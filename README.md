@@ -1,2 +1,2 @@
 # TheLongStory
-Picsart Academy's iOS Group Students final project
+Picsart Academy's iOS Group Students Suren Poghosyan and Garik Hovsepyan's final project

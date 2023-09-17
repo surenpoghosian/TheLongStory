@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3324CCDB2AB7029B00A863D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324CCDA2AB7029B00A863D3 /* AppDelegate.swift */; };
+		3324CCDD2AB7029B00A863D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324CCDC2AB7029B00A863D3 /* SceneDelegate.swift */; };
+		3324CCDF2AB7029B00A863D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324CCDE2AB7029B00A863D3 /* ViewController.swift */; };
+		3324CCE22AB7029B00A863D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3324CCE02AB7029B00A863D3 /* Main.storyboard */; };
+		3324CCE52AB7029B00A863D3 /* Greedy_Kings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3324CCE32AB7029B00A863D3 /* Greedy_Kings.xcdatamodeld */; };
+		3324CCE72AB7029C00A863D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3324CCE62AB7029C00A863D3 /* Assets.xcassets */; };
+		3324CCEA2AB7029C00A863D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3324CCE82AB7029C00A863D3 /* LaunchScreen.storyboard */; };
+		3324CCF52AB7029C00A863D3 /* Greedy_KingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324CCF42AB7029C00A863D3 /* Greedy_KingsTests.swift */; };
+		3324CCFF2AB7029C00A863D3 /* Greedy_KingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324CCFE2AB7029C00A863D3 /* Greedy_KingsUITests.swift */; };
+		3324CD012AB7029C00A863D3 /* Greedy_KingsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324CD002AB7029C00A863D3 /* Greedy_KingsUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3324CCF12AB7029C00A863D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3324CCCF2AB7029B00A863D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3324CCD62AB7029B00A863D3;
+			remoteInfo = "Greedy Kings";
+		};
+		3324CCFB2AB7029C00A863D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3324CCCF2AB7029B00A863D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3324CCD62AB7029B00A863D3;
+			remoteInfo = "Greedy Kings";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3324CCD72AB7029B00A863D3 /* Greedy Kings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Greedy Kings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3324CCDA2AB7029B00A863D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3324CCDC2AB7029B00A863D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3324CCDE2AB7029B00A863D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3324CCE12AB7029B00A863D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3324CCE42AB7029B00A863D3 /* Greedy_Kings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Greedy_Kings.xcdatamodel; sourceTree = "<group>"; };
+		3324CCE62AB7029C00A863D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3324CCE92AB7029C00A863D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3324CCEB2AB7029C00A863D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3324CCF02AB7029C00A863D3 /* Greedy KingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Greedy KingsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3324CCF42AB7029C00A863D3 /* Greedy_KingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsTests.swift; sourceTree = "<group>"; };
+		3324CCFA2AB7029C00A863D3 /* Greedy KingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Greedy KingsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3324CCFE2AB7029C00A863D3 /* Greedy_KingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITests.swift; sourceTree = "<group>"; };
+		3324CD002AB7029C00A863D3 /* Greedy_KingsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3324CCD42AB7029B00A863D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3324CCED2AB7029C00A863D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3324CCF72AB7029C00A863D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3324CCCE2AB7029B00A863D3 = {
+			isa = PBXGroup;
+			children = (
+				3324CCD92AB7029B00A863D3 /* Greedy Kings */,
+				3324CCF32AB7029C00A863D3 /* Greedy KingsTests */,
+				3324CCFD2AB7029C00A863D3 /* Greedy KingsUITests */,
+				3324CCD82AB7029B00A863D3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3324CCD82AB7029B00A863D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3324CCD72AB7029B00A863D3 /* Greedy Kings.app */,
+				3324CCF02AB7029C00A863D3 /* Greedy KingsTests.xctest */,
+				3324CCFA2AB7029C00A863D3 /* Greedy KingsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3324CCD92AB7029B00A863D3 /* Greedy Kings */ = {
+			isa = PBXGroup;
+			children = (
+				3324CCDA2AB7029B00A863D3 /* AppDelegate.swift */,
+				3324CCDC2AB7029B00A863D3 /* SceneDelegate.swift */,
+				3324CCDE2AB7029B00A863D3 /* ViewController.swift */,
+				3324CCE02AB7029B00A863D3 /* Main.storyboard */,
+				3324CCE62AB7029C00A863D3 /* Assets.xcassets */,
+				3324CCE82AB7029C00A863D3 /* LaunchScreen.storyboard */,
+				3324CCEB2AB7029C00A863D3 /* Info.plist */,
+				3324CCE32AB7029B00A863D3 /* Greedy_Kings.xcdatamodeld */,
+			);
+			path = "Greedy Kings";
+			sourceTree = "<group>";
+		};
+		3324CCF32AB7029C00A863D3 /* Greedy KingsTests */ = {
+			isa = PBXGroup;
+			children = (
+				3324CCF42AB7029C00A863D3 /* Greedy_KingsTests.swift */,
+			);
+			path = "Greedy KingsTests";
+			sourceTree = "<group>";
+		};
+		3324CCFD2AB7029C00A863D3 /* Greedy KingsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3324CCFE2AB7029C00A863D3 /* Greedy_KingsUITests.swift */,
+				3324CD002AB7029C00A863D3 /* Greedy_KingsUITestsLaunchTests.swift */,
+			);
+			path = "Greedy KingsUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3324CCD62AB7029B00A863D3 /* Greedy Kings */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3324CD042AB7029C00A863D3 /* Build configuration list for PBXNativeTarget "Greedy Kings" */;
+			buildPhases = (
+				3324CCD32AB7029B00A863D3 /* Sources */,
+				3324CCD42AB7029B00A863D3 /* Frameworks */,
+				3324CCD52AB7029B00A863D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Greedy Kings";
+			productName = "Greedy Kings";
+			productReference = 3324CCD72AB7029B00A863D3 /* Greedy Kings.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3324CCEF2AB7029C00A863D3 /* Greedy KingsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3324CD072AB7029C00A863D3 /* Build configuration list for PBXNativeTarget "Greedy KingsTests" */;
+			buildPhases = (
+				3324CCEC2AB7029C00A863D3 /* Sources */,
+				3324CCED2AB7029C00A863D3 /* Frameworks */,
+				3324CCEE2AB7029C00A863D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3324CCF22AB7029C00A863D3 /* PBXTargetDependency */,
+			);
+			name = "Greedy KingsTests";
+			productName = "Greedy KingsTests";
+			productReference = 3324CCF02AB7029C00A863D3 /* Greedy KingsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3324CCF92AB7029C00A863D3 /* Greedy KingsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3324CD0A2AB7029C00A863D3 /* Build configuration list for PBXNativeTarget "Greedy KingsUITests" */;
+			buildPhases = (
+				3324CCF62AB7029C00A863D3 /* Sources */,
+				3324CCF72AB7029C00A863D3 /* Frameworks */,
+				3324CCF82AB7029C00A863D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3324CCFC2AB7029C00A863D3 /* PBXTargetDependency */,
+			);
+			name = "Greedy KingsUITests";
+			productName = "Greedy KingsUITests";
+			productReference = 3324CCFA2AB7029C00A863D3 /* Greedy KingsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3324CCCF2AB7029B00A863D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					3324CCD62AB7029B00A863D3 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					3324CCEF2AB7029C00A863D3 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 3324CCD62AB7029B00A863D3;
+					};
+					3324CCF92AB7029C00A863D3 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 3324CCD62AB7029B00A863D3;
+					};
+				};
+			};
+			buildConfigurationList = 3324CCD22AB7029B00A863D3 /* Build configuration list for PBXProject "Greedy Kings" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3324CCCE2AB7029B00A863D3;
+			productRefGroup = 3324CCD82AB7029B00A863D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3324CCD62AB7029B00A863D3 /* Greedy Kings */,
+				3324CCEF2AB7029C00A863D3 /* Greedy KingsTests */,
+				3324CCF92AB7029C00A863D3 /* Greedy KingsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3324CCD52AB7029B00A863D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3324CCEA2AB7029C00A863D3 /* LaunchScreen.storyboard in Resources */,
+				3324CCE72AB7029C00A863D3 /* Assets.xcassets in Resources */,
+				3324CCE22AB7029B00A863D3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3324CCEE2AB7029C00A863D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3324CCF82AB7029C00A863D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3324CCD32AB7029B00A863D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3324CCE52AB7029B00A863D3 /* Greedy_Kings.xcdatamodeld in Sources */,
+				3324CCDF2AB7029B00A863D3 /* ViewController.swift in Sources */,
+				3324CCDB2AB7029B00A863D3 /* AppDelegate.swift in Sources */,
+				3324CCDD2AB7029B00A863D3 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3324CCEC2AB7029C00A863D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3324CCF52AB7029C00A863D3 /* Greedy_KingsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3324CCF62AB7029C00A863D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3324CCFF2AB7029C00A863D3 /* Greedy_KingsUITests.swift in Sources */,
+				3324CD012AB7029C00A863D3 /* Greedy_KingsUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3324CCF22AB7029C00A863D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3324CCD62AB7029B00A863D3 /* Greedy Kings */;
+			targetProxy = 3324CCF12AB7029C00A863D3 /* PBXContainerItemProxy */;
+		};
+		3324CCFC2AB7029C00A863D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3324CCD62AB7029B00A863D3 /* Greedy Kings */;
+			targetProxy = 3324CCFB2AB7029C00A863D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3324CCE02AB7029B00A863D3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3324CCE12AB7029B00A863D3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3324CCE82AB7029C00A863D3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3324CCE92AB7029C00A863D3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3324CD022AB7029C00A863D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3324CD032AB7029C00A863D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3324CD052AB7029C00A863D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Greedy Kings/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-Kings";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3324CD062AB7029C00A863D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Greedy Kings/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-Kings";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3324CD082AB7029C00A863D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-KingsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greedy Kings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greedy Kings";
+			};
+			name = Debug;
+		};
+		3324CD092AB7029C00A863D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-KingsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greedy Kings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greedy Kings";
+			};
+			name = Release;
+		};
+		3324CD0B2AB7029C00A863D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-KingsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Greedy Kings";
+			};
+			name = Debug;
+		};
+		3324CD0C2AB7029C00A863D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-KingsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Greedy Kings";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3324CCD22AB7029B00A863D3 /* Build configuration list for PBXProject "Greedy Kings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3324CD022AB7029C00A863D3 /* Debug */,
+				3324CD032AB7029C00A863D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3324CD042AB7029C00A863D3 /* Build configuration list for PBXNativeTarget "Greedy Kings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3324CD052AB7029C00A863D3 /* Debug */,
+				3324CD062AB7029C00A863D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3324CD072AB7029C00A863D3 /* Build configuration list for PBXNativeTarget "Greedy KingsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3324CD082AB7029C00A863D3 /* Debug */,
+				3324CD092AB7029C00A863D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3324CD0A2AB7029C00A863D3 /* Build configuration list for PBXNativeTarget "Greedy KingsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3324CD0B2AB7029C00A863D3 /* Debug */,
+				3324CD0C2AB7029C00A863D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3324CCE32AB7029B00A863D3 /* Greedy_Kings.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3324CCE42AB7029B00A863D3 /* Greedy_Kings.xcdatamodel */,
+			);
+			currentVersion = 3324CCE42AB7029B00A863D3 /* Greedy_Kings.xcdatamodel */;
+			path = Greedy_Kings.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3324CCCF2AB7029B00A863D3 /* Project object */;
+}

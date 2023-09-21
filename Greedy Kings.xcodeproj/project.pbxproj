@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */; };
 		33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */; };
-		33F00D642ABCB4CB00A5D5B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D632ABCB4CB00A5D5B2 /* ViewController.swift */; };
+		33F00D642ABCB4CB00A5D5B2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D632ABCB4CB00A5D5B2 /* RootViewController.swift */; };
 		33F00D672ABCB4CB00A5D5B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33F00D652ABCB4CB00A5D5B2 /* Main.storyboard */; };
 		33F00D6A2ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D682ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld */; };
 		33F00D6C2ABCB4CC00A5D5B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33F00D6B2ABCB4CC00A5D5B2 /* Assets.xcassets */; };
@@ -40,7 +40,7 @@
 		33F00D5C2ABCB4CB00A5D5B2 /* Greedy Kings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Greedy Kings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		33F00D632ABCB4CB00A5D5B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		33F00D632ABCB4CB00A5D5B2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		33F00D662ABCB4CB00A5D5B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33F00D692ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Greedy_Kings.xcdatamodel; sourceTree = "<group>"; };
 		33F00D6B2ABCB4CC00A5D5B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,12 +101,10 @@
 		33F00D5E2ABCB4CB00A5D5B2 /* Greedy Kings */ = {
 			isa = PBXGroup;
 			children = (
-				33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */,
-				33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */,
-				33F00D632ABCB4CB00A5D5B2 /* ViewController.swift */,
-				33F00D652ABCB4CB00A5D5B2 /* Main.storyboard */,
+				33F00D942ABCB57600A5D5B2 /* Managers */,
+				33F00D932ABCB56600A5D5B2 /* Application */,
+				33F00D922ABCB56100A5D5B2 /* Game */,
 				33F00D6B2ABCB4CC00A5D5B2 /* Assets.xcassets */,
-				33F00D6D2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard */,
 				33F00D702ABCB4CC00A5D5B2 /* Info.plist */,
 				33F00D682ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld */,
 			);
@@ -128,6 +126,160 @@
 				33F00D852ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift */,
 			);
 			path = "Greedy KingsUITests";
+			sourceTree = "<group>";
+		};
+		33F00D922ABCB56100A5D5B2 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				33F00D982ABCB59F00A5D5B2 /* Main Menu */,
+				33F00D972ABCB59C00A5D5B2 /* Game Scene */,
+				33F00D962ABCB58800A5D5B2 /* Levels */,
+				33F00D952ABCB58000A5D5B2 /* Settings */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		33F00D932ABCB56600A5D5B2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */,
+				33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */,
+				33F00D632ABCB4CB00A5D5B2 /* RootViewController.swift */,
+				33F00D652ABCB4CB00A5D5B2 /* Main.storyboard */,
+				33F00D6D2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		33F00D942ABCB57600A5D5B2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		33F00D952ABCB58000A5D5B2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				33F00DA52ABCB5D300A5D5B2 /* ViewModel */,
+				33F00DA42ABCB5D100A5D5B2 /* Models */,
+				33F00DA32ABCB5CF00A5D5B2 /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		33F00D962ABCB58800A5D5B2 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				33F00DA22ABCB5CD00A5D5B2 /* ViewModel */,
+				33F00DA12ABCB5CA00A5D5B2 /* Models */,
+				33F00DA02ABCB5C800A5D5B2 /* Views */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
+		33F00D972ABCB59C00A5D5B2 /* Game Scene */ = {
+			isa = PBXGroup;
+			children = (
+				33F00D9F2ABCB5C600A5D5B2 /* ViewModel */,
+				33F00D9E2ABCB5C300A5D5B2 /* Models */,
+				33F00D9C2ABCB5BC00A5D5B2 /* Views */,
+			);
+			path = "Game Scene";
+			sourceTree = "<group>";
+		};
+		33F00D982ABCB59F00A5D5B2 /* Main Menu */ = {
+			isa = PBXGroup;
+			children = (
+				33F00D9B2ABCB5BA00A5D5B2 /* ViewModel */,
+				33F00D9A2ABCB5B800A5D5B2 /* Models */,
+				33F00D992ABCB5B600A5D5B2 /* Views */,
+			);
+			path = "Main Menu";
+			sourceTree = "<group>";
+		};
+		33F00D992ABCB5B600A5D5B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		33F00D9A2ABCB5B800A5D5B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		33F00D9B2ABCB5BA00A5D5B2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		33F00D9C2ABCB5BC00A5D5B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		33F00D9E2ABCB5C300A5D5B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		33F00D9F2ABCB5C600A5D5B2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		33F00DA02ABCB5C800A5D5B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		33F00DA12ABCB5CA00A5D5B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		33F00DA22ABCB5CD00A5D5B2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		33F00DA32ABCB5CF00A5D5B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		33F00DA42ABCB5D100A5D5B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		33F00DA52ABCB5D300A5D5B2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33F00D6A2ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld in Sources */,
-				33F00D642ABCB4CB00A5D5B2 /* ViewController.swift in Sources */,
+				33F00D642ABCB4CB00A5D5B2 /* RootViewController.swift in Sources */,
 				33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */,
 				33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */,
 			);

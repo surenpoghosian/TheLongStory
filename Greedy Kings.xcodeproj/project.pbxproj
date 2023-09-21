@@ -134,10 +134,8 @@
 		33F00D922ABCB56100A5D5B2 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				33F00D982ABCB59F00A5D5B2 /* Main Menu */,
-				33F00D972ABCB59C00A5D5B2 /* Game Scene */,
-				33F00D962ABCB58800A5D5B2 /* Levels */,
-				33F00D952ABCB58000A5D5B2 /* Settings */,
+				33F00DA92ABCD92900A5D5B2 /* UI */,
+				33F00DA82ABCD91D00A5D5B2 /* Physics */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -283,6 +281,24 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		33F00DA82ABCD91D00A5D5B2 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		33F00DA92ABCD92900A5D5B2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				33F00D982ABCB59F00A5D5B2 /* Main Menu */,
+				33F00D972ABCB59C00A5D5B2 /* Game Scene */,
+				33F00D962ABCB58800A5D5B2 /* Levels */,
+				33F00D952ABCB58000A5D5B2 /* Settings */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */; };
+		33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */; };
+		33F00D642ABCB4CB00A5D5B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D632ABCB4CB00A5D5B2 /* ViewController.swift */; };
+		33F00D672ABCB4CB00A5D5B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33F00D652ABCB4CB00A5D5B2 /* Main.storyboard */; };
+		33F00D6A2ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D682ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld */; };
+		33F00D6C2ABCB4CC00A5D5B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33F00D6B2ABCB4CC00A5D5B2 /* Assets.xcassets */; };
+		33F00D6F2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33F00D6D2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard */; };
+		33F00D7A2ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D792ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift */; };
+		33F00D842ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D832ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift */; };
+		33F00D862ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D852ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		33F00D762ABCB4CC00A5D5B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33F00D542ABCB4CB00A5D5B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33F00D5B2ABCB4CB00A5D5B2;
+			remoteInfo = "Greedy Kings";
+		};
+		33F00D802ABCB4CC00A5D5B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33F00D542ABCB4CB00A5D5B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33F00D5B2ABCB4CB00A5D5B2;
+			remoteInfo = "Greedy Kings";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		33F00D5C2ABCB4CB00A5D5B2 /* Greedy Kings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Greedy Kings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		33F00D632ABCB4CB00A5D5B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		33F00D662ABCB4CB00A5D5B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		33F00D692ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Greedy_Kings.xcdatamodel; sourceTree = "<group>"; };
+		33F00D6B2ABCB4CC00A5D5B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		33F00D6E2ABCB4CC00A5D5B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		33F00D702ABCB4CC00A5D5B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33F00D752ABCB4CC00A5D5B2 /* Greedy KingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Greedy KingsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33F00D792ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsTests.swift; sourceTree = "<group>"; };
+		33F00D7F2ABCB4CC00A5D5B2 /* Greedy KingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Greedy KingsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33F00D832ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITests.swift; sourceTree = "<group>"; };
+		33F00D852ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		33F00D592ABCB4CB00A5D5B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33F00D722ABCB4CC00A5D5B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33F00D7C2ABCB4CC00A5D5B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33F00D532ABCB4CB00A5D5B2 = {
+			isa = PBXGroup;
+			children = (
+				33F00D5E2ABCB4CB00A5D5B2 /* Greedy Kings */,
+				33F00D782ABCB4CC00A5D5B2 /* Greedy KingsTests */,
+				33F00D822ABCB4CC00A5D5B2 /* Greedy KingsUITests */,
+				33F00D5D2ABCB4CB00A5D5B2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		33F00D5D2ABCB4CB00A5D5B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33F00D5C2ABCB4CB00A5D5B2 /* Greedy Kings.app */,
+				33F00D752ABCB4CC00A5D5B2 /* Greedy KingsTests.xctest */,
+				33F00D7F2ABCB4CC00A5D5B2 /* Greedy KingsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33F00D5E2ABCB4CB00A5D5B2 /* Greedy Kings */ = {
+			isa = PBXGroup;
+			children = (
+				33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */,
+				33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */,
+				33F00D632ABCB4CB00A5D5B2 /* ViewController.swift */,
+				33F00D652ABCB4CB00A5D5B2 /* Main.storyboard */,
+				33F00D6B2ABCB4CC00A5D5B2 /* Assets.xcassets */,
+				33F00D6D2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard */,
+				33F00D702ABCB4CC00A5D5B2 /* Info.plist */,
+				33F00D682ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld */,
+			);
+			path = "Greedy Kings";
+			sourceTree = "<group>";
+		};
+		33F00D782ABCB4CC00A5D5B2 /* Greedy KingsTests */ = {
+			isa = PBXGroup;
+			children = (
+				33F00D792ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift */,
+			);
+			path = "Greedy KingsTests";
+			sourceTree = "<group>";
+		};
+		33F00D822ABCB4CC00A5D5B2 /* Greedy KingsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				33F00D832ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift */,
+				33F00D852ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift */,
+			);
+			path = "Greedy KingsUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		33F00D5B2ABCB4CB00A5D5B2 /* Greedy Kings */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33F00D892ABCB4CC00A5D5B2 /* Build configuration list for PBXNativeTarget "Greedy Kings" */;
+			buildPhases = (
+				33F00D582ABCB4CB00A5D5B2 /* Sources */,
+				33F00D592ABCB4CB00A5D5B2 /* Frameworks */,
+				33F00D5A2ABCB4CB00A5D5B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Greedy Kings";
+			productName = "Greedy Kings";
+			productReference = 33F00D5C2ABCB4CB00A5D5B2 /* Greedy Kings.app */;
+			productType = "com.apple.product-type.application";
+		};
+		33F00D742ABCB4CC00A5D5B2 /* Greedy KingsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33F00D8C2ABCB4CC00A5D5B2 /* Build configuration list for PBXNativeTarget "Greedy KingsTests" */;
+			buildPhases = (
+				33F00D712ABCB4CC00A5D5B2 /* Sources */,
+				33F00D722ABCB4CC00A5D5B2 /* Frameworks */,
+				33F00D732ABCB4CC00A5D5B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33F00D772ABCB4CC00A5D5B2 /* PBXTargetDependency */,
+			);
+			name = "Greedy KingsTests";
+			productName = "Greedy KingsTests";
+			productReference = 33F00D752ABCB4CC00A5D5B2 /* Greedy KingsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		33F00D7E2ABCB4CC00A5D5B2 /* Greedy KingsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33F00D8F2ABCB4CC00A5D5B2 /* Build configuration list for PBXNativeTarget "Greedy KingsUITests" */;
+			buildPhases = (
+				33F00D7B2ABCB4CC00A5D5B2 /* Sources */,
+				33F00D7C2ABCB4CC00A5D5B2 /* Frameworks */,
+				33F00D7D2ABCB4CC00A5D5B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33F00D812ABCB4CC00A5D5B2 /* PBXTargetDependency */,
+			);
+			name = "Greedy KingsUITests";
+			productName = "Greedy KingsUITests";
+			productReference = 33F00D7F2ABCB4CC00A5D5B2 /* Greedy KingsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		33F00D542ABCB4CB00A5D5B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					33F00D5B2ABCB4CB00A5D5B2 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					33F00D742ABCB4CC00A5D5B2 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 33F00D5B2ABCB4CB00A5D5B2;
+					};
+					33F00D7E2ABCB4CC00A5D5B2 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 33F00D5B2ABCB4CB00A5D5B2;
+					};
+				};
+			};
+			buildConfigurationList = 33F00D572ABCB4CB00A5D5B2 /* Build configuration list for PBXProject "Greedy Kings" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 33F00D532ABCB4CB00A5D5B2;
+			productRefGroup = 33F00D5D2ABCB4CB00A5D5B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				33F00D5B2ABCB4CB00A5D5B2 /* Greedy Kings */,
+				33F00D742ABCB4CC00A5D5B2 /* Greedy KingsTests */,
+				33F00D7E2ABCB4CC00A5D5B2 /* Greedy KingsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		33F00D5A2ABCB4CB00A5D5B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33F00D6F2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard in Resources */,
+				33F00D6C2ABCB4CC00A5D5B2 /* Assets.xcassets in Resources */,
+				33F00D672ABCB4CB00A5D5B2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33F00D732ABCB4CC00A5D5B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33F00D7D2ABCB4CC00A5D5B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		33F00D582ABCB4CB00A5D5B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33F00D6A2ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld in Sources */,
+				33F00D642ABCB4CB00A5D5B2 /* ViewController.swift in Sources */,
+				33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */,
+				33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33F00D712ABCB4CC00A5D5B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33F00D7A2ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33F00D7B2ABCB4CC00A5D5B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33F00D842ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift in Sources */,
+				33F00D862ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33F00D772ABCB4CC00A5D5B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33F00D5B2ABCB4CB00A5D5B2 /* Greedy Kings */;
+			targetProxy = 33F00D762ABCB4CC00A5D5B2 /* PBXContainerItemProxy */;
+		};
+		33F00D812ABCB4CC00A5D5B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33F00D5B2ABCB4CB00A5D5B2 /* Greedy Kings */;
+			targetProxy = 33F00D802ABCB4CC00A5D5B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		33F00D652ABCB4CB00A5D5B2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33F00D662ABCB4CB00A5D5B2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		33F00D6D2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33F00D6E2ABCB4CC00A5D5B2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		33F00D872ABCB4CC00A5D5B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		33F00D882ABCB4CC00A5D5B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		33F00D8A2ABCB4CC00A5D5B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Greedy Kings/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-Kings";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		33F00D8B2ABCB4CC00A5D5B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Greedy Kings/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-Kings";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		33F00D8D2ABCB4CC00A5D5B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-KingsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greedy Kings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greedy Kings";
+			};
+			name = Debug;
+		};
+		33F00D8E2ABCB4CC00A5D5B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-KingsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greedy Kings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greedy Kings";
+			};
+			name = Release;
+		};
+		33F00D902ABCB4CC00A5D5B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-KingsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Greedy Kings";
+			};
+			name = Debug;
+		};
+		33F00D912ABCB4CC00A5D5B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-KingsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Greedy Kings";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		33F00D572ABCB4CB00A5D5B2 /* Build configuration list for PBXProject "Greedy Kings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33F00D872ABCB4CC00A5D5B2 /* Debug */,
+				33F00D882ABCB4CC00A5D5B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33F00D892ABCB4CC00A5D5B2 /* Build configuration list for PBXNativeTarget "Greedy Kings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33F00D8A2ABCB4CC00A5D5B2 /* Debug */,
+				33F00D8B2ABCB4CC00A5D5B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33F00D8C2ABCB4CC00A5D5B2 /* Build configuration list for PBXNativeTarget "Greedy KingsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33F00D8D2ABCB4CC00A5D5B2 /* Debug */,
+				33F00D8E2ABCB4CC00A5D5B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33F00D8F2ABCB4CC00A5D5B2 /* Build configuration list for PBXNativeTarget "Greedy KingsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33F00D902ABCB4CC00A5D5B2 /* Debug */,
+				33F00D912ABCB4CC00A5D5B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		33F00D682ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				33F00D692ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodel */,
+			);
+			currentVersion = 33F00D692ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodel */;
+			path = Greedy_Kings.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 33F00D542ABCB4CB00A5D5B2 /* Project object */;
+}

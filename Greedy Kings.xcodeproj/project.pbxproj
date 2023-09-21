@@ -17,6 +17,7 @@
 		33F00D7A2ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D792ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift */; };
 		33F00D842ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D832ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift */; };
 		33F00D862ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D852ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift */; };
+		33F00DA72ABCBA9D00A5D5B2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 33F00DA62ABCBA9D00A5D5B2 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		33F00D7F2ABCB4CC00A5D5B2 /* Greedy KingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Greedy KingsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F00D832ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITests.swift; sourceTree = "<group>"; };
 		33F00D852ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		33F00DA62ABCBA9D00A5D5B2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		33F00D532ABCB4CB00A5D5B2 = {
 			isa = PBXGroup;
 			children = (
+				33F00DA62ABCBA9D00A5D5B2 /* README.md */,
 				33F00D5E2ABCB4CB00A5D5B2 /* Greedy Kings */,
 				33F00D782ABCB4CC00A5D5B2 /* Greedy KingsTests */,
 				33F00D822ABCB4CC00A5D5B2 /* Greedy KingsUITests */,
@@ -388,6 +391,7 @@
 			files = (
 				33F00D6F2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard in Resources */,
 				33F00D6C2ABCB4CC00A5D5B2 /* Assets.xcassets in Resources */,
+				33F00DA72ABCBA9D00A5D5B2 /* README.md in Resources */,
 				33F00D672ABCB4CB00A5D5B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

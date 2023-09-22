@@ -21,6 +21,42 @@
 		33F00DAB2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DAA2ABDBD0A00A5D5B2 /* MainMenuViewController.swift */; };
 		33F00DAC2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DAA2ABDBD0A00A5D5B2 /* MainMenuViewController.swift */; };
 		33F00DAD2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DAA2ABDBD0A00A5D5B2 /* MainMenuViewController.swift */; };
+		33F00DB32ABDC41700A5D5B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DB22ABDC41700A5D5B2 /* Models.swift */; };
+		33F00DB42ABDC41700A5D5B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DB22ABDC41700A5D5B2 /* Models.swift */; };
+		33F00DB52ABDC41700A5D5B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DB22ABDC41700A5D5B2 /* Models.swift */; };
+		33F00DB72ABDC42700A5D5B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DB62ABDC42700A5D5B2 /* ViewModel.swift */; };
+		33F00DB82ABDC42700A5D5B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DB62ABDC42700A5D5B2 /* ViewModel.swift */; };
+		33F00DB92ABDC42700A5D5B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DB62ABDC42700A5D5B2 /* ViewModel.swift */; };
+		33F00DBB2ABDC44E00A5D5B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DBA2ABDC44E00A5D5B2 /* ViewModel.swift */; };
+		33F00DBC2ABDC44E00A5D5B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DBA2ABDC44E00A5D5B2 /* ViewModel.swift */; };
+		33F00DBD2ABDC44E00A5D5B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DBA2ABDC44E00A5D5B2 /* ViewModel.swift */; };
+		33F00DBF2ABDC45600A5D5B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DBE2ABDC45600A5D5B2 /* Models.swift */; };
+		33F00DC02ABDC45600A5D5B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DBE2ABDC45600A5D5B2 /* Models.swift */; };
+		33F00DC12ABDC45600A5D5B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DBE2ABDC45600A5D5B2 /* Models.swift */; };
+		33F00DC32ABDC46E00A5D5B2 /* GameSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DC22ABDC46E00A5D5B2 /* GameSceneViewController.swift */; };
+		33F00DC42ABDC46E00A5D5B2 /* GameSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DC22ABDC46E00A5D5B2 /* GameSceneViewController.swift */; };
+		33F00DC52ABDC46E00A5D5B2 /* GameSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DC22ABDC46E00A5D5B2 /* GameSceneViewController.swift */; };
+		33F00DC72ABDC49800A5D5B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DC62ABDC49800A5D5B2 /* ViewModel.swift */; };
+		33F00DC82ABDC49800A5D5B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DC62ABDC49800A5D5B2 /* ViewModel.swift */; };
+		33F00DC92ABDC49800A5D5B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DC62ABDC49800A5D5B2 /* ViewModel.swift */; };
+		33F00DCB2ABDC4A200A5D5B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DCA2ABDC4A200A5D5B2 /* Models.swift */; };
+		33F00DCC2ABDC4A200A5D5B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DCA2ABDC4A200A5D5B2 /* Models.swift */; };
+		33F00DCD2ABDC4A200A5D5B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DCA2ABDC4A200A5D5B2 /* Models.swift */; };
+		33F00DCF2ABDC4BC00A5D5B2 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DCE2ABDC4BC00A5D5B2 /* LevelsViewController.swift */; };
+		33F00DD02ABDC4BC00A5D5B2 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DCE2ABDC4BC00A5D5B2 /* LevelsViewController.swift */; };
+		33F00DD12ABDC4BC00A5D5B2 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DCE2ABDC4BC00A5D5B2 /* LevelsViewController.swift */; };
+		33F00DD32ABDC4C700A5D5B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DD22ABDC4C700A5D5B2 /* ViewModel.swift */; };
+		33F00DD42ABDC4C700A5D5B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DD22ABDC4C700A5D5B2 /* ViewModel.swift */; };
+		33F00DD52ABDC4C700A5D5B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DD22ABDC4C700A5D5B2 /* ViewModel.swift */; };
+		33F00DD72ABDC4CE00A5D5B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DD62ABDC4CE00A5D5B2 /* Models.swift */; };
+		33F00DD82ABDC4CE00A5D5B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DD62ABDC4CE00A5D5B2 /* Models.swift */; };
+		33F00DD92ABDC4CE00A5D5B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DD62ABDC4CE00A5D5B2 /* Models.swift */; };
+		33F00DDB2ABDC4DC00A5D5B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DDA2ABDC4DC00A5D5B2 /* SettingsViewController.swift */; };
+		33F00DDC2ABDC4DC00A5D5B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DDA2ABDC4DC00A5D5B2 /* SettingsViewController.swift */; };
+		33F00DDD2ABDC4DC00A5D5B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DDA2ABDC4DC00A5D5B2 /* SettingsViewController.swift */; };
+		33F00DDF2ABDC4F900A5D5B2 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DDE2ABDC4F900A5D5B2 /* Physics.swift */; };
+		33F00DE02ABDC4F900A5D5B2 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DDE2ABDC4F900A5D5B2 /* Physics.swift */; };
+		33F00DE12ABDC4F900A5D5B2 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DDE2ABDC4F900A5D5B2 /* Physics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +93,18 @@
 		33F00D852ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		33F00DA62ABCBA9D00A5D5B2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		33F00DAA2ABDBD0A00A5D5B2 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		33F00DB22ABDC41700A5D5B2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		33F00DB62ABDC42700A5D5B2 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		33F00DBA2ABDC44E00A5D5B2 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		33F00DBE2ABDC45600A5D5B2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		33F00DC22ABDC46E00A5D5B2 /* GameSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneViewController.swift; sourceTree = "<group>"; };
+		33F00DC62ABDC49800A5D5B2 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		33F00DCA2ABDC4A200A5D5B2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		33F00DCE2ABDC4BC00A5D5B2 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
+		33F00DD22ABDC4C700A5D5B2 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		33F00DD62ABDC4CE00A5D5B2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		33F00DDA2ABDC4DC00A5D5B2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		33F00DDE2ABDC4F900A5D5B2 /* Physics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +262,7 @@
 		33F00D9A2ABCB5B800A5D5B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				33F00DB22ABDC41700A5D5B2 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,6 +270,7 @@
 		33F00D9B2ABCB5BA00A5D5B2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				33F00DB62ABDC42700A5D5B2 /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -228,6 +278,7 @@
 		33F00D9C2ABCB5BC00A5D5B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				33F00DC22ABDC46E00A5D5B2 /* GameSceneViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +286,7 @@
 		33F00D9E2ABCB5C300A5D5B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				33F00DBE2ABDC45600A5D5B2 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,6 +294,7 @@
 		33F00D9F2ABCB5C600A5D5B2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				33F00DBA2ABDC44E00A5D5B2 /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -249,6 +302,7 @@
 		33F00DA02ABCB5C800A5D5B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				33F00DCE2ABDC4BC00A5D5B2 /* LevelsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,6 +310,7 @@
 		33F00DA12ABCB5CA00A5D5B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				33F00DCA2ABDC4A200A5D5B2 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +318,7 @@
 		33F00DA22ABCB5CD00A5D5B2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				33F00DC62ABDC49800A5D5B2 /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -270,6 +326,7 @@
 		33F00DA32ABCB5CF00A5D5B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				33F00DDA2ABDC4DC00A5D5B2 /* SettingsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +334,7 @@
 		33F00DA42ABCB5D100A5D5B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				33F00DD62ABDC4CE00A5D5B2 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +342,7 @@
 		33F00DA52ABCB5D300A5D5B2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				33F00DD22ABDC4C700A5D5B2 /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -291,6 +350,7 @@
 		33F00DA82ABCD91D00A5D5B2 /* Physics */ = {
 			isa = PBXGroup;
 			children = (
+				33F00DDE2ABDC4F900A5D5B2 /* Physics.swift */,
 			);
 			path = Physics;
 			sourceTree = "<group>";
@@ -440,9 +500,21 @@
 			files = (
 				33F00D6A2ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld in Sources */,
 				33F00DAB2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */,
+				33F00DCF2ABDC4BC00A5D5B2 /* LevelsViewController.swift in Sources */,
 				33F00D642ABCB4CB00A5D5B2 /* RootViewController.swift in Sources */,
+				33F00DCB2ABDC4A200A5D5B2 /* Models.swift in Sources */,
+				33F00DC72ABDC49800A5D5B2 /* ViewModel.swift in Sources */,
+				33F00DD32ABDC4C700A5D5B2 /* ViewModel.swift in Sources */,
+				33F00DDB2ABDC4DC00A5D5B2 /* SettingsViewController.swift in Sources */,
+				33F00DC32ABDC46E00A5D5B2 /* GameSceneViewController.swift in Sources */,
+				33F00DB32ABDC41700A5D5B2 /* Models.swift in Sources */,
+				33F00DD72ABDC4CE00A5D5B2 /* Models.swift in Sources */,
 				33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */,
 				33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */,
+				33F00DBF2ABDC45600A5D5B2 /* Models.swift in Sources */,
+				33F00DDF2ABDC4F900A5D5B2 /* Physics.swift in Sources */,
+				33F00DBB2ABDC44E00A5D5B2 /* ViewModel.swift in Sources */,
+				33F00DB72ABDC42700A5D5B2 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +522,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F00DBC2ABDC44E00A5D5B2 /* ViewModel.swift in Sources */,
+				33F00DD02ABDC4BC00A5D5B2 /* LevelsViewController.swift in Sources */,
+				33F00DC42ABDC46E00A5D5B2 /* GameSceneViewController.swift in Sources */,
+				33F00DD82ABDC4CE00A5D5B2 /* Models.swift in Sources */,
+				33F00DD42ABDC4C700A5D5B2 /* ViewModel.swift in Sources */,
+				33F00DE02ABDC4F900A5D5B2 /* Physics.swift in Sources */,
+				33F00DB42ABDC41700A5D5B2 /* Models.swift in Sources */,
 				33F00DAC2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */,
+				33F00DC02ABDC45600A5D5B2 /* Models.swift in Sources */,
+				33F00DB82ABDC42700A5D5B2 /* ViewModel.swift in Sources */,
+				33F00DCC2ABDC4A200A5D5B2 /* Models.swift in Sources */,
+				33F00DDC2ABDC4DC00A5D5B2 /* SettingsViewController.swift in Sources */,
+				33F00DC82ABDC49800A5D5B2 /* ViewModel.swift in Sources */,
 				33F00D7A2ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,9 +543,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F00DB92ABDC42700A5D5B2 /* ViewModel.swift in Sources */,
+				33F00DD92ABDC4CE00A5D5B2 /* Models.swift in Sources */,
+				33F00DE12ABDC4F900A5D5B2 /* Physics.swift in Sources */,
+				33F00DC92ABDC49800A5D5B2 /* ViewModel.swift in Sources */,
 				33F00DAD2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */,
 				33F00D842ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift in Sources */,
 				33F00D862ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift in Sources */,
+				33F00DBD2ABDC44E00A5D5B2 /* ViewModel.swift in Sources */,
+				33F00DB52ABDC41700A5D5B2 /* Models.swift in Sources */,
+				33F00DC12ABDC45600A5D5B2 /* Models.swift in Sources */,
+				33F00DDD2ABDC4DC00A5D5B2 /* SettingsViewController.swift in Sources */,
+				33F00DD12ABDC4BC00A5D5B2 /* LevelsViewController.swift in Sources */,
+				33F00DC52ABDC46E00A5D5B2 /* GameSceneViewController.swift in Sources */,
+				33F00DD52ABDC4C700A5D5B2 /* ViewModel.swift in Sources */,
+				33F00DCD2ABDC4A200A5D5B2 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

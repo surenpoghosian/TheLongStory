@@ -18,6 +18,9 @@
 		33F00D842ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D832ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift */; };
 		33F00D862ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D852ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift */; };
 		33F00DA72ABCBA9D00A5D5B2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 33F00DA62ABCBA9D00A5D5B2 /* README.md */; };
+		33F00DAB2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DAA2ABDBD0A00A5D5B2 /* MainMenuViewController.swift */; };
+		33F00DAC2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DAA2ABDBD0A00A5D5B2 /* MainMenuViewController.swift */; };
+		33F00DAD2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DAA2ABDBD0A00A5D5B2 /* MainMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,7 @@
 		33F00D832ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITests.swift; sourceTree = "<group>"; };
 		33F00D852ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		33F00DA62ABCBA9D00A5D5B2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		33F00DAA2ABDBD0A00A5D5B2 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 		33F00D992ABCB5B600A5D5B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				33F00DAA2ABDBD0A00A5D5B2 /* MainMenuViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33F00D6A2ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld in Sources */,
+				33F00DAB2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */,
 				33F00D642ABCB4CB00A5D5B2 /* RootViewController.swift in Sources */,
 				33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */,
 				33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */,
@@ -444,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F00DAC2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */,
 				33F00D7A2ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F00DAD2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */,
 				33F00D842ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift in Sources */,
 				33F00D862ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift in Sources */,
 			);

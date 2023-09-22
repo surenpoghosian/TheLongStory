@@ -21,7 +21,6 @@
 		33F00DAB2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DAA2ABDBD0A00A5D5B2 /* MainMenuViewController.swift */; };
 		33F00DAC2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DAA2ABDBD0A00A5D5B2 /* MainMenuViewController.swift */; };
 		33F00DAD2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DAA2ABDBD0A00A5D5B2 /* MainMenuViewController.swift */; };
-		33F00DAF2ABDC16900A5D5B2 /* .gitignore.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 33F00DAE2ABDC16900A5D5B2 /* .gitignore.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +57,6 @@
 		33F00D852ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		33F00DA62ABCBA9D00A5D5B2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		33F00DAA2ABDBD0A00A5D5B2 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
-		33F00DAE2ABDC16900A5D5B2 /* .gitignore.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = .gitignore.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +87,6 @@
 		33F00D532ABCB4CB00A5D5B2 = {
 			isa = PBXGroup;
 			children = (
-				33F00DAE2ABDC16900A5D5B2 /* .gitignore.rtf */,
 				33F00DA62ABCBA9D00A5D5B2 /* README.md */,
 				33F00D5E2ABCB4CB00A5D5B2 /* Greedy Kings */,
 				33F00D782ABCB4CC00A5D5B2 /* Greedy KingsTests */,
@@ -417,7 +414,6 @@
 				33F00D6C2ABCB4CC00A5D5B2 /* Assets.xcassets in Resources */,
 				33F00DA72ABCBA9D00A5D5B2 /* README.md in Resources */,
 				33F00D672ABCB4CB00A5D5B2 /* Main.storyboard in Resources */,
-				33F00DAF2ABDC16900A5D5B2 /* .gitignore.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

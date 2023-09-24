@@ -2,7 +2,19 @@
 //  SettingsViewController.swift
 //  Greedy Kings
 //
-//  Created by Suren Poghosyan on 22.09.23.
+//  Created by Garik Hovsepian on 24.09.23.
 //
 
-import Foundation
+import UIKit
+
+class SettingsViewController: UIViewController {
+
+    private var viewModel: SettingsViewModel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel = SettingsViewModel()
+        // Do any additional setup after loading the view.
+    }
+}

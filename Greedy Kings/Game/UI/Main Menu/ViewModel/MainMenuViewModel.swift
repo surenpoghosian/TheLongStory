@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+final class MainMenuViewModel {
+    
+    func startGame() {
+        
+    }
+    
+    func openSettings() {
+        
+    }
+    
+    func openLeaderboard () {
+        
+    }
+}

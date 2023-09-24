@@ -2,7 +2,19 @@
 //  LevelsViewController.swift
 //  Greedy Kings
 //
-//  Created by Suren Poghosyan on 22.09.23.
+//  Created by Garik Hovsepian on 24.09.23.
 //
 
-import Foundation
+import UIKit
+
+class LevelsViewController: UIViewController {
+
+    private var viewModel: LevelsViewModel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel = LevelsViewModel()
+      
+    }
+}

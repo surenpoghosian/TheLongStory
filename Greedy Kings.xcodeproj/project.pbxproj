@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33A293482AC4078F008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293472AC4078F008D9B9C /* LevelBuilder.swift */; };
 		33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */; };
 		33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */; };
 		33F00D642ABCB4CB00A5D5B2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D632ABCB4CB00A5D5B2 /* RootViewController.swift */; };
@@ -55,6 +56,8 @@
 		33F00DDF2ABDC4F900A5D5B2 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DDE2ABDC4F900A5D5B2 /* Physics.swift */; };
 		33F00DE02ABDC4F900A5D5B2 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DDE2ABDC4F900A5D5B2 /* Physics.swift */; };
 		33F00DE12ABDC4F900A5D5B2 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DDE2ABDC4F900A5D5B2 /* Physics.swift */; };
+		33F55C6C2ABECF08008FC1B3 /* Greedy_Kings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D682ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld */; };
+		33F55C6D2ABECF12008FC1B3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 33F00DA62ABCBA9D00A5D5B2 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33A293472AC4078F008D9B9C /* LevelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuilder.swift; sourceTree = "<group>"; };
 		33F00D5C2ABCB4CB00A5D5B2 /* Greedy Kings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Greedy Kings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +134,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33A293462AC40779008D9B9C /* LevelManager */ = {
+			isa = PBXGroup;
+			children = (
+				33A293472AC4078F008D9B9C /* LevelBuilder.swift */,
+			);
+			path = LevelManager;
+			sourceTree = "<group>";
+		};
 		33F00D532ABCB4CB00A5D5B2 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +217,7 @@
 		33F00D942ABCB57600A5D5B2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				33A293462AC40779008D9B9C /* LevelManager */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -468,6 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F55C6D2ABECF12008FC1B3 /* README.md in Resources */,
 				33F00D6F2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard in Resources */,
 				33F00D6C2ABCB4CC00A5D5B2 /* Assets.xcassets in Resources */,
 				33F00D672ABCB4CB00A5D5B2 /* Main.storyboard in Resources */,
@@ -495,6 +509,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33A293482AC4078F008D9B9C /* LevelBuilder.swift in Sources */,
+				33F55C6C2ABECF08008FC1B3 /* Greedy_Kings.xcdatamodeld in Sources */,
 				33F00DAB2ABDBD0A00A5D5B2 /* MainMenuViewController.swift in Sources */,
 				33F00DCF2ABDC4BC00A5D5B2 /* LevelsViewController.swift in Sources */,
 				33F00D642ABCB4CB00A5D5B2 /* RootViewController.swift in Sources */,

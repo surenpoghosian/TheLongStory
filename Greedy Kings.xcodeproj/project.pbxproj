@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33A293532AC44EF6008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
+		33A293542AC44EF6008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
+		33A293562AC44F00008D9B9C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293552AC44F00008D9B9C /* GameManager.swift */; };
+		33A293572AC44F00008D9B9C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293552AC44F00008D9B9C /* GameManager.swift */; };
+		33A293592AC44F08008D9B9C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293582AC44F08008D9B9C /* UserManager.swift */; };
+		33A2935A2AC44F08008D9B9C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293582AC44F08008D9B9C /* UserManager.swift */; };
 		33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */; };
 		33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */; };
 		33F00D642ABCB4CB00A5D5B2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D632ABCB4CB00A5D5B2 /* RootViewController.swift */; };
@@ -90,6 +96,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33A293522AC44EF6008D9B9C /* LevelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuilder.swift; sourceTree = "<group>"; };
+		33A293552AC44F00008D9B9C /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		33A293582AC44F08008D9B9C /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		33F00D5C2ABCB4CB00A5D5B2 /* Greedy Kings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Greedy Kings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +159,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33A2934F2AC44EC8008D9B9C /* User Manager */ = {
+			isa = PBXGroup;
+			children = (
+				33A293582AC44F08008D9B9C /* UserManager.swift */,
+			);
+			path = "User Manager";
+			sourceTree = "<group>";
+		};
+		33A293502AC44ED1008D9B9C /* Game Manager */ = {
+			isa = PBXGroup;
+			children = (
+				33A293552AC44F00008D9B9C /* GameManager.swift */,
+			);
+			path = "Game Manager";
+			sourceTree = "<group>";
+		};
+		33A293512AC44ED7008D9B9C /* Level Manager */ = {
+			isa = PBXGroup;
+			children = (
+				33A293522AC44EF6008D9B9C /* LevelBuilder.swift */,
+			);
+			path = "Level Manager";
+			sourceTree = "<group>";
+		};
 		33F00D532ABCB4CB00A5D5B2 = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +258,9 @@
 		33F00D942ABCB57600A5D5B2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				33A293512AC44ED7008D9B9C /* Level Manager */,
+				33A293502AC44ED1008D9B9C /* Game Manager */,
+				33A2934F2AC44EC8008D9B9C /* User Manager */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -558,12 +594,15 @@
 				E8BBD42F2ABFC7F90056E1E8 /* LeaderboardViewModel.swift in Sources */,
 				33F00DCB2ABDC4A200A5D5B2 /* LevelsModels.swift in Sources */,
 				33F00DC72ABDC49800A5D5B2 /* LevelsViewModel.swift in Sources */,
+				33A293592AC44F08008D9B9C /* UserManager.swift in Sources */,
 				E8BBD42B2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,
 				E8BBD4272ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
 				33F00DD32ABDC4C700A5D5B2 /* SettingsViewModel.swift in Sources */,
 				33F00DB32ABDC41700A5D5B2 /* MainMenuModels.swift in Sources */,
 				33F00DD72ABDC4CE00A5D5B2 /* SettingsModels.swift in Sources */,
 				E8BBD41B2ABFA5ED0056E1E8 /* SettingsViewController.swift in Sources */,
+				33A293562AC44F00008D9B9C /* GameManager.swift in Sources */,
+				33A293532AC44EF6008D9B9C /* LevelBuilder.swift in Sources */,
 				E8BBD4232ABFC7600056E1E8 /* ResultViewController.swift in Sources */,
 				33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */,
 				33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */,
@@ -590,14 +629,17 @@
 				33F00DE02ABDC4F900A5D5B2 /* Physics.swift in Sources */,
 				E8BBD4342ABFC8A70056E1E8 /* PlayerDataViewController.swift in Sources */,
 				33F00DB42ABDC41700A5D5B2 /* MainMenuModels.swift in Sources */,
+				33A293572AC44F00008D9B9C /* GameManager.swift in Sources */,
 				33F00DC02ABDC45600A5D5B2 /* GameSceneModels.swift in Sources */,
 				33F00DB82ABDC42700A5D5B2 /* MainMenuViewModel.swift in Sources */,
 				E8BBD41C2ABFA5ED0056E1E8 /* SettingsViewController.swift in Sources */,
 				33F00DCC2ABDC4A200A5D5B2 /* LevelsModels.swift in Sources */,
 				E8BBD4182ABFA5B30056E1E8 /* LevelsViewController.swift in Sources */,
 				33F00DC82ABDC49800A5D5B2 /* LevelsViewModel.swift in Sources */,
+				33A293542AC44EF6008D9B9C /* LevelBuilder.swift in Sources */,
 				E8BBD4282ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
 				E8BBD42C2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,
+				33A2935A2AC44F08008D9B9C /* UserManager.swift in Sources */,
 				33F00D7A2ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

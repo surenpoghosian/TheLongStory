@@ -17,6 +17,7 @@
 		33A2935E2AC46A4D008D9B9C /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2935C2AC46A4D008D9B9C /* LevelModel.swift */; };
 		33A293612AC4B0D8008D9B9C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293602AC4B0D8008D9B9C /* StorageManager.swift */; };
 		33A293622AC4B0D8008D9B9C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293602AC4B0D8008D9B9C /* StorageManager.swift */; };
+		33A293682AC855AE008D9B9C /* GameComponentsPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33A293672AC855AE008D9B9C /* GameComponentsPropertyList.plist */; };
 		33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */; };
 		33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */; };
 		33F00D642ABCB4CB00A5D5B2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D632ABCB4CB00A5D5B2 /* RootViewController.swift */; };
@@ -102,6 +103,7 @@
 		33A293582AC44F08008D9B9C /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		33A2935C2AC46A4D008D9B9C /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
 		33A293602AC4B0D8008D9B9C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		33A293672AC855AE008D9B9C /* GameComponentsPropertyList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GameComponentsPropertyList.plist; sourceTree = "<group>"; };
 		33F00D5C2ABCB4CB00A5D5B2 /* Greedy Kings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Greedy Kings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -202,6 +204,14 @@
 			path = "Storage Manager";
 			sourceTree = "<group>";
 		};
+		33A293642AC8556E008D9B9C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				33A293672AC855AE008D9B9C /* GameComponentsPropertyList.plist */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		33F00D532ABCB4CB00A5D5B2 = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +266,7 @@
 		33F00D922ABCB56100A5D5B2 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				33A293642AC8556E008D9B9C /* Constants */,
 				33F00DA92ABCD92900A5D5B2 /* UI */,
 			);
 			path = Game;
@@ -573,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33F00D6F2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard in Resources */,
+				33A293682AC855AE008D9B9C /* GameComponentsPropertyList.plist in Resources */,
 				33F00D6C2ABCB4CC00A5D5B2 /* Assets.xcassets in Resources */,
 				33F00D672ABCB4CB00A5D5B2 /* Main.storyboard in Resources */,
 			);

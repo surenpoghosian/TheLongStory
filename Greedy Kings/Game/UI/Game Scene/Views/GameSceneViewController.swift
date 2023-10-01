@@ -9,19 +9,32 @@ import UIKit
 
 final class GameSceneViewController: UIViewController {
 
-    private var viewModel: GameSceneViewModel!
     weak var delegate: GameDataDelegate?
+    private var viewModel: GameSceneViewModel!
     private var levelBuilder: LevelBuilder!
 
+    // create scene view
+    private var gameScene: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel = GameSceneViewModel()
-        setupLevelBuilder()
+        initializeGameScene()
+        buildLevel(level: 1)
     }
         
-    func setupLevelBuilder(){
-        levelBuilder = LevelBuilder(level: 1)
-        print("setupLevelBuilder")
+    func initializeGameScene(){
+        gameScene = UIView()
     }
+    
+    func buildLevel(level: Int){
+        levelBuilder = LevelBuilder(level: level)
+        gameScene = levelBuilder.buildLevel(gameScene: gameScene)
+        self.view.addSubview(gameScene)
+    }
+    
+    
+//    create level UI building function and call in it LevelBuilder(level: )
+    
 }

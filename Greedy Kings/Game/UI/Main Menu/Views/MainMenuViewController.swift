@@ -21,7 +21,7 @@ final class MainMenuViewController: UIViewController {
         viewModel = MainMenuViewModel()
         
         playButton.addAction(UIAction(handler: { [weak self]_ in
-            self?.pushViewController(identifier: "PickCharacterView", viewControllerType: PickCharacterViewController.self)
+            self?.pushViewController(identifier: "PlayerDataView", viewControllerType: PlayerDataViewController.self)
         }), for: .touchUpInside)
         
         settingsButton.addAction(UIAction(handler: { [weak self]_ in

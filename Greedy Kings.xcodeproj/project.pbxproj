@@ -76,18 +76,6 @@
 		E8BBD4332ABFC8A70056E1E8 /* PlayerDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD4322ABFC8A70056E1E8 /* PlayerDataViewController.swift */; };
 		E8BBD4342ABFC8A70056E1E8 /* PlayerDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD4322ABFC8A70056E1E8 /* PlayerDataViewController.swift */; };
 		E8BBD4352ABFC8A70056E1E8 /* PlayerDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD4322ABFC8A70056E1E8 /* PlayerDataViewController.swift */; };
-		E8BBD4682AC461FC0056E1E8 /* PickCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD4672AC461FC0056E1E8 /* PickCharacterViewController.swift */; };
-		E8BBD4692AC461FC0056E1E8 /* PickCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD4672AC461FC0056E1E8 /* PickCharacterViewController.swift */; };
-		E8BBD46A2AC461FC0056E1E8 /* PickCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD4672AC461FC0056E1E8 /* PickCharacterViewController.swift */; };
-		E8BBD46C2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD46B2AC462300056E1E8 /* PickCharacterViewModel.swift */; };
-		E8BBD46D2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD46B2AC462300056E1E8 /* PickCharacterViewModel.swift */; };
-		E8BBD46E2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD46B2AC462300056E1E8 /* PickCharacterViewModel.swift */; };
-		E8BBD4702AC462570056E1E8 /* PickCharacterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD46F2AC462570056E1E8 /* PickCharacterModels.swift */; };
-		E8BBD4712AC462570056E1E8 /* PickCharacterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD46F2AC462570056E1E8 /* PickCharacterModels.swift */; };
-		E8BBD4722AC462570056E1E8 /* PickCharacterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD46F2AC462570056E1E8 /* PickCharacterModels.swift */; };
-		E8BBD4742AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD4732AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift */; };
-		E8BBD4752AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD4732AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift */; };
-		E8BBD4762AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD4732AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,10 +132,6 @@
 		E8BBD42A2ABFC7E00056E1E8 /* LeaderboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardModel.swift; sourceTree = "<group>"; };
 		E8BBD42E2ABFC7F90056E1E8 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
 		E8BBD4322ABFC8A70056E1E8 /* PlayerDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataViewController.swift; sourceTree = "<group>"; };
-		E8BBD4672AC461FC0056E1E8 /* PickCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickCharacterViewController.swift; sourceTree = "<group>"; };
-		E8BBD46B2AC462300056E1E8 /* PickCharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickCharacterViewModel.swift; sourceTree = "<group>"; };
-		E8BBD46F2AC462570056E1E8 /* PickCharacterModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickCharacterModels.swift; sourceTree = "<group>"; };
-		E8BBD4732AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,7 +415,6 @@
 			isa = PBXGroup;
 			children = (
 				33F00D982ABCB59F00A5D5B2 /* Main Menu */,
-				E8BBD4632AC4618D0056E1E8 /* Pick Character */,
 				33F00D972ABCB59C00A5D5B2 /* Game Scene */,
 				33F00D962ABCB58800A5D5B2 /* Levels */,
 				33F00D952ABCB58000A5D5B2 /* Settings */,
@@ -470,41 +453,6 @@
 			isa = PBXGroup;
 			children = (
 				E8BBD4262ABFC7B80056E1E8 /* LeaderboardViewController.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		E8BBD4632AC4618D0056E1E8 /* Pick Character */ = {
-			isa = PBXGroup;
-			children = (
-				E8BBD4642AC461AB0056E1E8 /* ViewModel */,
-				E8BBD4652AC461C00056E1E8 /* Models */,
-				E8BBD4662AC461CB0056E1E8 /* Views */,
-			);
-			path = "Pick Character";
-			sourceTree = "<group>";
-		};
-		E8BBD4642AC461AB0056E1E8 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				E8BBD46B2AC462300056E1E8 /* PickCharacterViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		E8BBD4652AC461C00056E1E8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E8BBD46F2AC462570056E1E8 /* PickCharacterModels.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		E8BBD4662AC461CB0056E1E8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E8BBD4672AC461FC0056E1E8 /* PickCharacterViewController.swift */,
-				E8BBD4732AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -648,11 +596,9 @@
 				33F00DC72ABDC49800A5D5B2 /* LevelsViewModel.swift in Sources */,
 				33A293592AC44F08008D9B9C /* UserManager.swift in Sources */,
 				E8BBD42B2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,
-				E8BBD46C2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */,
 				E8BBD4272ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
 				33F00DD32ABDC4C700A5D5B2 /* SettingsViewModel.swift in Sources */,
 				33F00DB32ABDC41700A5D5B2 /* MainMenuModels.swift in Sources */,
-				E8BBD4682AC461FC0056E1E8 /* PickCharacterViewController.swift in Sources */,
 				33F00DD72ABDC4CE00A5D5B2 /* SettingsModels.swift in Sources */,
 				E8BBD41B2ABFA5ED0056E1E8 /* SettingsViewController.swift in Sources */,
 				33A293562AC44F00008D9B9C /* GameManager.swift in Sources */,
@@ -660,14 +606,12 @@
 				E8BBD4232ABFC7600056E1E8 /* ResultViewController.swift in Sources */,
 				33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */,
 				33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */,
-				E8BBD4742AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift in Sources */,
 				33F00DBF2ABDC45600A5D5B2 /* GameSceneModels.swift in Sources */,
 				33F00DDF2ABDC4F900A5D5B2 /* Physics.swift in Sources */,
 				33F00DBB2ABDC44E00A5D5B2 /* GameSceneViewModel.swift in Sources */,
 				33F00DB72ABDC42700A5D5B2 /* MainMenuViewModel.swift in Sources */,
 				E8BBD4132ABFA57B0056E1E8 /* GameSceneViewController.swift in Sources */,
 				E8BBD4172ABFA5B30056E1E8 /* LevelsViewController.swift in Sources */,
-				E8BBD4702AC462570056E1E8 /* PickCharacterModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,15 +619,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8BBD4692AC461FC0056E1E8 /* PickCharacterViewController.swift in Sources */,
-				E8BBD4712AC462570056E1E8 /* PickCharacterModels.swift in Sources */,
 				33F00DBC2ABDC44E00A5D5B2 /* GameSceneViewModel.swift in Sources */,
 				E8BBD4142ABFA57B0056E1E8 /* GameSceneViewController.swift in Sources */,
 				33F00DD82ABDC4CE00A5D5B2 /* SettingsModels.swift in Sources */,
-				E8BBD46D2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */,
 				E8BBD4102ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */,
 				E8BBD4302ABFC7F90056E1E8 /* LeaderboardViewModel.swift in Sources */,
-				E8BBD4752AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift in Sources */,
 				33F00DD42ABDC4C700A5D5B2 /* SettingsViewModel.swift in Sources */,
 				E8BBD4242ABFC7600056E1E8 /* ResultViewController.swift in Sources */,
 				33F00DE02ABDC4F900A5D5B2 /* Physics.swift in Sources */,
@@ -708,10 +648,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8BBD4762AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift in Sources */,
 				33F00DB92ABDC42700A5D5B2 /* MainMenuViewModel.swift in Sources */,
 				E8BBD4312ABFC7F90056E1E8 /* LeaderboardViewModel.swift in Sources */,
-				E8BBD46E2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */,
 				33F00DD92ABDC4CE00A5D5B2 /* SettingsModels.swift in Sources */,
 				E8BBD4352ABFC8A70056E1E8 /* PlayerDataViewController.swift in Sources */,
 				33F00DE12ABDC4F900A5D5B2 /* Physics.swift in Sources */,
@@ -723,11 +661,9 @@
 				E8BBD4192ABFA5B30056E1E8 /* LevelsViewController.swift in Sources */,
 				E8BBD4112ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */,
 				E8BBD41D2ABFA5ED0056E1E8 /* SettingsViewController.swift in Sources */,
-				E8BBD46A2AC461FC0056E1E8 /* PickCharacterViewController.swift in Sources */,
 				33F00DBD2ABDC44E00A5D5B2 /* GameSceneViewModel.swift in Sources */,
 				E8BBD4292ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
 				33F00DB52ABDC41700A5D5B2 /* MainMenuModels.swift in Sources */,
-				E8BBD4722AC462570056E1E8 /* PickCharacterModels.swift in Sources */,
 				33F00DC12ABDC45600A5D5B2 /* GameSceneModels.swift in Sources */,
 				33F00DD52ABDC4C700A5D5B2 /* SettingsViewModel.swift in Sources */,
 				E8BBD4152ABFA57B0056E1E8 /* GameSceneViewController.swift in Sources */,
@@ -897,8 +833,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -925,8 +861,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

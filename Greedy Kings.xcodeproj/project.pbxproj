@@ -13,6 +13,11 @@
 		33A293572AC44F00008D9B9C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293552AC44F00008D9B9C /* GameManager.swift */; };
 		33A293592AC44F08008D9B9C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293582AC44F08008D9B9C /* UserManager.swift */; };
 		33A2935A2AC44F08008D9B9C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293582AC44F08008D9B9C /* UserManager.swift */; };
+		33A2935D2AC46A4D008D9B9C /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2935C2AC46A4D008D9B9C /* LevelModel.swift */; };
+		33A2935E2AC46A4D008D9B9C /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2935C2AC46A4D008D9B9C /* LevelModel.swift */; };
+		33A293612AC4B0D8008D9B9C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293602AC4B0D8008D9B9C /* StorageManager.swift */; };
+		33A293622AC4B0D8008D9B9C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293602AC4B0D8008D9B9C /* StorageManager.swift */; };
+		33A293682AC855AE008D9B9C /* GameComponentsPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33A293672AC855AE008D9B9C /* GameComponentsPropertyList.plist */; };
 		33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */; };
 		33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */; };
 		33F00D642ABCB4CB00A5D5B2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D632ABCB4CB00A5D5B2 /* RootViewController.swift */; };
@@ -46,9 +51,6 @@
 		33F00DD72ABDC4CE00A5D5B2 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DD62ABDC4CE00A5D5B2 /* SettingsModels.swift */; };
 		33F00DD82ABDC4CE00A5D5B2 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DD62ABDC4CE00A5D5B2 /* SettingsModels.swift */; };
 		33F00DD92ABDC4CE00A5D5B2 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DD62ABDC4CE00A5D5B2 /* SettingsModels.swift */; };
-		33F00DDF2ABDC4F900A5D5B2 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DDE2ABDC4F900A5D5B2 /* Physics.swift */; };
-		33F00DE02ABDC4F900A5D5B2 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DDE2ABDC4F900A5D5B2 /* Physics.swift */; };
-		33F00DE12ABDC4F900A5D5B2 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DDE2ABDC4F900A5D5B2 /* Physics.swift */; };
 		E8BBD40F2ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD40E2ABFA5460056E1E8 /* MainMenuViewController.swift */; };
 		E8BBD4102ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD40E2ABFA5460056E1E8 /* MainMenuViewController.swift */; };
 		E8BBD4112ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD40E2ABFA5460056E1E8 /* MainMenuViewController.swift */; };
@@ -99,6 +101,9 @@
 		33A293522AC44EF6008D9B9C /* LevelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuilder.swift; sourceTree = "<group>"; };
 		33A293552AC44F00008D9B9C /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		33A293582AC44F08008D9B9C /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		33A2935C2AC46A4D008D9B9C /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
+		33A293602AC4B0D8008D9B9C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		33A293672AC855AE008D9B9C /* GameComponentsPropertyList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GameComponentsPropertyList.plist; sourceTree = "<group>"; };
 		33F00D5C2ABCB4CB00A5D5B2 /* Greedy Kings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Greedy Kings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,7 +127,6 @@
 		33F00DCA2ABDC4A200A5D5B2 /* LevelsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsModels.swift; sourceTree = "<group>"; };
 		33F00DD22ABDC4C700A5D5B2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		33F00DD62ABDC4CE00A5D5B2 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
-		33F00DDE2ABDC4F900A5D5B2 /* Physics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics.swift; sourceTree = "<group>"; };
 		E8BBD40E2ABFA5460056E1E8 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		E8BBD4122ABFA57B0056E1E8 /* GameSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneViewController.swift; sourceTree = "<group>"; };
 		E8BBD4162ABFA5B30056E1E8 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
@@ -178,9 +182,34 @@
 		33A293512AC44ED7008D9B9C /* Level Manager */ = {
 			isa = PBXGroup;
 			children = (
+				33A2935B2AC46A2F008D9B9C /* Models */,
 				33A293522AC44EF6008D9B9C /* LevelBuilder.swift */,
 			);
 			path = "Level Manager";
+			sourceTree = "<group>";
+		};
+		33A2935B2AC46A2F008D9B9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				33A2935C2AC46A4D008D9B9C /* LevelModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		33A2935F2AC4B0C7008D9B9C /* Storage Manager */ = {
+			isa = PBXGroup;
+			children = (
+				33A293602AC4B0D8008D9B9C /* StorageManager.swift */,
+			);
+			path = "Storage Manager";
+			sourceTree = "<group>";
+		};
+		33A293642AC8556E008D9B9C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				33A293672AC855AE008D9B9C /* GameComponentsPropertyList.plist */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		33F00D532ABCB4CB00A5D5B2 = {
@@ -237,8 +266,8 @@
 		33F00D922ABCB56100A5D5B2 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				33A293642AC8556E008D9B9C /* Constants */,
 				33F00DA92ABCD92900A5D5B2 /* UI */,
-				33F00DA82ABCD91D00A5D5B2 /* Physics */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -258,6 +287,7 @@
 		33F00D942ABCB57600A5D5B2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				33A2935F2AC4B0C7008D9B9C /* Storage Manager */,
 				33A293512AC44ED7008D9B9C /* Level Manager */,
 				33A293502AC44ED1008D9B9C /* Game Manager */,
 				33A2934F2AC44EC8008D9B9C /* User Manager */,
@@ -401,14 +431,6 @@
 				33F00DD22ABDC4C700A5D5B2 /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		33F00DA82ABCD91D00A5D5B2 /* Physics */ = {
-			isa = PBXGroup;
-			children = (
-				33F00DDE2ABDC4F900A5D5B2 /* Physics.swift */,
-			);
-			path = Physics;
 			sourceTree = "<group>";
 		};
 		33F00DA92ABCD92900A5D5B2 /* UI */ = {
@@ -562,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33F00D6F2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard in Resources */,
+				33A293682AC855AE008D9B9C /* GameComponentsPropertyList.plist in Resources */,
 				33F00D6C2ABCB4CC00A5D5B2 /* Assets.xcassets in Resources */,
 				33F00D672ABCB4CB00A5D5B2 /* Main.storyboard in Resources */,
 			);
@@ -603,15 +626,16 @@
 				E8BBD41B2ABFA5ED0056E1E8 /* SettingsViewController.swift in Sources */,
 				33A293562AC44F00008D9B9C /* GameManager.swift in Sources */,
 				33A293532AC44EF6008D9B9C /* LevelBuilder.swift in Sources */,
+				33A2935D2AC46A4D008D9B9C /* LevelModel.swift in Sources */,
 				E8BBD4232ABFC7600056E1E8 /* ResultViewController.swift in Sources */,
 				33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */,
 				33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */,
 				33F00DBF2ABDC45600A5D5B2 /* GameSceneModels.swift in Sources */,
-				33F00DDF2ABDC4F900A5D5B2 /* Physics.swift in Sources */,
 				33F00DBB2ABDC44E00A5D5B2 /* GameSceneViewModel.swift in Sources */,
 				33F00DB72ABDC42700A5D5B2 /* MainMenuViewModel.swift in Sources */,
 				E8BBD4132ABFA57B0056E1E8 /* GameSceneViewController.swift in Sources */,
 				E8BBD4172ABFA5B30056E1E8 /* LevelsViewController.swift in Sources */,
+				33A293612AC4B0D8008D9B9C /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +650,6 @@
 				E8BBD4302ABFC7F90056E1E8 /* LeaderboardViewModel.swift in Sources */,
 				33F00DD42ABDC4C700A5D5B2 /* SettingsViewModel.swift in Sources */,
 				E8BBD4242ABFC7600056E1E8 /* ResultViewController.swift in Sources */,
-				33F00DE02ABDC4F900A5D5B2 /* Physics.swift in Sources */,
 				E8BBD4342ABFC8A70056E1E8 /* PlayerDataViewController.swift in Sources */,
 				33F00DB42ABDC41700A5D5B2 /* MainMenuModels.swift in Sources */,
 				33A293572AC44F00008D9B9C /* GameManager.swift in Sources */,
@@ -634,8 +657,10 @@
 				33F00DB82ABDC42700A5D5B2 /* MainMenuViewModel.swift in Sources */,
 				E8BBD41C2ABFA5ED0056E1E8 /* SettingsViewController.swift in Sources */,
 				33F00DCC2ABDC4A200A5D5B2 /* LevelsModels.swift in Sources */,
+				33A293622AC4B0D8008D9B9C /* StorageManager.swift in Sources */,
 				E8BBD4182ABFA5B30056E1E8 /* LevelsViewController.swift in Sources */,
 				33F00DC82ABDC49800A5D5B2 /* LevelsViewModel.swift in Sources */,
+				33A2935E2AC46A4D008D9B9C /* LevelModel.swift in Sources */,
 				33A293542AC44EF6008D9B9C /* LevelBuilder.swift in Sources */,
 				E8BBD4282ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
 				E8BBD42C2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,
@@ -652,7 +677,6 @@
 				E8BBD4312ABFC7F90056E1E8 /* LeaderboardViewModel.swift in Sources */,
 				33F00DD92ABDC4CE00A5D5B2 /* SettingsModels.swift in Sources */,
 				E8BBD4352ABFC8A70056E1E8 /* PlayerDataViewController.swift in Sources */,
-				33F00DE12ABDC4F900A5D5B2 /* Physics.swift in Sources */,
 				E8BBD4252ABFC7600056E1E8 /* ResultViewController.swift in Sources */,
 				33F00DC92ABDC49800A5D5B2 /* LevelsViewModel.swift in Sources */,
 				33F00D842ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift in Sources */,
@@ -833,8 +857,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -861,8 +885,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

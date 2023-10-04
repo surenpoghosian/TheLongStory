@@ -12,9 +12,8 @@ final class GameSceneViewController: UIViewController {
     weak var delegate: GameDataDelegate?
     private var viewModel: GameSceneViewModel!
     private var levelBuilder: LevelBuilder!
-
-    // create scene view
     private var gameScene: UIView!
+    private var physicsManager: PhysicsManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +25,19 @@ final class GameSceneViewController: UIViewController {
         
     func initializeGameScene(){
         gameScene = UIView()
+        gameScene.frame = view.bounds
     }
+    
     
     func buildLevel(level: Int){
         levelBuilder = LevelBuilder(level: level)
-        gameScene = levelBuilder.buildLevel(gameScene: gameScene)
-        self.view.addSubview(gameScene)
+        self.gameScene = levelBuilder.buildLevel(gameScene: gameScene)
+        self.view.addSubview(self.gameScene)
+        physicsManager = PhysicsManager(parentView: self.gameScene)
+        physicsManager.shotFromLeft(item: gameScene.subviews[6])
     }
     
     
-//    create level UI building function and call in it LevelBuilder(level: )
     
+        
 }

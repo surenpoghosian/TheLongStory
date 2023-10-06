@@ -57,6 +57,8 @@
 		33F00DD72ABDC4CE00A5D5B2 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DD62ABDC4CE00A5D5B2 /* SettingsModels.swift */; };
 		33F00DD82ABDC4CE00A5D5B2 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DD62ABDC4CE00A5D5B2 /* SettingsModels.swift */; };
 		33F00DD92ABDC4CE00A5D5B2 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DD62ABDC4CE00A5D5B2 /* SettingsModels.swift */; };
+		E887FCAD2AD073BA0056999E /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887FCAC2AD073BA0056999E /* GameModels.swift */; };
+		E887FCAF2AD073D10056999E /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887FCAE2AD073D10056999E /* HealthManager.swift */; };
 		E8BBD40F2ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD40E2ABFA5460056E1E8 /* MainMenuViewController.swift */; };
 		E8BBD4102ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD40E2ABFA5460056E1E8 /* MainMenuViewController.swift */; };
 		E8BBD4112ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD40E2ABFA5460056E1E8 /* MainMenuViewController.swift */; };
@@ -146,6 +148,8 @@
 		33F00DCA2ABDC4A200A5D5B2 /* LevelsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsModels.swift; sourceTree = "<group>"; };
 		33F00DD22ABDC4C700A5D5B2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		33F00DD62ABDC4CE00A5D5B2 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
+		E887FCAC2AD073BA0056999E /* GameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModels.swift; sourceTree = "<group>"; };
+		E887FCAE2AD073D10056999E /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		E8BBD40E2ABFA5460056E1E8 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		E8BBD4122ABFA57B0056E1E8 /* GameSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneViewController.swift; sourceTree = "<group>"; };
 		E8BBD4162ABFA5B30056E1E8 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +201,8 @@
 		33A293502AC44ED1008D9B9C /* Game Manager */ = {
 			isa = PBXGroup;
 			children = (
+				E887FCAB2AD0739A0056999E /* HealthManager */,
+				E887FCAA2AD073900056999E /* Models */,
 				33A293552AC44F00008D9B9C /* GameManager.swift */,
 			);
 			path = "Game Manager";
@@ -486,6 +492,22 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		E887FCAA2AD073900056999E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E887FCAC2AD073BA0056999E /* GameModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E887FCAB2AD0739A0056999E /* HealthManager */ = {
+			isa = PBXGroup;
+			children = (
+				E887FCAE2AD073D10056999E /* HealthManager.swift */,
+			);
+			path = HealthManager;
+			sourceTree = "<group>";
+		};
 		E8BBD41E2ABFC6640056E1E8 /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,11 +713,13 @@
 				E8BBD40F2ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */,
 				33F00D642ABCB4CB00A5D5B2 /* RootViewController.swift in Sources */,
 				33E8D3E02AD0456300C3892C /* PhysicsModels.swift in Sources */,
+				E887FCAF2AD073D10056999E /* HealthManager.swift in Sources */,
 				E8BBD42F2ABFC7F90056E1E8 /* LeaderboardViewModel.swift in Sources */,
 				33F00DCB2ABDC4A200A5D5B2 /* LevelsModels.swift in Sources */,
 				33F00DC72ABDC49800A5D5B2 /* LevelsViewModel.swift in Sources */,
 				33A293592AC44F08008D9B9C /* UserManager.swift in Sources */,
 				E8BBD42B2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,
+				E887FCAD2AD073BA0056999E /* GameModels.swift in Sources */,
 				E8BBD46C2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */,
 				33A2939A2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */,
 				E8BBD4272ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,

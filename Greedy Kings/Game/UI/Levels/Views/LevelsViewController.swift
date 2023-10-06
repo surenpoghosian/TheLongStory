@@ -25,7 +25,10 @@ class LevelsViewController: UIViewController {
                     Character(name: "Mexico", avatar: UIImage(systemName: "photo.fill")!),
                     Character(name: "Italy", avatar: UIImage(systemName: "photo.fill")!),
                     Character(name: "Persia", avatar: UIImage(systemName: "photo.fill")!)]
+        
     }
+    
+    
     private func setupPickLevelLabel() {
         pickLevelLabel = UILabel()
         pickLevelLabel.text = "Pick Level"
@@ -97,14 +100,18 @@ extension LevelsViewController: UICollectionViewDataSource {
         let character = testData[sectionOffset + indexPath.row]
         cell.configure(with: character)
         cell.isUserInteractionEnabled = character.availableToPick
+        
         return cell
     }
 }
 
 extension LevelsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? CharacterCollectionViewCell
-       
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "GameSceneView") as? GameSceneViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+
         }
     }
 

@@ -18,6 +18,12 @@
 		33A293612AC4B0D8008D9B9C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293602AC4B0D8008D9B9C /* StorageManager.swift */; };
 		33A293622AC4B0D8008D9B9C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293602AC4B0D8008D9B9C /* StorageManager.swift */; };
 		33A293682AC855AE008D9B9C /* GameComponentsPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33A293672AC855AE008D9B9C /* GameComponentsPropertyList.plist */; };
+		33A2939A2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293992ACB1B67008D9B9C /* PhysicsManager.swift */; };
+		33A2939B2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293992ACB1B67008D9B9C /* PhysicsManager.swift */; };
+		33A2939C2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293992ACB1B67008D9B9C /* PhysicsManager.swift */; };
+		33E8D3E02AD0456300C3892C /* PhysicsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E8D3DF2AD0456300C3892C /* PhysicsModels.swift */; };
+		33E8D3E12AD0456300C3892C /* PhysicsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E8D3DF2AD0456300C3892C /* PhysicsModels.swift */; };
+		33E8D3E22AD0456300C3892C /* PhysicsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E8D3DF2AD0456300C3892C /* PhysicsModels.swift */; };
 		33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */; };
 		33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */; };
 		33F00D642ABCB4CB00A5D5B2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D632ABCB4CB00A5D5B2 /* RootViewController.swift */; };
@@ -116,12 +122,13 @@
 		33A2935C2AC46A4D008D9B9C /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
 		33A293602AC4B0D8008D9B9C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		33A293672AC855AE008D9B9C /* GameComponentsPropertyList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GameComponentsPropertyList.plist; sourceTree = "<group>"; };
+		33A293992ACB1B67008D9B9C /* PhysicsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsManager.swift; sourceTree = "<group>"; };
+		33E8D3DF2AD0456300C3892C /* PhysicsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsModels.swift; sourceTree = "<group>"; };
 		33F00D5C2ABCB4CB00A5D5B2 /* Greedy Kings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Greedy Kings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F00D5F2ABCB4CB00A5D5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		33F00D632ABCB4CB00A5D5B2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		33F00D662ABCB4CB00A5D5B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		33F00D692ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Greedy_Kings.xcdatamodel; sourceTree = "<group>"; };
 		33F00D6B2ABCB4CC00A5D5B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33F00D6E2ABCB4CC00A5D5B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33F00D702ABCB4CC00A5D5B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -228,6 +235,23 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		33A293982ACB1B4D008D9B9C /* Physics Manager */ = {
+			isa = PBXGroup;
+			children = (
+				33E8D3DE2AD0454900C3892C /* PhysicsModels */,
+				33A293992ACB1B67008D9B9C /* PhysicsManager.swift */,
+			);
+			path = "Physics Manager";
+			sourceTree = "<group>";
+		};
+		33E8D3DE2AD0454900C3892C /* PhysicsModels */ = {
+			isa = PBXGroup;
+			children = (
+				33E8D3DF2AD0456300C3892C /* PhysicsModels.swift */,
+			);
+			path = PhysicsModels;
+			sourceTree = "<group>";
+		};
 		33F00D532ABCB4CB00A5D5B2 = {
 			isa = PBXGroup;
 			children = (
@@ -257,7 +281,6 @@
 				33F00D932ABCB56600A5D5B2 /* Application */,
 				33F00D6B2ABCB4CC00A5D5B2 /* Assets.xcassets */,
 				33F00D702ABCB4CC00A5D5B2 /* Info.plist */,
-				33F00D682ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld */,
 			);
 			path = "Greedy Kings";
 			sourceTree = "<group>";
@@ -303,6 +326,7 @@
 		33F00D942ABCB57600A5D5B2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				33A293982ACB1B4D008D9B9C /* Physics Manager */,
 				33A2935F2AC4B0C7008D9B9C /* Storage Manager */,
 				33A293512AC44ED7008D9B9C /* Level Manager */,
 				33A293502AC44ED1008D9B9C /* Game Manager */,
@@ -666,12 +690,14 @@
 				E8BBD4332ABFC8A70056E1E8 /* PlayerDataViewController.swift in Sources */,
 				E8BBD40F2ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */,
 				33F00D642ABCB4CB00A5D5B2 /* RootViewController.swift in Sources */,
+				33E8D3E02AD0456300C3892C /* PhysicsModels.swift in Sources */,
 				E8BBD42F2ABFC7F90056E1E8 /* LeaderboardViewModel.swift in Sources */,
 				33F00DCB2ABDC4A200A5D5B2 /* LevelsModels.swift in Sources */,
 				33F00DC72ABDC49800A5D5B2 /* LevelsViewModel.swift in Sources */,
 				33A293592AC44F08008D9B9C /* UserManager.swift in Sources */,
 				E8BBD42B2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,
 				E8BBD46C2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */,
+				33A2939A2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */,
 				E8BBD4272ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
 				33F00DD32ABDC4C700A5D5B2 /* SettingsViewModel.swift in Sources */,
 				33F00DB32ABDC41700A5D5B2 /* MainMenuModels.swift in Sources */,
@@ -711,11 +737,13 @@
 				33F00DD42ABDC4C700A5D5B2 /* SettingsViewModel.swift in Sources */,
 				E8BBD4242ABFC7600056E1E8 /* ResultViewController.swift in Sources */,
 				E8BBD4342ABFC8A70056E1E8 /* PlayerDataViewController.swift in Sources */,
+				33E8D3E12AD0456300C3892C /* PhysicsModels.swift in Sources */,
 				33F00DB42ABDC41700A5D5B2 /* MainMenuModels.swift in Sources */,
 				33A293572AC44F00008D9B9C /* GameManager.swift in Sources */,
 				33F00DC02ABDC45600A5D5B2 /* GameSceneModels.swift in Sources */,
 				33F00DB82ABDC42700A5D5B2 /* MainMenuViewModel.swift in Sources */,
 				E8BBD41C2ABFA5ED0056E1E8 /* SettingsViewController.swift in Sources */,
+				33A2939B2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */,
 				33F00DCC2ABDC4A200A5D5B2 /* LevelsModels.swift in Sources */,
 				33A293622AC4B0D8008D9B9C /* StorageManager.swift in Sources */,
 				E8BBD4182ABFA5B30056E1E8 /* LevelsViewController.swift in Sources */,
@@ -751,9 +779,11 @@
 				33F00DBD2ABDC44E00A5D5B2 /* GameSceneViewModel.swift in Sources */,
 				E8BBD4292ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
 				33F00DB52ABDC41700A5D5B2 /* MainMenuModels.swift in Sources */,
+				33E8D3E22AD0456300C3892C /* PhysicsModels.swift in Sources */,
 				E8BBD4722AC462570056E1E8 /* PickCharacterModels.swift in Sources */,
 				33F00DC12ABDC45600A5D5B2 /* GameSceneModels.swift in Sources */,
 				33F00DD52ABDC4C700A5D5B2 /* SettingsViewModel.swift in Sources */,
+				33A2939C2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */,
 				E8BBD4152ABFA57B0056E1E8 /* GameSceneViewController.swift in Sources */,
 				33F00DCD2ABDC4A200A5D5B2 /* LevelsModels.swift in Sources */,
 			);
@@ -1080,19 +1110,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		33F00D682ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				33F00D692ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodel */,
-			);
-			currentVersion = 33F00D692ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodel */;
-			path = Greedy_Kings.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 33F00D542ABCB4CB00A5D5B2 /* Project object */;
 }

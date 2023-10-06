@@ -8,25 +8,47 @@
 import Foundation
 import UIKit
 
-final class PhysicsManager {
-    private var animator: UIDynamicAnimator!
+final class PhysicsManager: NSObject {
+    var animator: UIDynamicAnimator!
     private var collisionBehavior: UICollisionBehavior!
     private var gravityBehavior: UIGravityBehavior!
     private var pushBehavior: UIPushBehavior!
     
     init(parentView: UIView!) {
+        super.init()
         initializeAllBehaviors()
         initializeAnimator(referenceView: parentView)
+        
+//        It'll be right and perfect to move the part below outside of the PhysicsManager
+        initializeItem(item: parentView.subviews[1], weight: 500.0, applyGravity: true)
+        initializeItem(item: parentView.subviews[2], weight: 500.0, applyGravity: true)
+        initializeItem(item: parentView.subviews[3], weight: 1500.0, applyGravity: false)
+        initializeItem(item: parentView.subviews[6], weight: 2.5, applyGravity: true)
+        initializeItem(item: parentView.subviews[7], weight: 2.5, applyGravity: true)
+        
+        self.collisionBehavior.collisionDelegate = self
     }
     
     private func initializeAnimator(referenceView: UIView){
         self.animator = UIDynamicAnimator(referenceView: referenceView)
         self.animator.addBehavior(gravityBehavior)
         self.animator.addBehavior(collisionBehavior)
+    }
+    
+    func initializeItem(item: UIView, weight: Double, applyGravity: Bool = true) {
+        let itemBehavior = self.addDynamicItemBehavior(view: item, weight: weight)
+        self.addCollisionBehavior(view: item)
         
-        for item in 1..<referenceView.subviews.count {
-            initializeItem(item: referenceView.subviews[item])
+        if applyGravity {
+            self.addGravityBehavior(view: item)
         }
+        
+        self.animator.addBehavior(itemBehavior)
+    }
+    
+    private func initializeAllBehaviors(){
+        initializeGravityBehavior()
+        initializeCollisionBehavior()
     }
 
     private func initializeGravityBehavior(){
@@ -42,18 +64,10 @@ final class PhysicsManager {
         self.collisionBehavior = UICollisionBehavior(items: [])
     }
 
-    private func initializeAllBehaviors(){
-        initializeGravityBehavior()
-        initializeCollisionBehavior()
+    func removeBehaviors(){
+        self.animator.removeBehavior(gravityBehavior)
     }
-    
-    func initializeItem(item: UIView) {
-        let itemBehavior = self.addDynamicItemBehavior(view: item, weight: 2.0)
-        self.addCollisionBehavior(view: item)
-        self.addGravityBehavior(view: item)
-        self.animator.addBehavior(itemBehavior)
-    }
-    
+        
     private func addCollisionBehavior(view: UIView) {
         self.collisionBehavior.addItem(view)
         self.collisionBehavior.translatesReferenceBoundsIntoBoundary = true
@@ -73,13 +87,37 @@ final class PhysicsManager {
         return self.animator
     }
     
-    func shotFromLeft(item: UIView){
-        let velocity = CGPoint(x: -2200.0, y: -500.0)
+    func removeGravityBehavior(from item: UIView) {
+        self.gravityBehavior.removeItem(item)
+    }
+    
+    func shotToLeft(item: UIView, velocityX byX: Double, velocityY byY: Double){
+        let velocity = CGPoint(x: -byX, y: -byY)
         pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
         pushBehavior.pushDirection = CGVector(dx: velocity.x / 200, dy: velocity.y / 200)
         animator.addBehavior(pushBehavior)
     }
+    
+    func shotToRight(item: UIView, velocityX byX: Double, velocityY byY: Double){
+        let velocity = CGPoint(x: byX, y: -byY)
+        pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
+        pushBehavior.pushDirection = CGVector(dx: velocity.x / 200, dy: velocity.y / 200)
+        animator.addBehavior(pushBehavior)
+    }
+    
+    func updtateItemPosition(item: UIView, toX: CGFloat, toY: CGFloat){
+        item.center = CGPoint(x: toX, y: toY)
+        self.animator.updateItem(usingCurrentState: item)
+    }
+    
         
 }
 
 
+extension PhysicsManager: UICollisionBehaviorDelegate {
+    func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item: UIDynamicItem, with otherItem: UIDynamicItem, at point: CGPoint) {
+        if let view = item as? UIView, let otherView = otherItem as? UIView {
+            print("Collision of ",view.description, otherView.description)
+        }
+    }
+}

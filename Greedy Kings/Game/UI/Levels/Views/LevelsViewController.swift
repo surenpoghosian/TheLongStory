@@ -107,7 +107,6 @@ extension LevelsViewController: UICollectionViewDataSource {
 
 extension LevelsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? CharacterCollectionViewCell
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "GameSceneView") as? GameSceneViewController {
             self.navigationController?.pushViewController(vc, animated: true)

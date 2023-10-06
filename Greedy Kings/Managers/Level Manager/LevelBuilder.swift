@@ -30,7 +30,7 @@ final class LevelBuilder {
     private var castleLeftAmmo: Ammo!
     private var castleRightAmmo: Ammo!
     private let screenSize = UIScreen.main.bounds
-    private var physicsManager: PhysicsManager!
+    var physicsManager: PhysicsManager!
     
     
     init(level: Int) {
@@ -50,7 +50,7 @@ final class LevelBuilder {
         castleRightAmmo = levels[level].castleRight.weapon.ammo
     }
 
-    func initializePhysicsManager(parentView: UIView){
+    func initializePhysicsBehavior(parentView: UIView){
         self.physicsManager = PhysicsManager(parentView: parentView)
     }
     
@@ -76,7 +76,7 @@ final class LevelBuilder {
 
     private func createWeapon(weapon: Weapon) -> UIView {
         var component: UIView!
-        let angleInRadians = CGFloat.pi / 4.0 // 45 degrees in radians
+        let angleInRadians = CGFloat.pi / 4.0
         
         switch weapon.locationOnScreen {
         case .left:
@@ -92,9 +92,17 @@ final class LevelBuilder {
         return component
     }
     
-    private func createAmmo(ammo: Ammo) -> UIView {
-        let component = UIView(frame: CGRect(x: 270, y: 200, width: 20, height: 20))
+    private func createAmmo(weapon: Weapon, ammo: Ammo) -> UIView {
+        var component: UIView!
+        
+        switch weapon.locationOnScreen {
+        case .left:
+            component = UIView(frame: CGRect(x: 90, y: screenSize.height - 140, width: 20, height: 20))
+        case .right:
+            component = UIView(frame: CGRect(x: screenSize.width - 90, y: screenSize.height - 140, width: 20, height: 20))
+        }
         component.backgroundColor = .orange
+
         return component
     }
     
@@ -105,22 +113,18 @@ final class LevelBuilder {
     }
 
     func buildLevel(gameScene: UIView) -> UIView {
-        
         let levelUI = self.buildLevelUI(gameScene: gameScene)
-        
-        let userInteractiveUI = self.buildUserInteractiveUI(gameScene: levelUI)
+        let interactiveUI = self.buildInteractiveUI(gameScene: levelUI)
 
-        return userInteractiveUI
+        return interactiveUI
     }
-    
     
 //  function which builds level ui, castles, characters, obstacle, scene background etc.
     private func buildLevelUI(gameScene: UIView) -> UIView {
-        var gameScene = gameScene
-        var castleLeft = createCastle(castle: castleLeft)
-        var castleRight = createCastle(castle: castleRight)
-        var obstacle = createObstacle(obstacle: obstacle)
-        var scene = createScene(scene: scene)
+        let castleLeft = createCastle(castle: castleLeft)
+        let castleRight = createCastle(castle: castleRight)
+        let obstacle = createObstacle(obstacle: obstacle)
+        let scene = createScene(scene: scene)
         
         
         let components = [scene, castleLeft, castleRight, obstacle]
@@ -129,21 +133,18 @@ final class LevelBuilder {
             component.translatesAutoresizingMaskIntoConstraints = false
             gameScene.addSubview(component)
         }
-
-        
-        setupLevelUIConstraints(scene: &scene ,castleLeft: &castleLeft, castleRight: &castleRight, obstacle: &obstacle, gameScene: &gameScene)
         
         return gameScene
     }
     
 //  function which builds user interactive components, weapons, ammo, game control elements
-    private func buildUserInteractiveUI(gameScene: UIView) -> UIView {
+    private func buildInteractiveUI(gameScene: UIView) -> UIView {
         var gameScene = gameScene
         
         var weaponLeft = createWeapon(weapon: castleLeftWeapon)
         var weaponRight = createWeapon(weapon: castleRightWeapon)
-        var ammoLeft = createAmmo(ammo: castleLeftAmmo)
-        var ammoRight = createAmmo(ammo: castleRightAmmo)
+        var ammoLeft = createAmmo(weapon: castleLeftWeapon, ammo: castleLeftAmmo)
+        var ammoRight = createAmmo(weapon: castleRightWeapon,ammo: castleRightAmmo)
         
         let components = [weaponLeft, weaponRight, ammoLeft, ammoRight]
         
@@ -156,28 +157,7 @@ final class LevelBuilder {
 
         return gameScene
     }
-    
-    func setupLevelUIConstraints(scene: inout UIView, castleLeft: inout UIView, castleRight: inout UIView, obstacle: inout UIView,  gameScene: inout UIView){
-//      castleLeft
-        NSLayoutConstraint.activate([
-
-        ])
         
-//      castleRight
-        NSLayoutConstraint.activate([
-
-        ])
-        
-//      obstacle
-        NSLayoutConstraint.activate([
-
-        ])
-
-//      Scene background / SceneType
-        NSLayoutConstraint.activate([
-            
-        ])
-    }
     
     func setupUserInteractiveUIConstraints( weaponLeft: inout UIView, weaponRight: inout UIView, ammoLeft: inout UIView, ammoRight: inout UIView, gameScene: inout UIView){
         NSLayoutConstraint.activate([
@@ -204,6 +184,18 @@ final class LevelBuilder {
             
         ])
     }
-    
+      
+    func updateAmmoLocation(locationOnScreen: ScreenSide, ammoView: UIView) {
+        switch locationOnScreen {
+        case .left:
+            let newX: CGFloat = 90.0
+            let newY: CGFloat = screenSize.height - 140.0
+            self.physicsManager.updtateItemPosition(item: ammoView, toX: newX, toY: newY)
+        case .right:
+            let newX: CGFloat = screenSize.width - 90.0
+            let newY: CGFloat = screenSize.height - 140.0
+            self.physicsManager.updtateItemPosition(item: ammoView, toX: newX, toY: newY)
+        }
+    }
     
 }

@@ -125,7 +125,6 @@
 		33F00D612ABCB4CB00A5D5B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		33F00D632ABCB4CB00A5D5B2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		33F00D662ABCB4CB00A5D5B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		33F00D692ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Greedy_Kings.xcdatamodel; sourceTree = "<group>"; };
 		33F00D6B2ABCB4CC00A5D5B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33F00D6E2ABCB4CC00A5D5B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33F00D702ABCB4CC00A5D5B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -269,7 +268,6 @@
 				33F00D932ABCB56600A5D5B2 /* Application */,
 				33F00D6B2ABCB4CC00A5D5B2 /* Assets.xcassets */,
 				33F00D702ABCB4CC00A5D5B2 /* Info.plist */,
-				33F00D682ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld */,
 			);
 			path = "Greedy Kings";
 			sourceTree = "<group>";
@@ -1096,19 +1094,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		33F00D682ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				33F00D692ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodel */,
-			);
-			currentVersion = 33F00D692ABCB4CB00A5D5B2 /* Greedy_Kings.xcdatamodel */;
-			path = Greedy_Kings.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 33F00D542ABCB4CB00A5D5B2 /* Project object */;
 }

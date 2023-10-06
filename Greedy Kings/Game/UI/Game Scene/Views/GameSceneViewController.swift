@@ -8,12 +8,10 @@
 import UIKit
 
 final class GameSceneViewController: UIViewController {
-
     weak var delegate: GameDataDelegate?
     private var viewModel: GameSceneViewModel!
     private var levelBuilder: LevelBuilder!
     private var gameScene: UIView!
-    private var physicsManager: PhysicsManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +26,38 @@ final class GameSceneViewController: UIViewController {
         gameScene.frame = view.bounds
     }
     
-    
     func buildLevel(level: Int){
         levelBuilder = LevelBuilder(level: level)
+        
         self.gameScene = levelBuilder.buildLevel(gameScene: gameScene)
         self.view.addSubview(self.gameScene)
-        physicsManager = PhysicsManager(parentView: self.gameScene)
-        physicsManager.shotFromLeft(item: gameScene.subviews[6])
-    }
-    
-    
-    
+        levelBuilder.initializePhysicsBehavior(parentView: self.gameScene)
         
+        
+//        ------------------TEST OF SHOT AND UPDATEAMMOLOCATION FUNCTIONS------------------
+//        let leftAmmo = self.gameScene.subviews[6]
+//        let rightAmmo = self.gameScene.subviews[7]
+//
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+//            self.levelBuilder.physicsManager.shotToRight(item: leftAmmo, velocityX: 100, velocityY: 130)
+//        })
+//
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
+//            self.levelBuilder.physicsManager.shotToLeft(item: rightAmmo, velocityX: 100, velocityY: 150)
+//        })
+//
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5, execute: {
+//            self.levelBuilder.updateAmmoLocation(locationOnScreen: .left, ammoView: leftAmmo)
+//            self.levelBuilder.updateAmmoLocation(locationOnScreen: .right, ammoView: rightAmmo)
+//        })
+//
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 7, execute: {
+//            self.levelBuilder.physicsManager.shotToRight(item: leftAmmo, velocityX: 100, velocityY: 150)
+//        })
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 9, execute: {
+//            self.levelBuilder.physicsManager.shotToLeft(item: rightAmmo, velocityX: 100, velocityY: 150)
+//        })
+    }
 }
+
+

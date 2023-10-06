@@ -91,18 +91,19 @@ final class PhysicsManager: NSObject {
         self.gravityBehavior.removeItem(item)
     }
     
-    func shotToLeft(item: UIView, velocityX byX: Double, velocityY byY: Double){
-        let velocity = CGPoint(x: -byX, y: -byY)
-        pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
-        pushBehavior.pushDirection = CGVector(dx: velocity.x / 200, dy: velocity.y / 200)
-        animator.addBehavior(pushBehavior)
-    }
-    
-    func shotToRight(item: UIView, velocityX byX: Double, velocityY byY: Double){
-        let velocity = CGPoint(x: byX, y: -byY)
-        pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
-        pushBehavior.pushDirection = CGVector(dx: velocity.x / 200, dy: velocity.y / 200)
-        animator.addBehavior(pushBehavior)
+    func shot(item: UIView, velocityX byX: Double, velocityY byY: Double, toSide: Side){
+        switch toSide {
+        case .left:
+            let velocity = CGPoint(x: -byX, y: -byY)
+            pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
+            pushBehavior.pushDirection = CGVector(dx: velocity.x / 200, dy: velocity.y / 200)
+            animator.addBehavior(pushBehavior)
+        case .right:
+            let velocity = CGPoint(x: byX, y: -byY)
+            pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
+            pushBehavior.pushDirection = CGVector(dx: velocity.x / 200, dy: velocity.y / 200)
+            animator.addBehavior(pushBehavior)
+        }
     }
     
     func updtateItemPosition(item: UIView, toX: CGFloat, toY: CGFloat){

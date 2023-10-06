@@ -39,11 +39,11 @@ final class GameSceneViewController: UIViewController {
 //        let rightAmmo = self.gameScene.subviews[7]
 //
 //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-//            self.levelBuilder.physicsManager.shotToRight(item: leftAmmo, velocityX: 100, velocityY: 130)
+//        self.levelBuilder.physicsManager.shot(item: leftAmmo, velocityX: 100, velocityY: 130, toSide: .right)
 //        })
 //
 //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
-//            self.levelBuilder.physicsManager.shotToLeft(item: rightAmmo, velocityX: 100, velocityY: 150)
+//            self.levelBuilder.physicsManager.shot(item: rightAmmo, velocityX: 100, velocityY: 150, toSide: .left)
 //        })
 //
 //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5, execute: {
@@ -52,10 +52,10 @@ final class GameSceneViewController: UIViewController {
 //        })
 //
 //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 7, execute: {
-//            self.levelBuilder.physicsManager.shotToRight(item: leftAmmo, velocityX: 100, velocityY: 150)
+//            self.levelBuilder.physicsManager.shot(item: leftAmmo, velocityX: 100, velocityY: 150, toSide: .right)
 //        })
 //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 9, execute: {
-//            self.levelBuilder.physicsManager.shotToLeft(item: rightAmmo, velocityX: 100, velocityY: 150)
+//            self.levelBuilder.physicsManager.shot(item: rightAmmo, velocityX: 100, velocityY: 150, toSide: .left)
 //        })
     }
 }

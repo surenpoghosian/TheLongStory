@@ -114,7 +114,7 @@ final class LevelBuilder {
 
     func buildLevel(gameScene: UIView) -> UIView {
         let levelUI = self.buildLevelUI(gameScene: gameScene)
-        let interactiveUI = self.buildInteractiveUI(gameScene: levelUI)
+        let interactiveUI = self.buildInteractiveUI(referenceView: levelUI)
 
         return interactiveUI
     }
@@ -125,9 +125,13 @@ final class LevelBuilder {
         let castleRight = createCastle(castle: castleRight)
         let obstacle = createObstacle(obstacle: obstacle)
         let scene = createScene(scene: scene)
+        let weaponLeft = createWeapon(weapon: castleLeftWeapon)
+        let weaponRight = createWeapon(weapon: castleRightWeapon)
+        let ammoLeft = createAmmo(weapon: castleLeftWeapon, ammo: castleLeftAmmo)
+        let ammoRight = createAmmo(weapon: castleRightWeapon,ammo: castleRightAmmo)
+
         
-        
-        let components = [scene, castleLeft, castleRight, obstacle]
+        let components = [scene, castleLeft, castleRight, obstacle, weaponLeft, weaponRight, ammoLeft, ammoRight]
         
         for component in components {
             component.translatesAutoresizingMaskIntoConstraints = false
@@ -137,27 +141,32 @@ final class LevelBuilder {
         return gameScene
     }
     
-//  function which builds user interactive components, weapons, ammo, game control elements
-    private func buildInteractiveUI(gameScene: UIView) -> UIView {
-        var gameScene = gameScene
-        
-        var weaponLeft = createWeapon(weapon: castleLeftWeapon)
-        var weaponRight = createWeapon(weapon: castleRightWeapon)
-        var ammoLeft = createAmmo(weapon: castleLeftWeapon, ammo: castleLeftAmmo)
-        var ammoRight = createAmmo(weapon: castleRightWeapon,ammo: castleRightAmmo)
-        
-        let components = [weaponLeft, weaponRight, ammoLeft, ammoRight]
-        
-        for component in components {
-            component.translatesAutoresizingMaskIntoConstraints = false
-            gameScene.addSubview(component)
+    // Handle left tap gesture
+        @objc func leftTapped() {
+            // Code to execute when left half of the screen is tapped
+            print("Left half tapped!")
         }
 
-        setupUserInteractiveUIConstraints(weaponLeft: &weaponLeft, weaponRight: &weaponRight, ammoLeft: &ammoLeft, ammoRight: &ammoRight, gameScene: &gameScene)
+        // Handle right tap gesture
+        @objc func rightTapped() {
+            // Code to execute when right half of the screen is tapped
+            print("Right half tapped!")
+        }
+//  function which builds user interactive components, weapons, ammo, game control elements
+    private func buildInteractiveUI(referenceView: UIView) -> UIView {
+        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: referenceView.frame.width / 2, height: referenceView.frame.height))
+        leftView.backgroundColor = UIColor.clear // Change the background color as desired
+        referenceView.addSubview(leftView)
 
-        return gameScene
-    }
+        // Create a UIView for the right half of the screen
+        let rightView = UIView(frame: CGRect(x: referenceView.frame.width / 2, y: 0, width: referenceView.frame.width / 2, height: referenceView.frame.height))
+        rightView.backgroundColor = UIColor.clear // Change the background color as desired
+        referenceView.addSubview(rightView)
+
+
         
+        return referenceView
+    }
     
     func setupUserInteractiveUIConstraints( weaponLeft: inout UIView, weaponRight: inout UIView, ammoLeft: inout UIView, ammoRight: inout UIView, gameScene: inout UIView){
         NSLayoutConstraint.activate([
@@ -198,8 +207,11 @@ final class LevelBuilder {
 //        }
 //    }
 
-    func updateAmmoLocation(originX newX: CGFloat, originY newY: CGFloat, ammoView: UIView) {
-        self.physicsManager.updtateItemPosition(item: ammoView, toX: newX, toY: newY)
+    func updateAmmoLocation(for weapon: UIView ,ammo: UIView) {
+        let newX = weapon.frame.origin.x + weapon.frame.width - ammo.frame.width
+        let newY = weapon.frame.origin.y + ammo.frame.height
+        
+        self.physicsManager.updtateItemPosition(item: ammo, toX: newX, toY: newY)
     }
 
     

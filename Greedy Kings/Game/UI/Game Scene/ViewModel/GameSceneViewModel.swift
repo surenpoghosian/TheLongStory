@@ -15,18 +15,20 @@ final class GameSceneViewModel {
     
     init(){
         gameManager = GameManager()
+        gameManager.startGame()
+
     }
     
     func onHit() {
-        gameManager.startGame()
         gameManager.updateHits()
         gameManager.updateShots()
         gameManager.updateHealth()
+        let battleFinished = gameManager.checkIsGameFinished()
         
-        if let gameFinishedResults = gameManager.checkIsGameFinished() {
+        if let gameFinishedResults = battleFinished {
             gameFinished!()
         } else {
-            
+            print("game is not finished yet")
         }
         
         print("p1 ",HealthManager.shared.player1health,"p2 ", HealthManager.shared.player2health)

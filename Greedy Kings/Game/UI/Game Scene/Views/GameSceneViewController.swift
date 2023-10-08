@@ -16,7 +16,11 @@ final class GameSceneViewController: UIViewController {
     var viewanimator1_2: UIViewPropertyAnimator!
     var viewanimator2: UIViewPropertyAnimator!
     var viewanimator2_2: UIViewPropertyAnimator!
+    var isGameFinished: Bool = false
     
+    override func viewWillDisappear(_ animated: Bool) {
+        isGameFinished = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,7 @@ final class GameSceneViewController: UIViewController {
     }
     
     func gameFinished() {
+        isGameFinished = true
         print("gamefinished")
     }
         
@@ -71,7 +76,7 @@ final class GameSceneViewController: UIViewController {
                 self.viewanimator1_2.startAnimation()
             }
         
-            self.viewanimator1.startAnimation()
+            viewanimator1.startAnimation()
             
         case .player2:
             viewanimator2 = UIViewPropertyAnimator(
@@ -97,7 +102,7 @@ final class GameSceneViewController: UIViewController {
                 self.viewanimator2_2.startAnimation()
             }
         
-            self.viewanimator2.startAnimation()
+            viewanimator2.startAnimation()
         }
     }
     
@@ -117,8 +122,67 @@ final class GameSceneViewController: UIViewController {
         }
     }
 
+    // Handle left tap gesture
+    @objc func leftTapped() {
+        
+//        self.gameScene.subviews[7].isHidden = true
+//        self.gameScene.subviews[4].transform = CGAffineTransform(rotationAngle:(CGFloat(90).degreesToRadians))
+//
+//        let rightWeapon = self.gameScene.subviews[5]
+//        let rightAmmo = self.gameScene.subviews[7]
+//
+//        self.levelBuilder.physicsManager.removeGravityBehavior(from: rightAmmo)
+//
+//        self.levelBuilder.updateAmmoLocation(for: rightWeapon, ammo: rightAmmo)
+//
+//        self.stopAnimation(for: .player1)
+//
+//        let leftWeapon = self.gameScene.subviews[4]
+//        let leftAmmo = self.gameScene.subviews[6]
+//
+//        self.levelBuilder.physicsManager.removeGravityBehavior(from: leftAmmo)
+//
+//        self.levelBuilder.updateAmmoLocation(for: leftWeapon, ammo: leftAmmo)
+//
+//        leftAmmo.isHidden = false
+//
+//        self.levelBuilder.physicsManager.addGravityBehavior(view: leftAmmo)
+//        self.levelBuilder.physicsManager.shot(item: leftAmmo, from: leftWeapon, toSide: .right)
+//
+        
+        
+        self.stopAnimation(for: .player1)
+        let leftWeapon = self.gameScene.subviews[4]
+        let leftAmmo = self.gameScene.subviews[6]
+        
+        self.levelBuilder.physicsManager.removeGravityBehavior(from: leftAmmo)
+
+        self.levelBuilder.updateAmmoLocation(for: leftWeapon, ammo: leftAmmo)
+        
+        leftAmmo.isHidden = false
+        
+        self.levelBuilder.physicsManager.addGravityBehavior(view: leftAmmo)
+        self.levelBuilder.physicsManager.shot(item: leftAmmo, from: leftWeapon, toSide: .right)
+    }
+
+    // Handle right tap gesture
+    @objc func rightTapped() {
+        self.stopAnimation(for: .player2)
+        
+        let rightWeapon = self.gameScene.subviews[5]
+        let rightAmmo = self.gameScene.subviews[7]
+        
+        self.levelBuilder.physicsManager.removeGravityBehavior(from: rightAmmo)
+        
+        self.levelBuilder.updateAmmoLocation(for: rightWeapon, ammo: rightAmmo)
+        rightAmmo.isHidden = false
+        self.levelBuilder.physicsManager.shot(item: rightAmmo, from: rightWeapon, toSide: .left)
+        self.levelBuilder.physicsManager.addGravityBehavior(view: rightAmmo)
+    
+    }
+    
     func buildLevel(level: Int){
-        levelBuilder = LevelBuilder(level: level)
+        self.levelBuilder = LevelBuilder(level: level)
         
         self.gameScene = levelBuilder.buildLevel(gameScene: gameScene)
         self.view.addSubview(self.gameScene)
@@ -127,7 +191,23 @@ final class GameSceneViewController: UIViewController {
         self.levelBuilder.physicsManager.collisionBehavior.collisionDelegate = self
 
 
-        startAnimation(for: .player1)
+        let leftSideTapView = self.gameScene.subviews[8]
+        let rightSideTapView = self.gameScene.subviews[9]
+        
+        let leftTapGesture = UITapGestureRecognizer()
+        let rightTapGesture = UITapGestureRecognizer()
+
+        // Set up target actions for the gestures
+        leftTapGesture.addTarget(self, action: #selector(leftTapped))
+        rightTapGesture.addTarget(self, action: #selector(rightTapped))
+        
+        // Add tap gestures to the left and right views
+        leftSideTapView.addGestureRecognizer(leftTapGesture)
+        rightSideTapView.addGestureRecognizer(rightTapGesture)
+
+
+        
+        self.startAnimation(for: .player1)
         
         
         let leftAmmo = self.gameScene.subviews[6]
@@ -135,100 +215,48 @@ final class GameSceneViewController: UIViewController {
 
         leftAmmo.isHidden = true
         rightAmmo.isHidden = true
-
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-            self.stopAnimation(for: .player1)
-            let leftWeapon = self.gameScene.subviews[4]
-            let leftAmmo = self.gameScene.subviews[6]
-            
-            self.levelBuilder.physicsManager.removeGravityBehavior(from: leftAmmo)
-
-            self.levelBuilder.updateAmmoLocation(originX: leftWeapon.frame.origin.x + leftWeapon.frame.width - leftAmmo.frame.width, originY: leftWeapon.frame.origin.y + leftAmmo.frame.height, ammoView: leftAmmo)
-            
-            leftAmmo.isHidden = false
-            
-            self.levelBuilder.physicsManager.addGravityBehavior(view: leftAmmo)
-            self.levelBuilder.physicsManager.shot(item: leftAmmo, from: leftWeapon, toSide: .right)
-        })
         
-
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-//            self.levelBuilder.physicsManager.shot(item: leftAmmo, velocityX: 100, velocityY: 130, toSide: .right)
-//        })
-
     }
 }
 
 
 extension GameSceneViewController: UICollisionBehaviorDelegate {
     func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item: UIDynamicItem, with otherItem: UIDynamicItem, at point: CGPoint) {
-        if let view = item as? UIView, let otherView = otherItem as? UIView {
-            if otherView == self.gameScene.subviews[6] && view == self.gameScene.subviews[2] {
-                print("Player1 HIT Player2")
-
-                self.viewModel.onHit()
-                self.gameScene.subviews[6].isHidden = true
-                self.gameScene.subviews[5].transform = CGAffineTransform(rotationAngle:(CGFloat(-90).degreesToRadians))
-                
-                let leftWeaponFrame = self.gameScene.subviews[4].frame
-                let leftAmmo = self.gameScene.subviews[6]
-                
-                self.levelBuilder.physicsManager.removeGravityBehavior(from: leftAmmo)
-
-                self.levelBuilder.updateAmmoLocation(originX: leftWeaponFrame.origin.x + leftWeaponFrame.width - leftAmmo.frame.width, originY: leftWeaponFrame.origin.y + leftAmmo.frame.height, ammoView: leftAmmo)
-                
-
-                self.startAnimation(for: .player2)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
-                    self.stopAnimation(for: .player2)
-
-                    let rightWeapon = self.gameScene.subviews[5]
-                    let rightAmmo = self.gameScene.subviews[7]
-                    
-                    self.levelBuilder.physicsManager.removeGravityBehavior(from: rightAmmo)
-
-                    self.levelBuilder.updateAmmoLocation(originX: rightWeapon.frame.origin.x + rightWeapon.frame.width - rightAmmo.frame.width, originY: rightWeapon.frame.origin.y + rightAmmo.frame.height, ammoView: rightAmmo)
-                    rightAmmo.isHidden = false
-                    self.levelBuilder.physicsManager.shot(item: rightAmmo, from: rightWeapon, toSide: .left)
-                    self.levelBuilder.physicsManager.addGravityBehavior(view: rightAmmo)
-
-                })
-            }
-
-            if otherView == self.gameScene.subviews[7] && view == self.gameScene.subviews[1] {
-                print("Player2 HIT Player1")
-                
-                self.viewModel.onHit()
-                self.gameScene.subviews[7].isHidden = true
-                self.gameScene.subviews[4].transform = CGAffineTransform(rotationAngle:(CGFloat(90).degreesToRadians))
-
-                let rightWeaponFrame = self.gameScene.subviews[5].frame
-                let rightAmmo = self.gameScene.subviews[7]
-                
-                self.levelBuilder.physicsManager.removeGravityBehavior(from: rightAmmo)
-
-                self.levelBuilder.updateAmmoLocation(originX: rightWeaponFrame.origin.x + rightWeaponFrame.width - rightAmmo.frame.width, originY: rightWeaponFrame.origin.y + rightAmmo.frame.height, ammoView: rightAmmo)
-                
-                
-               
-                self.startAnimation(for: .player1)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
-                    self.stopAnimation(for: .player1)
+        
+        if !self.isGameFinished {
+            
+            
+            if let view = item as? UIView, let otherView = otherItem as? UIView {
+                if otherView == self.gameScene.subviews[6] && view == self.gameScene.subviews[2] {
+                    self.viewModel.onHit()
+                    self.gameScene.subviews[6].isHidden = true
+                    self.gameScene.subviews[5].transform = CGAffineTransform(rotationAngle:(CGFloat(-90).degreesToRadians))
 
                     let leftWeapon = self.gameScene.subviews[4]
                     let leftAmmo = self.gameScene.subviews[6]
-                    
+
                     self.levelBuilder.physicsManager.removeGravityBehavior(from: leftAmmo)
 
-                    self.levelBuilder.updateAmmoLocation(originX: leftWeapon.frame.origin.x + leftWeapon.frame.width - leftAmmo.frame.width, originY: leftWeapon.frame.origin.y + leftAmmo.frame.height, ammoView: leftAmmo)
+                    self.levelBuilder.updateAmmoLocation(for: leftWeapon, ammo: leftAmmo)
                     
-                    leftAmmo.isHidden = false
                     
-                    self.levelBuilder.physicsManager.addGravityBehavior(view: leftAmmo)
-                    self.levelBuilder.physicsManager.shot(item: leftAmmo, from: leftWeapon, toSide: .right)
+                    self.startAnimation(for: .player2)
+                }
+                
+                if otherView == self.gameScene.subviews[7] && view == self.gameScene.subviews[1] {
+                    self.viewModel.onHit()
+                    self.gameScene.subviews[7].isHidden = true
+                    self.gameScene.subviews[4].transform = CGAffineTransform(rotationAngle:(CGFloat(90).degreesToRadians))
 
-                    
-                })
+                    let rightWeapon = self.gameScene.subviews[5]
+                    let rightAmmo = self.gameScene.subviews[7]
+
+                    self.levelBuilder.physicsManager.removeGravityBehavior(from: rightAmmo)
+
+                    self.levelBuilder.updateAmmoLocation(for: rightWeapon, ammo: rightAmmo)
+
+                    self.startAnimation(for: .player1)
+                }
             }
         }
     }
@@ -237,11 +265,9 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
         if let view = item as? UIView {
             self.viewModel.onMiss()
             if view == self.gameScene.subviews[6] {
-//                self.levelBuilder.updateAmmoLocation(locationOnScreen: .left, ammoView: self.gameScene.subviews[6])
-//
+
             } else if view == self.gameScene.subviews[7]{
-//                self.levelBuilder.updateAmmoLocation(locationOnScreen: .right, ammoView: self.gameScene.subviews[7])
-//
+                
             }
         }
         

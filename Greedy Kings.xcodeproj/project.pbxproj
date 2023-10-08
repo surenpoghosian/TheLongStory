@@ -11,8 +11,6 @@
 		33A293542AC44EF6008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
 		33A293562AC44F00008D9B9C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293552AC44F00008D9B9C /* GameManager.swift */; };
 		33A293572AC44F00008D9B9C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293552AC44F00008D9B9C /* GameManager.swift */; };
-		33A293592AC44F08008D9B9C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293582AC44F08008D9B9C /* UserManager.swift */; };
-		33A2935A2AC44F08008D9B9C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293582AC44F08008D9B9C /* UserManager.swift */; };
 		33A2935D2AC46A4D008D9B9C /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2935C2AC46A4D008D9B9C /* LevelModel.swift */; };
 		33A2935E2AC46A4D008D9B9C /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2935C2AC46A4D008D9B9C /* LevelModel.swift */; };
 		33A293612AC4B0D8008D9B9C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293602AC4B0D8008D9B9C /* StorageManager.swift */; };
@@ -120,7 +118,6 @@
 /* Begin PBXFileReference section */
 		33A293522AC44EF6008D9B9C /* LevelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuilder.swift; sourceTree = "<group>"; };
 		33A293552AC44F00008D9B9C /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
-		33A293582AC44F08008D9B9C /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		33A2935C2AC46A4D008D9B9C /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
 		33A293602AC4B0D8008D9B9C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		33A293672AC855AE008D9B9C /* GameComponentsPropertyList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GameComponentsPropertyList.plist; sourceTree = "<group>"; };
@@ -190,14 +187,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		33A2934F2AC44EC8008D9B9C /* User Manager */ = {
-			isa = PBXGroup;
-			children = (
-				33A293582AC44F08008D9B9C /* UserManager.swift */,
-			);
-			path = "User Manager";
-			sourceTree = "<group>";
-		};
 		33A293502AC44ED1008D9B9C /* Game Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,7 +325,6 @@
 				33A2935F2AC4B0C7008D9B9C /* Storage Manager */,
 				33A293512AC44ED7008D9B9C /* Level Manager */,
 				33A293502AC44ED1008D9B9C /* Game Manager */,
-				33A2934F2AC44EC8008D9B9C /* User Manager */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -717,7 +705,6 @@
 				E8BBD42F2ABFC7F90056E1E8 /* LeaderboardViewModel.swift in Sources */,
 				33F00DCB2ABDC4A200A5D5B2 /* LevelsModels.swift in Sources */,
 				33F00DC72ABDC49800A5D5B2 /* LevelsViewModel.swift in Sources */,
-				33A293592AC44F08008D9B9C /* UserManager.swift in Sources */,
 				E8BBD42B2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,
 				E887FCAD2AD073BA0056999E /* GameModels.swift in Sources */,
 				E8BBD46C2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */,
@@ -776,7 +763,6 @@
 				33A293542AC44EF6008D9B9C /* LevelBuilder.swift in Sources */,
 				E8BBD4282ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
 				E8BBD42C2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,
-				33A2935A2AC44F08008D9B9C /* UserManager.swift in Sources */,
 				33F00D7A2ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,6 @@ struct Castle {
     var type: CastleType
     var locationOnScreen: ScreenSide
     var weapon: Weapon
-    var health: Double = 100.0
 }
 
 // Weapon and its parameters

@@ -11,8 +11,9 @@ final class GameManager {
     private var currentPlayer: Player!
     private var battleResult: BattleResult!
     
-    init(currentPlayer: Player!, battleResult: BattleResult!) {
+    init() {
         initializeBattleResult()
+        startGame()
     }
     
     func initializeBattleResult() {
@@ -37,12 +38,12 @@ final class GameManager {
     func updateHits() {
         if currentPlayer == .player1 {
             battleResult.player1Hits += 1
-            checkIsGameFinished()
+//            checkIsGameFinished()
             
         } else {
             battleResult.player2Hits += 1
         }
-        checkIsGameFinished()
+//        checkIsGameFinished()
     }
     
     func updateShots() {
@@ -54,22 +55,22 @@ final class GameManager {
         }
     }
     
-    func checkIsGameFinished() {
+    func checkIsGameFinished() -> BattleResult? {
         if HealthManager.shared.player1health <= 0 || HealthManager.shared.player2health <= 0 {
             setWinner(winner: currentPlayer)
-            gameFinished()
-            
+//            gameFinished()
+            return battleResult
         } else {
-            updateHealth(currentPlayer: currentPlayer)
             switchPlayerTurn()
         }
+        return nil
     }
     
-    func updateHealth(currentPlayer: Player) {
+    func updateHealth() {
         if currentPlayer == .player1 {
             HealthManager.shared.player2health -= 20
         } else {
-            HealthManager.shared.player2health -= 20
+            HealthManager.shared.player1health -= 20
         }
     }
     

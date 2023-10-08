@@ -206,7 +206,7 @@ extension PickCharacterViewController: UICollectionViewDelegate {
         if cell != nil {
             let sectionOffset = indexPath.section * (testData.count / 2)
             let selectedCharacter = testData[sectionOffset + indexPath.row]
-            
+
             // Check if the selected character is available to pick
             if selectedCharacter.availableToPick {
                 if selectedPlayer == 1 {

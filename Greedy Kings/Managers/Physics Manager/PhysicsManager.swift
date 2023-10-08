@@ -10,9 +10,9 @@ import UIKit
 
 final class PhysicsManager: NSObject {
     var animator: UIDynamicAnimator!
-    private var collisionBehavior: UICollisionBehavior!
     private var gravityBehavior: UIGravityBehavior!
     private var pushBehavior: UIPushBehavior!
+    var collisionBehavior: UICollisionBehavior!
     
     init(parentView: UIView!) {
         super.init()
@@ -26,7 +26,6 @@ final class PhysicsManager: NSObject {
         initializeItem(item: parentView.subviews[6], weight: 2.5, applyGravity: true)
         initializeItem(item: parentView.subviews[7], weight: 2.5, applyGravity: true)
         
-        self.collisionBehavior.collisionDelegate = self
     }
     
     private func initializeAnimator(referenceView: UIView){
@@ -115,10 +114,3 @@ final class PhysicsManager: NSObject {
 }
 
 
-extension PhysicsManager: UICollisionBehaviorDelegate {
-    func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item: UIDynamicItem, with otherItem: UIDynamicItem, at point: CGPoint) {
-        if let view = item as? UIView, let otherView = otherItem as? UIView {
-            print("Collision of ",view.description, otherView.description)
-        }
-    }
-}

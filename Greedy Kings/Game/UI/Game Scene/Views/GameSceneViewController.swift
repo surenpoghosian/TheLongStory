@@ -12,7 +12,12 @@ final class GameSceneViewController: UIViewController {
     private var viewModel: GameSceneViewModel!
     private var levelBuilder: LevelBuilder!
     private var gameScene: UIView!
-
+    var viewanimator1: UIViewPropertyAnimator!
+    var viewanimator1_2: UIViewPropertyAnimator!
+    var viewanimator2: UIViewPropertyAnimator!
+    var viewanimator2_2: UIViewPropertyAnimator!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +38,86 @@ final class GameSceneViewController: UIViewController {
         gameScene.frame = view.bounds
     }
     
+    func startAnimation(for player: Player){
+        let minRotationAngleDegrees: CGFloat = 25.0
+        let maxRotationAngleDegrees: CGFloat = 80.0
+
+        let minRotationAngleRadians = minRotationAngleDegrees.degreesToRadians
+        let maxRotationAngleRadians = maxRotationAngleDegrees.degreesToRadians
+
+        switch player {
+        case .player1:
+
+            viewanimator1 = UIViewPropertyAnimator(
+                duration: 1.5,
+                curve: .linear,
+                animations: {
+                    self.gameScene.subviews[4].transform = CGAffineTransform(rotationAngle: minRotationAngleRadians)
+                }
+            )
+
+            viewanimator1.addCompletion { _ in
+                self.viewanimator1_2 = UIViewPropertyAnimator(
+                    duration: 1.5,
+                    curve: .linear,
+                    animations: {
+                        self.gameScene.subviews[4].transform = CGAffineTransform(rotationAngle: maxRotationAngleRadians)
+                    }
+                )
+                self.viewanimator1_2.addCompletion { _ in
+                    self.startAnimation(for: .player1)
+                }
+                
+                self.viewanimator1_2.startAnimation()
+            }
+        
+            self.viewanimator1.startAnimation()
+            
+        case .player2:
+            viewanimator2 = UIViewPropertyAnimator(
+                duration: 1.5,
+                curve: .linear,
+                animations: {
+                    self.gameScene.subviews[5].transform = CGAffineTransform(rotationAngle: -minRotationAngleRadians)
+                }
+            )
+
+            viewanimator2.addCompletion { _ in
+                self.viewanimator2_2 = UIViewPropertyAnimator(
+                    duration: 1.5,
+                    curve: .linear,
+                    animations: {
+                        self.gameScene.subviews[5].transform = CGAffineTransform(rotationAngle: -maxRotationAngleRadians)
+                    }
+                )
+                self.viewanimator2_2.addCompletion { _ in
+                    self.startAnimation(for: .player2)
+                }
+                
+                self.viewanimator2_2.startAnimation()
+            }
+        
+            self.viewanimator2.startAnimation()
+        }
+
+    }
+    
+    
+    func stopAnimation(for player: Player){
+        switch player{
+        case .player1:
+            self.viewanimator1.stopAnimation(true)
+            if let _ = self.viewanimator1_2{
+                self.viewanimator1_2.stopAnimation(true)
+            }
+        case .player2:
+            self.viewanimator2.stopAnimation(true)
+            if let _ = self.viewanimator2_2{
+                self.viewanimator2_2.stopAnimation(true)
+            }
+        }
+    }
+    
     func buildLevel(level: Int){
         levelBuilder = LevelBuilder(level: level)
         
@@ -43,15 +128,29 @@ final class GameSceneViewController: UIViewController {
         self.levelBuilder.physicsManager.collisionBehavior.collisionDelegate = self
 
 
+        startAnimation(for: .player1)
+        
+        
+        let leftAmmo = self.gameScene.subviews[6]
 
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
+            self.stopAnimation(for: .player1)
+            self.levelBuilder.physicsManager.shot(item: leftAmmo, velocityX: 100, velocityY: 130, toSide: .right)
+        })
+//
+//
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+//            viewanimator2.stopAnimation(true)
+//        })
+        
         
         
 //        ------------------TEST OF SHOT AND UPDATEAMMOLOCATION FUNCTIONS------------------
-        let leftAmmo = self.gameScene.subviews[6]
-
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-            self.levelBuilder.physicsManager.shot(item: leftAmmo, velocityX: 100, velocityY: 130, toSide: .right)
-        })
+//
+//
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+//            self.levelBuilder.physicsManager.shot(item: leftAmmo, velocityX: 100, velocityY: 130, toSide: .right)
+//        })
 
     }
 }
@@ -60,15 +159,23 @@ final class GameSceneViewController: UIViewController {
 extension GameSceneViewController: UICollisionBehaviorDelegate {
     func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item: UIDynamicItem, with otherItem: UIDynamicItem, at point: CGPoint) {
         if let view = item as? UIView, let otherView = otherItem as? UIView {
+
             if otherView == self.gameScene.subviews[6] && view == self.gameScene.subviews[2] {
                 print("Player1 HIT Player2")
+
                 self.viewModel.onHit()
                 self.gameScene.subviews[6].isHidden = true
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-                    
+                self.gameScene.subviews[5].transform = CGAffineTransform(rotationAngle:(CGFloat(-45).degreesToRadians))
+
+                self.startAnimation(for: .player2)
+                
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: {
                     self.levelBuilder.updateAmmoLocation(locationOnScreen: .left, ammoView: self.gameScene.subviews[6])
                     self.gameScene.subviews[6].isHidden = false
+
                     self.levelBuilder.physicsManager.shot(item: self.gameScene.subviews[7], velocityX: 100, velocityY: 130, toSide: .left)
+                    self.stopAnimation(for: .player2)
+
                 })
             }
 
@@ -76,11 +183,16 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                 print("Player2 HIT Player1")
                 self.viewModel.onHit()
                 self.gameScene.subviews[7].isHidden = true
+                self.gameScene.subviews[4].transform = CGAffineTransform(rotationAngle:(CGFloat(45).degreesToRadians))
+
+                self.startAnimation(for: .player1)
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
                     
                     self.levelBuilder.updateAmmoLocation(locationOnScreen: .right, ammoView: self.gameScene.subviews[7])
                     self.gameScene.subviews[7].isHidden = false
+
                     self.levelBuilder.physicsManager.shot(item: self.gameScene.subviews[6], velocityX: 100, velocityY: 130, toSide: .right)
+                    self.stopAnimation(for: .player1)
                 })
             }
         }

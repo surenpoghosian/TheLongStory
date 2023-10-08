@@ -76,7 +76,7 @@ final class LevelBuilder {
 
     private func createWeapon(weapon: Weapon) -> UIView {
         var component: UIView!
-        let angleInRadians = CGFloat.pi / 4.0
+        let angleInRadians = CGFloat(75).degreesToRadians
         
         switch weapon.locationOnScreen {
         case .left:

@@ -76,7 +76,7 @@ final class LevelBuilder {
 
     private func createWeapon(weapon: Weapon) -> UIView {
         var component: UIView!
-        let angleInRadians = CGFloat(75).degreesToRadians
+        let angleInRadians = CGFloat(90).degreesToRadians
         
         switch weapon.locationOnScreen {
         case .left:
@@ -185,17 +185,22 @@ final class LevelBuilder {
         ])
     }
       
-    func updateAmmoLocation(locationOnScreen: ScreenSide, ammoView: UIView) {
-        switch locationOnScreen {
-        case .left:
-            let newX: CGFloat = 90.0
-            let newY: CGFloat = screenSize.height - 140.0
-            self.physicsManager.updtateItemPosition(item: ammoView, toX: newX, toY: newY)
-        case .right:
-            let newX: CGFloat = screenSize.width - 90.0
-            let newY: CGFloat = screenSize.height - 140.0
-            self.physicsManager.updtateItemPosition(item: ammoView, toX: newX, toY: newY)
-        }
+//    func updateAmmoLocation(locationOnScreen: ScreenSide, ammoView: UIView) {
+//        switch locationOnScreen {
+//        case .left:
+//            let newX: CGFloat = 90.0
+//            let newY: CGFloat = screenSize.height - 140.0
+//            self.physicsManager.updtateItemPosition(item: ammoView, toX: newX, toY: newY)
+//        case .right:
+//            let newX: CGFloat = screenSize.width - 90.0
+//            let newY: CGFloat = screenSize.height - 140.0
+//            self.physicsManager.updtateItemPosition(item: ammoView, toX: newX, toY: newY)
+//        }
+//    }
+
+    func updateAmmoLocation(originX newX: CGFloat, originY newY: CGFloat, ammoView: UIView) {
+        self.physicsManager.updtateItemPosition(item: ammoView, toX: newX, toY: newY)
     }
+
     
 }

@@ -72,7 +72,7 @@ final class PhysicsManager: NSObject {
         self.collisionBehavior.translatesReferenceBoundsIntoBoundary = true
     }
     
-    private func addGravityBehavior(view: UIView) {
+    func addGravityBehavior(view: UIView) {
         self.gravityBehavior.addItem(view)
     }
     
@@ -90,20 +90,71 @@ final class PhysicsManager: NSObject {
         self.gravityBehavior.removeItem(item)
     }
     
-    func shot(item: UIView, velocityX byX: Double, velocityY byY: Double, toSide: Side){
+//    func shot(item: UIView, velocityX byX: Double, velocityY byY: Double, toSide: Side){
+//        switch toSide {
+//        case .left:
+//            let velocity = CGPoint(x: -byX, y: -byY)
+//            pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
+//            pushBehavior.pushDirection = CGVector(dx: velocity.x / 200, dy: velocity.y / 200)
+//            animator.addBehavior(pushBehavior)
+//        case .right:
+//            let velocity = CGPoint(x: byX, y: -byY)
+//            pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
+//            pushBehavior.pushDirection = CGVector(dx: velocity.x / 200, dy: velocity.y / 200)
+//            animator.addBehavior(pushBehavior)
+//        }
+//    }
+    
+//    func shot(item: UIView, from cannon: UIView, toSide: Side) {
+//        let cannonCenter = cannon.center
+//        let ammoCenter = item.center
+//        let dx = Double(ammoCenter.x - cannonCenter.x)
+//        let dy = Double(ammoCenter.y - cannonCenter.y)
+//
+//        let magnitude = sqrt(dx * dx + dy * dy)
+//
+//        // Calculate the normalized direction vector
+//        let directionX = dx / magnitude
+//        let directionY = dy / magnitude
+//
+//        switch toSide {
+//            case .left:
+////                directionX = -directionX
+//                pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
+//                pushBehavior.pushDirection = CGVector(dx: -directionX, dy: -directionY) // Push to the left
+//                animator.addBehavior(pushBehavior)
+//            case .right:
+//                pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
+//                pushBehavior.pushDirection = CGVector(dx: directionX, dy: directionY) // Push to the right
+//                animator.addBehavior(pushBehavior)
+//            }
+//    }
+    
+    
+    func shot(item: UIView, from cannon: UIView, toSide: Side) {
+        let cannonCenter = cannon.center
+        let ammoCenter = item.center
+        let dx = Double(ammoCenter.x - cannonCenter.x)
+        let dy = Double(ammoCenter.y - cannonCenter.y)
+        
+        let magnitude = sqrt(dx * dx + dy * dy)
+        
+        // Calculate the normalized direction vector
+        let directionX = dx / magnitude
+        let directionY = dy / magnitude
+        
         switch toSide {
         case .left:
-            let velocity = CGPoint(x: -byX, y: -byY)
             pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
-            pushBehavior.pushDirection = CGVector(dx: velocity.x / 200, dy: velocity.y / 200)
+            pushBehavior.pushDirection = CGVector(dx: -directionX, dy: directionY) // Push to the left
             animator.addBehavior(pushBehavior)
         case .right:
-            let velocity = CGPoint(x: byX, y: -byY)
             pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
-            pushBehavior.pushDirection = CGVector(dx: velocity.x / 200, dy: velocity.y / 200)
+            pushBehavior.pushDirection = CGVector(dx: directionX, dy: directionY) // Push to the right (negate directionX)
             animator.addBehavior(pushBehavior)
         }
     }
+
     
     func updtateItemPosition(item: UIView, toX: CGFloat, toY: CGFloat){
         item.center = CGPoint(x: toX, y: toY)

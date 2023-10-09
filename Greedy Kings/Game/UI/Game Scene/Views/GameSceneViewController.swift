@@ -44,11 +44,6 @@ final class GameSceneViewController: UIViewController {
         gameScene = UIView()
         gameScene.frame = view.bounds
     }
-    
-    
-    
-    
-  
 
 
     @objc func screenTapped(){
@@ -265,6 +260,10 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
             if let view = item as? UIView, let otherView = otherItem as? UIView {
                         
                         if otherView == leftAmmo && view == rightCastle {
+                            if let temporaryCurrentPlayer{
+                            if temporaryCurrentPlayer == viewModel.currentPlayer {
+                                self.temporaryCurrentPlayer = nil
+
                             viewModel.onHit()
                             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
                                 self.updatePlayerState(side: .left)
@@ -272,18 +271,28 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                             })
                             
                             levelBuilder.updateAmmoVisiblity(for: leftAmmo, isHidden: true)
-                            
+                            }
+                        }
+
                             
                         } else if otherView == rightAmmo && view == leftCastle {
+                            if let temporaryCurrentPlayer{
+                            if temporaryCurrentPlayer == viewModel.currentPlayer {
+                                self.temporaryCurrentPlayer = nil
+
                             viewModel.onHit()
                             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
                                 self.updatePlayerState(side: .right)
                                 self.setTapRecognitionState(disabled: false)
                             })
                             levelBuilder.updateAmmoVisiblity(for: rightAmmo, isHidden: true)
-                            
+
                         }
-            }
+                    }
+
+                        }
+                    }
+                    
         }
     }
         
@@ -299,31 +308,41 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
 //            let rightBoundaryFrame = CGRect(x: self.view.frame.width - 20, y: 0, width: 20, height: self.view.frame.height)
             
             if itemFrame.intersects(upperBoundaryFrame) {
-                print("upper")
+                print("upper edge")
             } else {
-                print("here")
-
-                        viewModel.onMiss()
-                        print("delegate onmiss")
                         let leftAmmo = gameScene.subviews[6]
                         let rightAmmo = gameScene.subviews[7]
                         
                         if view == leftAmmo {
+                            if let temporaryCurrentPlayer {
+                                if temporaryCurrentPlayer == viewModel.currentPlayer {
+                                    self.temporaryCurrentPlayer = nil
+                                    viewModel.onMiss()
+
                             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
                                 self.updatePlayerState(side: .left)
                                 self.setTapRecognitionState(disabled: false)
                             })
                             levelBuilder.updateAmmoVisiblity(for: leftAmmo, isHidden: true)
-                            
+                                }
+                            }
+
+                                    
                         } else if view == rightAmmo {
+                            if let temporaryCurrentPlayer {
+                                if temporaryCurrentPlayer == viewModel.currentPlayer {
+                                    self.temporaryCurrentPlayer = nil
+                                    viewModel.onMiss()
+
                             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
                                 self.updatePlayerState(side: .right)
                                 self.setTapRecognitionState(disabled: false)
                             })
                             levelBuilder.updateAmmoVisiblity(for: rightAmmo, isHidden: true)
-                            print("miss")
                         }
-                
+                    }
+
+                        }
             }
             
 //            else if itemFrame.intersects(lowerBoundaryFrame) {

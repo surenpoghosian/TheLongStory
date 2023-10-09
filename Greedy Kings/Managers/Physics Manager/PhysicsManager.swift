@@ -23,8 +23,8 @@ final class PhysicsManager: NSObject {
         initializeItem(item: parentView.subviews[1], weight: 500.0, applyGravity: true)
         initializeItem(item: parentView.subviews[2], weight: 500.0, applyGravity: true)
         initializeItem(item: parentView.subviews[3], weight: 1500.0, applyGravity: false)
-        initializeItem(item: parentView.subviews[6], weight: 2.5, applyGravity: true)
-        initializeItem(item: parentView.subviews[7], weight: 2.5, applyGravity: true)
+        initializeItem(item: parentView.subviews[6], weight: 3, applyGravity: true)
+        initializeItem(item: parentView.subviews[7], weight: 3, applyGravity: true)
         
     }
     
@@ -96,32 +96,26 @@ final class PhysicsManager: NSObject {
     }
     
     func shot(item: UIView, from cannon: UIView, toSide: Side) {
-//        let cannonCenter = cannon.center
-//        let ammoCenter = item.center
-//        let dx = Double(ammoCenter.x - cannonCenter.x)
-//        let dy = Double(ammoCenter.y - cannonCenter.y)
-//
-//        let magnitude = sqrt(dx * dx + dy * dy)
-//
-//        let directionX = dx / magnitude
-//        let directionY = dy / magnitude
-//        let transform = cannon.transform
-//         
-//         // Calculate the angle in radians using atan2
-//         let angleInRadians = atan2(transform.b, transform.a)
-//         
-//        let directionX = cos(angleInRadians)
-//           let directionY = sin(angleInRadians)
-//        
+        let cannonCenter = cannon.center
+        let ammoCenter = item.center
+        let dx = Double(ammoCenter.x - cannonCenter.x)
+        let dy = Double(ammoCenter.y - cannonCenter.y)
+
+        let magnitude = sqrt(dx * dx + dy * dy)
+
+        let directionX = dx / magnitude
+        let directionY = dy / magnitude
+
+        print(directionX,directionY)
         
         switch toSide {
         case .left:
             pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
-            pushBehavior.pushDirection = CGVector(dx: 100, dy: 130)
+            pushBehavior.pushDirection = CGVector(dx: -directionX, dy: directionY)
             animator.addBehavior(pushBehavior)
         case .right:
             pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
-            pushBehavior.pushDirection = CGVector(dx: 100, dy: 130)
+            pushBehavior.pushDirection = CGVector(dx: directionX, dy: directionY)
             animator.addBehavior(pushBehavior)
         }
     }

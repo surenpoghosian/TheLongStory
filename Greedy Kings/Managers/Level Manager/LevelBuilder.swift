@@ -195,13 +195,7 @@ final class LevelBuilder {
     }
 
     
-    func updateAmmoVisiblity(for ammo: UIView, isHidden: Bool) {
-        if isHidden {
-            self.physicsManager.removeCollisionBehavior(from: ammo)
-        } else {
-            self.physicsManager.addCollisionBehavior(view: ammo)
-        }
-        
+    func updateAmmoVisiblity(for ammo: UIView, isHidden: Bool) {        
         ammo.isHidden = isHidden
     }
 

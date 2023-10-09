@@ -13,7 +13,7 @@ final class PhysicsManager: NSObject {
     private var gravityBehavior: UIGravityBehavior!
     private var pushBehavior: UIPushBehavior!
     var collisionBehavior: UICollisionBehavior!
-    
+
     init(parentView: UIView!) {
         super.init()
         initializeAllBehaviors()
@@ -41,6 +41,7 @@ final class PhysicsManager: NSObject {
         if applyGravity {
             self.addGravityBehavior(view: item)
         }
+
         
         self.animator.addBehavior(itemBehavior)
     }
@@ -67,7 +68,7 @@ final class PhysicsManager: NSObject {
         self.animator.removeBehavior(gravityBehavior)
     }
         
-    private func addCollisionBehavior(view: UIView) {
+    func addCollisionBehavior(view: UIView) {
         self.collisionBehavior.addItem(view)
         self.collisionBehavior.translatesReferenceBoundsIntoBoundary = true
     }
@@ -90,25 +91,37 @@ final class PhysicsManager: NSObject {
         self.gravityBehavior.removeItem(item)
     }
     
+    func removeCollisionBehavior(from item: UIView){
+        self.collisionBehavior.removeItem(item)
+    }
+    
     func shot(item: UIView, from cannon: UIView, toSide: Side) {
-        let cannonCenter = cannon.center
-        let ammoCenter = item.center
-        let dx = Double(ammoCenter.x - cannonCenter.x)
-        let dy = Double(ammoCenter.y - cannonCenter.y)
-        
-        let magnitude = sqrt(dx * dx + dy * dy)
-        
-        let directionX = dx / magnitude
-        let directionY = dy / magnitude
+//        let cannonCenter = cannon.center
+//        let ammoCenter = item.center
+//        let dx = Double(ammoCenter.x - cannonCenter.x)
+//        let dy = Double(ammoCenter.y - cannonCenter.y)
+//
+//        let magnitude = sqrt(dx * dx + dy * dy)
+//
+//        let directionX = dx / magnitude
+//        let directionY = dy / magnitude
+//        let transform = cannon.transform
+//         
+//         // Calculate the angle in radians using atan2
+//         let angleInRadians = atan2(transform.b, transform.a)
+//         
+//        let directionX = cos(angleInRadians)
+//           let directionY = sin(angleInRadians)
+//        
         
         switch toSide {
         case .left:
             pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
-            pushBehavior.pushDirection = CGVector(dx: -directionX, dy: directionY)
+            pushBehavior.pushDirection = CGVector(dx: 100, dy: 130)
             animator.addBehavior(pushBehavior)
         case .right:
             pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
-            pushBehavior.pushDirection = CGVector(dx: directionX, dy: directionY)
+            pushBehavior.pushDirection = CGVector(dx: 100, dy: 130)
             animator.addBehavior(pushBehavior)
         }
     }
@@ -118,8 +131,7 @@ final class PhysicsManager: NSObject {
         item.center = CGPoint(x: toX, y: toY)
         self.animator.updateItem(usingCurrentState: item)
     }
-    
-        
+            
 }
 
 

@@ -141,29 +141,22 @@ final class LevelBuilder {
         return gameScene
     }
     
-    // Handle left tap gesture
-        @objc func leftTapped() {
-            // Code to execute when left half of the screen is tapped
-            print("Left half tapped!")
-        }
+//    private func buildInteractiveUI(referenceView: UIView) -> UIView {
+//        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: referenceView.frame.width / 2, height: referenceView.frame.height))
+//        leftView.backgroundColor = UIColor.clear // Change the background color as desired
+//        referenceView.addSubview(leftView)
+//
+//        let rightView = UIView(frame: CGRect(x: referenceView.frame.width / 2, y: 0, width: referenceView.frame.width / 2, height: referenceView.frame.height))
+//        rightView.backgroundColor = UIColor.clear // Change the background color as desired
+//        referenceView.addSubview(rightView)
+//
+//        return referenceView
+//    }
 
-        // Handle right tap gesture
-        @objc func rightTapped() {
-            // Code to execute when right half of the screen is tapped
-            print("Right half tapped!")
-        }
-//  function which builds user interactive components, weapons, ammo, game control elements
     private func buildInteractiveUI(referenceView: UIView) -> UIView {
-        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: referenceView.frame.width / 2, height: referenceView.frame.height))
-        leftView.backgroundColor = UIColor.clear // Change the background color as desired
-        referenceView.addSubview(leftView)
-
-        // Create a UIView for the right half of the screen
-        let rightView = UIView(frame: CGRect(x: referenceView.frame.width / 2, y: 0, width: referenceView.frame.width / 2, height: referenceView.frame.height))
-        rightView.backgroundColor = UIColor.clear // Change the background color as desired
-        referenceView.addSubview(rightView)
-
-
+        let fullScreenView = UIView(frame: CGRect(x: 0, y: 0, width: referenceView.frame.width, height: referenceView.frame.height))
+        fullScreenView.backgroundColor = UIColor.clear
+        referenceView.addSubview(fullScreenView)
         
         return referenceView
     }
@@ -194,24 +187,22 @@ final class LevelBuilder {
         ])
     }
       
-//    func updateAmmoLocation(locationOnScreen: ScreenSide, ammoView: UIView) {
-//        switch locationOnScreen {
-//        case .left:
-//            let newX: CGFloat = 90.0
-//            let newY: CGFloat = screenSize.height - 140.0
-//            self.physicsManager.updtateItemPosition(item: ammoView, toX: newX, toY: newY)
-//        case .right:
-//            let newX: CGFloat = screenSize.width - 90.0
-//            let newY: CGFloat = screenSize.height - 140.0
-//            self.physicsManager.updtateItemPosition(item: ammoView, toX: newX, toY: newY)
-//        }
-//    }
-
     func updateAmmoLocation(for weapon: UIView ,ammo: UIView) {
         let newX = weapon.frame.origin.x + weapon.frame.width - ammo.frame.width
         let newY = weapon.frame.origin.y + ammo.frame.height
         
         self.physicsManager.updtateItemPosition(item: ammo, toX: newX, toY: newY)
+    }
+
+    
+    func updateAmmoVisiblity(for ammo: UIView, isHidden: Bool) {
+        if isHidden {
+            self.physicsManager.removeCollisionBehavior(from: ammo)
+        } else {
+            self.physicsManager.addCollisionBehavior(view: ammo)
+        }
+        
+        ammo.isHidden = isHidden
     }
 
     

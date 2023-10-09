@@ -12,11 +12,12 @@ final class GameSceneViewModel {
     private var gameManager: GameManager
     var resetAmmo: (() -> Void)?
     var gameFinished: (() -> Void)?
+    private(set) var currentPlayer: Player?
     
     init(){
         gameManager = GameManager()
         gameManager.startGame()
-
+        currentPlayer = gameManager.currentPlayer
     }
     
     func onHit() {
@@ -25,17 +26,27 @@ final class GameSceneViewModel {
         gameManager.updateHealth()
         let battleFinished = gameManager.checkIsGameFinished()
         
-        if let gameFinishedResults = battleFinished {
+        if let _ = battleFinished {
             gameFinished!()
         } else {
             print("game is not finished yet")
         }
         
         print("p1 ",HealthManager.shared.player1health,"p2 ", HealthManager.shared.player2health)
+
+        updateCurrentPlayer(player: gameManager.currentPlayer)
+
+    }
+    
+    private func updateCurrentPlayer(player: Player){
+        self.currentPlayer = player
     }
     
     func onMiss() {
         gameManager.updateShots()
+        let _ = gameManager.checkIsGameFinished()
+
+        updateCurrentPlayer(player: gameManager.currentPlayer)
     }
     
     func onCloseDuringBattle() {

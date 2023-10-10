@@ -19,7 +19,8 @@ final class GameSceneViewController: UIViewController {
     var viewanimator2_2: UIViewPropertyAnimator!
     var isGameFinished: Bool = false
     var temporaryCurrentPlayer: Player?
-    
+    var longPressStartTime: Date?
+
     override func viewWillDisappear(_ animated: Bool) {
         isGameFinished = true
         audioManager.stopAudio(type: .background)
@@ -35,7 +36,6 @@ final class GameSceneViewController: UIViewController {
         audioManager.playAudio(type: .background)
         initializeGameScene()
         buildLevel(level: 1)
-        
     }
     
     func gameFinished() {
@@ -43,6 +43,10 @@ final class GameSceneViewController: UIViewController {
         print("isGameFinished", isGameFinished)
         audioManager.stopAudio(type: .background)
         audioManager.playAudio(type: .finished)
+        stopAnimation(for: .player1)
+        stopAnimation(for: .player2)
+        setTapRecognitionState(disabled: true)
+
     }
     
     func initializeGameScene(){
@@ -50,8 +54,7 @@ final class GameSceneViewController: UIViewController {
         gameScene.frame = view.bounds
     }
     
-    
-    @objc func screenTapped(){
+    @objc func onLongpressEnd(pressInterval: Double){
         //        for disabling multiple calls of onmiss and onhit, the code validates in delegate function call, was the temporarycurrentPlayer changed after touch in screen,
         temporaryCurrentPlayer = viewModel.currentPlayer
         
@@ -69,11 +72,11 @@ final class GameSceneViewController: UIViewController {
                 levelBuilder.updateAmmoVisiblity(for: leftAmmo, isHidden: false)
                 
                 levelBuilder.physicsManager.addGravityBehavior(view: leftAmmo)
-                levelBuilder.physicsManager.shot(item: leftAmmo, from: leftWeapon, toSide: .right)
+                levelBuilder.physicsManager.shot(item: leftAmmo, from: leftWeapon, toSide: .right, strength: pressInterval)
                 audioManager.playAudio(type: .shot)
                 setTapRecognitionState(disabled: true)
             case .player2:
-
+                
                 let rightWeapon = gameScene.subviews[5]
                 let rightAmmo = gameScene.subviews[7]
                 
@@ -84,7 +87,7 @@ final class GameSceneViewController: UIViewController {
                 levelBuilder.updateAmmoVisiblity(for: rightAmmo, isHidden: false)
                 
                 levelBuilder.physicsManager.addGravityBehavior(view: rightAmmo)
-                levelBuilder.physicsManager.shot(item: rightAmmo, from: rightWeapon, toSide: .left)
+                levelBuilder.physicsManager.shot(item: rightAmmo, from: rightWeapon, toSide: .left, strength: pressInterval)
                 audioManager.playAudio(type: .shot)
                 setTapRecognitionState(disabled: true)
             }
@@ -93,20 +96,31 @@ final class GameSceneViewController: UIViewController {
     }
     
     @objc func handleLongPress(_ gestureRecognizer: UILongPressGestureRecognizer) {
-        if gestureRecognizer.state == .began {
-            if let player = viewModel.currentPlayer {
-                switch player {
-                case .player1:
-                    stopAnimation(for: .player1)
-                case .player2:
-                    stopAnimation(for: .player2)
-                }
-            }
-            
-        } else if gestureRecognizer.state == .ended {
-            screenTapped()
-        }
-    }
+           if gestureRecognizer.state == .began {
+               longPressStartTime = Date()
+               
+               if let player = viewModel.currentPlayer {
+                   switch player {
+                   case .player1:
+                       stopAnimation(for: .player1)
+                   case .player2:
+                       stopAnimation(for: .player2)
+                   }
+               }
+           } else if gestureRecognizer.state == .ended {
+               if let startTime = longPressStartTime {
+                   let endTime = Date()
+                   let duration = endTime.timeIntervalSince(startTime)
+                   
+                   print("Long press duration: \(duration) seconds")
+                   
+                   onLongpressEnd(pressInterval: duration)
+                   longPressStartTime = nil
+               }
+               
+               
+           }
+       }
     
     func buildLevel(level: Int){
         levelBuilder = LevelBuilder(level: level)
@@ -282,8 +296,10 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                             audioManager.playAudio(type: .hit)
                             viewModel.onHit()
                             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                                self.updatePlayerState(side: .left)
-                                self.setTapRecognitionState(disabled: false)
+                                if !self.isGameFinished{
+                                    self.updatePlayerState(side: .left)
+                                    self.setTapRecognitionState(disabled: false)
+                                }
                             })
                             
                             levelBuilder.updateAmmoVisiblity(for: leftAmmo, isHidden: true)
@@ -297,8 +313,10 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                             audioManager.playAudio(type: .hit)
                             viewModel.onHit()
                             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                                self.updatePlayerState(side: .right)
-                                self.setTapRecognitionState(disabled: false)
+                                if !self.isGameFinished{
+                                    self.updatePlayerState(side: .right)
+                                    self.setTapRecognitionState(disabled: false)
+                                }
                             })
                             levelBuilder.updateAmmoVisiblity(for: rightAmmo, isHidden: true)
                             
@@ -313,13 +331,8 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
     func collisionBehavior(_ behavior: UICollisionBehavior, endedContactFor item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?) {
         if let view = item as? UIView {
             
-            
             let itemFrame = view.frame
-            
             let upperBoundaryFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 20)
-            //            let lowerBoundaryFrame = CGRect(x: 0, y: self.view.frame.height - 20, width: self.view.frame.width, height: 20)
-            //            let leftBoundaryFrame = CGRect(x: 0, y: 0, width: 20, height: self.view.frame.height)
-            //            let rightBoundaryFrame = CGRect(x: self.view.frame.width - 20, y: 0, width: 20, height: self.view.frame.height)
             
             if itemFrame.intersects(upperBoundaryFrame) {
                 print("upper edge")
@@ -334,8 +347,10 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                             viewModel.onMiss()
                             audioManager.playAudio(type: .miss)
                             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                                self.updatePlayerState(side: .left)
-                                self.setTapRecognitionState(disabled: false)
+                                if !self.isGameFinished{
+                                    self.updatePlayerState(side: .left)
+                                    self.setTapRecognitionState(disabled: false)
+                                }
                             })
                             levelBuilder.updateAmmoVisiblity(for: leftAmmo, isHidden: true)
                         }
@@ -349,27 +364,18 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                             viewModel.onMiss()
                             audioManager.playAudio(type: .miss)
                             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                                self.updatePlayerState(side: .right)
-                                self.setTapRecognitionState(disabled: false)
+                                if !self.isGameFinished{
+                                    self.updatePlayerState(side: .right)
+                                    self.setTapRecognitionState(disabled: false)
+                                }
                             })
                             levelBuilder.updateAmmoVisiblity(for: rightAmmo, isHidden: true)
                         }
                     }
-                    
                 }
             }
-            
-            //            else if itemFrame.intersects(lowerBoundaryFrame) {
-            //                print("lower")
-            //            } else if itemFrame.intersects(leftBoundaryFrame) {
-            //                print("left")
-            //            } else if itemFrame.intersects(rightBoundaryFrame) {
-            //                print("right")
-            //            }
         }
     }
-    
-    
 }
 
 

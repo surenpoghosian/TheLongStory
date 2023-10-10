@@ -59,10 +59,10 @@ final class LevelBuilder {
 
         switch castle.locationOnScreen {
         case .left:
-            component = UIView(frame: CGRect(x: 20, y: screenSize.height - 110 , width: 90, height: 90))
+            component = UIView(frame: CGRect(x: 0, y: screenSize.height - 110 , width: 90, height: 120))
             component.backgroundColor = .red
         case .right:
-            component = UIView(frame: CGRect(x: screenSize.width - 110 , y: screenSize.height - 110, width: 90, height: 90))
+            component = UIView(frame: CGRect(x: screenSize.width - 90 , y: screenSize.height - 110, width: 90, height: 120))
             component.backgroundColor = .cyan
         }
         return component
@@ -140,18 +140,6 @@ final class LevelBuilder {
         
         return gameScene
     }
-    
-//    private func buildInteractiveUI(referenceView: UIView) -> UIView {
-//        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: referenceView.frame.width / 2, height: referenceView.frame.height))
-//        leftView.backgroundColor = UIColor.clear // Change the background color as desired
-//        referenceView.addSubview(leftView)
-//
-//        let rightView = UIView(frame: CGRect(x: referenceView.frame.width / 2, y: 0, width: referenceView.frame.width / 2, height: referenceView.frame.height))
-//        rightView.backgroundColor = UIColor.clear // Change the background color as desired
-//        referenceView.addSubview(rightView)
-//
-//        return referenceView
-//    }
 
     private func buildInteractiveUI(referenceView: UIView) -> UIView {
         let fullScreenView = UIView(frame: CGRect(x: 0, y: 0, width: referenceView.frame.width, height: referenceView.frame.height))

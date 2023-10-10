@@ -20,8 +20,8 @@ final class PhysicsManager: NSObject {
         initializeAnimator(referenceView: parentView)
         
 //        It'll be right and perfect to move the part below outside of the PhysicsManager
-        initializeItem(item: parentView.subviews[1], weight: 500.0, applyGravity: true)
-        initializeItem(item: parentView.subviews[2], weight: 500.0, applyGravity: true)
+        initializeItem(item: parentView.subviews[1], weight: 3000, applyGravity: true)
+        initializeItem(item: parentView.subviews[2], weight: 3000, applyGravity: true)
         initializeItem(item: parentView.subviews[3], weight: 1500.0, applyGravity: false)
         initializeItem(item: parentView.subviews[6], weight: 3, applyGravity: true)
         initializeItem(item: parentView.subviews[7], weight: 3, applyGravity: true)
@@ -95,7 +95,7 @@ final class PhysicsManager: NSObject {
         self.collisionBehavior.removeItem(item)
     }
     
-    func shot(item: UIView, from cannon: UIView, toSide: Side) {
+    func shot(item: UIView, from cannon: UIView, toSide: Side, strength: Double) {
         let cannonCenter = cannon.center
         let ammoCenter = item.center
         let dx = Double(ammoCenter.x - cannonCenter.x)
@@ -105,17 +105,15 @@ final class PhysicsManager: NSObject {
 
         let directionX = dx / magnitude
         let directionY = dy / magnitude
-
-        print(directionX,directionY)
         
         switch toSide {
         case .left:
             pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
-            pushBehavior.pushDirection = CGVector(dx: -directionX, dy: directionY)
+            pushBehavior.pushDirection = CGVector(dx: -directionX * strength, dy: directionY * strength)
             animator.addBehavior(pushBehavior)
         case .right:
             pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
-            pushBehavior.pushDirection = CGVector(dx: directionX, dy: directionY)
+            pushBehavior.pushDirection = CGVector(dx: directionX * strength, dy: directionY * strength)
             animator.addBehavior(pushBehavior)
         }
     }

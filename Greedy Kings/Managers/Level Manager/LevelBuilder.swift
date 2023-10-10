@@ -80,11 +80,11 @@ final class LevelBuilder {
         
         switch weapon.locationOnScreen {
         case .left:
-            component = UIView(frame: CGRect(x: 90, y: screenSize.height - 140, width: 40, height: 70))
+            component = UIView(frame: CGRect(x: 130, y: screenSize.height - 100, width: 40, height: 70))
             component.backgroundColor = .yellow
             component.transform = CGAffineTransform(rotationAngle: angleInRadians)
         case .right:
-            component = UIView(frame: CGRect(x: screenSize.width - 130, y: screenSize.height - 140, width: 40, height: 70))
+            component = UIView(frame: CGRect(x: screenSize.width - 170, y: screenSize.height - 100, width: 40, height: 70))
             component.backgroundColor = .green
             component.transform = CGAffineTransform(rotationAngle: -angleInRadians)
         }
@@ -97,9 +97,9 @@ final class LevelBuilder {
         
         switch weapon.locationOnScreen {
         case .left:
-            component = UIView(frame: CGRect(x: 90, y: screenSize.height - 140, width: 20, height: 20))
+            component = UIView(frame: CGRect(x: 130, y: screenSize.height - 100, width: 20, height: 20))
         case .right:
-            component = UIView(frame: CGRect(x: screenSize.width - 90, y: screenSize.height - 140, width: 20, height: 20))
+            component = UIView(frame: CGRect(x: screenSize.width - 170, y: screenSize.height - 100, width: 20, height: 20))
         }
         component.backgroundColor = .orange
 

@@ -20,7 +20,7 @@ final class LevelBuilder {
             adjustedLevel = newValue - 1
         }
     }
-    
+
     private var castleLeft: Castle!
     private var castleRight: Castle!
     private var scene: Scene!
@@ -113,9 +113,11 @@ final class LevelBuilder {
     }
 
     func buildLevel(gameScene: UIView) -> UIView {
-        let levelUI = self.buildLevelUI(gameScene: gameScene)
-        let interactiveUI = self.buildInteractiveUI(referenceView: levelUI)
-
+        let levelUI = buildLevelUI(gameScene: gameScene)
+        let indicatingUI = buildIndicatingUI(referenceView: levelUI)
+        let interactiveUI = buildInteractiveUI(referenceView: indicatingUI)
+        
+        
         return interactiveUI
     }
     
@@ -129,7 +131,6 @@ final class LevelBuilder {
         let weaponRight = createWeapon(weapon: castleRightWeapon)
         let ammoLeft = createAmmo(weapon: castleLeftWeapon, ammo: castleLeftAmmo)
         let ammoRight = createAmmo(weapon: castleRightWeapon,ammo: castleRightAmmo)
-
         
         let components = [scene, castleLeft, castleRight, obstacle, weaponLeft, weaponRight, ammoLeft, ammoRight]
         
@@ -149,32 +150,108 @@ final class LevelBuilder {
         return referenceView
     }
     
-    func setupUserInteractiveUIConstraints( weaponLeft: inout UIView, weaponRight: inout UIView, ammoLeft: inout UIView, ammoRight: inout UIView, gameScene: inout UIView){
-        NSLayoutConstraint.activate([
-            
-        ])
+    private func createPlayerIndicatorView(side: Side) -> UIView {
+        var componentX: Double = 0
+        var componentY: Double = 0
+        let componentWidth: Double = 310
+        let componentHeight: Double = 80
+
+        var imageViewX: Double = 0
+        var imageViewY: Double = 0
+        let imageViewWidth: Double = 60
+        let imageViewHeight: Double = 60
+
+        var healthScaleX: Double = 0
+        var healthScaleY: Double = 0
+        let healthScaleWidth: Double = 240
+        let healthScaleHeight: Double = 30
+
         
-        NSLayoutConstraint.activate([
-
-        ])
-
-        NSLayoutConstraint.activate([
-
-        ])
-
-        NSLayoutConstraint.activate([
-
-        ])
+        var healthScaleBackgroundX: Double = 0
+        var healthScaleBackgroundY: Double = 0
+        let healthScaleBackgroundWidth: Double = 250
+        let healthScaleBackgroundHeight: Double = 50
         
-        NSLayoutConstraint.activate([
-
-        ])
-
-        NSLayoutConstraint.activate([
+        switch side {
+        case .left:
+            componentX = 20
+            componentY = 10
             
-        ])
+            imageViewX = componentX
+            imageViewY = componentY
+            
+            healthScaleBackgroundX = imageViewX + imageViewWidth
+            healthScaleBackgroundY = componentY
+            
+            healthScaleX = healthScaleBackgroundX
+            healthScaleY = healthScaleBackgroundY + (healthScaleBackgroundHeight / 6)
+
+        case .right:
+            componentX = screenSize.width / 2 - componentWidth / 2 - 20
+            componentY = 10
+
+            healthScaleBackgroundX = componentX
+            healthScaleBackgroundY = componentY
+            
+            healthScaleX = componentX + healthScaleBackgroundWidth - healthScaleWidth
+            healthScaleY = healthScaleBackgroundY + (healthScaleBackgroundHeight / 6)
+            
+            imageViewX = healthScaleBackgroundX + healthScaleBackgroundWidth
+            imageViewY = componentY
+        }
+                
+        print(componentX, componentY, imageViewX, imageViewY, healthScaleX, healthScaleY, healthScaleBackgroundX, healthScaleBackgroundY)
+        
+        let component = UIView(frame: CGRect(x: componentX, y: componentY, width: componentWidth, height: componentHeight))
+        
+        let imageView = UIImageView(frame: CGRect(x: imageViewX, y: imageViewY, width: imageViewWidth, height: imageViewHeight))
+        
+        let healthScaleBackground = UIImageView(frame: CGRect(x: healthScaleBackgroundX, y: healthScaleBackgroundY, width: healthScaleBackgroundWidth, height: healthScaleBackgroundHeight))
+        
+        let healthScale = UIView(frame: CGRect(x: healthScaleX, y: healthScaleY, width: healthScaleWidth, height: healthScaleHeight))
+        
+        component.addSubview(imageView)
+        component.addSubview(healthScaleBackground)
+        component.addSubview(healthScale)
+        
+        component.backgroundColor = .clear
+        imageView.backgroundColor = .gray
+        healthScaleBackground.backgroundColor = .systemGray3
+        healthScale.backgroundColor = .red
+        
+        return component
     }
-      
+    
+    func updatePlayerHealthIndicator(health: Double, referenceView: UIView, side: Side) {
+        let percentageFraction = health / 100
+        let originalFrame = referenceView.subviews[2].frame
+
+        let newWidth = originalFrame.width * CGFloat(percentageFraction)
+        
+        var newX: Double = 0
+        switch side {
+        case .left:
+            newX = originalFrame.origin.x
+        case .right:
+            newX = originalFrame.origin.x + (originalFrame.width * (CGFloat(1) -  CGFloat(percentageFraction)))
+        }
+        
+        let newFrame = CGRect(x: newX, y: originalFrame.origin.y, width: newWidth, height: originalFrame.size.height)
+
+        referenceView.subviews[2].frame = newFrame
+
+    }
+
+    private func buildIndicatingUI(referenceView: UIView) -> UIView {
+        let leftPlayerIndicator = createPlayerIndicatorView(side: .left)
+        let rightPlayerIndicator = createPlayerIndicatorView(side: .right)
+        
+        referenceView.addSubview(leftPlayerIndicator)
+        referenceView.addSubview(rightPlayerIndicator)
+        
+        return referenceView
+    }
+    
     func updateAmmoLocation(for weapon: UIView ,ammo: UIView) {
         let newX = weapon.frame.origin.x + weapon.frame.width - ammo.frame.width
         let newY = weapon.frame.origin.y + ammo.frame.height

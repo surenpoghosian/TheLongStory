@@ -49,6 +49,11 @@ final class GameSceneViewModel {
         updateCurrentPlayer(player: gameManager.currentPlayer)
     }
     
+    func onTimeOut(){
+        let _ = gameManager.checkIsGameFinished()
+        updateCurrentPlayer(player: gameManager.currentPlayer)
+    }
+    
     func onCloseDuringBattle() {
         
     }

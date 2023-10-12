@@ -21,7 +21,7 @@ final class GameSceneViewController: UIViewController {
     var temporaryCurrentPlayer: Player?
     var longPressStartTime: Date?
     var countdownTimer: Timer?
-    var totalTime: Int = 8
+    var totalTime: Int = 10
     var isTimerRunning: Bool = false
     
     
@@ -50,8 +50,8 @@ final class GameSceneViewController: UIViewController {
     
     
     func updateTimerLabel() {
-        //        update timer label
-        print(totalTime)
+        let timerLabel = gameScene.subviews[10] as? UILabel
+        timerLabel?.text = String(totalTime)
     }
     
     func startTimer() {
@@ -161,7 +161,7 @@ final class GameSceneViewController: UIViewController {
         
         levelBuilder.physicsManager.collisionBehavior.collisionDelegate = self
         
-        let fullScreenTapView = gameScene.subviews[10]
+        let fullScreenTapView = gameScene.subviews[11]
         
         let fullScreenLongPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
         
@@ -225,7 +225,7 @@ final class GameSceneViewController: UIViewController {
     }
     
     func setTapRecognitionState(disabled state: Bool){
-        let tapView = gameScene.subviews[10]
+        let tapView = gameScene.subviews[11]
         tapView.isHidden = state
     }
     
@@ -327,7 +327,7 @@ final class GameSceneViewController: UIViewController {
         stopAnimation(for: .player2)
         setTapRecognitionState(disabled: true)
         
-        for n in 1...gameScene.subviews.count - 4 {
+        for n in 1...gameScene.subviews.count - 5 {
             gameScene.subviews[n].backgroundColor = .systemGray2
         }
         

@@ -117,7 +117,6 @@ final class LevelBuilder {
         let indicatingUI = buildIndicatingUI(referenceView: levelUI)
         let interactiveUI = buildInteractiveUI(referenceView: indicatingUI)
         
-        
         return interactiveUI
     }
     
@@ -241,13 +240,34 @@ final class LevelBuilder {
         referenceView.subviews[2].frame = newFrame
 
     }
+    
+    private func createTimerLabel() -> UILabel {
+        let timerLabelX = Int(screenSize.width / 2)
+        let timerLabelY = 30
+        let timerLabelWidth = 120
+        let timerLabelHeight = 40
+        
+            
+        
+        let timerLabel = UILabel(frame: CGRect(x: timerLabelX - timerLabelWidth / 2, y: timerLabelY, width: timerLabelWidth, height: timerLabelHeight))
+        
+        timerLabel.textColor = .white
+        
+        timerLabel.font = UIFont.systemFont(ofSize: 45)
+        timerLabel.text = ""
+        timerLabel.textAlignment = .center
+        
+        return timerLabel
+    }
 
     private func buildIndicatingUI(referenceView: UIView) -> UIView {
         let leftPlayerIndicator = createPlayerIndicatorView(side: .left)
         let rightPlayerIndicator = createPlayerIndicatorView(side: .right)
+        let timerLabel = createTimerLabel()
         
         referenceView.addSubview(leftPlayerIndicator)
         referenceView.addSubview(rightPlayerIndicator)
+        referenceView.addSubview(timerLabel)
         
         return referenceView
     }

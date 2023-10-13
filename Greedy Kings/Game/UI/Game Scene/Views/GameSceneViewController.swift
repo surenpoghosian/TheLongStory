@@ -37,7 +37,7 @@ final class GameSceneViewController: UIViewController {
         viewModel = GameSceneViewModel()
         viewModel.gameFinished = gameFinished
         audioManager = AudioManager()
-//        audioManager.playAudio(type: .background)
+        audioManager.playAudio(type: .background)
         initializeGameScene()
         buildLevel(level: 1)
         startTimer()
@@ -353,7 +353,6 @@ final class GameSceneViewController: UIViewController {
         stopTimer()
         resetTimer()
 //        setTimerLabelVisiblity(false)
-        
         
         for n in 1...gameScene.subviews.count - 5 {
             gameScene.subviews[n].backgroundColor = .systemGray2

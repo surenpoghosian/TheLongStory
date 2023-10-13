@@ -14,8 +14,8 @@
             filePath = "Greedy Kings/Managers/Level Manager/LevelBuilder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "createPlayerIndicatorView(side:)"
             landmarkType = "7">
             <Locations>
@@ -77,8 +77,8 @@
             filePath = "Greedy Kings/Managers/Level Manager/LevelBuilder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "createPlayerIndicatorView(side:)"
             landmarkType = "7">
             <Locations>
@@ -140,8 +140,8 @@
             filePath = "Greedy Kings/Managers/Level Manager/LevelBuilder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
             landmarkName = "updatePlayerHealthIndicator(health:referenceView:side:)"
             landmarkType = "7">
             <Locations>
@@ -188,8 +188,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "441"
-            endingLineNumber = "441"
+            startingLineNumber = "440"
+            endingLineNumber = "440"
             landmarkName = "collisionBehavior(_:endedContactFor:withBoundaryIdentifier:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -23,31 +23,36 @@ final class PickCharacterViewController: UIViewController {
     
     weak var delegate: GameDataDelegate?
     
-    var testData: [Character] = []
-    
-    
+    var characterData: [Character] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel = PickCharacterViewModel()
+        setupUI()
         setupPickedCharactersStackView()
         setupButtonsStackView()
         setupPickCharacterCollectionView()
         
-        testData = [Character(name: "Jobs", avatar: UIImage(systemName: "trash.fill")!),
-                    Character(name: "Woz", avatar: UIImage(systemName: "seal.fill")!),
-                    Character(name: "Jony", avatar: UIImage(systemName: "eye.fill")!),
-                    Character(name: "Gates", avatar: UIImage(systemName: "exclamationmark.shield.fill")!),
-                    Character(name: "Zuck", avatar: UIImage(systemName: "sunset.circle.fill")!),
-                    Character(name: "Musk", avatar: UIImage(systemName: "globe.asia.australia.fill")!)]
+        characterData = [Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "1"),
+                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "2"),
+                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "3"),
+                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "4"),
+                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "5"),
+                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "6"),
+                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "7"),
+                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "8"),
+                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "9"),
+                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "10")]
         
-        viewModel = PickCharacterViewModel()
+    }
+    private func setupUI() {
+        view.backgroundColor = UIColor(named: "backgroundColor")
     }
     
     private func setupPickedCharactersStackView() {
-        player1Container = UIImageView(image: UIImage(systemName: "person.fill"))
+        player1Container = UIImageView(image: viewModel.cellBackground)
         player1Container.contentMode = .scaleAspectFit
-        player2Container = UIImageView(image: UIImage(systemName: "person.fill"))
+        player2Container = UIImageView(image: viewModel.cellBackground)
         player2Container.contentMode = .scaleAspectFit
         
         
@@ -60,7 +65,7 @@ final class PickCharacterViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            pickedCharactersStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            pickedCharactersStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 25),
             pickedCharactersStackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             pickedCharactersStackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             pickedCharactersStackView.heightAnchor.constraint(equalToConstant: view.safeAreaLayoutGuide.layoutFrame.height / 4)])
@@ -70,7 +75,7 @@ final class PickCharacterViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         
-        let numberOfColumns: CGFloat = 3
+        let numberOfColumns: CGFloat = 5
         let numberOfRows: CGFloat = 2
         
         // Calculate the spacing between cells based on the screen size
@@ -78,30 +83,34 @@ final class PickCharacterViewController: UIViewController {
         let totalSpacing = cellSpacing * (numberOfColumns - 1)
         
         let safeArea = view.safeAreaLayoutGuide
-        let availableWidth = safeArea.layoutFrame.width - totalSpacing
+        let availableWidth = safeArea.layoutFrame.width - totalSpacing * 2
         let availableHeight = safeArea.layoutFrame.height - pickedCharactersStackView.frame.height - buttonsStackView.frame.height - cellSpacing * 2
         
         // Calculate the item size based on the available width and height while keeping items square
-        let itemWidth = (availableWidth - totalSpacing) / numberOfColumns
+        let itemWidth = (availableWidth - totalSpacing) / numberOfColumns / 2
         let itemHeight = (availableHeight - totalSpacing) / numberOfRows / 2
         
-        print(itemWidth, itemHeight)
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.minimumInteritemSpacing = cellSpacing
         layout.minimumLineSpacing = cellSpacing
         
-        // Calculate the section insets to center the cells horizontally
-        let horizontalInset = (safeArea.layoutFrame.width - (itemWidth * numberOfColumns + totalSpacing)) / 2
-        
+        // Center items horizontally
+        layout.sectionInset = UIEdgeInsets(
+            top: 10,
+            left: (availableWidth - (numberOfColumns * itemWidth + (numberOfColumns - 1) * cellSpacing)) / 8,
+            bottom: 0,
+            right: (availableWidth - (numberOfColumns * itemWidth + (numberOfColumns - 1) * cellSpacing)) / 8
+        )
         
         characterCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         characterCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        characterCollectionView.backgroundColor = UIColor.white.withAlphaComponent(0.05)
         view.addSubview(characterCollectionView)
         
         NSLayoutConstraint.activate([
-            characterCollectionView.topAnchor.constraint(equalTo: pickedCharactersStackView.bottomAnchor, constant: cellSpacing),
-            characterCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: horizontalInset),
-            characterCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -horizontalInset),
+            characterCollectionView.topAnchor.constraint(equalTo: pickedCharactersStackView.bottomAnchor, constant: 20),
+            characterCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 140),
+            characterCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -140),
             characterCollectionView.bottomAnchor.constraint(equalTo: buttonsStackView.topAnchor, constant: -cellSpacing)
         ])
         
@@ -111,13 +120,16 @@ final class PickCharacterViewController: UIViewController {
         characterCollectionView.delegate = self
     }
     
+    
     private func setupButtonsStackView() {
         
-        nextButton = UIButton(type: .system)
+        nextButton = UIButton(type: .custom)
         nextButton.setTitle("Next", for: .normal)
-        nextButton.backgroundColor = .systemBlue
-        nextButton.tintColor = .white
+        nextButton.setTitleColor(.black.withAlphaComponent(0.5), for: .normal)
+        nextButton.titleLabel?.font = UIFont(name: "Futura-Bold", size: 26.0)
         nextButton.frame = CGRect(x: 200, y: 200, width: 200, height: 50)
+        nextButton.setBackgroundImage(viewModel.buttonImage, for: .normal)
+        nextButton.setBackgroundImage(viewModel.buttonTouchedImage, for: .highlighted)
         nextButton.addAction(UIAction(handler: {[weak self] _ in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let vc = storyboard.instantiateViewController(withIdentifier: "LevelsView") as? LevelsViewController {
@@ -127,41 +139,45 @@ final class PickCharacterViewController: UIViewController {
             }
         }), for: .touchUpInside)
         
-        resetButton = UIButton(type: .system)
+        resetButton = UIButton(type: .custom)
         resetButton.setTitle("Reset", for: .normal)
-        resetButton.backgroundColor = .systemBlue
-        resetButton.tintColor = .white
+        resetButton.setTitleColor(.black.withAlphaComponent(0.5), for: .normal)
         resetButton.frame = CGRect(x: 100, y: 100, width: 200, height: 50)
+        resetButton.titleLabel?.font = UIFont(name: "Futura-Bold", size: 26.0)
+        resetButton.setBackgroundImage(viewModel.buttonImage, for: .normal)
+        resetButton.setBackgroundImage(viewModel.buttonTouchedImage, for: .highlighted)
         resetButton.addAction(UIAction(handler: {[weak self] _ in
             
             // Reset the player containers to default images
-            self?.player1Container.image = UIImage(systemName: "person.fill")
-            self?.player2Container.image = UIImage(systemName: "person.fill")
+            self?.player1Container.image = self?.viewModel.cellBackground
+            self?.player2Container.image = self?.viewModel.cellBackground
             
             // Clear picked characters for both players
             self?.pickedCharacterForPlayer1 = nil
             self?.pickedCharacterForPlayer2 = nil
             
             // Enable all characters for picking again
-            for index in 0..<(self?.testData.count ?? 0) {
-                self?.testData[index].availableToPick = true
+            for index in 0..<(self?.characterData.count ?? 0) {
+                self?.characterData[index].availableToPick = true
             }
             
-            // Reload the collection view to reflect the changes
+            // Reload the collection view to see changes
             self?.characterCollectionView.reloadData()
         }), for: .touchUpInside)
         
-        buttonsStackView = UIStackView(arrangedSubviews: [nextButton, resetButton])
+        buttonsStackView = UIStackView(arrangedSubviews: [resetButton, nextButton])
         buttonsStackView.axis = .horizontal
-        buttonsStackView.spacing = 10
+        buttonsStackView.spacing = 50
         buttonsStackView.distribution = .fillEqually
         buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(buttonsStackView)
         
         NSLayoutConstraint.activate([
-            buttonsStackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 5),
-            buttonsStackView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -5),
-            buttonsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
+            buttonsStackView.heightAnchor.constraint(equalToConstant: view.frame.height / 11),
+            buttonsStackView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: 10),
+            buttonsStackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 150),
+            buttonsStackView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -150),
+            buttonsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
         ])
     }
 }
@@ -174,28 +190,29 @@ extension PickCharacterViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        let itemsPerSection = testData.count / 2
-        return section == 0 ? itemsPerSection : testData.count - itemsPerSection
+        let itemsPerSection = characterData.count / 2
+        return section == 0 ? itemsPerSection : characterData.count - itemsPerSection
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CharacterCell", for: indexPath) as! CharacterCollectionViewCell
-        let sectionOffset = indexPath.section * (testData.count / 2)
-        let character = testData[sectionOffset + indexPath.row]
-        cell.configure(with: character)
-        cell.isUserInteractionEnabled = character.availableToPick
-        
-        if character.availableToPick {
-                // Character is available, set the default cell appearance
-                cell.backgroundColor = .white
+            let sectionOffset = indexPath.section * (characterData.count / 2)
+            let character = characterData[sectionOffset + indexPath.row]
+            
+            // Call the configure function with the character data
+            cell.configure(with: character)
+            
+            cell.isUserInteractionEnabled = character.availableToPick
+
+            if character.availableToPick {
+                cell.nameLabel.alpha = 1
                 cell.isUserInteractionEnabled = true
             } else {
-                // Character is unavailable, customize the appearance
-                cell.backgroundColor = .gray // Set the background color to gray
-                cell.isUserInteractionEnabled = false // Disable user interaction
+                cell.nameLabel.alpha = 0.7
+                cell.isUserInteractionEnabled = false
             }
-        return cell
+            return cell
     }
 }
 
@@ -204,27 +221,26 @@ extension PickCharacterViewController: UICollectionViewDelegate {
         let cell = collectionView.cellForItem(at: indexPath) as? CharacterCollectionViewCell
         
         if cell != nil {
-            let sectionOffset = indexPath.section * (testData.count / 2)
-            let selectedCharacter = testData[sectionOffset + indexPath.row]
-
+            let sectionOffset = indexPath.section * (characterData.count / 2)
+            let selectedCharacter = characterData[sectionOffset + indexPath.row]
+            
             // Check if the selected character is available to pick
             if selectedCharacter.availableToPick {
                 if selectedPlayer == 1 {
                     if pickedCharacterForPlayer1 == nil {
                         player1Container.image = selectedCharacter.avatar
                         pickedCharacterForPlayer1 = selectedCharacter
-                        testData[sectionOffset + indexPath.row].availableToPick = false
+                        characterData[sectionOffset + indexPath.row].availableToPick = false
                         selectedPlayer = 2
                     }
                 } else if selectedPlayer == 2 {
                     if pickedCharacterForPlayer2 == nil {
                         player2Container.image = selectedCharacter.avatar
                         pickedCharacterForPlayer2 = selectedCharacter
-                        testData[sectionOffset + indexPath.row].availableToPick = false
+                        characterData[sectionOffset + indexPath.row].availableToPick = false
                         selectedPlayer = 1
                     }
                 }
-                
                 collectionView.reloadData()
             }
         }

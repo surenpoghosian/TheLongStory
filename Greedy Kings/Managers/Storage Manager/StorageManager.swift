@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+final class StorageManager {
+    var isSoundOn: Bool = true
+    var isMusicOn: Bool = true
+}

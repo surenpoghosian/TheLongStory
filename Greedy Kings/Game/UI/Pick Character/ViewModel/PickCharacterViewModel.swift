@@ -6,12 +6,16 @@
 //
 
 import Foundation
+import UIKit
 
 final class PickCharacterViewModel {
     var allPredefinedCharacters: [Character] = []
+    let buttonImage = UIImage(named: "button")
+    let buttonTouchedImage = UIImage(named: "buttonTouched")
+    let backgroundColor = UIColor(red: 0.51, green: 0.40, blue: 0.33, alpha: 0.4)
+    let cellBackground = UIImage(named: "cellFrame")
     private var firstPlayerCharacter: Character?
     private var secondPlayerCharacter: Character?
-    private var characterAvatars = (1...6).map({ "character-\($0)" })
     
     func selectCharacter(_ character: Character) {
         if firstPlayerCharacter == nil {

@@ -37,7 +37,7 @@ final class LevelBuilder {
         self.level = level
         self.initializeLevelComponents(level: adjustedLevel)
     }
-    
+
     
     private func initializeLevelComponents(level: Int){
         castleLeft = levels[level].castleLeft
@@ -132,9 +132,18 @@ final class LevelBuilder {
         
         if let image = UIImage(named: scene.image) {
             addComponentImage(referenceView: component, image: image)
+
+            let blurEffect = UIBlurEffect(style: .light)
+            let visualEffectView = UIVisualEffectView(effect: blurEffect)
+            visualEffectView.frame = component.subviews[0].bounds
+            visualEffectView.alpha = 0.6
+            component.addSubview(visualEffectView)
+
         }
         
         component.backgroundColor = .black
+        
+        
         return component
     }
     

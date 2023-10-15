@@ -115,10 +115,17 @@ final class GameSceneViewController: UIViewController {
         
         levelBuilder.physicsManager.addGravityBehavior(view: ammo)
         levelBuilder.physicsManager.shot(item: ammo, from: weapon, toSide: toSide, strength: strength)
+        
+        let weaponOrigin = weapon.frame.origin
+        animation.play(x: weaponOrigin.x, y: weaponOrigin.y, type: .shot, referenceView: gameScene)
+        
         audioManager.playAudio(type: .shot)
+        
+        hapticsManager.generate(type: .heavy)
+        
         setTapRecognitionState(disabled: true)
         stopTimer()
-        hapticsManager.generate(type: .heavy)
+        
     }
     
     @objc func onLongpressEnd(pressInterval: Double){

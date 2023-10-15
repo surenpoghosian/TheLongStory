@@ -22,6 +22,7 @@
 		336A95192ADC7E2100F43B13 /* animation1.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A95162ADC7E2100F43B13 /* animation1.json */; };
 		336A951A2ADC7E2100F43B13 /* animation2.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A95172ADC7E2100F43B13 /* animation2.json */; };
 		336A951B2ADC7E2100F43B13 /* animation3.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A95182ADC7E2100F43B13 /* animation3.json */; };
+		336A951D2ADC85C400F43B13 /* animation4.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A951C2ADC85C400F43B13 /* animation4.json */; };
 		33A293532AC44EF6008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
 		33A293542AC44EF6008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
 		33A293562AC44F00008D9B9C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293552AC44F00008D9B9C /* GameManager.swift */; };
@@ -163,6 +164,7 @@
 		336A95162ADC7E2100F43B13 /* animation1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation1.json; sourceTree = "<group>"; };
 		336A95172ADC7E2100F43B13 /* animation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation2.json; sourceTree = "<group>"; };
 		336A95182ADC7E2100F43B13 /* animation3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation3.json; sourceTree = "<group>"; };
+		336A951C2ADC85C400F43B13 /* animation4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = animation4.json; path = ../../../../Downloads/animation4.json; sourceTree = "<group>"; };
 		33A293522AC44EF6008D9B9C /* LevelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuilder.swift; sourceTree = "<group>"; };
 		33A293552AC44F00008D9B9C /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		33A2935C2AC46A4D008D9B9C /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				336A95162ADC7E2100F43B13 /* animation1.json */,
 				336A95172ADC7E2100F43B13 /* animation2.json */,
 				336A95182ADC7E2100F43B13 /* animation3.json */,
+				336A951C2ADC85C400F43B13 /* animation4.json */,
 			);
 			path = AnimationAssets;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				33F00D6F2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard in Resources */,
 				336A94F72ADC657500F43B13 /* menu.mp3 in Resources */,
 				336A94F92ADC657500F43B13 /* hit3.mp3 in Resources */,
+				336A951D2ADC85C400F43B13 /* animation4.json in Resources */,
 				336A94FD2ADC657500F43B13 /* miss.mp3 in Resources */,
 				336A94FF2ADC657500F43B13 /* backgroundMusic1.mp3 in Resources */,
 				336A951A2ADC7E2100F43B13 /* animation2.json in Resources */,

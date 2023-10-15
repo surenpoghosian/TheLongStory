@@ -6,16 +6,24 @@
 //
 
 import Foundation
-import UIKit
 
 
 
+// Level struct which combines all level components
+struct Level {
+    var castleLeft: Castle
+    var castleRight: Castle
+    var obstacle: Obstacle
+    var scene: Scene
+    var image: String
+}
 
 // Castle and its parameters
 struct Castle {
     var type: CastleType
     var locationOnScreen: ScreenSide
     var weapon: Weapon
+    var image: String
 }
 
 // Weapon and its parameters
@@ -23,25 +31,25 @@ struct Weapon {
     var type: WeaponType
     var locationOnScreen: ScreenSide
     var ammo: Ammo
+    var image: String
 }
 
 // Ammo shot by weapon
 struct Ammo {
     var type: AmmoType
+    var image: String
 }
 
 // An obstacle which will be located between the castles, at the center, and will define the difficulty of the level
 struct Obstacle {
     var type: ObstacleType
     var difficulty: Difficulty
+    var image: String
 }
 
-// Level struct which combines all level components
-struct Level {
-    var castleLeft: Castle
-    var castleRight: Castle
-    var obstacle: Obstacle
-    var sceneType: Scene
+struct Scene {
+    var type: SceneType
+    var image: String
 }
 
 // Obstacle types. It may be a square, circle etc.
@@ -80,7 +88,7 @@ enum ScreenSide {
 }
 
 // Enum which represents background and theme of the scene
-enum Scene {
+enum SceneType {
     case spring
     case summer
     case autumn

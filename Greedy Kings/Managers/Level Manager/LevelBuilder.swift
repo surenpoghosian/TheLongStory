@@ -7,11 +7,11 @@
 
 import Foundation
 import UIKit
-
+import AVFoundation
 
 final class LevelBuilder {
     private var levels: [Level] = [
-        Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood))) , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood))), obstacle:  Obstacle(type: .circle, difficulty: .easy), sceneType: .autumn)
+        Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "1"), image: "1"), image: "1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "1"), image: "1"), image: "1"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "1"), scene: Scene(type: .autumn, image: "1"), image: "1")
     ]
     
     private var adjustedLevel: Int = 0
@@ -37,58 +37,74 @@ final class LevelBuilder {
         self.level = level
         self.initializeLevelComponents(level: adjustedLevel)
     }
-
+    
     
     private func initializeLevelComponents(level: Int){
         castleLeft = levels[level].castleLeft
         castleRight = levels[level].castleRight
-        scene = levels[level].sceneType
+        scene = levels[level].scene
         obstacle = levels[level].obstacle
         castleLeftWeapon = levels[level].castleLeft.weapon
         castleRightWeapon = levels[level].castleRight.weapon
         castleLeftAmmo = levels[level].castleLeft.weapon.ammo
         castleRightAmmo = levels[level].castleRight.weapon.ammo
     }
-
+    
     func initializePhysicsBehavior(parentView: UIView){
         self.physicsManager = PhysicsManager(parentView: parentView)
     }
     
     private func createCastle(castle: Castle) -> UIView {
         var component: UIView!
-
+        
         switch castle.locationOnScreen {
         case .left:
-            component = UIView(frame: CGRect(x: 20, y: screenSize.height - 110 , width: 90, height: 90))
+            component = UIView(frame: CGRect(x: 0, y: screenSize.height - 110 , width: 90, height: 120))
             component.backgroundColor = .red
         case .right:
-            component = UIView(frame: CGRect(x: screenSize.width - 110 , y: screenSize.height - 110, width: 90, height: 90))
+            component = UIView(frame: CGRect(x: screenSize.width - 90 , y: screenSize.height - 110, width: 90, height: 120))
             component.backgroundColor = .cyan
         }
+        
+        if let image = UIImage(named: castle.image) {
+            addComponentImage(referenceView: component, image: image)
+        }
+        
         return component
     }
-
+    
     private func createObstacle(obstacle: Obstacle) -> UIView {
         let component = UIView(frame: CGRect(x: screenSize.width / 2 - 40, y: screenSize.height / 2 - 40 , width: 80, height: 80))
         component.backgroundColor = .blue
+        
+        if let image = UIImage(named: obstacle.image) {
+            addComponentImage(referenceView: component, image: image)
+        }
         return component
     }
-
+    
     private func createWeapon(weapon: Weapon) -> UIView {
         var component: UIView!
         let angleInRadians = CGFloat(90).degreesToRadians
         
         switch weapon.locationOnScreen {
         case .left:
-            component = UIView(frame: CGRect(x: 90, y: screenSize.height - 140, width: 40, height: 70))
+            component = UIView(frame: CGRect(x: 130, y: screenSize.height - 100, width: 40, height: 70))
             component.backgroundColor = .yellow
             component.transform = CGAffineTransform(rotationAngle: angleInRadians)
+            if let image = UIImage(named: weapon.image) {
+                addComponentImage(referenceView: component, image: image)
+            }
         case .right:
-            component = UIView(frame: CGRect(x: screenSize.width - 130, y: screenSize.height - 140, width: 40, height: 70))
+            component = UIView(frame: CGRect(x: screenSize.width - 170, y: screenSize.height - 100, width: 40, height: 70))
             component.backgroundColor = .green
             component.transform = CGAffineTransform(rotationAngle: -angleInRadians)
+            
+            if let image = UIImage(named: weapon.image) {
+                addComponentImage(referenceView: component, image: image)
+            }
         }
-
+        
         return component
     }
     
@@ -97,29 +113,50 @@ final class LevelBuilder {
         
         switch weapon.locationOnScreen {
         case .left:
-            component = UIView(frame: CGRect(x: 90, y: screenSize.height - 140, width: 20, height: 20))
+            component = UIView(frame: CGRect(x: 130, y: screenSize.height - 100, width: 20, height: 20))
         case .right:
-            component = UIView(frame: CGRect(x: screenSize.width - 90, y: screenSize.height - 140, width: 20, height: 20))
+            component = UIView(frame: CGRect(x: screenSize.width - 170, y: screenSize.height - 100, width: 20, height: 20))
         }
+        
+        if let image = UIImage(named: ammo.image) {
+            addComponentImage(referenceView: component, image: image)
+        }
+        
         component.backgroundColor = .orange
-
+        
         return component
     }
     
     private func createScene(scene: Scene) -> UIView {
         let component = UIView(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height))
+        
+        if let image = UIImage(named: scene.image) {
+            addComponentImage(referenceView: component, image: image)
+        }
+        
         component.backgroundColor = .black
         return component
     }
+    
+    private func addComponentImage(referenceView: UIView, image: UIImage) {
+        let imageView = UIImageView()
 
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFill
+        imageView.frame = referenceView.bounds
+        
+        referenceView.addSubview(imageView)
+    }
+    
     func buildLevel(gameScene: UIView) -> UIView {
-        let levelUI = self.buildLevelUI(gameScene: gameScene)
-        let interactiveUI = self.buildInteractiveUI(referenceView: levelUI)
-
+        let levelUI = buildLevelUI(gameScene: gameScene)
+        let indicatingUI = buildIndicatingUI(referenceView: levelUI)
+        let interactiveUI = buildInteractiveUI(referenceView: indicatingUI)
+        
         return interactiveUI
     }
     
-//  function which builds level ui, castles, characters, obstacle, scene background etc.
+    //  function which builds level ui, castles, characters, obstacle, scene background etc.
     private func buildLevelUI(gameScene: UIView) -> UIView {
         let castleLeft = createCastle(castle: castleLeft)
         let castleRight = createCastle(castle: castleRight)
@@ -129,7 +166,6 @@ final class LevelBuilder {
         let weaponRight = createWeapon(weapon: castleRightWeapon)
         let ammoLeft = createAmmo(weapon: castleLeftWeapon, ammo: castleLeftAmmo)
         let ammoRight = createAmmo(weapon: castleRightWeapon,ammo: castleRightAmmo)
-
         
         let components = [scene, castleLeft, castleRight, obstacle, weaponLeft, weaponRight, ammoLeft, ammoRight]
         
@@ -141,18 +177,6 @@ final class LevelBuilder {
         return gameScene
     }
     
-//    private func buildInteractiveUI(referenceView: UIView) -> UIView {
-//        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: referenceView.frame.width / 2, height: referenceView.frame.height))
-//        leftView.backgroundColor = UIColor.clear // Change the background color as desired
-//        referenceView.addSubview(leftView)
-//
-//        let rightView = UIView(frame: CGRect(x: referenceView.frame.width / 2, y: 0, width: referenceView.frame.width / 2, height: referenceView.frame.height))
-//        rightView.backgroundColor = UIColor.clear // Change the background color as desired
-//        referenceView.addSubview(rightView)
-//
-//        return referenceView
-//    }
-
     private func buildInteractiveUI(referenceView: UIView) -> UIView {
         let fullScreenView = UIView(frame: CGRect(x: 0, y: 0, width: referenceView.frame.width, height: referenceView.frame.height))
         fullScreenView.backgroundColor = UIColor.clear
@@ -161,43 +185,137 @@ final class LevelBuilder {
         return referenceView
     }
     
-    func setupUserInteractiveUIConstraints( weaponLeft: inout UIView, weaponRight: inout UIView, ammoLeft: inout UIView, ammoRight: inout UIView, gameScene: inout UIView){
-        NSLayoutConstraint.activate([
-            
-        ])
+    private func createPlayerIndicatorView(side: Side) -> UIView {
+        var componentX: Double = 0
+        var componentY: Double = 0
+        let componentWidth: Double = 310
+        let componentHeight: Double = 80
         
-        NSLayoutConstraint.activate([
-
-        ])
-
-        NSLayoutConstraint.activate([
-
-        ])
-
-        NSLayoutConstraint.activate([
-
-        ])
+        var imageViewX: Double = 0
+        var imageViewY: Double = 0
+        let imageViewWidth: Double = 60
+        let imageViewHeight: Double = 60
         
-        NSLayoutConstraint.activate([
-
-        ])
-
-        NSLayoutConstraint.activate([
+        var healthScaleX: Double = 0
+        var healthScaleY: Double = 0
+        let healthScaleWidth: Double = 240
+        let healthScaleHeight: Double = 30
+        
+        
+        var healthScaleBackgroundX: Double = 0
+        var healthScaleBackgroundY: Double = 0
+        let healthScaleBackgroundWidth: Double = 250
+        let healthScaleBackgroundHeight: Double = 50
+        
+        switch side {
+        case .left:
+            componentX = 20
+            componentY = 10
             
-        ])
+            imageViewX = componentX
+            imageViewY = componentY
+            
+            healthScaleBackgroundX = imageViewX + imageViewWidth
+            healthScaleBackgroundY = componentY
+            
+            healthScaleX = healthScaleBackgroundX
+            healthScaleY = healthScaleBackgroundY + (healthScaleBackgroundHeight / 6)
+            
+        case .right:
+            componentX = screenSize.width / 2 - componentWidth / 2 - 20
+            componentY = 10
+            
+            healthScaleBackgroundX = componentX
+            healthScaleBackgroundY = componentY
+            
+            healthScaleX = componentX + healthScaleBackgroundWidth - healthScaleWidth
+            healthScaleY = healthScaleBackgroundY + (healthScaleBackgroundHeight / 6)
+            
+            imageViewX = healthScaleBackgroundX + healthScaleBackgroundWidth
+            imageViewY = componentY
+        }
+        
+        print(componentX, componentY, imageViewX, imageViewY, healthScaleX, healthScaleY, healthScaleBackgroundX, healthScaleBackgroundY)
+        
+        let component = UIView(frame: CGRect(x: componentX, y: componentY, width: componentWidth, height: componentHeight))
+        
+        let imageView = UIImageView(frame: CGRect(x: imageViewX, y: imageViewY, width: imageViewWidth, height: imageViewHeight))
+        
+        let healthScaleBackground = UIImageView(frame: CGRect(x: healthScaleBackgroundX, y: healthScaleBackgroundY, width: healthScaleBackgroundWidth, height: healthScaleBackgroundHeight))
+        
+        let healthScale = UIView(frame: CGRect(x: healthScaleX, y: healthScaleY, width: healthScaleWidth, height: healthScaleHeight))
+        
+        component.addSubview(imageView)
+        component.addSubview(healthScaleBackground)
+        component.addSubview(healthScale)
+        
+        component.backgroundColor = .clear
+        imageView.backgroundColor = .gray
+        healthScaleBackground.backgroundColor = .systemGray3
+        healthScale.backgroundColor = .red
+        
+        return component
     }
-      
+    
+    func updatePlayerHealthIndicator(health: Double, referenceView: UIView, side: Side) {
+        let percentageFraction = health / 100
+        let originalFrame = referenceView.subviews[2].frame
+        
+        let newWidth = originalFrame.width * CGFloat(percentageFraction)
+        
+        var newX: Double = 0
+        switch side {
+        case .left:
+            newX = originalFrame.origin.x
+        case .right:
+            newX = originalFrame.origin.x + (originalFrame.width * (CGFloat(1) -  CGFloat(percentageFraction)))
+        }
+        
+        let newFrame = CGRect(x: newX, y: originalFrame.origin.y, width: newWidth, height: originalFrame.size.height)
+        
+        referenceView.subviews[2].frame = newFrame
+    }
+    
+    private func createTimerLabel() -> UILabel {
+        let timerLabelX = Int(screenSize.width / 2)
+        let timerLabelY = 30
+        let timerLabelWidth = 120
+        let timerLabelHeight = 40
+        
+        let timerLabel = UILabel(frame: CGRect(x: timerLabelX - timerLabelWidth / 2, y: timerLabelY, width: timerLabelWidth, height: timerLabelHeight))
+        
+        timerLabel.textColor = .white
+        
+        timerLabel.font = UIFont.systemFont(ofSize: 45)
+        timerLabel.text = ""
+        timerLabel.textAlignment = .center
+        
+        return timerLabel
+    }
+    
+    private func buildIndicatingUI(referenceView: UIView) -> UIView {
+        let leftPlayerIndicator = createPlayerIndicatorView(side: .left)
+        let rightPlayerIndicator = createPlayerIndicatorView(side: .right)
+        let timerLabel = createTimerLabel()
+        
+        referenceView.addSubview(leftPlayerIndicator)
+        referenceView.addSubview(rightPlayerIndicator)
+        referenceView.addSubview(timerLabel)
+        
+        return referenceView
+    }
+    
     func updateAmmoLocation(for weapon: UIView ,ammo: UIView) {
         let newX = weapon.frame.origin.x + weapon.frame.width - ammo.frame.width
         let newY = weapon.frame.origin.y + ammo.frame.height
         
         self.physicsManager.updtateItemPosition(item: ammo, toX: newX, toY: newY)
     }
-
     
-    func updateAmmoVisiblity(for ammo: UIView, isHidden: Bool) {        
+    
+    func updateAmmoVisiblity(for ammo: UIView, isHidden: Bool) {
         ammo.isHidden = isHidden
     }
-
+    
     
 }

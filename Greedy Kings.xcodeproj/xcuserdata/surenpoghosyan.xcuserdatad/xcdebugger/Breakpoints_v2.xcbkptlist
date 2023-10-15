@@ -7,126 +7,62 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0485365A-6862-4A91-A14F-78458AB00A8D"
+            uuid = "7B486EFF-AC15-4B1B-8754-98F6FEE07E05"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Greedy Kings/Managers/Game Manager/GameManager.swift"
+            filePath = "Greedy Kings/Managers/Level Manager/LevelBuilder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "switchPlayerTurn()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "948D7270-B8E2-4B8E-9D8D-042CE4AAB4A6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greedy Kings/Managers/Game Manager/GameManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "checkIsGameFinished()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DF8BDD9F-4AE3-4EF5-B2E6-41792712885C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greedy Kings/Managers/Game Manager/GameManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "updateHealth()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8D573010-AD86-41B6-8F5B-339D7DBAB404"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greedy Kings/Managers/Game Manager/GameManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "updateHealth()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "05833C6B-7BBF-414D-B9A7-B4681AB3E49D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greedy Kings/Managers/Game Manager/GameManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "switchPlayerTurn()"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "createPlayerIndicatorView(side:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "05833C6B-7BBF-414D-B9A7-B4681AB3E49D - d60cd90363887a16"
+                  uuid = "7B486EFF-AC15-4B1B-8754-98F6FEE07E05 - 655f01fdf13e0379"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.GameManager.switchPlayerTurn() -&gt; ()"
+                  symbolName = "Greedy_Kings.LevelBuilder.createPlayerIndicatorView(side: Greedy_Kings.Side) -&gt; __C.UIView"
                   moduleName = "Greedy Kings"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Game%20Manager/GameManager.swift"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Level%20Manager/LevelBuilder.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "84">
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "196">
                </Location>
                <Location
-                  uuid = "05833C6B-7BBF-414D-B9A7-B4681AB3E49D - d60cd90363887a16"
+                  uuid = "7B486EFF-AC15-4B1B-8754-98F6FEE07E05 - 655f01fdf13e0379"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.GameManager.switchPlayerTurn() -&gt; ()"
+                  symbolName = "Greedy_Kings.LevelBuilder.createPlayerIndicatorView(side: Greedy_Kings.Side) -&gt; __C.UIView"
                   moduleName = "Greedy Kings"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Game%20Manager/GameManager.swift"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Level%20Manager/LevelBuilder.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "32">
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "232">
                </Location>
                <Location
-                  uuid = "05833C6B-7BBF-414D-B9A7-B4681AB3E49D - d60cd90363887a16"
+                  uuid = "7B486EFF-AC15-4B1B-8754-98F6FEE07E05 - 655f01fdf13e0358"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.GameManager.switchPlayerTurn() -&gt; ()"
+                  symbolName = "Greedy_Kings.LevelBuilder.createPlayerIndicatorView(side: Greedy_Kings.Side) -&gt; __C.UIView"
                   moduleName = "Greedy Kings"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Game%20Manager/GameManager.swift"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Level%20Manager/LevelBuilder.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "44">
+                  startingLineNumber = "189"
+                  endingLineNumber = "189"
+                  offsetFromSymbolStart = "232">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -134,62 +70,62 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BBA59E78-0922-44F7-A388-6D3A3D9BEB24"
+            uuid = "DD2746AA-55D6-4CE0-A36C-999457C87841"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Greedy Kings/Managers/Game Manager/GameManager.swift"
+            filePath = "Greedy Kings/Managers/Level Manager/LevelBuilder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "switchPlayerTurn()"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "createPlayerIndicatorView(side:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "BBA59E78-0922-44F7-A388-6D3A3D9BEB24 - d60cd903638879d4"
+                  uuid = "DD2746AA-55D6-4CE0-A36C-999457C87841 - 655f01fdf13e04ac"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.GameManager.switchPlayerTurn() -&gt; ()"
+                  symbolName = "Greedy_Kings.LevelBuilder.createPlayerIndicatorView(side: Greedy_Kings.Side) -&gt; __C.UIView"
                   moduleName = "Greedy Kings"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Game%20Manager/GameManager.swift"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Level%20Manager/LevelBuilder.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "440">
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
+                  offsetFromSymbolStart = "144">
                </Location>
                <Location
-                  uuid = "BBA59E78-0922-44F7-A388-6D3A3D9BEB24 - d60cd903638879d4"
+                  uuid = "DD2746AA-55D6-4CE0-A36C-999457C87841 - 655f01fdf13e04ac"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.GameManager.switchPlayerTurn() -&gt; ()"
+                  symbolName = "Greedy_Kings.LevelBuilder.createPlayerIndicatorView(side: Greedy_Kings.Side) -&gt; __C.UIView"
                   moduleName = "Greedy Kings"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Game%20Manager/GameManager.swift"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Level%20Manager/LevelBuilder.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "348">
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
+                  offsetFromSymbolStart = "172">
                </Location>
                <Location
-                  uuid = "BBA59E78-0922-44F7-A388-6D3A3D9BEB24 - d60cd903638879d4"
+                  uuid = "DD2746AA-55D6-4CE0-A36C-999457C87841 - 655f01fdf13e048f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.GameManager.switchPlayerTurn() -&gt; ()"
+                  symbolName = "Greedy_Kings.LevelBuilder.createPlayerIndicatorView(side: Greedy_Kings.Side) -&gt; __C.UIView"
                   moduleName = "Greedy Kings"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Game%20Manager/GameManager.swift"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Level%20Manager/LevelBuilder.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "356">
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "172">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -197,32 +133,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "331BBD6F-745A-4FD6-B54F-E700385A3791"
+            uuid = "C77AF009-D667-428D-BD54-8BF3F4BB1763"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Greedy Kings/Managers/Game Manager/GameManager.swift"
+            filePath = "Greedy Kings/Managers/Level Manager/LevelBuilder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "switchPlayerTurn()"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
+            landmarkName = "updatePlayerHealthIndicator(health:referenceView:side:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C77AF009-D667-428D-BD54-8BF3F4BB1763 - 3a9b2c53bc985412"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.LevelBuilder.updatePlayerHealthIndicator(health: Swift.Double, referenceView: __C.UIView) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Level%20Manager/LevelBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "232"
+                  endingLineNumber = "232"
+                  offsetFromSymbolStart = "408">
+               </Location>
+               <Location
+                  uuid = "C77AF009-D667-428D-BD54-8BF3F4BB1763 - 89588b232af25f1a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.LevelBuilder.updatePlayerHealthIndicator(health: Swift.Double, referenceView: __C.UIView, side: Greedy_Kings.Side) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Level%20Manager/LevelBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "233"
+                  endingLineNumber = "233"
+                  offsetFromSymbolStart = "392">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "70ACE02C-3AC7-4758-9CC2-67C4669E8BB8"
+            uuid = "53BB8E86-EA04-4857-ACFA-56BC9DDE7224"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Greedy Kings/Managers/Game Manager/GameManager.swift"
+            filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "switchPlayerTurn()"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
+            landmarkName = "collisionBehavior(_:endedContactFor:withBoundaryIdentifier:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

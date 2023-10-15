@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 final class GameSceneViewController: UIViewController {
     weak var delegate: GameDataDelegate?
@@ -24,6 +25,7 @@ final class GameSceneViewController: UIViewController {
     var countdownTimer: Timer?
     var totalTime: Int = 10
     var isTimerRunning: Bool = false
+    var animation: Animation!
     
     override func viewWillDisappear(_ animated: Bool) {
         isGameFinished = true
@@ -31,13 +33,13 @@ final class GameSceneViewController: UIViewController {
     }
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = GameSceneViewModel()
         viewModel.gameFinished = gameFinished
         audioManager = AudioManager()
-        audioManager.playAudio(type: .background)
+        animation = Animation()
+//        audioManager.playAudio(type: .background)
         hapticsManager = HapticsManager()
         initializeGameScene()
         buildLevel(level: 1)
@@ -370,9 +372,15 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                 if otherView == leftAmmo && view == rightCastle {
                     if let temporaryCurrentPlayer{
                         if temporaryCurrentPlayer == viewModel.currentPlayer {
+                            
+                            let viewOrigin = view.frame.origin
+                            print("onhit",viewOrigin)
+                            
+                            animation.play(x: viewOrigin.x, y: viewOrigin.y, type: .hit, referenceView: gameScene)
+
                             stopTimer()
                             self.temporaryCurrentPlayer = nil
-                            audioManager.playAudio(type: .hit)
+//                            audioManager.playAudio(type: .hit)
                             viewModel.onHit()
                             updateHealthScale(player: .player2)
                             hapticsManager.generate(type: .medium)
@@ -392,9 +400,14 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                 } else if otherView == rightAmmo && view == leftCastle {
                     if let temporaryCurrentPlayer{
                         if temporaryCurrentPlayer == viewModel.currentPlayer {
+                            let viewOrigin = view.frame.origin
+                            print("onhit",viewOrigin)
+                            
+                            animation.play(x: viewOrigin.x, y: viewOrigin.y, type: .hit, referenceView: gameScene)
+ 
                             stopTimer()
                             self.temporaryCurrentPlayer = nil
-                            audioManager.playAudio(type: .hit)
+//                            audioManager.playAudio(type: .hit)
                             viewModel.onHit()
                             updateHealthScale(player: .player1)
                             hapticsManager.generate(type: .medium)
@@ -433,6 +446,11 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                     if let temporaryCurrentPlayer {
                         print(temporaryCurrentPlayer)
                         if temporaryCurrentPlayer == viewModel.currentPlayer {
+                            
+                            let viewOrigin = view.frame.origin
+                            print("onmiss",viewOrigin)
+                            
+                            animation.play(x: viewOrigin.x, y: viewOrigin.y, type: .miss, referenceView: gameScene)
                             stopTimer()
                             self.temporaryCurrentPlayer = nil
                             viewModel.onMiss()
@@ -452,6 +470,10 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                 } else if view == rightAmmo {
                     if let temporaryCurrentPlayer {
                         if temporaryCurrentPlayer == viewModel.currentPlayer {
+                            let viewOrigin = view.frame.origin
+                            print("onmiss",viewOrigin)
+
+                            animation.play(x: viewOrigin.x, y: viewOrigin.y, type: .miss, referenceView: gameScene)
                             stopTimer()
                             self.temporaryCurrentPlayer = nil
                             viewModel.onMiss()

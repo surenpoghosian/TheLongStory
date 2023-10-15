@@ -348,11 +348,6 @@ final class GameSceneViewController: UIViewController {
         setTapRecognitionState(disabled: true)
         stopTimer()
         resetTimer()
-//        setTimerLabelVisiblity(false)
-        
-        for n in 1...gameScene.subviews.count - 5 {
-            gameScene.subviews[n].backgroundColor = .systemGray2
-        }
         
     }
 }
@@ -380,7 +375,7 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
 
                             stopTimer()
                             self.temporaryCurrentPlayer = nil
-//                            audioManager.playAudio(type: .hit)
+                            audioManager.playAudio(type: .hit)
                             viewModel.onHit()
                             updateHealthScale(player: .player2)
                             hapticsManager.generate(type: .medium)
@@ -407,7 +402,7 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
  
                             stopTimer()
                             self.temporaryCurrentPlayer = nil
-//                            audioManager.playAudio(type: .hit)
+                            audioManager.playAudio(type: .hit)
                             viewModel.onHit()
                             updateHealthScale(player: .player1)
                             hapticsManager.generate(type: .medium)

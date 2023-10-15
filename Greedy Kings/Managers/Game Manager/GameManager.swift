@@ -8,7 +8,7 @@
 import Foundation
 
 final class GameManager {
-    private var currentPlayer: Player!
+    private(set) var currentPlayer: Player!
     private var battleResult: BattleResult!
     
     init() {

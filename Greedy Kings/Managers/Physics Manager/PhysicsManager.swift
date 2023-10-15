@@ -13,18 +13,18 @@ final class PhysicsManager: NSObject {
     private var gravityBehavior: UIGravityBehavior!
     private var pushBehavior: UIPushBehavior!
     var collisionBehavior: UICollisionBehavior!
-    
+
     init(parentView: UIView!) {
         super.init()
         initializeAllBehaviors()
         initializeAnimator(referenceView: parentView)
         
 //        It'll be right and perfect to move the part below outside of the PhysicsManager
-        initializeItem(item: parentView.subviews[1], weight: 500.0, applyGravity: true)
-        initializeItem(item: parentView.subviews[2], weight: 500.0, applyGravity: true)
+        initializeItem(item: parentView.subviews[1], weight: 3000, applyGravity: true)
+        initializeItem(item: parentView.subviews[2], weight: 3000, applyGravity: true)
         initializeItem(item: parentView.subviews[3], weight: 1500.0, applyGravity: false)
-        initializeItem(item: parentView.subviews[6], weight: 2.5, applyGravity: true)
-        initializeItem(item: parentView.subviews[7], weight: 2.5, applyGravity: true)
+        initializeItem(item: parentView.subviews[6], weight: 3, applyGravity: true)
+        initializeItem(item: parentView.subviews[7], weight: 3, applyGravity: true)
         
     }
     
@@ -41,6 +41,7 @@ final class PhysicsManager: NSObject {
         if applyGravity {
             self.addGravityBehavior(view: item)
         }
+
         
         self.animator.addBehavior(itemBehavior)
     }
@@ -67,12 +68,12 @@ final class PhysicsManager: NSObject {
         self.animator.removeBehavior(gravityBehavior)
     }
         
-    private func addCollisionBehavior(view: UIView) {
+    func addCollisionBehavior(view: UIView) {
         self.collisionBehavior.addItem(view)
         self.collisionBehavior.translatesReferenceBoundsIntoBoundary = true
     }
     
-    private func addGravityBehavior(view: UIView) {
+    func addGravityBehavior(view: UIView) {
         self.gravityBehavior.addItem(view)
     }
     
@@ -90,27 +91,39 @@ final class PhysicsManager: NSObject {
         self.gravityBehavior.removeItem(item)
     }
     
-    func shot(item: UIView, velocityX byX: Double, velocityY byY: Double, toSide: Side){
+    func removeCollisionBehavior(from item: UIView){
+        self.collisionBehavior.removeItem(item)
+    }
+    
+    func shot(item: UIView, from cannon: UIView, toSide: Side, strength: Double) {
+        let cannonCenter = cannon.center
+        let ammoCenter = item.center
+        let dx = Double(ammoCenter.x - cannonCenter.x)
+        let dy = Double(ammoCenter.y - cannonCenter.y)
+
+        let magnitude = sqrt(dx * dx + dy * dy)
+
+        let directionX = dx / magnitude
+        let directionY = dy / magnitude
+        
         switch toSide {
         case .left:
-            let velocity = CGPoint(x: -byX, y: -byY)
             pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
-            pushBehavior.pushDirection = CGVector(dx: velocity.x / 200, dy: velocity.y / 200)
+            pushBehavior.pushDirection = CGVector(dx: -directionX * strength, dy: directionY * strength)
             animator.addBehavior(pushBehavior)
         case .right:
-            let velocity = CGPoint(x: byX, y: -byY)
             pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
-            pushBehavior.pushDirection = CGVector(dx: velocity.x / 200, dy: velocity.y / 200)
+            pushBehavior.pushDirection = CGVector(dx: directionX * strength, dy: directionY * strength)
             animator.addBehavior(pushBehavior)
         }
     }
+
     
     func updtateItemPosition(item: UIView, toX: CGFloat, toY: CGFloat){
         item.center = CGPoint(x: toX, y: toY)
         self.animator.updateItem(usingCurrentState: item)
     }
-    
-        
+            
 }
 
 

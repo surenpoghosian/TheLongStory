@@ -11,6 +11,7 @@ import UIKit
 struct Character {
     var name: String
     var avatar: UIImage
+    var avatarID: String
     var availableToPick: Bool = true
 }
 

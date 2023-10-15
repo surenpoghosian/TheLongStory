@@ -157,9 +157,26 @@
                     <view key="view" contentMode="scaleToFill" id="YvP-GX-eZy">
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3C-JD-dpQ" userLabel="backButton">
+                                <rect key="frame" x="79" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="evI-I0-knp"/>
+                                    <constraint firstAttribute="width" constant="40" id="jqq-dd-IOB"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fNc-Yf-zCa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P3C-JD-dpQ" firstAttribute="leading" secondItem="YvP-GX-eZy" secondAttribute="leadingMargin" id="TDd-3V-hHc"/>
+                            <constraint firstItem="P3C-JD-dpQ" firstAttribute="top" secondItem="YvP-GX-eZy" secondAttribute="topMargin" constant="20" id="hIS-TJ-cuY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="P3C-JD-dpQ" id="wUq-GP-gvA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVQ-c8-42X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -172,15 +189,32 @@
                     <view key="view" contentMode="scaleToFill" id="SYD-gJ-07p">
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRL-aP-CIq" userLabel="backButton">
+                                <rect key="frame" x="79" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="bHR-6V-0kv"/>
+                                    <constraint firstAttribute="height" constant="40" id="kTS-eW-3Pi"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cZv-DJ-qgg"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qRL-aP-CIq" firstAttribute="leading" secondItem="SYD-gJ-07p" secondAttribute="leadingMargin" id="8yI-is-3cN"/>
+                            <constraint firstItem="qRL-aP-CIq" firstAttribute="top" secondItem="SYD-gJ-07p" secondAttribute="top" constant="20" id="Gcs-oM-kcT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QF8-pg-iCz"/>
+                    <connections>
+                        <outlet property="backButton" destination="qRL-aP-CIq" id="5OF-cG-Ftn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njW-hZ-SyN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1823" y="-895"/>
+            <point key="canvasLocation" x="1822.5352112676057" y="-895.41984732824426"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="bcn-8J-Y6T">

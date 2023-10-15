@@ -30,6 +30,7 @@ final class GameSceneViewController: UIViewController {
         viewModel = GameSceneViewModel()
         viewModel.gameFinished = gameFinished
         
+        
         initializeGameScene()
         buildLevel(level: 1)
 
@@ -43,6 +44,7 @@ final class GameSceneViewController: UIViewController {
     func initializeGameScene(){
         gameScene = UIView()
         gameScene.frame = view.bounds
+        navigationItem.hidesBackButton = true
     }
 
 

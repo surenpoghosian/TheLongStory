@@ -11,6 +11,8 @@ class LevelsViewController: UIViewController {
     private var levelsCollectionView: UICollectionView!
     private var pickLevelLabel: UILabel!
     private var viewModel: LevelsViewModel!
+    private var levelsData: [LevelsData]!
+    @IBOutlet weak var backButton: UIButton!
     
     var testData: [Character] = []
     override func viewDidLoad() {
@@ -20,14 +22,28 @@ class LevelsViewController: UIViewController {
         setupUI()
         setupPickLevelLabel(hintText: "Pick the level")
         setupLevelsCollectionView()
+        setupBackButton()
         
-        testData = [Character(name: "Japan", avatar: UIImage(named: "cellFrame")!, avatarID: "1"),
-                    Character(name: "Egypt", avatar: UIImage(named: "cellFrame")!, avatarID: "2"),
-                    Character(name: "Armenia", avatar: UIImage(named: "cellFrame")!, avatarID: "3")]
+        levelsData = [LevelsData(name: "Normal", iconID: "1", type: .normal),
+                      LevelsData(name: "Halloween", iconID: "2", type: .halloween),
+                      LevelsData(name: "Moon", iconID: "3", type: .moon)]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     private func setupUI() {
         view.backgroundColor = UIColor(named: "backgroundColor")
+        navigationItem.hidesBackButton = true
+    }
+    private func setupBackButton() {
+        backButton.setBackgroundImage(UIImage(named: "leftArrowIcon"), for: .normal)
+        backButton.addAction(UIAction(handler: {[weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
+        }), for: .touchUpInside)
+        self.view.bringSubviewToFront(backButton)
     }
     
     private func setupPickLevelLabel(hintText: String) {
@@ -41,57 +57,45 @@ class LevelsViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             pickLevelLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
-            pickLevelLabel.leftAnchor.constraint(equalTo: view.leftAnchor),
-            pickLevelLabel.rightAnchor.constraint(equalTo: view.rightAnchor)
+            pickLevelLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 150),
+            pickLevelLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -150)
         ])
     }
     
     private func setupLevelsCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        
-        let numberOfColumns: CGFloat = 3
-        let numberOfRows: CGFloat = 1
-        
-        // Calculate the spacing between cells based on the screen size
+
+        // Set the section insets to center the cells horizontally.
         let cellSpacing: CGFloat = 1
-        let totalSpacing = cellSpacing * (numberOfColumns - 1)
-        
-        let safeArea = view.safeAreaLayoutGuide
-        let availableWidth = safeArea.layoutFrame.width - totalSpacing
-        let availableHeight = safeArea.layoutFrame.height - cellSpacing * 2
-        
-        // Calculate the item size based on the available width and height while keeping items square
-        let itemWidth = (availableWidth - totalSpacing) / numberOfColumns
-        let itemHeight = (availableHeight - totalSpacing) / numberOfRows / 2
-        
-        print(itemWidth, itemHeight)
-        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.minimumInteritemSpacing = cellSpacing
         layout.minimumLineSpacing = cellSpacing
-        layout.sectionInset.top = 30
-        
-        // Calculate the section insets to center the cells horizontally
-//        let horizontalInset = (safeArea.layoutFrame.width - (itemWidth * numberOfColumns + totalSpacing)) / 2
-    
+
+        let numberOfColumns: CGFloat = 3
+
+        let totalSpacing = cellSpacing * (numberOfColumns - 1)
+        let safeArea = view.safeAreaLayoutGuide
+        let availableWidth = safeArea.layoutFrame.width - totalSpacing
+        let itemWidth = (availableWidth / numberOfColumns).rounded(.down) // Use rounded(.down) to ensure integer values
+
+        layout.itemSize = CGSize(width: itemWidth, height: itemWidth) // Square cells
+
         levelsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         levelsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        levelsCollectionView.backgroundColor = .clear
-        levelsCollectionView.layer.cornerRadius = 50
         view.addSubview(levelsCollectionView)
-        
+
         NSLayoutConstraint.activate([
-            levelsCollectionView.topAnchor.constraint(equalTo: pickLevelLabel.bottomAnchor, constant: 30),
+            levelsCollectionView.topAnchor.constraint(equalTo: pickLevelLabel.bottomAnchor, constant: 10),
             levelsCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
             levelsCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            levelsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            levelsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-        
-        levelsCollectionView.register(CharacterCollectionViewCell.self, forCellWithReuseIdentifier: "CharacterCell")
+
+        levelsCollectionView.backgroundColor = .clear
+        levelsCollectionView.register(LevelCollectionViewCell.self, forCellWithReuseIdentifier: "LevelCell")
         levelsCollectionView.dataSource = self
         levelsCollectionView.delegate = self
-    }
-    
+    }    
 }
 
 extension LevelsViewController: UICollectionViewDataSource {
@@ -102,16 +106,15 @@ extension LevelsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return testData.count
+        return levelsData.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CharacterCell", for: indexPath) as! CharacterCollectionViewCell
-        let sectionOffset = indexPath.section * (testData.count / 2)
-        let character = testData[sectionOffset + indexPath.row]
-        cell.configure(with: character)
-        cell.isUserInteractionEnabled = character.availableToPick
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LevelCell", for: indexPath) as! LevelCollectionViewCell
+        let sectionOffset = indexPath.section * (levelsData.count / 2)
+        let levelData = levelsData[sectionOffset + indexPath.row]
+        cell.configure(with: levelData)
         
         return cell
     }

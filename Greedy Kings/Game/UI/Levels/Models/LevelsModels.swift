@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct LevelsData {
+    var name: String
+    var iconID: String
+    var type: LevelType
+}

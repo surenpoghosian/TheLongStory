@@ -37,7 +37,7 @@ final class GameSceneViewController: UIViewController {
         viewModel = GameSceneViewModel()
         viewModel.gameFinished = gameFinished
         audioManager = AudioManager()
-//        audioManager.playAudio(type: .background)
+        audioManager.playAudio(type: .background)
         hapticsManager = HapticsManager()
         initializeGameScene()
         buildLevel(level: 1)

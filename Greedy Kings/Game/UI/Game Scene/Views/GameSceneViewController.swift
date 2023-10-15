@@ -13,6 +13,7 @@ final class GameSceneViewController: UIViewController {
     private var levelBuilder: LevelBuilder!
     private var gameScene: UIView!
     var audioManager: AudioManager!
+    var hapticsManager: HapticsManager!
     var viewanimator1: UIViewPropertyAnimator!
     var viewanimator1_2: UIViewPropertyAnimator!
     var viewanimator2: UIViewPropertyAnimator!
@@ -23,7 +24,6 @@ final class GameSceneViewController: UIViewController {
     var countdownTimer: Timer?
     var totalTime: Int = 10
     var isTimerRunning: Bool = false
-    
     
     override func viewWillDisappear(_ animated: Bool) {
         isGameFinished = true
@@ -37,7 +37,8 @@ final class GameSceneViewController: UIViewController {
         viewModel = GameSceneViewModel()
         viewModel.gameFinished = gameFinished
         audioManager = AudioManager()
-        audioManager.playAudio(type: .background)
+//        audioManager.playAudio(type: .background)
+        hapticsManager = HapticsManager()
         initializeGameScene()
         buildLevel(level: 1)
         startTimer()
@@ -95,19 +96,10 @@ final class GameSceneViewController: UIViewController {
             case .player1:
                 stopAnimation(for: .player1)
                 onLongpressEnd(pressInterval: 1.2)
-//                viewModel.onTimeOut()
-                
             case .player2:
                 stopAnimation(for: .player2)
                 onLongpressEnd(pressInterval: 1.2)
-//                viewModel.onTimeOut()
-                
             }
-            
-            
-            
-            // Trigger your function here when the timer reaches 0
-            // Example: functionName()
         }
     }
     
@@ -123,6 +115,7 @@ final class GameSceneViewController: UIViewController {
         audioManager.playAudio(type: .shot)
         setTapRecognitionState(disabled: true)
         stopTimer()
+        hapticsManager.generate(type: .heavy)
     }
     
     @objc func onLongpressEnd(pressInterval: Double){
@@ -381,6 +374,7 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                             audioManager.playAudio(type: .hit)
                             viewModel.onHit()
                             updateHealthScale(player: .player2)
+                            hapticsManager.generate(type: .medium)
                             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
                                 if !self.isGameFinished{
 
@@ -402,6 +396,7 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                             audioManager.playAudio(type: .hit)
                             viewModel.onHit()
                             updateHealthScale(player: .player1)
+                            hapticsManager.generate(type: .medium)
                             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
                                 if !self.isGameFinished{
                                     

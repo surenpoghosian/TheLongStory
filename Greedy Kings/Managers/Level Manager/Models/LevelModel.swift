@@ -101,3 +101,10 @@ enum Difficulty {
     case medium
     case hard
 }
+
+// Enum for specifying level category
+enum LevelType {
+    case moon
+    case halloween
+    case normal
+}

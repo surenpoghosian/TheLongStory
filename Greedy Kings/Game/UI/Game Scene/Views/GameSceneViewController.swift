@@ -47,6 +47,7 @@ final class GameSceneViewController: UIViewController {
     func initializeGameScene(){
         gameScene = UIView()
         gameScene.frame = view.bounds
+        navigationItem.hidesBackButton = true
     }
     
     

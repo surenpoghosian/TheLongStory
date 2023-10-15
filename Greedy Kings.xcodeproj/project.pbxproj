@@ -141,6 +141,9 @@
 		E8BBD4742AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD4732AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift */; };
 		E8BBD4752AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD4732AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift */; };
 		E8BBD4762AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBD4732AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift */; };
+		E8F44AD92ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44AD82ADC419900B2568F /* LevelCollectionViewCell.swift */; };
+		E8F44ADA2ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44AD82ADC419900B2568F /* LevelCollectionViewCell.swift */; };
+		E8F44ADB2ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44AD82ADC419900B2568F /* LevelCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,6 +223,7 @@
 		E8BBD46B2AC462300056E1E8 /* PickCharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickCharacterViewModel.swift; sourceTree = "<group>"; };
 		E8BBD46F2AC462570056E1E8 /* PickCharacterModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickCharacterModels.swift; sourceTree = "<group>"; };
 		E8BBD4732AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
+		E8F44AD82ADC419900B2568F /* LevelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -546,6 +550,7 @@
 			isa = PBXGroup;
 			children = (
 				E8BBD4162ABFA5B30056E1E8 /* LevelsViewController.swift */,
+				E8F44AD82ADC419900B2568F /* LevelCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -860,6 +865,7 @@
 				33F00DCB2ABDC4A200A5D5B2 /* LevelsModels.swift in Sources */,
 				33F00DC72ABDC49800A5D5B2 /* LevelsViewModel.swift in Sources */,
 				E8BBD42B2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,
+				E8F44AD92ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */,
 				E887FCAD2AD073BA0056999E /* GameModels.swift in Sources */,
 				E8BBD46C2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */,
 				33A2939A2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */,
@@ -909,6 +915,7 @@
 				33E8D3E12AD0456300C3892C /* PhysicsModels.swift in Sources */,
 				33F00DB42ABDC41700A5D5B2 /* MainMenuModels.swift in Sources */,
 				33A293572AC44F00008D9B9C /* GameManager.swift in Sources */,
+				E8F44ADA2ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */,
 				33E8D43B2AD54B9D00C3892C /* HapticModels.swift in Sources */,
 				33F00DC02ABDC45600A5D5B2 /* GameSceneModels.swift in Sources */,
 				33F00DB82ABDC42700A5D5B2 /* MainMenuViewModel.swift in Sources */,
@@ -934,6 +941,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8F44ADB2ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */,
 				33E8D43C2AD54B9D00C3892C /* HapticModels.swift in Sources */,
 				E8BBD4762AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift in Sources */,
 				33F00DB92ABDC42700A5D5B2 /* MainMenuViewModel.swift in Sources */,
@@ -1123,7 +1131,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SZF3LG898Y;
+				DEVELOPMENT_TEAM = 4CNWJ7UXMX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Greedy Kings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1151,7 +1159,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SZF3LG898Y;
+				DEVELOPMENT_TEAM = 4CNWJ7UXMX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Greedy Kings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

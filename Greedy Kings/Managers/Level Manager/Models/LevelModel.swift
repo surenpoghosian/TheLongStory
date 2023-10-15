@@ -15,7 +15,6 @@ struct Level {
     var castleRight: Castle
     var obstacle: Obstacle
     var scene: Scene
-    var image: String
 }
 
 // Castle and its parameters
@@ -108,3 +107,6 @@ enum LevelType {
     case halloween
     case normal
 }
+
+
+

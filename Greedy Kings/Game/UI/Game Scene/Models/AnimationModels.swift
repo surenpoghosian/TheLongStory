@@ -65,7 +65,7 @@ final class Animation {
                 animationViewX = CGFloat(x - animationViewWidth / 2)
                 animationViewY = CGFloat(y - animationViewHeight / 2)
             }
-        
+         
             
             case .shot:
                 let point = CGPoint(x: x, y: y)

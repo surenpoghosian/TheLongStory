@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import UIKit
 
 final class LevelsViewModel {
-    
+    let backgroundColor = UIColor(red: 0.51, green: 0.40, blue: 0.33, alpha: 0.4)
 }

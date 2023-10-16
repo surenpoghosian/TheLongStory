@@ -17,6 +17,14 @@
 		336A94FE2ADC657500F43B13 /* shot1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 336A94F42ADC657500F43B13 /* shot1.mp3 */; };
 		336A94FF2ADC657500F43B13 /* backgroundMusic1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 336A94F52ADC657500F43B13 /* backgroundMusic1.mp3 */; };
 		336A95002ADC657500F43B13 /* hit1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 336A94F62ADC657500F43B13 /* hit1.mp3 */; };
+		336A95032ADC686000F43B13 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 336A95022ADC686000F43B13 /* Lottie */; };
+		336A95052ADC6A0900F43B13 /* AnimationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95042ADC6A0900F43B13 /* AnimationModels.swift */; };
+		336A95192ADC7E2100F43B13 /* animation1.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A95162ADC7E2100F43B13 /* animation1.json */; };
+		336A951A2ADC7E2100F43B13 /* animation2.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A95172ADC7E2100F43B13 /* animation2.json */; };
+		336A951B2ADC7E2100F43B13 /* animation3.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A95182ADC7E2100F43B13 /* animation3.json */; };
+		336A951D2ADC85C400F43B13 /* animation4.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A951C2ADC85C400F43B13 /* animation4.json */; };
+		336A951F2ADDB10900F43B13 /* strengthIndicator.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A951E2ADDB10900F43B13 /* strengthIndicator.json */; };
+		336A95212ADDCAB200F43B13 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95202ADDCAB200F43B13 /* UIViewController.swift */; };
 		33A293532AC44EF6008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
 		33A293542AC44EF6008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
 		33A293562AC44F00008D9B9C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293552AC44F00008D9B9C /* GameManager.swift */; };
@@ -155,6 +163,13 @@
 		336A94F42ADC657500F43B13 /* shot1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shot1.mp3; sourceTree = "<group>"; };
 		336A94F52ADC657500F43B13 /* backgroundMusic1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic1.mp3; sourceTree = "<group>"; };
 		336A94F62ADC657500F43B13 /* hit1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit1.mp3; sourceTree = "<group>"; };
+		336A95042ADC6A0900F43B13 /* AnimationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationModels.swift; sourceTree = "<group>"; };
+		336A95162ADC7E2100F43B13 /* animation1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation1.json; sourceTree = "<group>"; };
+		336A95172ADC7E2100F43B13 /* animation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation2.json; sourceTree = "<group>"; };
+		336A95182ADC7E2100F43B13 /* animation3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation3.json; sourceTree = "<group>"; };
+		336A951C2ADC85C400F43B13 /* animation4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = animation4.json; path = ../../../../Downloads/animation4.json; sourceTree = "<group>"; };
+		336A951E2ADDB10900F43B13 /* strengthIndicator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = strengthIndicator.json; path = ../../../../Downloads/strengthIndicator.json; sourceTree = "<group>"; };
+		336A95202ADDCAB200F43B13 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		33A293522AC44EF6008D9B9C /* LevelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuilder.swift; sourceTree = "<group>"; };
 		33A293552AC44F00008D9B9C /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		33A2935C2AC46A4D008D9B9C /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
@@ -213,6 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336A95032ADC686000F43B13 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +249,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		336A95062ADC6CB100F43B13 /* AnimationAssets */ = {
+			isa = PBXGroup;
+			children = (
+				336A951E2ADDB10900F43B13 /* strengthIndicator.json */,
+				336A95162ADC7E2100F43B13 /* animation1.json */,
+				336A95172ADC7E2100F43B13 /* animation2.json */,
+				336A95182ADC7E2100F43B13 /* animation3.json */,
+				336A951C2ADC85C400F43B13 /* animation4.json */,
+			);
+			path = AnimationAssets;
+			sourceTree = "<group>";
+		};
 		33A293502AC44ED1008D9B9C /* Game Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,7 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				33E8D3E42AD2AB2600C3892C /* CGFloat.swift */,
-				E8F44ADC2ADDBBBD00B2568F /* UIViewController.swift */,
+				336A95202ADDCAB200F43B13 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -382,6 +410,7 @@
 				33F00D932ABCB56600A5D5B2 /* Application */,
 				33E8D3E32AD2AB0500C3892C /* Extensions */,
 				33E8D3F22AD5376200C3892C /* AudioAssets */,
+				336A95062ADC6CB100F43B13 /* AnimationAssets */,
 				33F00D6B2ABCB4CC00A5D5B2 /* Assets.xcassets */,
 				33F00D702ABCB4CC00A5D5B2 /* Info.plist */,
 			);
@@ -517,6 +546,7 @@
 			isa = PBXGroup;
 			children = (
 				33F00DBE2ABDC45600A5D5B2 /* GameSceneModels.swift */,
+				336A95042ADC6A0900F43B13 /* AnimationModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -692,6 +722,9 @@
 			dependencies = (
 			);
 			name = "Greedy Kings";
+			packageProductDependencies = (
+				336A95022ADC686000F43B13 /* Lottie */,
+			);
 			productName = "Greedy Kings";
 			productReference = 33F00D5C2ABCB4CB00A5D5B2 /* Greedy Kings.app */;
 			productType = "com.apple.product-type.application";
@@ -764,6 +797,9 @@
 				Base,
 			);
 			mainGroup = 33F00D532ABCB4CB00A5D5B2;
+			packageReferences = (
+				336A95012ADC686000F43B13 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			productRefGroup = 33F00D5D2ABCB4CB00A5D5B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -781,13 +817,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				336A94F82ADC657500F43B13 /* gameFinished.mp3 in Resources */,
+				336A95192ADC7E2100F43B13 /* animation1.json in Resources */,
 				336A94FC2ADC657500F43B13 /* hit2.mp3 in Resources */,
+				336A951B2ADC7E2100F43B13 /* animation3.json in Resources */,
+				336A951F2ADDB10900F43B13 /* strengthIndicator.json in Resources */,
 				336A95002ADC657500F43B13 /* hit1.mp3 in Resources */,
 				33F00D6F2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard in Resources */,
 				336A94F72ADC657500F43B13 /* menu.mp3 in Resources */,
 				336A94F92ADC657500F43B13 /* hit3.mp3 in Resources */,
+				336A951D2ADC85C400F43B13 /* animation4.json in Resources */,
 				336A94FD2ADC657500F43B13 /* miss.mp3 in Resources */,
 				336A94FF2ADC657500F43B13 /* backgroundMusic1.mp3 in Resources */,
+				336A951A2ADC7E2100F43B13 /* animation2.json in Resources */,
 				33A293682AC855AE008D9B9C /* GameComponentsPropertyList.plist in Resources */,
 				33F00D6C2ABCB4CC00A5D5B2 /* Assets.xcassets in Resources */,
 				33F00D672ABCB4CB00A5D5B2 /* Main.storyboard in Resources */,
@@ -832,6 +873,7 @@
 				E887FCAD2AD073BA0056999E /* GameModels.swift in Sources */,
 				E8BBD46C2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */,
 				33A2939A2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */,
+				336A95212ADDCAB200F43B13 /* UIViewController.swift in Sources */,
 				E8BBD4272ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
 				33F00DD32ABDC4C700A5D5B2 /* SettingsViewModel.swift in Sources */,
 				33F00DB32ABDC41700A5D5B2 /* MainMenuModels.swift in Sources */,
@@ -840,6 +882,7 @@
 				33E8D4352AD54B8B00C3892C /* HapticsManager.swift in Sources */,
 				E8F44ADD2ADDBBBD00B2568F /* UIViewController.swift in Sources */,
 				E8BBD41B2ABFA5ED0056E1E8 /* SettingsViewController.swift in Sources */,
+				336A95052ADC6A0900F43B13 /* AnimationModels.swift in Sources */,
 				33A293562AC44F00008D9B9C /* GameManager.swift in Sources */,
 				33E8D43A2AD54B9D00C3892C /* HapticModels.swift in Sources */,
 				33A293532AC44EF6008D9B9C /* LevelBuilder.swift in Sources */,
@@ -1095,7 +1138,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4CNWJ7UXMX;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Greedy Kings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1123,7 +1166,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4CNWJ7UXMX;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Greedy Kings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1260,6 +1303,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		336A95012ADC686000F43B13 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		336A95022ADC686000F43B13 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 336A95012ADC686000F43B13 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 33F00D542ABCB4CB00A5D5B2 /* Project object */;
 }

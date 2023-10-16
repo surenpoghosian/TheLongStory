@@ -2,12 +2,11 @@
 //  UIViewController.swift
 //  Greedy Kings
 //
-//  Created by Garik Hovsepian on 16.10.23.
+//  Created by Suren Poghosyan on 16.10.23.
 //
 
+import Foundation
 import UIKit
-
-
 
 extension UIViewController {
     var topMostPresentedViewController: UIViewController {

@@ -132,6 +132,7 @@
 		E8F44AD92ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44AD82ADC419900B2568F /* LevelCollectionViewCell.swift */; };
 		E8F44ADA2ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44AD82ADC419900B2568F /* LevelCollectionViewCell.swift */; };
 		E8F44ADB2ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44AD82ADC419900B2568F /* LevelCollectionViewCell.swift */; };
+		E8F44ADD2ADDBBBD00B2568F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44ADC2ADDBBBD00B2568F /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +220,7 @@
 		E8BBD46F2AC462570056E1E8 /* PickCharacterModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickCharacterModels.swift; sourceTree = "<group>"; };
 		E8BBD4732AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		E8F44AD82ADC419900B2568F /* LevelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCollectionViewCell.swift; sourceTree = "<group>"; };
+		E8F44ADC2ADDBBBD00B2568F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -878,6 +880,7 @@
 				E8BBD4682AC461FC0056E1E8 /* PickCharacterViewController.swift in Sources */,
 				33F00DD72ABDC4CE00A5D5B2 /* SettingsModels.swift in Sources */,
 				33E8D4352AD54B8B00C3892C /* HapticsManager.swift in Sources */,
+				E8F44ADD2ADDBBBD00B2568F /* UIViewController.swift in Sources */,
 				E8BBD41B2ABFA5ED0056E1E8 /* SettingsViewController.swift in Sources */,
 				336A95052ADC6A0900F43B13 /* AnimationModels.swift in Sources */,
 				33A293562AC44F00008D9B9C /* GameManager.swift in Sources */,

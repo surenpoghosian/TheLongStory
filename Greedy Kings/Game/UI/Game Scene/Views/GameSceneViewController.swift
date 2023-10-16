@@ -9,7 +9,6 @@ import UIKit
 import Lottie
 
 final class GameSceneViewController: UIViewController {
-    weak var delegate: GameDataDelegate?
     private var viewModel: GameSceneViewModel!
     private var levelBuilder: LevelBuilder!
     private var gameScene: UIView!
@@ -41,17 +40,21 @@ final class GameSceneViewController: UIViewController {
         
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = GameSceneViewModel()
-        viewModel.gameFinished = gameFinished
+        viewModel.onGameFinished = onGameFinished
+        
         audioManager = AudioManager()
         animation = Animation()
         audioManager.playAudio(type: .background)
+        
         hapticsManager = HapticsManager()
+        
         initializeGameScene()
+        
         buildLevel(level: 1)
+        
         startTimer()
         
         //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
@@ -64,6 +67,7 @@ final class GameSceneViewController: UIViewController {
         //            self.dismissToRoot(animated: true)
         //        })
     }
+
     
     func initializeGameScene(){
         gameScene = UIView()
@@ -127,11 +131,8 @@ final class GameSceneViewController: UIViewController {
     
     func prepareAndShot(ammo: UIView, weapon: UIView, strength: Double, toSide: Side){
         levelBuilder.physicsManager.removeGravityBehavior(from: ammo)
-        
         levelBuilder.updateAmmoLocation(for: weapon, ammo: ammo)
-        
         levelBuilder.updateAmmoVisiblity(for: ammo, isHidden: false)
-        
         levelBuilder.physicsManager.addGravityBehavior(view: ammo)
         levelBuilder.physicsManager.shot(item: ammo, from: weapon, toSide: toSide, strength: strength)
         
@@ -143,6 +144,7 @@ final class GameSceneViewController: UIViewController {
         hapticsManager.generate(type: .heavy)
         
         setTapRecognitionState(disabled: true)
+        
         stopTimer()
         
         //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
@@ -151,6 +153,7 @@ final class GameSceneViewController: UIViewController {
         //            }
         //        })
         
+
     }
     
     @objc func onLongpressEnd(pressInterval: Double){
@@ -325,7 +328,6 @@ final class GameSceneViewController: UIViewController {
     }
     
     
-    
     func startAnimation(for player: Player){
         let minRotationAngleDegrees: CGFloat = 25.0
         let maxRotationAngleDegrees: CGFloat = 80.0
@@ -390,8 +392,7 @@ final class GameSceneViewController: UIViewController {
         
     }
     
-    
-    func gameFinished() {
+    func onGameFinished() {
         isGameFinished = true
         audioManager.stopAudio(type: .background)
         audioManager.playAudio(type: .finished)
@@ -400,6 +401,13 @@ final class GameSceneViewController: UIViewController {
         setTapRecognitionState(disabled: true)
         stopTimer()
         resetTimer()
+
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "ResultView") as? ResultViewController {
+            vc.winner = Character(name: "Antonio", avatarID: "3")
+            vc.viewModel = viewModel
+            navigationController?.present(vc, animated: true)
+        }
     }
     
     
@@ -436,6 +444,19 @@ final class GameSceneViewController: UIViewController {
                 levelBuilder.updateAmmoVisiblity(for: ammo, isHidden: true)
             }
         }
+    }
+    
+    func onRematch(){
+        print("onRematch")
+    }
+    
+    deinit {
+        gameScene = nil
+        viewModel = nil
+        audioManager = nil
+        hapticsManager = nil
+        levelBuilder = nil
+
     }
     
     func onMiss(ammo: UIView, side: Side){
@@ -486,6 +507,7 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                     
                 } else if otherView == rightAmmo && view == leftCastle {
                     self.onHit(ammo: rightAmmo, side: .right)
+
                 }
             }
         }
@@ -508,6 +530,7 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                     
                 } else if view == rightAmmo {
                     self.onMiss(ammo: rightAmmo, side: .right)
+
                 }
             }
         }

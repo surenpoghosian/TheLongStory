@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 extension UIViewController {
     var topMostPresentedViewController: UIViewController {
         if let presenting = presentingViewController {

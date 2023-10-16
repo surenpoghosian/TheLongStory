@@ -450,14 +450,6 @@ final class GameSceneViewController: UIViewController {
         print("onRematch")
     }
     
-    deinit {
-        gameScene = nil
-        viewModel = nil
-        audioManager = nil
-        hapticsManager = nil
-        levelBuilder = nil
-
-    }
     
     func onMiss(ammo: UIView, side: Side){
         if let temporaryCurrentPlayer {

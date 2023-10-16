@@ -190,23 +190,22 @@
                   endingLineNumber = "278"
                   offsetFromSymbolStart = "392">
                </Location>
+               <Location
+                  uuid = "C77AF009-D667-428D-BD54-8BF3F4BB1763 - 89588b232af24f63"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.LevelBuilder.updatePlayerHealthIndicator(health: Swift.Double, referenceView: __C.UIView, side: Greedy_Kings.Side) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Managers/Level%20Manager/LevelBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "354"
+                  endingLineNumber = "354"
+                  offsetFromSymbolStart = "392">
+               </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "53BB8E86-EA04-4857-ACFA-56BC9DDE7224"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "450"
-            endingLineNumber = "450"
-            landmarkName = "collisionBehavior(_:endedContactFor:withBoundaryIdentifier:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -219,10 +218,42 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Models/AnimationModels.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "createAnimationView(x:y:name:type:speed:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "85C9AA15-C264-40C4-A49D-AB77CE622498 - fcdd2f6901bfe60c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.Animation.createAnimationView(x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat, name: Swift.String, type: Greedy_Kings.AnimationType, speed: CoreGraphics.CGFloat) -&gt; Lottie.LottieAnimationView"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Game/UI/Game%20Scene/Models/AnimationModels.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "712">
+               </Location>
+               <Location
+                  uuid = "85C9AA15-C264-40C4-A49D-AB77CE622498 - fcdd2f6901bfe717"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.Animation.createAnimationView(x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat, name: Swift.String, type: Greedy_Kings.AnimationType, speed: CoreGraphics.CGFloat) -&gt; Lottie.LottieAnimationView"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Game/UI/Game%20Scene/Models/AnimationModels.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "572">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -235,9 +266,57 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Models/AnimationModels.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "createAnimationView(x:y:name:type:speed:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AF9D6887-BDDA-4033-B8F3-8B98DD1CC169 - fcdd2f6901bfe693"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.Animation.createAnimationView(x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat, name: Swift.String, type: Greedy_Kings.AnimationType, speed: CoreGraphics.CGFloat) -&gt; Lottie.LottieAnimationView"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Game/UI/Game%20Scene/Models/AnimationModels.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "764">
+               </Location>
+               <Location
+                  uuid = "AF9D6887-BDDA-4033-B8F3-8B98DD1CC169 - fcdd2f6901bfe7fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.Animation.createAnimationView(x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat, name: Swift.String, type: Greedy_Kings.AnimationType, speed: CoreGraphics.CGFloat) -&gt; Lottie.LottieAnimationView"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Game/UI/Game%20Scene/Models/AnimationModels.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "608">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81B62D06-114F-4979-BE0B-262478CDEF9F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greedy Kings/Game/UI/Game Scene/Models/AnimationModels.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "animate(x:y:type:animations:speed:referenceView:removeOnFinish:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

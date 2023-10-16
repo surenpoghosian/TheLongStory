@@ -40,16 +40,16 @@ final class PickCharacterViewController: UIViewController {
         setupPickCharacterCollectionView()
         setupBackButton()
         
-        characterData = [Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "1"),
-                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "2"),
-                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "3"),
-                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "4"),
-                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "5"),
-                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "6"),
-                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "7"),
-                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "8"),
-                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "9"),
-                         Character(name: "Jobs", avatar: UIImage(systemName: "person")!, avatarID: "10")]
+        characterData = [Character(name: "Jobs", avatarID: "1"),
+                         Character(name: "Jobs", avatarID: "2"),
+                         Character(name: "Jobs", avatarID: "3"),
+                         Character(name: "Jobs", avatarID: "4"),
+                         Character(name: "Jobs", avatarID: "5"),
+                         Character(name: "Jobs", avatarID: "6"),
+                         Character(name: "Jobs", avatarID: "7"),
+                         Character(name: "Jobs", avatarID: "8"),
+                         Character(name: "Jobs", avatarID: "9"),
+                         Character(name: "Jobs", avatarID: "10")]
         
     }
     private func setupUI() {

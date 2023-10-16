@@ -82,7 +82,9 @@ final class GameManager {
         
     }
     
-    func gameFinished() {
-        
+    func resetHealth() {
+        HealthManager.shared.player1health = 100
+        HealthManager.shared.player1health = 100
+        initializeBattleResult()
     }
 }

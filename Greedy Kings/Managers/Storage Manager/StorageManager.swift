@@ -10,4 +10,14 @@ import Foundation
 final class StorageManager {
     var isSoundOn: Bool = true
     var isMusicOn: Bool = true
+    
+    func set(key: String, value: Data){
+        
+    }
+    
+    func get(key: String) -> Data {
+        
+        return Data()
+    }
+    
 }

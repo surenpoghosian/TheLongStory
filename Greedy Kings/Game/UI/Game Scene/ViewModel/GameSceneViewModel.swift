@@ -12,7 +12,7 @@ final class GameSceneViewModel {
     private var gameManager: GameManager
     var resetAmmo: (() -> Void)?
     var onGameFinished: (() -> Void)?
-//    var onRematch: (() -> Void)?
+    var onRematch: (() -> Void)?
     
     private(set) var currentPlayer: Player?
 
@@ -57,6 +57,10 @@ final class GameSceneViewModel {
     }
     
     func rematch() {
+        if let onRematch = onRematch {
+            onRematch()
+        }
+        
         gameManager.resetHealth()
     }
 }

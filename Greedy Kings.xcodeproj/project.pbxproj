@@ -25,6 +25,7 @@
 		336A951D2ADC85C400F43B13 /* animation4.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A951C2ADC85C400F43B13 /* animation4.json */; };
 		336A951F2ADDB10900F43B13 /* strengthIndicator.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A951E2ADDB10900F43B13 /* strengthIndicator.json */; };
 		336A95212ADDCAB200F43B13 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95202ADDCAB200F43B13 /* UIViewController.swift */; };
+		336A95242ADDD92300F43B13 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95232ADDD92300F43B13 /* UIView.swift */; };
 		33A293532AC44EF6008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
 		33A293542AC44EF6008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
 		33A293562AC44F00008D9B9C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293552AC44F00008D9B9C /* GameManager.swift */; };
@@ -169,6 +170,7 @@
 		336A951C2ADC85C400F43B13 /* animation4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = animation4.json; path = ../../../../Downloads/animation4.json; sourceTree = "<group>"; };
 		336A951E2ADDB10900F43B13 /* strengthIndicator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = strengthIndicator.json; path = ../../../../Downloads/strengthIndicator.json; sourceTree = "<group>"; };
 		336A95202ADDCAB200F43B13 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		336A95232ADDD92300F43B13 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		33A293522AC44EF6008D9B9C /* LevelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuilder.swift; sourceTree = "<group>"; };
 		33A293552AC44F00008D9B9C /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		33A2935C2AC46A4D008D9B9C /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
@@ -331,8 +333,9 @@
 		33E8D3E32AD2AB0500C3892C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				33E8D3E42AD2AB2600C3892C /* CGFloat.swift */,
 				336A95202ADDCAB200F43B13 /* UIViewController.swift */,
+				336A95232ADDD92300F43B13 /* UIView.swift */,
+				33E8D3E42AD2AB2600C3892C /* CGFloat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -878,6 +881,7 @@
 				33F00DC72ABDC49800A5D5B2 /* LevelsViewModel.swift in Sources */,
 				E8BBD42B2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,
 				E8F44AD92ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */,
+				336A95242ADDD92300F43B13 /* UIView.swift in Sources */,
 				E887FCAD2AD073BA0056999E /* GameModels.swift in Sources */,
 				E8BBD46C2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */,
 				33A2939A2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */,

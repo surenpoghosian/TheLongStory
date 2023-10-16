@@ -14,8 +14,8 @@
             filePath = "Greedy Kings/Managers/Level Manager/LevelBuilder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "309"
-            endingLineNumber = "309"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "createPlayerIndicatorView(side:)"
             landmarkType = "7">
             <Locations>
@@ -77,8 +77,8 @@
             filePath = "Greedy Kings/Managers/Level Manager/LevelBuilder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "createPlayerIndicatorView(side:)"
             landmarkType = "7">
             <Locations>
@@ -140,8 +140,8 @@
             filePath = "Greedy Kings/Managers/Level Manager/LevelBuilder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "352"
-            endingLineNumber = "352"
+            startingLineNumber = "353"
+            endingLineNumber = "353"
             landmarkName = "updatePlayerHealthIndicator(health:referenceView:side:)"
             landmarkType = "7">
             <Locations>

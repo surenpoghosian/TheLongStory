@@ -20,7 +20,7 @@ final class LevelBuilder {
             adjustedLevel = newValue - 1
         }
     }
-    
+
     private var castleLeft: Castle!
     private var castleRight: Castle!
     private var scene: Scene!
@@ -209,13 +209,6 @@ final class LevelBuilder {
         
         if let image = UIImage(named: scene.image) {
             addComponentImage(referenceView: component, image: image)
-
-//            let blurEffect = UIBlurEffect(style: .regular)
-//            let visualEffectView = UIVisualEffectView(effect: blurEffect)
-//            visualEffectView.frame = component.subviews[0].bounds
-//            visualEffectView.alpha = 0.6
-//            component.addSubview(visualEffectView)
-
         }
         
         component.backgroundColor = .black
@@ -319,9 +312,7 @@ final class LevelBuilder {
             imageViewX = healthScaleBackgroundX + healthScaleBackgroundWidth
             imageViewY = componentY
         }
-        
-        print(componentX, componentY, imageViewX, imageViewY, healthScaleX, healthScaleY, healthScaleBackgroundX, healthScaleBackgroundY)
-        
+                
         let component = UIView(frame: CGRect(x: componentX, y: componentY, width: componentWidth, height: componentHeight))
         
         let imageView = UIImageView(frame: CGRect(x: imageViewX, y: imageViewY, width: imageViewWidth, height: imageViewHeight))
@@ -336,8 +327,18 @@ final class LevelBuilder {
         
         component.backgroundColor = .clear
         imageView.backgroundColor = .gray
-        healthScaleBackground.backgroundColor = .systemGray3
-        healthScale.backgroundColor = .red
+        healthScaleBackground.backgroundColor = UIColor(named: "backgroundColor")
+        
+        healthScale.backgroundColor = .systemBrown
+
+        switch side {
+        case .left:
+            healthScaleBackground.roundSpecificCorners(corners: [.topRight, .bottomRight], radius: 8)
+            healthScale.roundSpecificCorners(corners: [.topRight, .bottomRight], radius: 8)
+        case .right:
+            healthScaleBackground.roundSpecificCorners(corners: [.topLeft, .bottomLeft], radius: 8)
+            healthScale.roundSpecificCorners(corners: [.topLeft, .bottomLeft], radius: 8)
+        }
         
         return component
     }

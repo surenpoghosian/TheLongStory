@@ -27,9 +27,15 @@ final class GameSceneViewController: UIViewController {
     private var animation: Animation!
     
     override func viewWillDisappear(_ animated: Bool) {
+       onClose()
+    }
+    
+    func onClose(){
         isGameFinished = true
+        if let audioManager {
+            audioManager.stopAudio(type: .background)
+        }
         
-        audioManager.stopAudio(type: .background)
         
         self.levelBuilder = nil
         self.hapticsManager = nil
@@ -37,17 +43,19 @@ final class GameSceneViewController: UIViewController {
         self.viewModel = nil
         self.stopTimer()
         self.countdownTimer = nil
-        
+        self.dismissToRoot(animated: true)
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = GameSceneViewModel()
         viewModel.onGameFinished = onGameFinished
+        viewModel.onRematch = onRematch
         
         audioManager = AudioManager()
         animation = Animation()
-        audioManager.playAudio(type: .background)
+//        audioManager.playAudio(type: .background)
         
         hapticsManager = HapticsManager()
         
@@ -57,15 +65,6 @@ final class GameSceneViewController: UIViewController {
         
         startTimer()
         
-        //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-        //            self.levelBuilder = nil
-        //            self.hapticsManager = nil
-        //            self.audioManager = nil
-        //            self.viewModel = nil
-        //            self.stopTimer()
-        //            self.countdownTimer = nil
-        //            self.dismissToRoot(animated: true)
-        //        })
     }
 
     
@@ -147,13 +146,6 @@ final class GameSceneViewController: UIViewController {
         
         stopTimer()
         
-        //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-        //            if let _ = self.temporaryCurrentPlayer {
-        //                self.onMiss(ammo: ammo, side: toSide)
-        //            }
-        //        })
-        
-
     }
     
     @objc func onLongpressEnd(pressInterval: Double){
@@ -166,7 +158,7 @@ final class GameSceneViewController: UIViewController {
                 let leftWeapon = gameScene.subviews[4]
                 let leftAmmo = gameScene.subviews[6]
                 
-                if let levelBuilder{
+                if let _ = levelBuilder{
                     prepareAndShot(ammo: leftAmmo, weapon: leftWeapon, strength: pressInterval, toSide: .right)
                 }
                 
@@ -174,7 +166,7 @@ final class GameSceneViewController: UIViewController {
             case .player2:
                 let rightWeapon = gameScene.subviews[5]
                 let rightAmmo = gameScene.subviews[7]
-                if let levelBuilder{
+                if let _ = levelBuilder{
                     prepareAndShot(ammo: rightAmmo, weapon: rightWeapon, strength: pressInterval, toSide: .left)
                 }
                 
@@ -401,13 +393,19 @@ final class GameSceneViewController: UIViewController {
         setTapRecognitionState(disabled: true)
         stopTimer()
         resetTimer()
+        showResultModal()
+    }
+    
+    
+    func showResultModal(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+          if let vc = storyboard.instantiateViewController(withIdentifier: "ResultView") as? ResultViewController {
+              vc.winner = Character(name: "Antonio", avatarID: "3")
+              vc.viewModel = viewModel
+              vc.onMainMenu = onMainMenu
+              navigationController?.present(vc, animated: true)
+          }
 
-      let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "ResultView") as? ResultViewController {
-            vc.winner = Character(name: "Antonio", avatarID: "3")
-            vc.viewModel = viewModel
-            navigationController?.present(vc, animated: true)
-        }
     }
     
     
@@ -416,7 +414,6 @@ final class GameSceneViewController: UIViewController {
             if temporaryCurrentPlayer == viewModel.currentPlayer {
                 
                 let viewOrigin = ammo.frame.origin
-                print("onhit",viewOrigin)
                 
                 animation.play(x: viewOrigin.x, y: viewOrigin.y, type: .hit, referenceView: gameScene)
                 stopTimer()
@@ -432,10 +429,9 @@ final class GameSceneViewController: UIViewController {
                 }
                 
                 hapticsManager.generate(type: .medium)
+                
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
                     if !self.isGameFinished{
-                        
-                        
                         self.updatePlayerState(side: side)
                         self.setTapRecognitionState(disabled: false)
                     }
@@ -450,14 +446,15 @@ final class GameSceneViewController: UIViewController {
         print("onRematch")
     }
     
+    func onMainMenu(){
+        onClose()
+    }
     
     func onMiss(ammo: UIView, side: Side){
         if let temporaryCurrentPlayer {
-            print(temporaryCurrentPlayer)
             if temporaryCurrentPlayer == viewModel.currentPlayer {
                 
                 let viewOrigin = ammo.frame.origin
-                print("onmiss",viewOrigin)
                 
                 animation.play(x: viewOrigin.x, y: viewOrigin.y, type: .miss, referenceView: gameScene)
                 stopTimer()

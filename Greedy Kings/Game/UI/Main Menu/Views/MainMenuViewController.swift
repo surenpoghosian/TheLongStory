@@ -2,7 +2,7 @@
 //  MainMenuViewController.swift
 //  Greedy Kings
 //
-//  Created by Garik Hovsepian on 24.09.23.
+//  Created by Garik Hovsepyan on 24.09.23.
 //
 
 import UIKit

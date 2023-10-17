@@ -2,7 +2,7 @@
 //  LevelsViewController.swift
 //  Greedy Kings
 //
-//  Created by Garik Hovsepian on 24.09.23.
+//  Created by Garik Hovsepyan on 24.09.23.
 //
 
 import UIKit
@@ -65,37 +65,38 @@ class LevelsViewController: UIViewController {
     private func setupLevelsCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-
-        // Set the section insets to center the cells horizontally.
-        let cellSpacing: CGFloat = 1
+        
+        let numberOfColumns: CGFloat = 3
+        let cellSpacing: CGFloat = 10
+        let safeArea = view.safeAreaLayoutGuide
+        
+        // Calculate the item size
+        let availableWidth = view.frame.width * 0.8
+        let itemWidth = availableWidth / numberOfColumns - numberOfColumns * cellSpacing
+        let itemHeight = itemWidth
+        
+        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.minimumInteritemSpacing = cellSpacing
         layout.minimumLineSpacing = cellSpacing
-
-        let numberOfColumns: CGFloat = 3
-
-        let totalSpacing = cellSpacing * (numberOfColumns - 1)
-        let safeArea = view.safeAreaLayoutGuide
-        let availableWidth = safeArea.layoutFrame.width - totalSpacing
-        let itemWidth = (availableWidth / numberOfColumns).rounded(.down) // Use rounded(.down) to ensure integer values
-
-        layout.itemSize = CGSize(width: itemWidth, height: itemWidth) // Square cells
-
+        
+        layout.itemSize = CGSize(width: itemWidth, height: itemHeight) // Square cells
+        
         levelsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         levelsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(levelsCollectionView)
-
+        
         NSLayoutConstraint.activate([
-            levelsCollectionView.topAnchor.constraint(equalTo: pickLevelLabel.bottomAnchor, constant: 10),
-            levelsCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            levelsCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            levelsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            levelsCollectionView.topAnchor.constraint(equalTo: pickLevelLabel.bottomAnchor, constant: 50),
+            levelsCollectionView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
+            levelsCollectionView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.8),
+            levelsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -cellSpacing)
         ])
-
+        
         levelsCollectionView.backgroundColor = .clear
         levelsCollectionView.register(LevelCollectionViewCell.self, forCellWithReuseIdentifier: "LevelCell")
         levelsCollectionView.dataSource = self
         levelsCollectionView.delegate = self
-    }    
+    }
 }
 
 extension LevelsViewController: UICollectionViewDataSource {
@@ -126,9 +127,8 @@ extension LevelsViewController: UICollectionViewDelegate {
         if let vc = storyboard.instantiateViewController(withIdentifier: "GameSceneView") as? GameSceneViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
-
-        }
     }
+}
 
 
 extension LevelsViewController: UICollectionViewDelegateFlowLayout {

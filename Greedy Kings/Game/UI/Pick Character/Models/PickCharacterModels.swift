@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Character {
+struct Character: Codable {
     var name: String
     var avatarID: String
     var availableToPick: Bool = true

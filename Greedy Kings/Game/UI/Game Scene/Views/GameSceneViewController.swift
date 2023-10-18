@@ -14,6 +14,7 @@ final class GameSceneViewController: UIViewController {
     private var gameScene: UIView!
     private var audioManager: AudioManager!
     private var hapticsManager: HapticsManager!
+    private var storageManager: StorageManager!
     private var viewanimator1: UIViewPropertyAnimator!
     private var viewanimator1_2: UIViewPropertyAnimator!
     private var viewanimator2: UIViewPropertyAnimator!
@@ -25,49 +26,58 @@ final class GameSceneViewController: UIViewController {
     private var totalTime: Int = 10
     private var isTimerRunning: Bool = false
     private var animation: Animation!
+    var battleModel: BattleModel?
     
     override func viewWillDisappear(_ animated: Bool) {
+       onClose()
+        print("GameSceneViewController got closed")
+    }
+    
+    func onClose(){
         isGameFinished = true
+        if let audioManager {
+            audioManager.stopAudio(type: .background)
+        }
         
-        audioManager.stopAudio(type: .background)
         
-        self.levelBuilder = nil
-        self.hapticsManager = nil
-        self.audioManager = nil
-        self.viewModel = nil
-        self.stopTimer()
-        self.countdownTimer = nil
+        levelBuilder = nil
+        hapticsManager = nil
+        audioManager = nil
+        viewModel = nil
+        stopTimer()
+        countdownTimer = nil
         
+        removeBackgroundModeObserver()
+        dismissToRoot(animated: true)
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewModel = GameSceneViewModel()
         viewModel.onGameFinished = onGameFinished
+        viewModel.onRematch = onRematch
         
         audioManager = AudioManager()
         animation = Animation()
         audioManager.playAudio(type: .background)
         
+        storageManager = StorageManager()
+        
         hapticsManager = HapticsManager()
         
         initializeGameScene()
         
-        buildLevel(level: 1)
+        buildLevel(level: 1, battleModel: battleModel)
         
         startTimer()
         
-        //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-        //            self.levelBuilder = nil
-        //            self.hapticsManager = nil
-        //            self.audioManager = nil
-        //            self.viewModel = nil
-        //            self.stopTimer()
-        //            self.countdownTimer = nil
-        //            self.dismissToRoot(animated: true)
-        //        })
+        addSwitchToBackgroundModeObserver()
     }
 
+    
+    
     
     func initializeGameScene(){
         gameScene = UIView()
@@ -147,13 +157,6 @@ final class GameSceneViewController: UIViewController {
         
         stopTimer()
         
-        //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-        //            if let _ = self.temporaryCurrentPlayer {
-        //                self.onMiss(ammo: ammo, side: toSide)
-        //            }
-        //        })
-        
-
     }
     
     @objc func onLongpressEnd(pressInterval: Double){
@@ -166,7 +169,7 @@ final class GameSceneViewController: UIViewController {
                 let leftWeapon = gameScene.subviews[4]
                 let leftAmmo = gameScene.subviews[6]
                 
-                if let levelBuilder{
+                if let _ = levelBuilder{
                     prepareAndShot(ammo: leftAmmo, weapon: leftWeapon, strength: pressInterval, toSide: .right)
                 }
                 
@@ -174,7 +177,7 @@ final class GameSceneViewController: UIViewController {
             case .player2:
                 let rightWeapon = gameScene.subviews[5]
                 let rightAmmo = gameScene.subviews[7]
-                if let levelBuilder{
+                if let _ = levelBuilder{
                     prepareAndShot(ammo: rightAmmo, weapon: rightWeapon, strength: pressInterval, toSide: .left)
                 }
                 
@@ -224,7 +227,7 @@ final class GameSceneViewController: UIViewController {
         }
     }
     
-    func buildLevel(level: Int){
+    func buildLevel(level: Int, battleModel: BattleModel? = nil){
         levelBuilder = LevelBuilder(level: level)
         
         gameScene = levelBuilder.buildLevel(gameScene: gameScene)
@@ -246,6 +249,15 @@ final class GameSceneViewController: UIViewController {
         
         levelBuilder.updateAmmoVisiblity(for: leftAmmo, isHidden: true)
         levelBuilder.updateAmmoVisiblity(for: rightAmmo, isHidden: true)
+        
+        if let battleModel {
+            print(battleModel)
+            HealthManager.shared.player1health = battleModel.player1Health
+            HealthManager.shared.player2health = battleModel.player2Health
+            
+            self.updateHealthScale(player: .player1)
+            self.updateHealthScale(player: .player2)
+        }
     }
     
     func updateAmmoState(ammo: UIView, weapon: UIView){
@@ -401,13 +413,20 @@ final class GameSceneViewController: UIViewController {
         setTapRecognitionState(disabled: true)
         stopTimer()
         resetTimer()
+        showResultModal()
+        storageManager.remove(key: "game", storageType: .userdefaults)
+    }
+    
+    
+    func showResultModal(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+          if let vc = storyboard.instantiateViewController(withIdentifier: "ResultView") as? ResultViewController {
+              vc.winner = Character(name: "Antonio", avatarID: "3")
+              vc.viewModel = viewModel
+              vc.onMainMenu = onMainMenu
+              navigationController?.present(vc, animated: true)
+          }
 
-      let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "ResultView") as? ResultViewController {
-            vc.winner = Character(name: "Antonio", avatarID: "3")
-            vc.viewModel = viewModel
-            navigationController?.present(vc, animated: true)
-        }
     }
     
     
@@ -416,7 +435,6 @@ final class GameSceneViewController: UIViewController {
             if temporaryCurrentPlayer == viewModel.currentPlayer {
                 
                 let viewOrigin = ammo.frame.origin
-                print("onhit",viewOrigin)
                 
                 animation.play(x: viewOrigin.x, y: viewOrigin.y, type: .hit, referenceView: gameScene)
                 stopTimer()
@@ -432,10 +450,9 @@ final class GameSceneViewController: UIViewController {
                 }
                 
                 hapticsManager.generate(type: .medium)
+                
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
                     if !self.isGameFinished{
-                        
-                        
                         self.updatePlayerState(side: side)
                         self.setTapRecognitionState(disabled: false)
                     }
@@ -450,14 +467,15 @@ final class GameSceneViewController: UIViewController {
         print("onRematch")
     }
     
+    func onMainMenu(){
+        onClose()
+    }
     
     func onMiss(ammo: UIView, side: Side){
         if let temporaryCurrentPlayer {
-            print(temporaryCurrentPlayer)
             if temporaryCurrentPlayer == viewModel.currentPlayer {
                 
                 let viewOrigin = ammo.frame.origin
-                print("onmiss",viewOrigin)
                 
                 animation.play(x: viewOrigin.x, y: viewOrigin.y, type: .miss, referenceView: gameScene)
                 stopTimer()
@@ -476,10 +494,39 @@ final class GameSceneViewController: UIViewController {
         }
     }
     
-    deinit {
-        print("deinit")
+    func addSwitchToBackgroundModeObserver(){
+        NotificationCenter.default.addObserver(self, selector: #selector(onSwitchToBackgroundMode), name: .appDidEnterBackground, object: nil)
+    }
+
+    func removeBackgroundModeObserver(){
+        NotificationCenter.default.removeObserver(self, name: .appDidEnterBackground, object: nil)
+    }
+
+    @objc func onSwitchToBackgroundMode(){
+        print("game state saved")
+        
+        let player1Health = HealthManager.shared.player1health
+        let player2Health = HealthManager.shared.player2health
+        
+        if player1Health != 100 || player2Health != 100 {
+            let battleModel = BattleModel(player1Character: Character(name: "ch1", avatarID: "1"), player1Health: player1Health, player2Character: Character(name: "ch2", avatarID: "2"), player2Health: player2Health, turn: viewModel.currentPlayer!)
+            
+            let encoder = JSONEncoder()
+            if let encodedData = try? encoder.encode(battleModel) {
+                storageManager.set(key: "game", value: encodedData, storageType: .userdefaults)
+            }
+        } else {
+            if let _ = self.storageManager.get(key: "game", storageType: .userdefaults) as? Data {
+                storageManager.remove(key: "game", storageType: .userdefaults)
+            }
+        }
     }
     
+    deinit {
+        print("deinit")
+        removeBackgroundModeObserver()
+    }
+
 }
 
 

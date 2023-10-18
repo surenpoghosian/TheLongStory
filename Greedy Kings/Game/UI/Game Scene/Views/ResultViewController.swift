@@ -19,7 +19,7 @@ final class ResultViewController: UIViewController {
     weak var viewModel: GameSceneViewModel!
     var winner: Character!
     weak var delegate: GameDataDelegate?
-
+    var onMainMenu: (()-> Void)?
     
     
     override func viewDidLoad() {
@@ -69,7 +69,10 @@ final class ResultViewController: UIViewController {
         
         mainMenuButton = createButton(buttonLabel: "Main menu")
         mainMenuButton.addAction(UIAction(handler: {[weak self]_ in
-            
+            if let onMainMenu = self?.onMainMenu {
+                self?.dismiss(animated: true)
+                onMainMenu()
+            }
         }), for: .touchUpInside)
         
         buttonsStackView = UIStackView(arrangedSubviews: [rematchButton, mainMenuButton])

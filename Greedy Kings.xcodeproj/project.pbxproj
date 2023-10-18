@@ -22,8 +22,6 @@
 		336A95192ADC7E2100F43B13 /* animation1.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A95162ADC7E2100F43B13 /* animation1.json */; };
 		336A951A2ADC7E2100F43B13 /* animation2.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A95172ADC7E2100F43B13 /* animation2.json */; };
 		336A951B2ADC7E2100F43B13 /* animation3.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A95182ADC7E2100F43B13 /* animation3.json */; };
-		336A951D2ADC85C400F43B13 /* animation4.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A951C2ADC85C400F43B13 /* animation4.json */; };
-		336A951F2ADDB10900F43B13 /* strengthIndicator.json in Resources */ = {isa = PBXBuildFile; fileRef = 336A951E2ADDB10900F43B13 /* strengthIndicator.json */; };
 		336A95212ADDCAB200F43B13 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95202ADDCAB200F43B13 /* UIViewController.swift */; };
 		33A293532AC44EF6008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
 		33A293542AC44EF6008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
@@ -132,6 +130,9 @@
 		E8F44AD92ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44AD82ADC419900B2568F /* LevelCollectionViewCell.swift */; };
 		E8F44ADA2ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44AD82ADC419900B2568F /* LevelCollectionViewCell.swift */; };
 		E8F44ADB2ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44AD82ADC419900B2568F /* LevelCollectionViewCell.swift */; };
+		E8F44ADF2ADE380400B2568F /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44ADE2ADE380400B2568F /* LeaderboardTableViewCell.swift */; };
+		E8F44AE02ADE380400B2568F /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44ADE2ADE380400B2568F /* LeaderboardTableViewCell.swift */; };
+		E8F44AE12ADE380400B2568F /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44ADE2ADE380400B2568F /* LeaderboardTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,8 +167,6 @@
 		336A95162ADC7E2100F43B13 /* animation1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation1.json; sourceTree = "<group>"; };
 		336A95172ADC7E2100F43B13 /* animation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation2.json; sourceTree = "<group>"; };
 		336A95182ADC7E2100F43B13 /* animation3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation3.json; sourceTree = "<group>"; };
-		336A951C2ADC85C400F43B13 /* animation4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = animation4.json; path = ../../../../Downloads/animation4.json; sourceTree = "<group>"; };
-		336A951E2ADDB10900F43B13 /* strengthIndicator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = strengthIndicator.json; path = ../../../../Downloads/strengthIndicator.json; sourceTree = "<group>"; };
 		336A95202ADDCAB200F43B13 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		33A293522AC44EF6008D9B9C /* LevelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuilder.swift; sourceTree = "<group>"; };
 		33A293552AC44F00008D9B9C /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
@@ -220,6 +219,7 @@
 		E8BBD4732AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		E8F44AD82ADC419900B2568F /* LevelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCollectionViewCell.swift; sourceTree = "<group>"; };
 		E8F44ADC2ADDBBBD00B2568F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		E8F44ADE2ADE380400B2568F /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,11 +251,9 @@
 		336A95062ADC6CB100F43B13 /* AnimationAssets */ = {
 			isa = PBXGroup;
 			children = (
-				336A951E2ADDB10900F43B13 /* strengthIndicator.json */,
 				336A95162ADC7E2100F43B13 /* animation1.json */,
 				336A95172ADC7E2100F43B13 /* animation2.json */,
 				336A95182ADC7E2100F43B13 /* animation3.json */,
-				336A951C2ADC85C400F43B13 /* animation4.json */,
 			);
 			path = AnimationAssets;
 			sourceTree = "<group>";
@@ -675,6 +673,7 @@
 			isa = PBXGroup;
 			children = (
 				E8BBD4262ABFC7B80056E1E8 /* LeaderboardViewController.swift */,
+				E8F44ADE2ADE380400B2568F /* LeaderboardTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -828,12 +827,10 @@
 				336A95192ADC7E2100F43B13 /* animation1.json in Resources */,
 				336A94FC2ADC657500F43B13 /* hit2.mp3 in Resources */,
 				336A951B2ADC7E2100F43B13 /* animation3.json in Resources */,
-				336A951F2ADDB10900F43B13 /* strengthIndicator.json in Resources */,
 				336A95002ADC657500F43B13 /* hit1.mp3 in Resources */,
 				33F00D6F2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard in Resources */,
 				336A94F72ADC657500F43B13 /* menu.mp3 in Resources */,
 				336A94F92ADC657500F43B13 /* hit3.mp3 in Resources */,
-				336A951D2ADC85C400F43B13 /* animation4.json in Resources */,
 				336A94FD2ADC657500F43B13 /* miss.mp3 in Resources */,
 				336A94FF2ADC657500F43B13 /* backgroundMusic1.mp3 in Resources */,
 				336A951A2ADC7E2100F43B13 /* animation2.json in Resources */,
@@ -880,6 +877,7 @@
 				E8F44AD92ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */,
 				E887FCAD2AD073BA0056999E /* GameModels.swift in Sources */,
 				E8BBD46C2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */,
+				E8F44ADF2ADE380400B2568F /* LeaderboardTableViewCell.swift in Sources */,
 				33A2939A2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */,
 				336A95212ADDCAB200F43B13 /* UIViewController.swift in Sources */,
 				E8BBD4272ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
@@ -919,6 +917,7 @@
 				33F00DBC2ABDC44E00A5D5B2 /* GameSceneViewModel.swift in Sources */,
 				E8BBD4142ABFA57B0056E1E8 /* GameSceneViewController.swift in Sources */,
 				33F00DD82ABDC4CE00A5D5B2 /* SettingsModels.swift in Sources */,
+				E8F44AE02ADE380400B2568F /* LeaderboardTableViewCell.swift in Sources */,
 				E8BBD46D2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */,
 				E8BBD4102ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */,
 				E8BBD4302ABFC7F90056E1E8 /* LeaderboardViewModel.swift in Sources */,
@@ -972,6 +971,7 @@
 				E8BBD4192ABFA5B30056E1E8 /* LevelsViewController.swift in Sources */,
 				E8BBD4112ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */,
 				E8BBD41D2ABFA5ED0056E1E8 /* SettingsViewController.swift in Sources */,
+				E8F44AE12ADE380400B2568F /* LeaderboardTableViewCell.swift in Sources */,
 				E8BBD46A2AC461FC0056E1E8 /* PickCharacterViewController.swift in Sources */,
 				33F00DBD2ABDC44E00A5D5B2 /* GameSceneViewModel.swift in Sources */,
 				E8BBD4292ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
@@ -1145,7 +1145,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SZF3LG898Y;
+				DEVELOPMENT_TEAM = 4CNWJ7UXMX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Greedy Kings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1173,7 +1173,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SZF3LG898Y;
+				DEVELOPMENT_TEAM = 4CNWJ7UXMX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Greedy Kings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

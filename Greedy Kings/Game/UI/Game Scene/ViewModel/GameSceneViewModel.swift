@@ -10,11 +10,9 @@ import Foundation
 final class GameSceneViewModel {
     
     private var gameManager: GameManager
+    private(set) var currentPlayer: Player?
     var resetAmmo: (() -> Void)?
     var onGameFinished: (() -> Void)?
-//    var onRematch: (() -> Void)?
-    
-    private(set) var currentPlayer: Player?
 
     init(){
         gameManager = GameManager()

@@ -16,6 +16,7 @@ final class GameManager {
         startGame()
     }
     
+    // set initial data
     func initializeBattleResult() {
         battleResult = BattleResult(player1Shots: 0,
                                     player1Hits: 0,
@@ -23,10 +24,12 @@ final class GameManager {
                                     player2Hits: 0)
     }
     
+    // give turn to the first player in the beginning
     func startGame() {
         currentPlayer = .player1
     }
     
+    // switch player turn
     func switchPlayerTurn() {
         if currentPlayer == .player1 {
             currentPlayer = .player2
@@ -35,17 +38,16 @@ final class GameManager {
         }
     }
     
+    // updates hits score
     func updateHits() {
         if currentPlayer == .player1 {
             battleResult.player1Hits += 1
-//            checkIsGameFinished()
-            
         } else {
             battleResult.player2Hits += 1
         }
-//        checkIsGameFinished()
     }
     
+    // update shots
     func updateShots() {
         if currentPlayer == .player1 {
             battleResult.player1Shots += 1
@@ -55,17 +57,19 @@ final class GameManager {
         }
     }
     
+    // check is the game finished
     func checkIsGameFinished() -> BattleResult? {
         if HealthManager.shared.player1health <= 0 || HealthManager.shared.player2health <= 0 {
             setWinner(winner: currentPlayer)
-//            gameFinished()
             return battleResult
+            
         } else {
             switchPlayerTurn()
         }
         return nil
     }
     
+    // update health of player after hit
     func updateHealth() {
         if currentPlayer == .player1 {
             HealthManager.shared.player2health -= 20
@@ -74,14 +78,12 @@ final class GameManager {
         }
     }
     
+    // set the winner to the player
     func setWinner(winner: Player) {
         battleResult.winner = winner
     }
     
-    func onGameInterrupted() {
-        
-    }
-    
+    // reset health and battle stats
     func resetHealth() {
         HealthManager.shared.player1health = 100
         HealthManager.shared.player1health = 100

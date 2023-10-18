@@ -2,7 +2,7 @@
 //  MainMenuViewController.swift
 //  Greedy Kings
 //
-//  Created by Garik Hovsepian on 24.09.23.
+//  Created by Garik Hovsepyan on 24.09.23.
 //
 
 import UIKit
@@ -22,10 +22,9 @@ final class MainMenuViewController: UIViewController {
     private var storageManager: StorageManager!
     
     var areHiddenButtonsOpen = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         viewModel = MainMenuViewModel()
         storageManager = StorageManager()
         setupUI()
@@ -34,25 +33,21 @@ final class MainMenuViewController: UIViewController {
         checkForUnfinishedGame()
     }
     
+    // Setting up animation of settings buttons
     private func toggleHiddenButtons() {
         UIView.animate(withDuration: 0.3) { [weak self] in
             guard let self = self else { return }
             
             if self.areHiddenButtonsOpen {
-                // If hidden buttons are open, hide them
                 self.soundMuteButton.isHidden = true
                 self.musicMuteButton.isHidden = true
-                // Reset their positions (move them outside the circular button)
                 self.soundMuteButton.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.musicMuteButton.transform = CGAffineTransform(translationX: 0, y: 0)
             } else {
-                // If hidden buttons are closed, reveal them with an animation
                 self.soundMuteButton.isHidden = false
                 self.musicMuteButton.isHidden = false
-                // Animate their positions (move them back to their original positions)
                 self.soundMuteButton.transform = CGAffineTransform(translationX: -50, y: -50)
                 self.musicMuteButton.transform = CGAffineTransform(translationX: 50, y: -50)
-                
                 self.soundMuteButton.alpha = 1
                 self.musicMuteButton.alpha = 1
             }
@@ -60,6 +55,7 @@ final class MainMenuViewController: UIViewController {
         }
     }
     
+    //set view's background color and  buttons bg photos
     private func setupUI() {
         
         self.view.backgroundColor = viewModel.backgroundColor
@@ -80,13 +76,11 @@ final class MainMenuViewController: UIViewController {
         musicMuteButton.alpha = 0
     }
     
+    //set buttons UI and actions
     private func setupButtons() {
         
-        // Set the initial hidden buttons' properties here
         soundMuteButton.isHidden = true
         musicMuteButton.isHidden = true
-        
-        // Set their initial positions, for example, move them outside the circular button.
         soundMuteButton.transform = CGAffineTransform(translationX: 0, y: 0)
         musicMuteButton.transform = CGAffineTransform(translationX: 0, y: 0)
         
@@ -129,6 +123,7 @@ final class MainMenuViewController: UIViewController {
         
     }
     
+    //push the given view controller
     private func pushViewController<T: UIViewController>(identifier: String, viewControllerType: T.Type) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: identifier) as? T {

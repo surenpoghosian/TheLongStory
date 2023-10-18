@@ -2,7 +2,7 @@
 //  GameModels.swift
 //  Greedy Kings
 //
-//  Created by Garik Hovsepian on 04.10.23.
+//  Created by Garik Hovsepyan on 04.10.23.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  PickPlayerModels.swift
 //  Greedy Kings
 //
-//  Created by Garik Hovsepian on 27.09.23.
+//  Created by Garik Hovsepyan on 27.09.23.
 //
 
 import Foundation

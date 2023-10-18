@@ -2,7 +2,7 @@
 //  HealthManager.swift
 //  Greedy Kings
 //
-//  Created by Garik Hovsepian on 06.10.23.
+//  Created by Garik Hovsepyan on 06.10.23.
 //
 
 import Foundation

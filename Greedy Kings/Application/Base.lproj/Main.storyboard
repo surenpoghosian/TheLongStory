@@ -255,6 +255,9 @@
                             <constraint firstItem="0Xe-XT-gYY" firstAttribute="leading" secondItem="po3-lO-Vgj" secondAttribute="leadingMargin" id="92h-y4-4Le"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="0Xe-XT-gYY" id="z8f-n7-f4I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgx-Mv-wP3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

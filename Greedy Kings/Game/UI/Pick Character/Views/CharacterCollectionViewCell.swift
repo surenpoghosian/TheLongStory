@@ -8,7 +8,6 @@
 import UIKit
 
 final class CharacterCollectionViewCell: UICollectionViewCell {
-    
     let characterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit

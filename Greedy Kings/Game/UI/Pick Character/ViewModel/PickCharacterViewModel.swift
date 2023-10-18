@@ -18,6 +18,7 @@ final class PickCharacterViewModel {
     private var firstPlayerCharacter: Character?
     private var secondPlayerCharacter: Character?
     
+    //check the pick character and change the state
     func selectCharacter(_ character: Character) {
         if firstPlayerCharacter == nil {
             firstPlayerCharacter = character

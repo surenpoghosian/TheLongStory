@@ -13,20 +13,14 @@ class LevelsViewController: UIViewController {
     private var viewModel: LevelsViewModel!
     private var levelsData: [LevelsData]!
     @IBOutlet weak var backButton: UIButton!
-    
-    var testData: [Character] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         viewModel = LevelsViewModel()
         setupUI()
+        setupLevelsData()
         setupPickLevelLabel(hintText: "Pick the level")
         setupLevelsCollectionView()
         setupBackButton()
-        
-        levelsData = [LevelsData(name: "Normal", iconID: "1", type: .normal),
-                      LevelsData(name: "Halloween", iconID: "2", type: .halloween),
-                      LevelsData(name: "Moon", iconID: "3", type: .moon)]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,10 +28,20 @@ class LevelsViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    // setup UI
     private func setupUI() {
         view.backgroundColor = UIColor(named: "backgroundColor")
         navigationItem.hidesBackButton = true
     }
+    
+    // setup levels data for UICollectionView
+    private func setupLevelsData() {
+        levelsData = [LevelsData(name: "Normal", iconID: "1", type: .normal),
+                      LevelsData(name: "Halloween", iconID: "2", type: .halloween),
+                      LevelsData(name: "Moon", iconID: "3", type: .moon)]
+    }
+    
+    // setup custom navigation back button
     private func setupBackButton() {
         backButton.setBackgroundImage(UIImage(named: "leftArrowIcon"), for: .normal)
         backButton.addAction(UIAction(handler: {[weak self] _ in
@@ -46,6 +50,7 @@ class LevelsViewController: UIViewController {
         self.view.bringSubviewToFront(backButton)
     }
     
+    // setup header label
     private func setupPickLevelLabel(hintText: String) {
         pickLevelLabel = UILabel()
         pickLevelLabel.text = hintText.uppercased()
@@ -62,24 +67,24 @@ class LevelsViewController: UIViewController {
         ])
     }
     
+    // setup level picker UICollectionView
     private func setupLevelsCollectionView() {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        
         let numberOfColumns: CGFloat = 3
         let cellSpacing: CGFloat = 10
         let safeArea = view.safeAreaLayoutGuide
         
-        // Calculate the item size
+        // calculate the item size
         let availableWidth = view.frame.width * 0.8
         let itemWidth = availableWidth / numberOfColumns - numberOfColumns * cellSpacing
         let itemHeight = itemWidth
         
+        // setup layout settings
+        layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.minimumInteritemSpacing = cellSpacing
         layout.minimumLineSpacing = cellSpacing
-        
-        layout.itemSize = CGSize(width: itemWidth, height: itemHeight) // Square cells
+        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         
         levelsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         levelsCollectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -128,10 +133,5 @@ extension LevelsViewController: UICollectionViewDelegate {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-}
-
-
-extension LevelsViewController: UICollectionViewDelegateFlowLayout {
-    
 }
 

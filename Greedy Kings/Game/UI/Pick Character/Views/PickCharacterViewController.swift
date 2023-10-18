@@ -8,7 +8,6 @@
 import UIKit
 
 final class PickCharacterViewController: UIViewController {
-    
     private var characterCollectionView: UICollectionView!
     private var player1Container: UIImageView!
     private var player2Container: UIImageView!
@@ -27,6 +26,7 @@ final class PickCharacterViewController: UIViewController {
     
     var characterData: [Character] = []
     
+    //hide default navigation bar
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -35,28 +35,35 @@ final class PickCharacterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = PickCharacterViewModel()
+        setupCharacterData()
         setupUI()
         setupPickedCharactersStackView()
         setupButtonsStackView()
         setupPickCharacterCollectionView()
         setupBackButton()
-        
-        characterData = [Character(name: "Jobs", avatarID: "1"),
-                         Character(name: "Jobs", avatarID: "2"),
-                         Character(name: "Jobs", avatarID: "3"),
-                         Character(name: "Jobs", avatarID: "4"),
-                         Character(name: "Jobs", avatarID: "5"),
-                         Character(name: "Jobs", avatarID: "6"),
-                         Character(name: "Jobs", avatarID: "7"),
-                         Character(name: "Jobs", avatarID: "8"),
-                         Character(name: "Jobs", avatarID: "9"),
-                         Character(name: "Jobs", avatarID: "10")]
-        
     }
+    
+    // setup view's UI, background color
     private func setupUI() {
         view.backgroundColor = UIColor(named: "backgroundColor")
         navigationItem.hidesBackButton = true
     }
+    
+    // set character data
+    private func setupCharacterData() {
+        characterData = [Character(name: "Arthur", avatarID: "1"),
+                         Character(name: "Richard", avatarID: "2"),
+                         Character(name: "Henry", avatarID: "3"),
+                         Character(name: "George", avatarID: "4"),
+                         Character(name: "William", avatarID: "5"),
+                         Character(name: "Edward", avatarID: "6"),
+                         Character(name: "Charles", avatarID: "7"),
+                         Character(name: "James", avatarID: "8"),
+                         Character(name: "Louis", avatarID: "9"),
+                         Character(name: "Alexander", avatarID: "10")]
+    }
+    
+    // setup custom back button for navigation
     private func setupBackButton() {
         backButton.setBackgroundImage(UIImage(named: "leftArrowIcon"), for: .normal)
         backButton.addAction(UIAction(handler: {[weak self] _ in
@@ -65,6 +72,7 @@ final class PickCharacterViewController: UIViewController {
         view.bringSubviewToFront(backButton)
     }
     
+    // setup picked characters stack view
     private func setupPickedCharactersStackView() {
         player1Container = UIImageView(image: viewModel.cellBackground)
         player1Container.contentMode = .scaleAspectFit
@@ -72,7 +80,6 @@ final class PickCharacterViewController: UIViewController {
         player2Container.contentMode = .scaleAspectFit
         vsTitleImageView = UIImageView(image: viewModel.vsTitleImage)
         vsTitleImageView.contentMode = .scaleAspectFit
-        
         
         pickedCharactersStackView = UIStackView(arrangedSubviews: [player1Container,
                                                                    vsTitleImageView,
@@ -97,24 +104,20 @@ final class PickCharacterViewController: UIViewController {
             pickedCharactersStackView.heightAnchor.constraint(equalToConstant: view.safeAreaLayoutGuide.layoutFrame.height / 4)])
     }
     
+    // setup character picker collection view
     private func setupPickCharacterCollectionView() {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
         
+        // calculate the size of cells
         let numberOfColumns: CGFloat = 5
-        //let numberOfRows: CGFloat = 2
-        
-        // Calculate the spacing between cells based on the screen size
         let cellSpacing: CGFloat = 10
-        let horizontalPadding: CGFloat = buttonsStackView.frame.width * 0.8
-        
         let safeArea = view.safeAreaLayoutGuide
-        
-        // Calculate the item size
         let availableWidth = view.frame.width * 0.6
         let itemWidth = availableWidth / numberOfColumns - 2 * numberOfColumns
         let itemHeight = itemWidth
         
+        // set layout settings
+        layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.minimumInteritemSpacing = cellSpacing
         layout.minimumLineSpacing = cellSpacing
@@ -138,8 +141,8 @@ final class PickCharacterViewController: UIViewController {
         characterCollectionView.delegate = self
     }
     
+    // setup "next" and "reset" buttons for character picker collection view
     private func setupButtonsStackView() {
-        
         nextButton = UIButton(type: .custom)
         nextButton.setTitle("Next", for: .normal)
         nextButton.setTitleColor(.black.withAlphaComponent(0.5), for: .normal)
@@ -173,17 +176,18 @@ final class PickCharacterViewController: UIViewController {
                 subview.removeFromSuperview()
             }
             
-            // Clear picked characters for both players
+            // reset picked characters for both players
             self?.pickedCharacterForPlayer1 = nil
             self?.pickedCharacterForPlayer2 = nil
             
-            // Enable all characters for picking again
+            // enable all characters for picking
             for index in 0..<(self?.characterData.count ?? 0) {
                 self?.characterData[index].availableToPick = true
             }
             self?.selectedPlayer = 1
             self?.nextButton.alpha = 0.5
-            // Reload the collection view to see changes
+            
+            // reload the collection view to see changes
             self?.characterCollectionView.reloadData()
         }), for: .touchUpInside)
         
@@ -226,6 +230,7 @@ extension PickCharacterViewController: UICollectionViewDataSource {
         
         cell.isUserInteractionEnabled = character.availableToPick
         
+        // check the availability of character for picking and change its ui state
         if character.availableToPick {
             cell.nameLabel.alpha = 1
             cell.characterImageView.alpha = 0.7
@@ -242,69 +247,62 @@ extension PickCharacterViewController: UICollectionViewDataSource {
 extension PickCharacterViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? CharacterCollectionViewCell
-
+        
         if cell != nil {
             let sectionOffset = indexPath.section * (characterData.count / 2)
             let selectedCharacter = characterData[sectionOffset + indexPath.row]
-
+            
             if selectedCharacter.availableToPick {
                 if selectedPlayer == 1 {
                     if pickedCharacterForPlayer1 == nil {
+                        
+                        // create a new UIImageView for the picked character and add it as an overlay
                         let characterImageView = UIImageView(image: UIImage(named: selectedCharacter.avatarID))
                         characterImageView.contentMode = .scaleAspectFit
                         player1Container.addSubview(characterImageView)
-
+                        
                         characterImageView.translatesAutoresizingMaskIntoConstraints = false
-
+                        
                         NSLayoutConstraint.activate([
                             characterImageView.topAnchor.constraint(equalTo: player1Container.topAnchor, constant: 10),
                             characterImageView.leftAnchor.constraint(equalTo: player1Container.leftAnchor, constant: 10),
                             characterImageView.rightAnchor.constraint(equalTo: player1Container.rightAnchor, constant: -10),
                             characterImageView.bottomAnchor.constraint(equalTo: player1Container.bottomAnchor, constant: -10)
                         ])
-
+                        
                         pickedCharacterForPlayer1 = selectedCharacter
-
+                        
                         cell?.alpha = 0.5
-
+                        
                         characterData[sectionOffset + indexPath.row].availableToPick = false
                         selectedPlayer = 2
                     }
                 } else if selectedPlayer == 2 {
                     if pickedCharacterForPlayer2 == nil {
-                        // Create a new UIImageView for the picked character and add it as an overlay
+                        
+                        // create a new UIImageView for the picked character and add it as an overlay
                         let characterImageView = UIImageView(image: UIImage(named: selectedCharacter.avatarID))
                         characterImageView.contentMode = .scaleAspectFit
                         player2Container.addSubview(characterImageView)
-
+                        
                         characterImageView.translatesAutoresizingMaskIntoConstraints = false
-
+                        
                         NSLayoutConstraint.activate([
                             characterImageView.topAnchor.constraint(equalTo: player2Container.topAnchor, constant: 10),
                             characterImageView.leftAnchor.constraint(equalTo: player2Container.leftAnchor, constant: 10),
                             characterImageView.rightAnchor.constraint(equalTo: player2Container.rightAnchor, constant: -10),
                             characterImageView.bottomAnchor.constraint(equalTo: player2Container.bottomAnchor, constant: -10)
                         ])
-
+                        
                         pickedCharacterForPlayer2 = selectedCharacter
-
-                        // Set the cell's alpha to 0.5
                         cell?.alpha = 0.5
-
-                        // Update the availability of the selected character
                         characterData[sectionOffset + indexPath.row].availableToPick = false
-
-                        // Enable the "Next" button
                         nextButton.alpha = 1.0
-
-                        // Switch back to the first player
                         selectedPlayer = 1
                     }
                 }
-
                 collectionView.reloadData()
             }
         }
     }
-
 }

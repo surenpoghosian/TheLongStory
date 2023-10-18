@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Player {
+enum Player: Codable {
     case player1
     case player2
 }
@@ -18,4 +18,14 @@ struct BattleResult {
     var player2Shots: Int
     var player2Hits: Int
     var winner: Player?
+}
+
+struct BattleModel: Codable {
+    var player1Character: Character
+    var player1Health: Double
+    
+    var player2Character: Character
+    var player2Health: Double
+    
+    var turn: Player
 }

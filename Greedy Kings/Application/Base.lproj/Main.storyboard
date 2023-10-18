@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zO2-SL-dRN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zO2-SL-dRN">
     <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,10 +17,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="qOI-Mf-xiJ">
-                                <rect key="frame" x="329" y="207" width="194" height="145"/>
+                                <rect key="frame" x="329" y="122" width="194" height="230"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Qa-pR-5CE">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nlC-nK-YQC">
                                         <rect key="frame" x="0.0" y="0.0" width="194" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="nvl-Jz-jXZ"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Continue">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.57708999999999999" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="26" name="Futura-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Qa-pR-5CE">
+                                        <rect key="frame" x="0.0" y="85" width="194" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="DZR-8V-X9Q"/>
                                         </constraints>
@@ -39,7 +56,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kwY-9s-o0h">
-                                        <rect key="frame" x="0.0" y="85" width="194" height="60"/>
+                                        <rect key="frame" x="0.0" y="170" width="194" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="SL9-tT-ctV"/>
                                         </constraints>
@@ -74,7 +91,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="dRl-sM-nHM">
-                                <rect key="frame" x="79" y="47" width="694" height="104"/>
+                                <rect key="frame" x="79" y="35" width="694" height="31"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIk-J3-eCZ">
                                 <rect key="frame" x="733" y="312" width="40" height="40"/>
@@ -106,6 +123,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZNe-kh-WcN"/>
                     <connections>
+                        <outlet property="continueButton" destination="nlC-nK-YQC" id="ocK-qC-5tE"/>
                         <outlet property="leaderboardButton" destination="kwY-9s-o0h" id="ADL-Zc-QYO"/>
                         <outlet property="musicMuteButton" destination="dIk-J3-eCZ" id="qn6-Af-2Lo"/>
                         <outlet property="playButton" destination="2Qa-pR-5CE" id="SMZ-nA-uMA"/>
@@ -123,7 +141,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zO2-SL-dRN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UDn-6A-caF">
-                        <rect key="frame" x="0.0" y="0.0" width="852" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -265,7 +283,7 @@
     <resources>
         <image name="logo" width="2248" height="361"/>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

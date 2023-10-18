@@ -9,21 +9,29 @@ import UIKit
 
 final class MainMenuViewController: UIViewController {
     
+
+    @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var leaderboardButton: UIButton!
     @IBOutlet weak var soundMuteButton: UIButton!
     @IBOutlet weak var musicMuteButton: UIButton!
     
+    
     private var viewModel: MainMenuViewModel!
+    private var storageManager: StorageManager!
+    
     var areHiddenButtonsOpen = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel = MainMenuViewModel()
+        storageManager = StorageManager()
         setupUI()
         setupButtons()
+        
+        checkForUnfinishedGame()
     }
     
     private func toggleHiddenButtons() {
@@ -56,10 +64,12 @@ final class MainMenuViewController: UIViewController {
         
         self.view.backgroundColor = viewModel.backgroundColor
         playButton.setBackgroundImage(viewModel.buttonImage, for: .normal)
+        continueButton.setBackgroundImage(viewModel.buttonImage, for: .normal)
         settingsButton.setBackgroundImage(viewModel.settingsIcon, for: .normal)
         leaderboardButton.setBackgroundImage(viewModel.buttonImage, for: .normal)
         
         playButton.setBackgroundImage(viewModel.buttonTouchedImage, for: .highlighted)
+        continueButton.setBackgroundImage(viewModel.buttonTouchedImage, for: .highlighted)
         settingsButton.setBackgroundImage(viewModel.settingsIconTouched, for: .highlighted)
         leaderboardButton.setBackgroundImage(viewModel.buttonTouchedImage, for: .highlighted)
 
@@ -79,6 +89,23 @@ final class MainMenuViewController: UIViewController {
         // Set their initial positions, for example, move them outside the circular button.
         soundMuteButton.transform = CGAffineTransform(translationX: 0, y: 0)
         musicMuteButton.transform = CGAffineTransform(translationX: 0, y: 0)
+        
+        continueButton.addAction(UIAction(handler: { [weak self]_ in
+            
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let vc = storyboard.instantiateViewController(withIdentifier: "GameSceneView") as? GameSceneViewController {
+            if let data = self?.storageManager.get(key: "game", storageType: .userdefaults) as? Data {
+                let decoder = JSONDecoder()
+                if let battleModel = try? decoder.decode(BattleModel.self, from: data) {
+                    vc.battleModel = battleModel
+                }
+            }
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+
+            
+        }), for: .touchUpInside)
         
         playButton.addAction(UIAction(handler: { [weak self]_ in
             self?.pushViewController(identifier: "PickCharacterView", viewControllerType: PickCharacterViewController.self)
@@ -106,6 +133,16 @@ final class MainMenuViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: identifier) as? T {
             navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    
+    func checkForUnfinishedGame(){
+        let savedGameState = storageManager.get(key: "game", storageType: .userdefaults)
+        if let _ = savedGameState {
+            continueButton.isHidden = false
+        } else {
+            continueButton.isHidden = true
         }
     }
 }

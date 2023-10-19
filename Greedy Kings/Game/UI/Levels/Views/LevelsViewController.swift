@@ -40,9 +40,9 @@ class LevelsViewController: UIViewController {
     
     // setup levels data for UICollectionView
     private func setupLevelsData() {
-        levelsData = [LevelsData(name: "Normal", iconID: "1", type: .normal),
-                      LevelsData(name: "Halloween", iconID: "2", type: .halloween),
-                      LevelsData(name: "Moon", iconID: "3", type: .moon)]
+        levelsData = [LevelsData(name: "Normal", iconID: "NormalIcon", type: .normal),
+                      LevelsData(name: "Halloween", iconID: "HalloweenIcon", type: .halloween),
+                      LevelsData(name: "Space", iconID: "SpaceIcon", type: .space)]
     }
     
     // setup custom navigation back button
@@ -134,6 +134,8 @@ extension LevelsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "GameSceneView") as? GameSceneViewController {
+            print(levelsData[indexPath.row].type)
+            vc.levelType = levelsData[indexPath.row].type
             vc.pickedCharacters = pickedCharacters
             self.navigationController?.pushViewController(vc, animated: true)
         }

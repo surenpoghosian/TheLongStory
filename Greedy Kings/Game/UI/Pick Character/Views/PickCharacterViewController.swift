@@ -21,6 +21,7 @@ final class PickCharacterViewController: UIViewController {
     private var pickedCharacterForPlayer2: Character?
     private var viewModel: PickCharacterViewModel!
     @IBOutlet weak var backButton: UIButton!
+    private var storageManager: StorageManager!
     
     weak var delegate: GameDataDelegate?
     
@@ -34,6 +35,7 @@ final class PickCharacterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        storageManager = StorageManager()
         viewModel = PickCharacterViewModel()
         setupCharacterData()
         setupUI()
@@ -41,6 +43,7 @@ final class PickCharacterViewController: UIViewController {
         setupButtonsStackView()
         setupPickCharacterCollectionView()
         setupBackButton()
+        
     }
     
     // setup view's UI, background color
@@ -51,16 +54,14 @@ final class PickCharacterViewController: UIViewController {
     
     // set character data
     private func setupCharacterData() {
-        characterData = [Character(name: "Arthur", avatarID: "1"),
-                         Character(name: "Richard", avatarID: "2"),
-                         Character(name: "Henry", avatarID: "3"),
-                         Character(name: "George", avatarID: "4"),
-                         Character(name: "William", avatarID: "5"),
-                         Character(name: "Edward", avatarID: "6"),
-                         Character(name: "Charles", avatarID: "7"),
-                         Character(name: "James", avatarID: "8"),
-                         Character(name: "Louis", avatarID: "9"),
-                         Character(name: "Alexander", avatarID: "10")]
+        if let characters = storageManager.get(key: "characters", storageType: .userdefaults) as? Data {
+            let decoder = JSONDecoder()
+            if let characters = try? decoder.decode([Character].self, from: characters) {
+                print(characters)
+                characterData = characters
+            }
+        }
+        
     }
     
     // setup custom back button for navigation
@@ -91,7 +92,6 @@ final class PickCharacterViewController: UIViewController {
         view.addSubview(pickedCharactersStackView)
         
         NSLayoutConstraint.activate([
-            
             pickedCharactersStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 25),
             pickedCharactersStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             pickedCharactersStackView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.8),

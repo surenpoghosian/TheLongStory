@@ -29,6 +29,7 @@ final class GameSceneViewController: UIViewController {
     private var animation: Animation!
     var battleModel: BattleModel?
     var pickedCharacters: PickedCharacters?
+    var levelType: LevelType?
     
     private var isGameFinished: Bool = false
     private var isTimerRunning: Bool = false
@@ -78,7 +79,7 @@ final class GameSceneViewController: UIViewController {
         
         initializeGameScene()
         
-        buildLevel(level: 1, battleModel: battleModel)
+        buildLevel(scene: levelType!, battleModel: battleModel)
 
         setCharactersIcons(characters: pickedCharacters)
 
@@ -273,8 +274,8 @@ final class GameSceneViewController: UIViewController {
           }
     }
     
-    func buildLevel(level: Int, battleModel: BattleModel? = nil){
-        levelBuilder = LevelBuilder(level: level)
+    func buildLevel(scene: LevelType, battleModel: BattleModel? = nil){
+        levelBuilder = LevelBuilder(type: scene)
         
         gameScene = levelBuilder.buildLevel(gameScene: gameScene)
         view.addSubview(gameScene)
@@ -363,10 +364,11 @@ final class GameSceneViewController: UIViewController {
             }
         }
         
+        resetTimer()
         if !isPaused {
             startTimer()
         }
-        resetTimer()
+        
     }
     
     func setTapRecognitionState(disabled state: Bool){
@@ -478,9 +480,37 @@ final class GameSceneViewController: UIViewController {
         
         let winner = determineWinner(battleResult: battleResult)
         showResultModal(winner: winner)
+        updateWins(name: winner.name, increment: 1)
         
         storageManager.remove(key: "game", storageType: .userdefaults)
     }
+    
+    
+    func updateWins(name: String, increment: Int) {
+        if let data = storageManager.get(key: "leaderboard", storageType: .userdefaults) as? Data {
+            let decoder = JSONDecoder()
+            if let leaderboard = try? decoder.decode([LeaderboardItem].self, from: data) {
+                let newLeaderBoard = increaseWins(for: name, in: leaderboard)
+                
+                let encoder = JSONEncoder()
+                if let encodedData = try? encoder.encode(newLeaderBoard) {
+                    storageManager.set(key: "leaderboard", value: encodedData, storageType: .userdefaults)
+                }
+            }
+        }
+        
+    }
+    
+    func increaseWins(for playerName: String, in leaderboardItems: [LeaderboardItem]) -> [LeaderboardItem] {
+        return leaderboardItems.map { item in
+            var updatedItem = item
+            if item.playerName == playerName {
+                updatedItem.wins += 1
+            }
+            return updatedItem
+        }
+    }
+    
     
     func determineWinner(battleResult: BattleResult) -> Character {
         var winner: Character

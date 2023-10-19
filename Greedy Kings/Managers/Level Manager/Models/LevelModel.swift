@@ -15,6 +15,7 @@ struct Level {
     var castleRight: Castle
     var obstacle: Obstacle
     var scene: Scene
+    var type: LevelType
 }
 
 // Castle and its parameters
@@ -103,7 +104,7 @@ enum Difficulty {
 
 // Enum for specifying level category
 enum LevelType {
-    case moon
+    case space
     case halloween
     case normal
 }

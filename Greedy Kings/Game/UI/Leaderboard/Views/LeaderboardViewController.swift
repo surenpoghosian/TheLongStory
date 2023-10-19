@@ -13,9 +13,11 @@ final class LeaderboardViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     private var leaderboardData: [LeaderboardItem] = []
     private let medalEmojis = ["🥇", "🥈", "🥉"]
+    private var storageManager: StorageManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        storageManager = StorageManager()
         setupUI()
         setupBackButton()
         setupLeaderboardData()
@@ -29,6 +31,29 @@ final class LeaderboardViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    
+    private func checkLeaderboardDataExistence(){
+        if storageManager.get(key: "leaderboard", storageType: .userdefaults) == nil {
+            if let data = storageManager.get(key: "characters", storageType: .userdefaults) as? Data {
+                let decoder = JSONDecoder()
+                if let characters = try? decoder.decode([Character].self, from: data) {
+
+                    let leaderboardData = characters.map { character in
+                        LeaderboardItem(playerName: character.name, wins: 0, photoName: character.avatarID)
+                    }
+                    
+                    let encoder = JSONEncoder()
+                    if let encodedData = try? encoder.encode(leaderboardData) {
+                        storageManager.set(key: "leaderboard", value: encodedData, storageType: .userdefaults)
+                    }
+
+                }
+            }
+
+        }
+    }
+
+    
     // setup leaderboard UI
     private func setupUI() {
         view.backgroundColor = UIColor(named: "backgroundColor")
@@ -36,13 +61,23 @@ final class LeaderboardViewController: UIViewController {
     
     // setup leaderboard data for UITableView
     private func setupLeaderboardData() {
-        leaderboardData = [
-            LeaderboardItem(playerName: "John Doe", wins: 10, photoName: "1"),
-            LeaderboardItem(playerName: "Jane Smith", wins: 8, photoName: "2"),
-            LeaderboardItem(playerName: "Alice Johnson", wins: 7, photoName: "3"),
-            LeaderboardItem(playerName: "Alice Johnson", wins: 7, photoName: "4"),
-            LeaderboardItem(playerName: "Alice Johnson", wins: 7, photoName: "5"),
-            LeaderboardItem(playerName: "Alice Johnson", wins: 7, photoName: "6")]
+        checkLeaderboardDataExistence()
+        
+        if let data = storageManager.get(key: "leaderboard", storageType: .userdefaults) as? Data {
+            let decoder = JSONDecoder()
+            if let leaderboard = try? decoder.decode([LeaderboardItem].self, from: data) {
+                let sortedLeaderboard = leaderboard.sorted { (item1, item2) in
+                    if item1.wins == 0 && item2.wins == 0 {
+                        return item1.playerName < item2.playerName
+                    } else {
+                        return item1.wins > item2.wins
+                    }
+                }
+                
+                leaderboardData = sortedLeaderboard
+            }
+        }
+        
     }
     
     // setup custom back button for navigation
@@ -99,10 +134,14 @@ extension LeaderboardViewController: UITableViewDataSource {
         return leaderboardData.count
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LeaderboardCell", for: indexPath) as! LeaderboardCell
         let leaderboardItem = leaderboardData[indexPath.row]
-        
+        cell.selectionStyle = .none
         // change the place labels for the fisrt three places
         if indexPath.row < 3 {
             cell.placeLabel.text = medalEmojis[indexPath.row]
@@ -126,7 +165,7 @@ extension LeaderboardViewController: UITableViewDelegate {
     
 }
 
-struct LeaderboardItem {
+struct LeaderboardItem: Codable {
     var playerName: String
     var wins: Int
     var photoName: String

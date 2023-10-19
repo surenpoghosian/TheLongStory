@@ -9,31 +9,55 @@ import UIKit
 
 final class MainMenuViewController: UIViewController {
     
-
+    
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var leaderboardButton: UIButton!
     @IBOutlet weak var soundMuteButton: UIButton!
     @IBOutlet weak var musicMuteButton: UIButton!
-    
-    
-    private var viewModel: MainMenuViewModel!
     private var storageManager: StorageManager!
     
+    private var viewModel: MainMenuViewModel!
+    
     var areHiddenButtonsOpen = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = MainMenuViewModel()
         storageManager = StorageManager()
         setupUI()
         setupButtons()
+        storageManager = StorageManager()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkForUnfinishedGame()
+        checkAndSetupCharactersData()
+    }
+
+    
+    private func checkAndSetupCharactersData(){
+        if storageManager.get(key: "characters", storageType: .userdefaults) == nil {
+            let characters = [Character(name: "Arthur", avatarID: "1"),
+                              Character(name: "Richard", avatarID: "2"),
+                              Character(name: "Henry", avatarID: "3"),
+                              Character(name: "George", avatarID: "4"),
+                              Character(name: "William", avatarID: "5"),
+                              Character(name: "Edward", avatarID: "6"),
+                              Character(name: "Charles", avatarID: "7"),
+                              Character(name: "James", avatarID: "8"),
+                              Character(name: "Louis", avatarID: "9"),
+                              Character(name: "Alexander", avatarID: "10")]
+            
+            
+            let encoder = JSONEncoder()
+            if let encodedData = try? encoder.encode(characters) {
+                storageManager.set(key: "characters", value: encodedData, storageType: .userdefaults)
+            }
+        }
     }
     
     // Setting up animation of settings buttons
@@ -71,7 +95,7 @@ final class MainMenuViewController: UIViewController {
         continueButton.setBackgroundImage(viewModel.buttonTouchedImage, for: .highlighted)
         settingsButton.setBackgroundImage(viewModel.settingsIconTouched, for: .highlighted)
         leaderboardButton.setBackgroundImage(viewModel.buttonTouchedImage, for: .highlighted)
-
+        
         musicMuteButton.setBackgroundImage(viewModel.musicOnIcon, for: .normal)
         soundMuteButton.setBackgroundImage(viewModel.soundsOnIcon, for: .normal)
         
@@ -89,18 +113,18 @@ final class MainMenuViewController: UIViewController {
         
         continueButton.addAction(UIAction(handler: { [weak self]_ in
             
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        if let vc = storyboard.instantiateViewController(withIdentifier: "GameSceneView") as? GameSceneViewController {
-            if let data = self?.storageManager.get(key: "game", storageType: .userdefaults) as? Data {
-                let decoder = JSONDecoder()
-                if let battleModel = try? decoder.decode(BattleModel.self, from: data) {
-                    vc.battleModel = battleModel
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            if let vc = storyboard.instantiateViewController(withIdentifier: "GameSceneView") as? GameSceneViewController {
+                if let data = self?.storageManager.get(key: "game", storageType: .userdefaults) as? Data {
+                    let decoder = JSONDecoder()
+                    if let battleModel = try? decoder.decode(BattleModel.self, from: data) {
+                        vc.battleModel = battleModel
+                    }
                 }
+                self?.navigationController?.pushViewController(vc, animated: true)
             }
-            self?.navigationController?.pushViewController(vc, animated: true)
-        }
-
+            
             
         }), for: .touchUpInside)
         
@@ -143,6 +167,8 @@ final class MainMenuViewController: UIViewController {
             continueButton.isHidden = true
         }
     }
+
+    
 }
 
 protocol GameDataDelegate: AnyObject {

@@ -21,6 +21,17 @@ Below you can find our experiments on this project important parts
 # Details
 <b>Architecture - MVVM</b>
 
+`Key Elements`
+• Level Manager (Builder)
+• Physics Manager
+• Game Manager
+• Storage Manager
+
+
+<b>Architecture - MVVM</b>
+
+
+
 Hierarchy
 <pre>
 ├── Greedy Kings

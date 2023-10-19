@@ -20,7 +20,7 @@ Below you can find our experiments on this project important parts
 Architecture - MVVM
 
 Hierarchy
-
+<pre>
 ├── Greedy Kings
 │   ├── `AnimationAssets`
 │   │   
@@ -91,3 +91,4 @@ Hierarchy
 │   ├── Greedy_KingsUITests.swift
 │   └── Greedy_KingsUITestsLaunchTests.swift
 └── `README.md`
+</pre>

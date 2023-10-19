@@ -63,8 +63,9 @@ final class ResultViewController: UIViewController {
     private func setupButtonsStackView() {
         rematchButton = createButton(buttonLabel: "Rematch")
         rematchButton.addAction(UIAction(handler: {[weak self]_ in
-            self?.viewModel.rematch()
             self?.dismiss(animated: true, completion: nil)
+            self?.viewModel.rematch()
+
         }), for: .touchUpInside)
         
         mainMenuButton = createButton(buttonLabel: "Main menu")

@@ -21,6 +21,7 @@ class LevelsViewController: UIViewController {
         setupPickLevelLabel(hintText: "Pick the level")
         setupLevelsCollectionView()
         setupBackButton()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

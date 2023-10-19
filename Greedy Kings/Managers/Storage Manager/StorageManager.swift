@@ -37,4 +37,8 @@ final class StorageManager {
         }
     }
     
+    deinit {
+        print("storage manager deinit")
+    }
+
 }

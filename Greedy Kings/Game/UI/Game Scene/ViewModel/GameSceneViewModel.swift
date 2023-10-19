@@ -14,15 +14,15 @@ final class GameSceneViewModel {
     var resetAmmo: (() -> Void)?
     var onGameFinished: (() -> Void)?
     var onRematch: (() -> Void)?
-    
-    private(set) var currentPlayer: Player?
+    var healthManager: HealthManager!
 
     init(){
         gameManager = GameManager()
         gameManager.startGame()
         currentPlayer = gameManager.currentPlayer
+        healthManager = HealthManager()
     }
-    
+     
     func onHit() {
         gameManager.updateHits()
         gameManager.updateShots()
@@ -34,11 +34,8 @@ final class GameSceneViewModel {
         } else {
             print("game is not finished yet")
         }
-        
-        print("p1 ",HealthManager.shared.player1health,"p2 ", HealthManager.shared.player2health)
 
         updateCurrentPlayer(player: gameManager.currentPlayer)
-
     }
     
     private func updateCurrentPlayer(player: Player){
@@ -62,6 +59,22 @@ final class GameSceneViewModel {
             onRematch()
         }
         
+        gameManager = GameManager()
+        updateCurrentPlayer(player: gameManager.currentPlayer)
+    }
+    
+    func onStart(){
+        updateCurrentPlayer(player: .player1)
         gameManager.resetHealth()
+        gameManager.startGame()
+    }
+    
+    func onContinue(battleModel: BattleModel){
+        healthManager.setHealth(player: .player1, health: battleModel.player1Health)
+        healthManager.setHealth(player: .player2, health: battleModel.player2Health)
+    }
+
+    deinit {
+        print("deinit viewmodel")
     }
 }

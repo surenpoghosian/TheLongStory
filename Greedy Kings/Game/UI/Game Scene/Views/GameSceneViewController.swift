@@ -15,10 +15,12 @@ final class GameSceneViewController: UIViewController {
     private var audioManager: AudioManager!
     private var hapticsManager: HapticsManager!
     private var storageManager: StorageManager!
+    
     private var viewanimator1: UIViewPropertyAnimator!
     private var viewanimator1_2: UIViewPropertyAnimator!
     private var viewanimator2: UIViewPropertyAnimator!
     private var viewanimator2_2: UIViewPropertyAnimator!
+    
     private var isGameFinished: Bool = false
     private var temporaryCurrentPlayer: Player?
     private var longPressStartTime: Date?
@@ -28,9 +30,10 @@ final class GameSceneViewController: UIViewController {
     private var animation: Animation!
     var battleModel: BattleModel?
     
+    var healthManager: HealthManager!
+    
     override func viewWillDisappear(_ animated: Bool) {
        onClose()
-        print("GameSceneViewController got closed")
     }
     
     func onClose(){
@@ -39,21 +42,22 @@ final class GameSceneViewController: UIViewController {
             audioManager.stopAudio(type: .background)
         }
         
-        
         levelBuilder = nil
         hapticsManager = nil
         audioManager = nil
         viewModel = nil
         stopTimer()
         countdownTimer = nil
+        animation = nil
         
         removeBackgroundModeObserver()
-        dismissToRoot(animated: true)
-
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        healthManager = HealthManager()
+        
+        print(healthManager.getHealth(player: .player1), healthManager.getHealth(player: .player2))
         
         viewModel = GameSceneViewModel()
         viewModel.onGameFinished = onGameFinished
@@ -74,12 +78,12 @@ final class GameSceneViewController: UIViewController {
         startTimer()
         
         addSwitchToBackgroundModeObserver()
-    }
 
-    
+    }
     
     
     func initializeGameScene(){
+        gameScene = nil
         gameScene = UIView()
         gameScene.frame = view.bounds
         navigationItem.hidesBackButton = true
@@ -136,6 +140,7 @@ final class GameSceneViewController: UIViewController {
                 stopAnimation(for: .player2)
                 onLongpressEnd(pressInterval: 1.2)
             }
+
         }
     }
     
@@ -251,12 +256,13 @@ final class GameSceneViewController: UIViewController {
         levelBuilder.updateAmmoVisiblity(for: rightAmmo, isHidden: true)
         
         if let battleModel {
-            print(battleModel)
-            HealthManager.shared.player1health = battleModel.player1Health
-            HealthManager.shared.player2health = battleModel.player2Health
-            
+            print("battleModel")
+            viewModel.onContinue(battleModel: battleModel)
             self.updateHealthScale(player: .player1)
             self.updateHealthScale(player: .player2)
+        } else {
+            
+            print("NON battleModel")
         }
     }
     
@@ -280,15 +286,13 @@ final class GameSceneViewController: UIViewController {
     func updateHealthScale(player: Player){
         switch player {
         case .player1:
-            levelBuilder.updatePlayerHealthIndicator(health: HealthManager.shared.player1health, referenceView: gameScene.subviews[8], side: .left)
-            
+            levelBuilder.updatePlayerHealthIndicator(health: healthManager.getHealth(player: .player1), referenceView: gameScene.subviews[8], side: .left)
         case .player2:
-            levelBuilder.updatePlayerHealthIndicator(health: HealthManager.shared.player2health, referenceView: gameScene.subviews[9], side: .right)
-            
+            levelBuilder.updatePlayerHealthIndicator(health: healthManager.getHealth(player: .player2), referenceView: gameScene.subviews[9], side: .right)
         }
     }
     
-    func updatePlayerState(side: Side){
+    func updatePlayerState(side: Side) {
         switch side {
         case .left:
             let leftWeapon = gameScene.subviews[4]
@@ -431,28 +435,28 @@ final class GameSceneViewController: UIViewController {
     
     
     func onHit(ammo: UIView, side: Side){
-        if let temporaryCurrentPlayer{
+        if let temporaryCurrentPlayer {
             if temporaryCurrentPlayer == viewModel.currentPlayer {
-                
+                viewModel.onHit()
                 let viewOrigin = ammo.frame.origin
                 
                 animation.play(x: viewOrigin.x, y: viewOrigin.y, type: .hit, referenceView: gameScene)
                 stopTimer()
                 self.temporaryCurrentPlayer = nil
                 audioManager.playAudio(type: .hit)
-                viewModel.onHit()
+                
                 
                 switch side {
-                case .left:
-                    updateHealthScale(player: .player2)
-                case .right:
-                    updateHealthScale(player: .player1)
+                    case .left:
+                        updateHealthScale(player: .player2)
+                    case .right:
+                        updateHealthScale(player: .player1)
                 }
                 
                 hapticsManager.generate(type: .medium)
                 
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                    if !self.isGameFinished{
+                    if !self.isGameFinished {
                         self.updatePlayerState(side: side)
                         self.setTapRecognitionState(disabled: false)
                     }
@@ -464,11 +468,13 @@ final class GameSceneViewController: UIViewController {
     }
     
     func onRematch(){
-        print("onRematch")
+        print("on rematch")
+        self.navigationController?.popViewController(animated: true)
     }
     
     func onMainMenu(){
         onClose()
+        self.dismissToRoot(animated: true)
     }
     
     func onMiss(ammo: UIView, side: Side){
@@ -505,8 +511,8 @@ final class GameSceneViewController: UIViewController {
     @objc func onSwitchToBackgroundMode(){
         print("game state saved")
         
-        let player1Health = HealthManager.shared.player1health
-        let player2Health = HealthManager.shared.player2health
+        let player1Health = healthManager.getHealth(player: .player1)
+        let player2Health = healthManager.getHealth(player: .player2)
         
         if player1Health != 100 || player2Health != 100 {
             let battleModel = BattleModel(player1Character: Character(name: "ch1", avatarID: "1"), player1Health: player1Health, player2Character: Character(name: "ch2", avatarID: "2"), player2Health: player2Health, turn: viewModel.currentPlayer!)
@@ -525,6 +531,7 @@ final class GameSceneViewController: UIViewController {
     deinit {
         print("deinit")
         removeBackgroundModeObserver()
+        onClose()
     }
 
 }

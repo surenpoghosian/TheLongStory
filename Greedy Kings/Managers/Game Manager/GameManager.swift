@@ -10,10 +10,13 @@ import Foundation
 final class GameManager {
     private(set) var currentPlayer: Player!
     private var battleResult: BattleResult!
+    private var healthManager: HealthManager!
     
     init() {
+        healthManager = HealthManager()
         initializeBattleResult()
         startGame()
+        
     }
     
     // set initial data
@@ -27,6 +30,7 @@ final class GameManager {
     // give turn to the first player in the beginning
     func startGame() {
         currentPlayer = .player1
+        resetHealth()
     }
     
     // switch player turn
@@ -59,7 +63,7 @@ final class GameManager {
     
     // check is the game finished
     func checkIsGameFinished() -> BattleResult? {
-        if HealthManager.shared.player1health <= 0 || HealthManager.shared.player2health <= 0 {
+        if healthManager.getHealth(player: .player1) <= 0 || healthManager.getHealth(player: .player2) <= 0 {
             setWinner(winner: currentPlayer)
             return battleResult
             
@@ -72,9 +76,9 @@ final class GameManager {
     // update health of player after hit
     func updateHealth() {
         if currentPlayer == .player1 {
-            HealthManager.shared.player2health -= 20
+            healthManager.decreaseHealth(player: .player2, by: 20)
         } else {
-            HealthManager.shared.player1health -= 20
+            healthManager.decreaseHealth(player: .player1, by: 20)
         }
     }
     
@@ -85,8 +89,11 @@ final class GameManager {
     
     // reset health and battle stats
     func resetHealth() {
-        HealthManager.shared.player1health = 100
-        HealthManager.shared.player1health = 100
+        healthManager.resetHealth()
         initializeBattleResult()
+    }
+    
+    deinit {
+        print("gamemanager deinit")
     }
 }

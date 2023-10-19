@@ -31,7 +31,7 @@ final class LevelBuilder {
     private var castleRightAmmo: Ammo!
     private let screenSize = UIScreen.main.bounds
     var physicsManager: PhysicsManager!
-    
+
     
     init(level: Int) {
         self.level = level
@@ -334,10 +334,8 @@ final class LevelBuilder {
         switch side {
         case .left:
             healthScaleBackground.roundSpecificCorners(corners: [.topRight, .bottomRight], radius: 8)
-            healthScale.roundSpecificCorners(corners: [.topRight, .bottomRight], radius: 8)
         case .right:
             healthScaleBackground.roundSpecificCorners(corners: [.topLeft, .bottomLeft], radius: 8)
-            healthScale.roundSpecificCorners(corners: [.topLeft, .bottomLeft], radius: 8)
         }
         
         return component
@@ -403,5 +401,8 @@ final class LevelBuilder {
         ammo.isHidden = isHidden
     }
     
+    deinit {
+        print("level builder deinit")
+    }
     
 }

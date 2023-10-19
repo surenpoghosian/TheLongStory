@@ -29,7 +29,10 @@ final class MainMenuViewController: UIViewController {
         storageManager = StorageManager()
         setupUI()
         setupButtons()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         checkForUnfinishedGame()
     }
     

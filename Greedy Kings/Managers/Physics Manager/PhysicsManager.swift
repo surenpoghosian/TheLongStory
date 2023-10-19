@@ -124,6 +124,11 @@ final class PhysicsManager: NSObject {
         self.animator.updateItem(usingCurrentState: item)
     }
             
+    
+    deinit {
+        print("physics manager deinit")
+    }
+
 }
 
 

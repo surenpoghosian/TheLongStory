@@ -60,8 +60,6 @@ final class GameSceneViewController: UIViewController {
         super.viewDidLoad()
         healthManager = HealthManager()
         
-        print(healthManager.getHealth(player: .player1), healthManager.getHealth(player: .player2))
-        
         viewModel = GameSceneViewModel()
         viewModel.onGameFinished = onGameFinished
         viewModel.onRematch = onRematch
@@ -349,13 +347,9 @@ final class GameSceneViewController: UIViewController {
         }
         
         if !isPaused {
-            startAnimation(for: .player2)
-        }
-        resetTimer()
-        
-        if !isPaused {
             startTimer()
         }
+        resetTimer()
     }
     
     func setTapRecognitionState(disabled state: Bool){

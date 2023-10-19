@@ -16,7 +16,6 @@ final class GameManager {
         healthManager = HealthManager()
         initializeBattleResult()
         startGame()
-        
     }
     
     // set initial data
@@ -76,9 +75,9 @@ final class GameManager {
     // update health of player after hit
     func updateHealth() {
         if currentPlayer == .player1 {
-            healthManager.decreaseHealth(player: .player2, by: 20)
+            healthManager.decreaseHealth(player: .player2, by: 100)
         } else {
-            healthManager.decreaseHealth(player: .player1, by: 20)
+            healthManager.decreaseHealth(player: .player1, by: 100)
         }
     }
     

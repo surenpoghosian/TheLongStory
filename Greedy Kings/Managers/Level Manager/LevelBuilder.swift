@@ -275,10 +275,16 @@ final class LevelBuilder {
         let componentWidth: Double = 310
         let componentHeight: Double = 80
         
-        var imageViewX: Double = 0
-        var imageViewY: Double = 0
-        let imageViewWidth: Double = 60
-        let imageViewHeight: Double = 60
+        var characterImageViewX: Double = 0
+        var characterImageViewY: Double = 0
+        var characterImageViewWidth: Double = 60
+        var characterImageViewHeight: Double = 60
+
+        var characterBackgroundImageViewX: Double = 0
+        var characterBackgroundImageViewY: Double = 0
+        let characterBackgroundImageViewWidth: Double = 60
+        let characterBackgroundImageViewHeight: Double = 60
+        
         
         var healthScaleX: Double = 0
         var healthScaleY: Double = 0
@@ -295,10 +301,13 @@ final class LevelBuilder {
             componentX = 20
             componentY = 10
             
-            imageViewX = componentX
-            imageViewY = componentY
+            characterBackgroundImageViewX = componentX + 2
+            characterBackgroundImageViewY = componentY - 5
             
-            healthScaleBackgroundX = imageViewX + imageViewWidth
+            characterImageViewX = characterBackgroundImageViewX
+            characterImageViewY = characterBackgroundImageViewY
+            
+            healthScaleBackgroundX = (characterBackgroundImageViewX + characterBackgroundImageViewWidth) - 3
             healthScaleBackgroundY = componentY
             
             healthScaleX = healthScaleBackgroundX
@@ -314,27 +323,44 @@ final class LevelBuilder {
             healthScaleX = componentX + healthScaleBackgroundWidth - healthScaleWidth
             healthScaleY = healthScaleBackgroundY + (healthScaleBackgroundHeight / 6)
             
-            imageViewX = healthScaleBackgroundX + healthScaleBackgroundWidth
-            imageViewY = componentY
+            characterBackgroundImageViewX = (healthScaleBackgroundX + healthScaleBackgroundWidth) - 2
+            characterBackgroundImageViewY = componentY - 5
+            
+            characterImageViewX = characterBackgroundImageViewX
+            characterImageViewY = componentY
         }
+        
+        
+        characterImageViewWidth = characterBackgroundImageViewWidth * 0.7
+        characterImageViewHeight = characterBackgroundImageViewHeight * 0.7
                 
         let component = UIView(frame: CGRect(x: componentX, y: componentY, width: componentWidth, height: componentHeight))
         
-        let imageView = UIImageView(frame: CGRect(x: imageViewX, y: imageViewY, width: imageViewWidth, height: imageViewHeight))
+        let characterBackgroundImageView = UIImageView(frame: CGRect(x: characterBackgroundImageViewX, y: characterBackgroundImageViewY, width: characterBackgroundImageViewWidth, height: characterBackgroundImageViewHeight))
         
+        let characterImageView = UIImageView(frame: CGRect(x: characterBackgroundImageView.center.x - characterImageViewWidth / 2, y: characterBackgroundImageView.center.y - characterImageViewHeight / 2, width: characterImageViewWidth, height: characterImageViewHeight))
+
         let healthScaleBackground = UIImageView(frame: CGRect(x: healthScaleBackgroundX, y: healthScaleBackgroundY, width: healthScaleBackgroundWidth, height: healthScaleBackgroundHeight))
         
         let healthScale = UIView(frame: CGRect(x: healthScaleX, y: healthScaleY, width: healthScaleWidth, height: healthScaleHeight))
         
-        component.addSubview(imageView)
+        component.backgroundColor = .clear
+        
+        characterBackgroundImageView.image = UIImage(named: "cellFrame")
+        characterBackgroundImageView.contentMode = .scaleAspectFit
+        
+        characterImageView.contentMode = .scaleAspectFit
+        characterImageView.backgroundColor = .clear
+
+        healthScaleBackground.backgroundColor = UIColor(named: "backgroundColor")
+        healthScale.backgroundColor = .systemBrown
+        
+        component.addSubview(characterBackgroundImageView)
+        component.addSubview(characterImageView)
         component.addSubview(healthScaleBackground)
         component.addSubview(healthScale)
         
-        component.backgroundColor = .clear
-        imageView.backgroundColor = .gray
-        healthScaleBackground.backgroundColor = UIColor(named: "backgroundColor")
         
-        healthScale.backgroundColor = .systemBrown
 
         switch side {
         case .left:
@@ -348,7 +374,7 @@ final class LevelBuilder {
     
     func updatePlayerHealthIndicator(health: Double, referenceView: UIView, side: Side) {
         let percentageFraction = health / 100
-        let originalFrame = referenceView.subviews[2].frame
+        let originalFrame = referenceView.subviews[3].frame
         
         let newWidth = originalFrame.width * CGFloat(percentageFraction)
         
@@ -362,7 +388,7 @@ final class LevelBuilder {
         
         let newFrame = CGRect(x: newX, y: originalFrame.origin.y, width: newWidth, height: originalFrame.size.height)
         
-        referenceView.subviews[2].frame = newFrame
+        referenceView.subviews[3].frame = newFrame
     }
     
     private func createTimerLabel() -> UILabel {

@@ -20,7 +20,7 @@ final class GameSceneViewController: UIViewController {
     private var viewanimator1_2: UIViewPropertyAnimator!
     private var viewanimator2: UIViewPropertyAnimator!
     private var viewanimator2_2: UIViewPropertyAnimator!
-    
+
     private var temporaryCurrentPlayer: Player?
     private var longPressStartTime: Date?
     private var countdownTimer: Timer?
@@ -28,6 +28,7 @@ final class GameSceneViewController: UIViewController {
     
     private var animation: Animation!
     var battleModel: BattleModel?
+    var pickedCharacters: PickedCharacters?
     
     private var isGameFinished: Bool = false
     private var isTimerRunning: Bool = false
@@ -58,6 +59,9 @@ final class GameSceneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         healthManager = HealthManager()
         
         viewModel = GameSceneViewModel()
@@ -75,10 +79,13 @@ final class GameSceneViewController: UIViewController {
         initializeGameScene()
         
         buildLevel(level: 1, battleModel: battleModel)
-        
+
+        setCharactersIcons(characters: pickedCharacters)
+
         startTimer()
         
         addSwitchToBackgroundModeObserver()
+        
 
     }
     
@@ -90,6 +97,16 @@ final class GameSceneViewController: UIViewController {
         navigationItem.hidesBackButton = true
     }
     
+    
+    func setCharactersIcons(characters: PickedCharacters?){
+        if let characters {
+            let player1ImageView = gameScene.subviews[8].subviews[1] as! UIImageView
+            let player2ImageView = gameScene.subviews[9].subviews[1] as! UIImageView
+            
+            player1ImageView.image = UIImage(named: characters.player1Character.avatarID)
+            player2ImageView.image = UIImage(named: characters.player2Character.avatarID)
+        }
+    }
     
     func updateTimerLabel() {
         let timerLabel = gameScene.subviews[10] as? UILabel
@@ -271,7 +288,6 @@ final class GameSceneViewController: UIViewController {
         
         fullScreenTapView.addGestureRecognizer(fullScreenLongPressGesture)
 
-        
         let pauseButton = gameScene.subviews[12] as! UIButton
         
         pauseButton.addTarget(self, action: #selector(onPause), for: .touchUpInside)
@@ -286,6 +302,7 @@ final class GameSceneViewController: UIViewController {
         
         if let battleModel {
             print("battleModel")
+            pickedCharacters = PickedCharacters(player1Character: battleModel.player1Character, player2Character: battleModel.player2Character)
             viewModel.onContinue(battleModel: battleModel)
             self.updateHealthScale(player: .player1)
             self.updateHealthScale(player: .player2)
@@ -445,24 +462,44 @@ final class GameSceneViewController: UIViewController {
         
     }
     
-    func onGameFinished() {
+    func onGameFinished(_ battleResult: BattleResult) {
         isGameFinished = true
+        
         audioManager.stopAudio(type: .background)
         audioManager.playAudio(type: .finished)
+        
         stopAnimation(for: .player1)
         stopAnimation(for: .player2)
+        
         setTapRecognitionState(disabled: true)
+        
         stopTimer()
         resetTimer()
-        showResultModal()
+        
+        let winner = determineWinner(battleResult: battleResult)
+        showResultModal(winner: winner)
+        
         storageManager.remove(key: "game", storageType: .userdefaults)
     }
     
+    func determineWinner(battleResult: BattleResult) -> Character {
+        var winner: Character
+        
+        switch battleResult.winner! {
+            case .player1:
+            winner = pickedCharacters!.player1Character
+            case .player2:
+            winner = pickedCharacters!.player2Character
+        }
+        
+        return winner
+    }
     
-    func showResultModal(){
+    func showResultModal(winner: Character){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
           if let vc = storyboard.instantiateViewController(withIdentifier: "ResultView") as? ResultViewController {
-              vc.winner = Character(name: "Antonio", avatarID: "3")
+              
+              vc.winner = winner
               vc.viewModel = viewModel
               vc.onMainMenu = onMainMenu
               navigationController?.present(vc, animated: true)
@@ -545,16 +582,23 @@ final class GameSceneViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: .appDidEnterBackground, object: nil)
     }
 
+    
     @objc func onSwitchToBackgroundMode(){
+        saveGame()
+    }
+    
+    func saveGame(){
         let player1Health = healthManager.getHealth(player: .player1)
         let player2Health = healthManager.getHealth(player: .player2)
         
-        if player1Health != 100 || player2Health != 100 {
-            let battleModel = BattleModel(player1Character: Character(name: "ch1", avatarID: "1"), player1Health: player1Health, player2Character: Character(name: "ch2", avatarID: "2"), player2Health: player2Health, turn: viewModel.currentPlayer!)
-            
-            let encoder = JSONEncoder()
-            if let encodedData = try? encoder.encode(battleModel) {
-                storageManager.set(key: "game", value: encodedData, storageType: .userdefaults)
+        if player1Health != 100 || player2Health != 100  {
+            if player2Health > 0 && player1Health > 0 {
+                let battleModel = BattleModel(player1Character: pickedCharacters!.player1Character, player1Health: player1Health, player2Character: pickedCharacters!.player2Character, player2Health: player2Health, turn: viewModel.currentPlayer!)
+                
+                let encoder = JSONEncoder()
+                if let encodedData = try? encoder.encode(battleModel) {
+                    storageManager.set(key: "game", value: encodedData, storageType: .userdefaults)
+                }
             }
         } else {
             if let _ = self.storageManager.get(key: "game", storageType: .userdefaults) as? Data {

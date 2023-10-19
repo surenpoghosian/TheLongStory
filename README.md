@@ -1,4 +1,5 @@
 # The Long Story | Greedy Kings
+Project planning tools
 
 • [Miro](https://miro.com/app/board/uXjVMkG03_8=/?share_link_id=134224966956) <br/>
 • [Jira](https://the-long-story.atlassian.net/jira/software/projects/LS/boards/1)
@@ -16,8 +17,7 @@ Below you can find our experiments on this project important parts
 
 
 # Details
-
-Architecture - MVVM
+<b>Architecture - MVVM</b>
 
 Hierarchy
 <pre>

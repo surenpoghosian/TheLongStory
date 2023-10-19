@@ -154,7 +154,8 @@ final class PickCharacterViewController: UIViewController {
         nextButton.addAction(UIAction(handler: {[weak self] _ in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let vc = storyboard.instantiateViewController(withIdentifier: "LevelsView") as? LevelsViewController {
-                if self?.pickedCharacterForPlayer2 != nil {
+                if let character1 = self?.pickedCharacterForPlayer1, let character2 = self?.pickedCharacterForPlayer2 {
+                    vc.pickedCharacters = PickedCharacters(player1Character: character1, player2Character: character2)
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
             }

@@ -14,6 +14,11 @@ struct Character: Codable {
     var availableToPick: Bool = true
 }
 
+struct PickedCharacters: Codable {
+    var player1Character: Character
+    var player2Character: Character
+}
+
 enum PlayerRole {
     case player1
     case player2

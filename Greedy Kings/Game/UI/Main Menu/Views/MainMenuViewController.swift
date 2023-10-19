@@ -17,6 +17,8 @@ final class MainMenuViewController: UIViewController {
     @IBOutlet weak var soundMuteButton: UIButton!
     @IBOutlet weak var musicMuteButton: UIButton!
     private var storageManager: StorageManager!
+    private var isMusicOn: Bool!
+    private var areSoundsOn: Bool!
     
     private var viewModel: MainMenuViewModel!
     
@@ -29,15 +31,15 @@ final class MainMenuViewController: UIViewController {
         setupUI()
         setupButtons()
         storageManager = StorageManager()
-        
+        setupAudioSettings()
+        checkAndSetupCharactersData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkForUnfinishedGame()
-        checkAndSetupCharactersData()
     }
-
+    
     
     private func checkAndSetupCharactersData(){
         if storageManager.get(key: "characters", storageType: .userdefaults) == nil {
@@ -122,6 +124,10 @@ final class MainMenuViewController: UIViewController {
                         vc.battleModel = battleModel
                     }
                 }
+                if self?.areHiddenButtonsOpen == true {
+                    self?.toggleHiddenButtons()
+                }
+                
                 self?.navigationController?.pushViewController(vc, animated: true)
             }
             
@@ -129,6 +135,9 @@ final class MainMenuViewController: UIViewController {
         }), for: .touchUpInside)
         
         playButton.addAction(UIAction(handler: { [weak self]_ in
+            if self?.areHiddenButtonsOpen == true {
+                self?.toggleHiddenButtons()
+            }
             self?.pushViewController(identifier: "PickCharacterView", viewControllerType: PickCharacterViewController.self)
         }), for: .touchUpInside)
         
@@ -141,10 +150,25 @@ final class MainMenuViewController: UIViewController {
         }), for: .touchUpInside)
         
         musicMuteButton.addAction(UIAction(handler: {[weak self]_ in
-            
+            if let isMusicOn = self?.isMusicOn {
+                if isMusicOn{
+                    self?.updateAudioSettings(type: .music, isOn: false)
+                } else {
+                    self?.updateAudioSettings(type: .music, isOn: true)
+                }
+                
+            }
         }), for: .touchUpInside)
         
         soundMuteButton.addAction(UIAction(handler: {[weak self]_ in
+            if let areSoundsOn = self?.areSoundsOn {
+                if areSoundsOn {
+                    self?.updateAudioSettings(type: .sounds, isOn: false)
+                } else {
+                    self?.updateAudioSettings(type: .sounds, isOn: true)
+                }
+                
+            }
             
         }), for: .touchUpInside)
         
@@ -159,7 +183,7 @@ final class MainMenuViewController: UIViewController {
     }
     
     
-    func checkForUnfinishedGame(){
+    private func checkForUnfinishedGame(){
         let savedGameState = storageManager.get(key: "game", storageType: .userdefaults)
         if let _ = savedGameState {
             continueButton.isHidden = false
@@ -167,7 +191,72 @@ final class MainMenuViewController: UIViewController {
             continueButton.isHidden = true
         }
     }
+    
+    
+    private func setupAudioSettings(){
+        if let data = storageManager.get(key: "audioSettings", storageType: .userdefaults) as? Data {
+            let decoder = JSONDecoder()
+            if let audioSettings = try? decoder.decode(AudioSettings.self, from: data) {
+                print("saved audioSettings",audioSettings)
+                isMusicOn = audioSettings.isMusicOn
+                areSoundsOn = audioSettings.areSoundsOn
+                updateAudioIcons()
+            }
+        } else {
+            let audioSettings = AudioSettings(isMusicOn: true, areSoundsOn: true)
+            let encoder = JSONEncoder()
+            if let encodedData = try? encoder.encode(audioSettings) {
+                storageManager.set(key: "audioSettings", value: encodedData, storageType: .userdefaults)
+                isMusicOn = audioSettings.isMusicOn
+                areSoundsOn = audioSettings.areSoundsOn
+                updateAudioIcons()
+            }
+        }
+    }
+    
+    func updateAudioIcons(){
+        if isMusicOn {
+            musicMuteButton.setBackgroundImage(viewModel.musicOnIcon, for: .normal)
+        } else {
+            musicMuteButton.setBackgroundImage(viewModel.musicOffIcon, for: .normal)
+        }
 
+        if areSoundsOn {
+            soundMuteButton.setBackgroundImage(viewModel.soundsOnIcon, for: .normal)
+        } else {
+            soundMuteButton.setBackgroundImage(viewModel.soundsOffIcon, for: .normal)
+            
+        }
+    }
+    
+    private func updateAudioSettings(type: AudioSettingType, isOn: Bool){
+        if let data = storageManager.get(key: "audioSettings", storageType: .userdefaults) as? Data {
+            let decoder = JSONDecoder()
+            if let audioSettings = try? decoder.decode(AudioSettings.self, from: data) {
+                var newAudioSettings: AudioSettings
+                switch type {
+                case .music:
+                    newAudioSettings = AudioSettings(isMusicOn: isOn, areSoundsOn: audioSettings.areSoundsOn)
+                    isMusicOn = isOn
+                    areSoundsOn = audioSettings.areSoundsOn
+                    updateAudioIcons()
+                case .sounds:
+                    newAudioSettings = AudioSettings(isMusicOn: audioSettings.isMusicOn, areSoundsOn: isOn)
+                    isMusicOn = audioSettings.isMusicOn
+                    areSoundsOn = isOn
+                    updateAudioIcons()
+
+                }
+                
+                let encoder = JSONEncoder()
+                if let encodedData = try? encoder.encode(newAudioSettings) {
+                    storageManager.set(key: "audioSettings", value: encodedData, storageType: .userdefaults)
+                    
+                }
+
+            }
+        }
+    }
     
 }
 

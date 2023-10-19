@@ -870,6 +870,150 @@
             endingLineNumber = "369"
             landmarkName = "updatePlayerState(side:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "870E6937-997C-4D9B-A982-A729370FADFE - 6cce18ee41180ac1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.GameSceneViewController.updatePlayerState(side: Greedy_Kings.Side) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Game/UI/Game%20Scene/Views/GameSceneViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "369"
+                  endingLineNumber = "369"
+                  offsetFromSymbolStart = "1716">
+               </Location>
+               <Location
+                  uuid = "870E6937-997C-4D9B-A982-A729370FADFE - 6cce18ee41180ac1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.GameSceneViewController.updatePlayerState(side: Greedy_Kings.Side) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Game/UI/Game%20Scene/Views/GameSceneViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "369"
+                  endingLineNumber = "369"
+                  offsetFromSymbolStart = "1720">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DDB5ED61-1EB2-4602-A60A-366C875D56A3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greedy Kings/Game/UI/Main Menu/Views/MainMenuViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "updateAudioSettings(type:isOn:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DDB5ED61-1EB2-4602-A60A-366C875D56A3 - 532dd00697e2e252"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.MainMenuViewController.updateAudioSettings(type: Greedy_Kings.AudioSettingType, isOn: Swift.Bool) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Game/UI/Main%20Menu/Views/MainMenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "DDB5ED61-1EB2-4602-A60A-366C875D56A3 - 532dd00697e2e252"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.MainMenuViewController.updateAudioSettings(type: Greedy_Kings.AudioSettingType, isOn: Swift.Bool) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Game/UI/Main%20Menu/Views/MainMenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "612">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8A79811-50E2-47A9-9D0C-B9C6239FA40D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greedy Kings/Game/UI/Main Menu/Views/MainMenuViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
+            landmarkName = "updateAudioIcons()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "532E2D72-F153-4531-AB4B-D753FD7D4ACF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greedy Kings/Game/UI/Main Menu/Views/MainMenuViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "setupAudioSettings()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02128547-A854-4F5A-9CF2-B5494D8762CE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greedy Kings/Game/UI/Main Menu/Views/MainMenuViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "updateAudioSettings(type:isOn:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "40661A1A-3C4A-4367-B7F7-F22BDAA707BA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greedy Kings/Game/UI/Main Menu/Views/MainMenuViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "setupAudioSettings()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

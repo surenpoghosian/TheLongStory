@@ -10,10 +10,38 @@ import AVFoundation
 
 final class AudioManager {
     private var audioPlayers: [AudioType: AVAudioPlayer] = [:]
-    private var isOnMute: Bool = true
+    private var isMusicOn: Bool!
+    private var areSoundsOn: Bool!
+    private var storageManager: StorageManager!
+    
+    init(){
+        storageManager = StorageManager()
+        checkAudioSettings()
+    }
+    
+    private func checkAudioSettings() {
+        if let data = storageManager.get(key: "audioSettings", storageType: .userdefaults) as? Data {
+            let decoder = JSONDecoder()
+            if let audioSettings = try? decoder.decode(AudioSettings.self, from: data) {
+
+                isMusicOn = audioSettings.isMusicOn
+                areSoundsOn = audioSettings.areSoundsOn
+            }
+        } else {
+            let audioSettings = AudioSettings(isMusicOn: true, areSoundsOn: true)
+            
+            let encoder = JSONEncoder()
+            if let encodedData = try? encoder.encode(audioSettings) {
+                storageManager.set(key: "audioSettings", value: encodedData, storageType: .userdefaults)
+                isMusicOn = true
+                areSoundsOn = true
+            }
+        }
+
+    }
+    
     
     func playAudio(type: AudioType) {
-        if !isOnMute  {
             var audioFile: String
             switch type {
             case .background:
@@ -32,7 +60,9 @@ final class AudioManager {
             case .finished:
                 audioFile = "gameFinished"
             }
-            
+        
+        
+        if (type == .background && isMusicOn) || (type != .background && areSoundsOn) {
             if let audioFileURL = Bundle.main.url(forResource: audioFile, withExtension: "mp3") {
                 do {
                     if let currentPlayer = audioPlayers[type] {
@@ -54,8 +84,7 @@ final class AudioManager {
             } else {
                 print("Audio file not found")
             }
-        } else {
-            print("audio is on mute")
+            
         }
         
     }

@@ -21,14 +21,17 @@ final class GameSceneViewController: UIViewController {
     private var viewanimator2: UIViewPropertyAnimator!
     private var viewanimator2_2: UIViewPropertyAnimator!
     
-    private var isGameFinished: Bool = false
     private var temporaryCurrentPlayer: Player?
     private var longPressStartTime: Date?
     private var countdownTimer: Timer?
     private var totalTime: Int = 10
-    private var isTimerRunning: Bool = false
+    
     private var animation: Animation!
     var battleModel: BattleModel?
+    
+    private var isGameFinished: Bool = false
+    private var isTimerRunning: Bool = false
+    var isPaused: Bool = false
     
     var healthManager: HealthManager!
     
@@ -232,6 +235,29 @@ final class GameSceneViewController: UIViewController {
         }
     }
     
+    @objc func onPause(){
+        isPaused = true
+        stopTimer()
+        stopAnimation(for: viewModel.currentPlayer!)
+        showPauseModal()
+    }
+    
+    func onContinue(){
+        isPaused = false
+        startAnimation(for: viewModel.currentPlayer!)
+        startTimer()
+    }
+    
+    func showPauseModal(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+          if let vc = storyboard.instantiateViewController(withIdentifier: "PauseView") as? PauseViewController {
+              vc.viewModel = viewModel
+              vc.onMainMenu = onMainMenu
+              vc.onContinue = onContinue
+              navigationController?.present(vc, animated: true)
+          }
+    }
+    
     func buildLevel(level: Int, battleModel: BattleModel? = nil){
         levelBuilder = LevelBuilder(level: level)
         
@@ -246,6 +272,11 @@ final class GameSceneViewController: UIViewController {
         let fullScreenLongPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
         
         fullScreenTapView.addGestureRecognizer(fullScreenLongPressGesture)
+
+        
+        let pauseButton = gameScene.subviews[12] as! UIButton
+        
+        pauseButton.addTarget(self, action: #selector(onPause), for: .touchUpInside)
         
         startAnimation(for: .player1)
         
@@ -300,7 +331,11 @@ final class GameSceneViewController: UIViewController {
             
             updateAmmoState(ammo: leftAmmo, weapon: leftWeapon)
             updateWeaponPosition(weapon: leftWeapon, side: .right)
-            startAnimation(for: .player2)
+            
+            if !isPaused {
+                startAnimation(for: .player2)
+            }
+            
             
         case .right:
             let rightWeapon = gameScene.subviews[5]
@@ -308,11 +343,19 @@ final class GameSceneViewController: UIViewController {
             
             updateAmmoState(ammo: rightAmmo, weapon: rightWeapon)
             updateWeaponPosition(weapon: rightWeapon, side: .left)
-            startAnimation(for: .player1)
+            if !isPaused {
+                startAnimation(for: .player1)
+            }
         }
         
+        if !isPaused {
+            startAnimation(for: .player2)
+        }
         resetTimer()
-        startTimer()
+        
+        if !isPaused {
+            startTimer()
+        }
     }
     
     func setTapRecognitionState(disabled state: Bool){
@@ -491,7 +534,7 @@ final class GameSceneViewController: UIViewController {
                 levelBuilder.updateAmmoVisiblity(for: ammo, isHidden: true)
                 
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                    if !self.isGameFinished{
+                    if !self.isGameFinished {
                         self.updatePlayerState(side: side)
                         self.setTapRecognitionState(disabled: false)
                     }
@@ -509,8 +552,6 @@ final class GameSceneViewController: UIViewController {
     }
 
     @objc func onSwitchToBackgroundMode(){
-        print("game state saved")
-        
         let player1Health = healthManager.getHealth(player: .player1)
         let player2Health = healthManager.getHealth(player: .player2)
         

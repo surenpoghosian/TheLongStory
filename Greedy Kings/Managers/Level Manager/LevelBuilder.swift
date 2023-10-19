@@ -11,7 +11,7 @@ import AVFoundation
 
 final class LevelBuilder {
     private(set) var levels: [Level] = [
-        Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle2"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene(type: .autumn, image: "NormalScene"))
+        Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle2"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene(type: .autumn, image: "NormalScene")),
     ]
     
     private var adjustedLevel: Int = 0
@@ -259,7 +259,12 @@ final class LevelBuilder {
     private func buildInteractiveUI(referenceView: UIView) -> UIView {
         let fullScreenView = UIView(frame: CGRect(x: 0, y: 0, width: referenceView.frame.width, height: referenceView.frame.height))
         fullScreenView.backgroundColor = UIColor.clear
+        
+        let pauseButton = createPauseButton()
+
         referenceView.addSubview(fullScreenView)
+        referenceView.addSubview(pauseButton)
+        
         
         return referenceView
     }
@@ -376,6 +381,24 @@ final class LevelBuilder {
         
         return timerLabel
     }
+
+    private func createPauseButton() -> UIButton {
+        let buttonX = Int(screenSize.width / 2)
+        let buttonY = 30
+        let buttonWidth = 40
+        let buttonHeight = 40
+        
+        let button = UIButton(frame: CGRect(x: buttonX + buttonWidth + 10, y: buttonY, width: buttonWidth, height: buttonHeight))
+        
+        if let image = UIImage(named: "pause") {
+            button.setImage(image, for: .normal)
+        }
+        
+        
+        return button
+    }
+
+    
     
     private func buildIndicatingUI(referenceView: UIView) -> UIView {
         let leftPlayerIndicator = createPlayerIndicatorView(side: .left)

@@ -296,6 +296,21 @@
             </objects>
             <point key="canvasLocation" x="4120" y="-895"/>
         </scene>
+        <!--Pause View Controller-->
+        <scene sceneID="rHO-Uf-JWj">
+            <objects>
+                <viewController storyboardIdentifier="PauseView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6PP-aG-dpz" customClass="PauseViewController" customModule="Greedy_Kings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nSn-9S-fGI">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="JDF-0y-nvz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Yn-0a-Uwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4906" y="-895"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo" width="2248" height="361"/>

@@ -14,8 +14,10 @@ Below you can find our experiments on this project important parts
 • [Lottie Animations](https://github.com/surenpoghosian/LottieAnimationsiOS) <br/>
 • [FirebaseSDK](https://github.com/surenpoghosian/FirebaseSDKTest) 
 
+# Assets
 
-
+• [Figma](https://www.figma.com/file/Hl29uOzYMh4mwdyZEW7LzK/The-Long-Story---Greedy-Kings-Game-UI?type=design&node-id=0-1&mode=design&t=H9i2z8GW5Si86SCE-0)
+ 
 # Details
 <b>Architecture - MVVM</b>
 

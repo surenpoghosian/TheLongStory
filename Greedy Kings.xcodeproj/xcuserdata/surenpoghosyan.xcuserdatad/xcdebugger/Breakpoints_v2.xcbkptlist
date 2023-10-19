@@ -375,8 +375,8 @@
             filePath = "Greedy Kings/Application/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "applicationWillTerminate(_:)"
             landmarkType = "7">
             <Locations>
@@ -439,69 +439,6 @@
                   startingLineNumber = "14"
                   endingLineNumber = "14"
                   offsetFromSymbolStart = "72">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3E15FC01-0E2C-45FF-A46F-08D27B2A6C20"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greedy Kings/Application/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "applicationWillTerminate(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3E15FC01-0E2C-45FF-A46F-08D27B2A6C20 - 9ac48f02d03a0ef9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.AppDelegate.applicationWillTerminate(__C.UIApplication) -&gt; ()"
-                  moduleName = "Greedy Kings"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Application/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  uuid = "3E15FC01-0E2C-45FF-A46F-08D27B2A6C20 - 9ac48f02d03a0ef9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.AppDelegate.applicationWillTerminate(__C.UIApplication) -&gt; ()"
-                  moduleName = "Greedy Kings"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Application/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "228">
-               </Location>
-               <Location
-                  uuid = "3E15FC01-0E2C-45FF-A46F-08D27B2A6C20 - 9ac48f02d03a0ef9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.AppDelegate.applicationWillTerminate(__C.UIApplication) -&gt; ()"
-                  moduleName = "Greedy Kings"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Application/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "236">
                </Location>
             </Locations>
          </BreakpointContent>

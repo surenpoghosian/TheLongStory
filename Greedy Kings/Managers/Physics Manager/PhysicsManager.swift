@@ -18,7 +18,7 @@ final class PhysicsManager: NSObject {
         super.init()
         initializeAllBehaviors()
         initializeAnimator(referenceView: parentView)
-        
+
 //        It'll be right and perfect to move the part below outside of the PhysicsManager
         initializeItem(item: parentView.subviews[1], weight: 3000, applyGravity: true)
         initializeItem(item: parentView.subviews[2], weight: 3000, applyGravity: true)
@@ -117,14 +117,12 @@ final class PhysicsManager: NSObject {
             animator.addBehavior(pushBehavior)
         }
     }
-
     
     func updtateItemPosition(item: UIView, toX: CGFloat, toY: CGFloat){
         item.center = CGPoint(x: toX, y: toY)
         self.animator.updateItem(usingCurrentState: item)
     }
             
-    
     deinit {
         print("physics manager deinit")
     }

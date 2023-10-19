@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseAnalytics
+import FirebaseCrashlytics
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
-        print("terminated saving gameState")
-        print("Loading...")
+        print("app got terminated")
         NotificationCenter.default.post(name: .appDidEnterBackground, object: nil)
         print("Notification sent")
     }
@@ -22,7 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
+        Analytics.logEvent("AppLaunched", parameters: [
+            "remember": "The ones who are crazy enough to think that they can change the world, are the ones who do."
+        ])
+        
+        Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
+        
         return true
     }
     

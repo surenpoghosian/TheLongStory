@@ -22,9 +22,9 @@ Architecture - MVVM
 Hierarchy
 <pre>
 ├── Greedy Kings
-│   ├── `AnimationAssets`
+│   ├── <strong>AnimationAssets</strong>
 │   │   
-│   ├── `Application`
+│   ├── <strong>Application</strong>
 │   │   ├── AppDelegate.swift
 │   │   ├── Base.lproj
 │   │   │   ├── LaunchScreen.storyboard
@@ -34,61 +34,61 @@ Hierarchy
 │   │   └── en.lproj
 │   │       └── LaunchScreen.strings
 │   │
-│   ├── `Assets.xcassets`
+│   ├── <strong>Assets.xcassets</strong>
 │   │   ├── AccentColor.colorset
 │   │   │   └── Contents.json
 │   │   ├── AppIcon.appiconset
 │   │   │   ├── Contents.json
 │   │   │   └── GreedyKingsIcon.png
 │   │   ├── Contents.json
-│   │   ├── `UI Assets`
-│   │   │   ├── `Buttons`
-│   │   │   ├── `Cell Frames`
-│   │   │   ├── `Color Sets`
-│   │   │   ├── `Contents.json`
-│   │   │   ├── `GameScene`
-│   │   │   ├── `Icons`
-│   │   │   └── `King Avatars`
+│   │   ├── <strong>UI Assets</strong>
+│   │   │   ├── <strong>Buttons</strong>
+│   │   │   ├── <strong>Cell Frames</strong>
+│   │   │   ├── <strong>Color Sets</strong>
+│   │   │   ├── <strong>Contents.json</strong>
+│   │   │   ├── <strong>GameScene</strong>
+│   │   │   ├── <strong>Icons</strong>
+│   │   │   └── <strong>King Avatars</strong>
 │   │   └── icon.imageset
-│   ├── `AudioAssets`
-│   ├── `Extensions`
-│   ├── `Game`
-│   │   ├── `Constants`
+│   ├── <strong>AudioAssets</strong>
+│   ├── <strong>Extensions</strong>
+│   ├── <strong>Game</strong>
+│   │   ├── <strong>Constants</strong>
 │   │   │   └── GameComponentsPropertyList.plist
-│   │   └── `UI`
-│   │       ├── `Game Scene`
-│   │       │   ├── `Models`
+│   │   └── <strong>UI</strong>
+│   │       ├── <strong>Game Scene</strong>
+│   │       │   ├── <strong>Models</strong>
 │   │       │   │   ├── AnimationModels.swift
 │   │       │   │   └── GameSceneModels.swift
-│   │       │   ├── `ViewModel`
+│   │       │   ├── <strong>ViewModel</strong>
 │   │       │   │   └── GameSceneViewModel.swift
-│   │       │   └── `Views`
+│   │       │   └── <strong>Views</strong>
 │   │       │       ├── Coordinator.swift
 │   │       │       ├── GameSceneViewController.swift
 │   │       │       ├── PauseViewController.swift
 │   │       │       ├── PlayerDataViewController.swift
 │   │       │       └── ResultViewController.swift
-│   │       ├── `Leaderboard`
-│   │       ├── `Levels`
-│   │       ├── `Main Menu`
-│   │       └── `Pick Character`
-│   ├── `Info.plist`
-│   └── `Managers`
-│       ├── `Game Manager`
+│   │       ├── <strong>Leaderboard</strong>
+│   │       ├── <strong>Levels</strong>
+│   │       ├── <strong>Main Menu</strong>
+│   │       └── <strong>Pick Character</strong>
+│   ├── <strong>Info.plist</strong>
+│   └── <strong>Managers</strong>
+│       ├── <strong>Game Manager</strong>
 │       │   ├── GameManager.swift
-│       │   ├── `HealthManager`
+│       │   ├── <strong>HealthManager</strong>
 │       │   │   └── HealthManager.swift
-│       │   └── `Models
+│       │   └── <strong>Models</strong>
 │       │       └── GameModels.swift
-│       ├── `Haptics Manager`
-│       ├── `Level Manager`
-│       ├── `Physics Manager`
-│       ├── `Audio Manager`
-│       └── `Storage Manager`
-├── `Greedy KingsTests`
+│       ├── <strong>Haptics Manager</strong>
+│       ├── <strong>Level Manager</strong>
+│       ├── <strong>Physics Manager</strong>
+│       ├── <strong>Audio Manager</strong>
+│       └── <strong>Storage Manager</strong>
+├── <strong>Greedy KingsTests</strong>
 │   └── Greedy_KingsTests.swift
-├── `Greedy KingsUITests`
+├── <strong>Greedy KingsUITests</strong>
 │   ├── Greedy_KingsUITests.swift
 │   └── Greedy_KingsUITestsLaunchTests.swift
-└── `README.md`
+└── <strong>README.md</strong>
 </pre>

@@ -48,7 +48,7 @@ final class MainMenuViewController: UIViewController {
         imageview.contentMode = .scaleAspectFill
         let image = UIImage(named: "NormalScene1")
 
-        if let blurredImage = image?.applyBlur(radius: 6.0) {
+        if let blurredImage = image?.applyBlur(radius: 8.0) {
             imageview.image = blurredImage
             
         }

@@ -15,7 +15,7 @@ struct Level {
     var castleRight: Castle
     var obstacle: Obstacle
     var scene: Scene
-    var image: String
+    var type: LevelType
 }
 
 // Castle and its parameters
@@ -48,7 +48,6 @@ struct Obstacle {
 }
 
 struct Scene {
-    var type: SceneType
     var image: String
 }
 
@@ -87,13 +86,13 @@ enum ScreenSide {
     case right
 }
 
-// Enum which represents background and theme of the scene
-enum SceneType {
-    case spring
-    case summer
-    case autumn
-    case winter
-}
+//// Enum which represents background and theme of the scene
+//enum SceneType {
+//    case spring
+//    case summer
+//    case autumn
+//    case winter
+//}
 
 // Enum for obstacle dificulty definiiton, each have 3 stages easy, medium, hard, which defines their size
 enum Difficulty {
@@ -103,8 +102,11 @@ enum Difficulty {
 }
 
 // Enum for specifying level category
-enum LevelType {
-    case moon
+enum LevelType: Codable {
+    case space
     case halloween
     case normal
 }
+
+
+

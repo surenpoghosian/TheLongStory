@@ -16,3 +16,16 @@ enum AudioType {
     case shot
     case finished
 }
+
+
+struct AudioSettings: Codable {
+    var isMusicOn: Bool
+    var areSoundsOn: Bool
+
+}
+
+
+enum AudioSettingType {
+    case music
+    case sounds
+}

@@ -10,32 +10,34 @@ import Foundation
 final class GameSceneViewModel {
     
     private var gameManager: GameManager
-    var resetAmmo: (() -> Void)?
-    var gameFinished: (() -> Void)?
     private(set) var currentPlayer: Player?
-    
+    var resetAmmo: (() -> Void)?
+    var onGameFinished: ((BattleResult) -> Void)?
+    var onRematch: (() -> Void)?
+    var healthManager: HealthManager!
+
     init(){
         gameManager = GameManager()
         gameManager.startGame()
         currentPlayer = gameManager.currentPlayer
+        healthManager = HealthManager()
     }
-    
+     
     func onHit() {
         gameManager.updateHits()
         gameManager.updateShots()
         gameManager.updateHealth()
-        let battleFinished = gameManager.checkIsGameFinished()
+        let gameResult = gameManager.checkIsGameFinished()
         
-        if let _ = battleFinished {
-            gameFinished!()
+        if let gameResult {
+            if let onGameFinished = onGameFinished {
+                onGameFinished(gameResult)
+            }
         } else {
             print("game is not finished yet")
         }
-        
-        print("p1 ",HealthManager.shared.player1health,"p2 ", HealthManager.shared.player2health)
 
         updateCurrentPlayer(player: gameManager.currentPlayer)
-
     }
     
     private func updateCurrentPlayer(player: Player){
@@ -54,7 +56,27 @@ final class GameSceneViewModel {
         updateCurrentPlayer(player: gameManager.currentPlayer)
     }
     
-    func onCloseDuringBattle() {
+    func rematch() {
+        if let onRematch = onRematch {
+            onRematch()
+        }
         
+        gameManager = GameManager()
+        updateCurrentPlayer(player: gameManager.currentPlayer)
+    }
+    
+    func onStart(){
+        updateCurrentPlayer(player: .player1)
+        gameManager.resetHealth()
+        gameManager.startGame()
+    }
+    
+    func onContinue(battleModel: BattleModel){
+        healthManager.setHealth(player: .player1, health: battleModel.player1Health)
+        healthManager.setHealth(player: .player2, health: battleModel.player2Health)
+    }
+
+    deinit {
+        print("deinit viewmodel")
     }
 }

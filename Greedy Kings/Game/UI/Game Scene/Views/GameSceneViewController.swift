@@ -2,54 +2,112 @@
 //  GameSceneViewController.swift
 //  Greedy Kings
 //
-//  Created by Garik Hovsepian on 24.09.23.
+//  Created by Garik Hovsepyan on 24.09.23.
 //
 
 import UIKit
+import Lottie
 
 final class GameSceneViewController: UIViewController {
-    weak var delegate: GameDataDelegate?
     private var viewModel: GameSceneViewModel!
     private var levelBuilder: LevelBuilder!
     private var gameScene: UIView!
-    var audioManager: AudioManager!
-    var hapticsManager: HapticsManager!
-    var viewanimator1: UIViewPropertyAnimator!
-    var viewanimator1_2: UIViewPropertyAnimator!
-    var viewanimator2: UIViewPropertyAnimator!
-    var viewanimator2_2: UIViewPropertyAnimator!
-    var isGameFinished: Bool = false
-    var temporaryCurrentPlayer: Player?
-    var longPressStartTime: Date?
-    var countdownTimer: Timer?
-    var totalTime: Int = 10
-    var isTimerRunning: Bool = false
+    private var audioManager: AudioManager!
+    private var hapticsManager: HapticsManager!
+    private var storageManager: StorageManager!
+    
+    private var viewanimator1: UIViewPropertyAnimator!
+    private var viewanimator1_2: UIViewPropertyAnimator!
+    private var viewanimator2: UIViewPropertyAnimator!
+    private var viewanimator2_2: UIViewPropertyAnimator!
+
+    private var temporaryCurrentPlayer: Player?
+    private var longPressStartTime: Date?
+    private var countdownTimer: Timer?
+    private var totalTime: Int = 10
+    
+    private var animation: Animation!
+    var battleModel: BattleModel?
+    var pickedCharacters: PickedCharacters?
+    var levelType: LevelType?
+    
+    private var isGameFinished: Bool = false
+    private var isTimerRunning: Bool = false
+    var isPaused: Bool = false
+    
+    var healthManager: HealthManager!
     
     override func viewWillDisappear(_ animated: Bool) {
-        isGameFinished = true
-        audioManager.stopAudio(type: .background)
+       onClose()
     }
     
-    
+    func onClose(){
+        isGameFinished = true
+        if let audioManager {
+            audioManager.stopAudio(type: .background)
+        }
+        
+        levelBuilder = nil
+        hapticsManager = nil
+        audioManager = nil
+        viewModel = nil
+        stopTimer()
+        countdownTimer = nil
+        animation = nil
+        
+        removeBackgroundModeObserver()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = GameSceneViewModel()
-        viewModel.gameFinished = gameFinished
-        audioManager = AudioManager()
-//        audioManager.playAudio(type: .background)
-        hapticsManager = HapticsManager()
-        initializeGameScene()
-        buildLevel(level: 1)
-        startTimer()
-    }
         
+        
+        
+        healthManager = HealthManager()
+        
+        viewModel = GameSceneViewModel()
+        viewModel.onGameFinished = onGameFinished
+        viewModel.onRematch = onRematch
+        
+        audioManager = AudioManager()
+        animation = Animation()
+        audioManager.playAudio(type: .background)
+        
+        storageManager = StorageManager()
+        
+        hapticsManager = HapticsManager()
+        
+        initializeGameScene()
+        
+        buildLevel(scene: levelType!, battleModel: battleModel)
+
+        setCharactersIcons(characters: pickedCharacters)
+
+        startTimer()
+        
+        addSwitchToBackgroundModeObserver()
+        
+
+    }
+    
+    
     func initializeGameScene(){
+        gameScene = nil
         gameScene = UIView()
         gameScene.frame = view.bounds
         navigationItem.hidesBackButton = true
     }
     
+    
+    func setCharactersIcons(characters: PickedCharacters?){
+        if let characters {
+            let player1ImageView = gameScene.subviews[8].subviews[1] as! UIImageView
+            let player2ImageView = gameScene.subviews[9].subviews[1] as! UIImageView
+            
+            player1ImageView.image = UIImage(named: characters.player1Character.avatarID)
+            player2ImageView.image = UIImage(named: characters.player2Character.avatarID)
+        }
+    }
     
     func updateTimerLabel() {
         let timerLabel = gameScene.subviews[10] as? UILabel
@@ -92,7 +150,7 @@ final class GameSceneViewController: UIViewController {
             updateTimerLabel()
         } else {
             stopTimer()
-
+            
             switch viewModel.currentPlayer! {
             case .player1:
                 stopAnimation(for: .player1)
@@ -101,42 +159,51 @@ final class GameSceneViewController: UIViewController {
                 stopAnimation(for: .player2)
                 onLongpressEnd(pressInterval: 1.2)
             }
+
         }
     }
     
     func prepareAndShot(ammo: UIView, weapon: UIView, strength: Double, toSide: Side){
         levelBuilder.physicsManager.removeGravityBehavior(from: ammo)
-        
         levelBuilder.updateAmmoLocation(for: weapon, ammo: ammo)
-        
         levelBuilder.updateAmmoVisiblity(for: ammo, isHidden: false)
-        
         levelBuilder.physicsManager.addGravityBehavior(view: ammo)
         levelBuilder.physicsManager.shot(item: ammo, from: weapon, toSide: toSide, strength: strength)
+        
+        let weaponOrigin = weapon.frame.origin
+        animation.play(x: weaponOrigin.x, y: weaponOrigin.y, type: .shot, referenceView: gameScene)
+        
         audioManager.playAudio(type: .shot)
-        setTapRecognitionState(disabled: true)
-        stopTimer()
+        
         hapticsManager.generate(type: .heavy)
+        
+        setTapRecognitionState(disabled: true)
+        
+        stopTimer()
+        
     }
     
     @objc func onLongpressEnd(pressInterval: Double){
         //        for disabling multiple calls of onmiss and onhit, the code validates in delegate function call, was the temporarycurrentPlayer changed after touch in screen,
         temporaryCurrentPlayer = viewModel.currentPlayer
-
+        
         if let player = viewModel.currentPlayer {
             switch player {
             case .player1:
                 let leftWeapon = gameScene.subviews[4]
                 let leftAmmo = gameScene.subviews[6]
                 
-
-                prepareAndShot(ammo: leftAmmo, weapon: leftWeapon, strength: pressInterval, toSide: .right)
+                if let _ = levelBuilder{
+                    prepareAndShot(ammo: leftAmmo, weapon: leftWeapon, strength: pressInterval, toSide: .right)
+                }
+                
                 
             case .player2:
                 let rightWeapon = gameScene.subviews[5]
                 let rightAmmo = gameScene.subviews[7]
-                
-                prepareAndShot(ammo: rightAmmo, weapon: rightWeapon, strength: pressInterval, toSide: .left)
+                if let _ = levelBuilder{
+                    prepareAndShot(ammo: rightAmmo, weapon: rightWeapon, strength: pressInterval, toSide: .left)
+                }
                 
             }
             
@@ -154,22 +221,61 @@ final class GameSceneViewController: UIViewController {
                 case .player2:
                     stopAnimation(for: .player2)
                 }
+                
+                //                adding strength animation to gamescene
+                let screenSize = UIScreen.main.bounds
+                animation.play(x: screenSize.width / 2, y: screenSize.height, type: .strength, referenceView: gameScene)
             }
+            
+            
         } else if gestureRecognizer.state == .ended {
             if let startTime = longPressStartTime {
                 let endTime = Date()
                 let duration = endTime.timeIntervalSince(startTime)
-                                
+                
                 onLongpressEnd(pressInterval: duration)
                 longPressStartTime = nil
+                
+                //                in this block i'm stopping the strength animation :D
+                let strengthView = self.gameScene.subviews.first(where: {
+                    $0.tag == 96
+                })
+                
+                if let strengthView {
+                    animation.stop(referenceView: gameScene, animationView: (strengthView as? LottieAnimationView)!)
+                }
+                
             }
             
             
         }
     }
     
-    func buildLevel(level: Int){
-        levelBuilder = LevelBuilder(level: level)
+    @objc func onPause(){
+        isPaused = true
+        stopTimer()
+        stopAnimation(for: viewModel.currentPlayer!)
+        showPauseModal()
+    }
+    
+    func onContinue(){
+        isPaused = false
+        startAnimation(for: viewModel.currentPlayer!)
+        startTimer()
+    }
+    
+    func showPauseModal(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+          if let vc = storyboard.instantiateViewController(withIdentifier: "PauseView") as? PauseViewController {
+              vc.viewModel = viewModel
+              vc.onMainMenu = onMainMenu
+              vc.onContinue = onContinue
+              navigationController?.present(vc, animated: true)
+          }
+    }
+    
+    func buildLevel(scene: LevelType, battleModel: BattleModel? = nil){
+        levelBuilder = LevelBuilder(type: scene)
         
         gameScene = levelBuilder.buildLevel(gameScene: gameScene)
         view.addSubview(gameScene)
@@ -182,6 +288,10 @@ final class GameSceneViewController: UIViewController {
         let fullScreenLongPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
         
         fullScreenTapView.addGestureRecognizer(fullScreenLongPressGesture)
+
+        let pauseButton = gameScene.subviews[12] as! UIButton
+        
+        pauseButton.addTarget(self, action: #selector(onPause), for: .touchUpInside)
         
         startAnimation(for: .player1)
         
@@ -190,6 +300,17 @@ final class GameSceneViewController: UIViewController {
         
         levelBuilder.updateAmmoVisiblity(for: leftAmmo, isHidden: true)
         levelBuilder.updateAmmoVisiblity(for: rightAmmo, isHidden: true)
+        
+        if let battleModel {
+            print("battleModel")
+            pickedCharacters = PickedCharacters(player1Character: battleModel.player1Character, player2Character: battleModel.player2Character)
+            viewModel.onContinue(battleModel: battleModel)
+            self.updateHealthScale(player: .player1)
+            self.updateHealthScale(player: .player2)
+        } else {
+            
+            print("NON battleModel")
+        }
     }
     
     func updateAmmoState(ammo: UIView, weapon: UIView){
@@ -212,15 +333,13 @@ final class GameSceneViewController: UIViewController {
     func updateHealthScale(player: Player){
         switch player {
         case .player1:
-            levelBuilder.updatePlayerHealthIndicator(health: HealthManager.shared.player1health, referenceView: gameScene.subviews[8], side: .left)
-
+            levelBuilder.updatePlayerHealthIndicator(health: healthManager.getHealth(player: .player1), referenceView: gameScene.subviews[8], side: .left)
         case .player2:
-            levelBuilder.updatePlayerHealthIndicator(health: HealthManager.shared.player2health, referenceView: gameScene.subviews[9], side: .right)
-
+            levelBuilder.updatePlayerHealthIndicator(health: healthManager.getHealth(player: .player2), referenceView: gameScene.subviews[9], side: .right)
         }
     }
     
-    func updatePlayerState(side: Side){
+    func updatePlayerState(side: Side) {
         switch side {
         case .left:
             let leftWeapon = gameScene.subviews[4]
@@ -228,7 +347,11 @@ final class GameSceneViewController: UIViewController {
             
             updateAmmoState(ammo: leftAmmo, weapon: leftWeapon)
             updateWeaponPosition(weapon: leftWeapon, side: .right)
-            startAnimation(for: .player2)
+            
+            if !isPaused {
+                startAnimation(for: .player2)
+            }
+            
             
         case .right:
             let rightWeapon = gameScene.subviews[5]
@@ -236,11 +359,16 @@ final class GameSceneViewController: UIViewController {
             
             updateAmmoState(ammo: rightAmmo, weapon: rightWeapon)
             updateWeaponPosition(weapon: rightWeapon, side: .left)
-            startAnimation(for: .player1)
+            if !isPaused {
+                startAnimation(for: .player1)
+            }
         }
         
         resetTimer()
-        startTimer()
+        if !isPaused {
+            startTimer()
+        }
+        
     }
     
     func setTapRecognitionState(disabled state: Bool){
@@ -270,7 +398,6 @@ final class GameSceneViewController: UIViewController {
             }
         }
     }
-    
     
     
     func startAnimation(for player: Player){
@@ -334,25 +461,193 @@ final class GameSceneViewController: UIViewController {
             
             viewanimator2.startAnimation()
         }
+        
+    }
+    
+    func onGameFinished(_ battleResult: BattleResult) {
+        isGameFinished = true
+        
+        audioManager.stopAudio(type: .background)
+        audioManager.playAudio(type: .finished)
+        
+        stopAnimation(for: .player1)
+        stopAnimation(for: .player2)
+        
+        setTapRecognitionState(disabled: true)
+        
+        stopTimer()
+        resetTimer()
+        
+        let winner = determineWinner(battleResult: battleResult)
+        showResultModal(winner: winner)
+        updateWins(name: winner.name, increment: 1)
+        
+        storageManager.remove(key: "game", storageType: .userdefaults)
     }
     
     
-    func gameFinished() {
-        isGameFinished = true
-        audioManager.stopAudio(type: .background)
-        audioManager.playAudio(type: .finished)
-        stopAnimation(for: .player1)
-        stopAnimation(for: .player2)
-        setTapRecognitionState(disabled: true)
-        stopTimer()
-        resetTimer()
-//        setTimerLabelVisiblity(false)
-        
-        for n in 1...gameScene.subviews.count - 5 {
-            gameScene.subviews[n].backgroundColor = .systemGray2
+    func updateWins(name: String, increment: Int) {
+        if let data = storageManager.get(key: "leaderboard", storageType: .userdefaults) as? Data {
+            let decoder = JSONDecoder()
+            if let leaderboard = try? decoder.decode([LeaderboardItem].self, from: data) {
+                let newLeaderBoard = increaseWins(for: name, in: leaderboard)
+                
+                let encoder = JSONEncoder()
+                if let encodedData = try? encoder.encode(newLeaderBoard) {
+                    storageManager.set(key: "leaderboard", value: encodedData, storageType: .userdefaults)
+                }
+            }
         }
         
     }
+    
+    func increaseWins(for playerName: String, in leaderboardItems: [LeaderboardItem]) -> [LeaderboardItem] {
+        return leaderboardItems.map { item in
+            var updatedItem = item
+            if item.playerName == playerName {
+                updatedItem.wins += 1
+            }
+            return updatedItem
+        }
+    }
+    
+    
+    func determineWinner(battleResult: BattleResult) -> Character {
+        var winner: Character
+        
+        switch battleResult.winner! {
+            case .player1:
+            winner = pickedCharacters!.player1Character
+            case .player2:
+            winner = pickedCharacters!.player2Character
+        }
+        
+        return winner
+    }
+    
+    func showResultModal(winner: Character){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+          if let vc = storyboard.instantiateViewController(withIdentifier: "ResultView") as? ResultViewController {
+              
+              vc.winner = winner
+              vc.viewModel = viewModel
+              vc.onMainMenu = onMainMenu
+              navigationController?.present(vc, animated: true)
+          }
+
+    }
+    
+    
+    func onHit(ammo: UIView, side: Side){
+        if let temporaryCurrentPlayer {
+            if temporaryCurrentPlayer == viewModel.currentPlayer {
+                viewModel.onHit()
+                let viewOrigin = ammo.frame.origin
+                
+                animation.play(x: viewOrigin.x, y: viewOrigin.y, type: .hit, referenceView: gameScene)
+                stopTimer()
+                self.temporaryCurrentPlayer = nil
+                audioManager.playAudio(type: .hit)
+                
+                
+                switch side {
+                    case .left:
+                        updateHealthScale(player: .player2)
+                    case .right:
+                        updateHealthScale(player: .player1)
+                }
+                
+                hapticsManager.generate(type: .medium)
+                
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                    if !self.isGameFinished {
+                        self.updatePlayerState(side: side)
+                        self.setTapRecognitionState(disabled: false)
+                    }
+                })
+                
+                levelBuilder.updateAmmoVisiblity(for: ammo, isHidden: true)
+            }
+        }
+    }
+    
+    func onRematch(){
+        print("on rematch")
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func onMainMenu(){
+        onClose()
+        self.dismissToRoot(animated: true)
+    }
+    
+    func onMiss(ammo: UIView, side: Side){
+        if let temporaryCurrentPlayer {
+            if temporaryCurrentPlayer == viewModel.currentPlayer {
+                
+                let viewOrigin = ammo.frame.origin
+                
+                animation.play(x: viewOrigin.x, y: viewOrigin.y, type: .miss, referenceView: gameScene)
+                stopTimer()
+                self.temporaryCurrentPlayer = nil
+                viewModel.onMiss()
+                audioManager.playAudio(type: .miss)
+                levelBuilder.updateAmmoVisiblity(for: ammo, isHidden: true)
+                
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                    if !self.isGameFinished {
+                        self.updatePlayerState(side: side)
+                        self.setTapRecognitionState(disabled: false)
+                    }
+                })
+            }
+        }
+    }
+    
+    func addSwitchToBackgroundModeObserver(){
+        NotificationCenter.default.addObserver(self, selector: #selector(onSwitchToBackgroundMode), name: .appDidEnterBackground, object: nil)
+    }
+
+    func removeBackgroundModeObserver(){
+        NotificationCenter.default.removeObserver(self, name: .appDidEnterBackground, object: nil)
+    }
+
+    
+    @objc func onSwitchToBackgroundMode(){
+        saveGame()
+    }
+    
+    func saveGame(){
+        let player1Health = healthManager.getHealth(player: .player1)
+        let player2Health = healthManager.getHealth(player: .player2)
+        
+        if player1Health != 100 || player2Health != 100  {
+            if player2Health > 0 && player1Health > 0 {
+                let battleModel = BattleModel(player1Character: pickedCharacters!.player1Character, player1Health: player1Health, player2Character: pickedCharacters!.player2Character, player2Health: player2Health, levelType: levelType!, turn: viewModel.currentPlayer!)
+                
+                let encoder = JSONEncoder()
+                if let encodedData = try? encoder.encode(battleModel) {
+                    storageManager.set(key: "game", value: encodedData, storageType: .userdefaults)
+                }
+            }
+        } else {
+            removeSavedGame()
+        }
+    }
+    
+    func removeSavedGame(){
+        if let _ = self.storageManager.get(key: "game", storageType: .userdefaults) as? Data {
+            storageManager.remove(key: "game", storageType: .userdefaults)
+        }
+
+    }
+    
+    deinit {
+        print("deinit")
+        removeBackgroundModeObserver()
+        onClose()
+    }
+
 }
 
 
@@ -368,49 +663,11 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
             if let view = item as? UIView, let otherView = otherItem as? UIView {
                 
                 if otherView == leftAmmo && view == rightCastle {
-                    if let temporaryCurrentPlayer{
-                        if temporaryCurrentPlayer == viewModel.currentPlayer {
-                            stopTimer()
-                            self.temporaryCurrentPlayer = nil
-                            audioManager.playAudio(type: .hit)
-                            viewModel.onHit()
-                            updateHealthScale(player: .player2)
-                            hapticsManager.generate(type: .medium)
-                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                                if !self.isGameFinished{
-
-                                    
-                                    self.updatePlayerState(side: .left)
-                                    self.setTapRecognitionState(disabled: false)
-                                }
-                            })
-                            
-                            levelBuilder.updateAmmoVisiblity(for: leftAmmo, isHidden: true)
-                        }
-                    }
+                    self.onHit(ammo: leftAmmo, side: .left)
                     
                 } else if otherView == rightAmmo && view == leftCastle {
-                    if let temporaryCurrentPlayer{
-                        if temporaryCurrentPlayer == viewModel.currentPlayer {
-                            stopTimer()
-                            self.temporaryCurrentPlayer = nil
-                            audioManager.playAudio(type: .hit)
-                            viewModel.onHit()
-                            updateHealthScale(player: .player1)
-                            hapticsManager.generate(type: .medium)
-                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                                if !self.isGameFinished{
-                                    
-                                    
-                                    self.updatePlayerState(side: .right)
-                                    self.setTapRecognitionState(disabled: false)
-                                }
-                            })
-                            levelBuilder.updateAmmoVisiblity(for: rightAmmo, isHidden: true)
-                            
-                        }
-                    }
-                    
+                    self.onHit(ammo: rightAmmo, side: .right)
+
                 }
             }
         }
@@ -429,43 +686,11 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                 let rightAmmo = gameScene.subviews[7]
                 
                 if view == leftAmmo {
-                    
-                    if let temporaryCurrentPlayer {
-                        print(temporaryCurrentPlayer)
-                        if temporaryCurrentPlayer == viewModel.currentPlayer {
-                            stopTimer()
-                            self.temporaryCurrentPlayer = nil
-                            viewModel.onMiss()
-                            audioManager.playAudio(type: .miss)
-                            levelBuilder.updateAmmoVisiblity(for: leftAmmo, isHidden: true)
-
-                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                                if !self.isGameFinished{
-                                    self.updatePlayerState(side: .left)
-                                    self.setTapRecognitionState(disabled: false)
-                                }
-                            })
-                        }
-                    }
-                    
+                    self.onMiss(ammo: leftAmmo, side: .left)
                     
                 } else if view == rightAmmo {
-                    if let temporaryCurrentPlayer {
-                        if temporaryCurrentPlayer == viewModel.currentPlayer {
-                            stopTimer()
-                            self.temporaryCurrentPlayer = nil
-                            viewModel.onMiss()
-                            audioManager.playAudio(type: .miss)
-                            levelBuilder.updateAmmoVisiblity(for: rightAmmo, isHidden: true)
+                    self.onMiss(ammo: rightAmmo, side: .right)
 
-                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                                if !self.isGameFinished{
-                                    self.updatePlayerState(side: .right)
-                                    self.setTapRecognitionState(disabled: false)
-                                }
-                            })
-                        }
-                    }
                 }
             }
         }

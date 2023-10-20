@@ -10,17 +10,30 @@ import UIKit
 import AVFoundation
 
 final class LevelBuilder {
-    private var levels: [Level] = [
-        Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "1"), image: "1"), image: "1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "1"), image: "1"), image: "1"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "1"), scene: Scene(type: .autumn, image: "1"), image: "1")
+    private(set) var levels: [Level] = [
+        Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle2"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "NormalScene1"), type: .normal),
+
+        Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle2"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "NormalScene2"), type: .normal),
+
+        Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle2"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "NormalScene3"), type: .normal),
+
+        
+        Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle3") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle4"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "HalloweenScene1"), type: .halloween),
+
+        
+        Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle4"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "SpaceScene1"), type: .space),
+
+        Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle4"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "SpaceScene2"), type: .space),
+
+        Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle4"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "SpaceScene3"), type: .space),
+
+        Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle4"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "SpaceScene4"), type: .space),
+
     ]
     
-    private var adjustedLevel: Int = 0
-    var level: Int = 0 {
-        willSet(newValue) {
-            adjustedLevel = newValue - 1
-        }
-    }
-    
+//    private var adjustedLevel: Int = 0
+    private var level: Int = 0
+
     private var castleLeft: Castle!
     private var castleRight: Castle!
     private var scene: Scene!
@@ -31,13 +44,29 @@ final class LevelBuilder {
     private var castleRightAmmo: Ammo!
     private let screenSize = UIScreen.main.bounds
     var physicsManager: PhysicsManager!
+
     
-    
-    init(level: Int) {
-        self.level = level
-        self.initializeLevelComponents(level: adjustedLevel)
+    init(type: LevelType) {
+        if let randomLevelIndex = getRandomLevelIndex(forSceneType: type) {
+            print("Randomly chosen level index for Halloween scene: \(randomLevelIndex)")
+            self.level = randomLevelIndex
+            self.initializeLevelComponents(level: randomLevelIndex)
+        } else {
+            print("No levels of the specified scene type found.")
+        }
     }
-    
+
+    private func getRandomLevelIndex(forSceneType type: LevelType) -> Int? {
+        let filteredLevels = levels.enumerated().filter { $0.element.type == type }
+        
+        if !filteredLevels.isEmpty {
+            let randomIndex = Int.random(in: 0..<filteredLevels.count)
+            return filteredLevels[randomIndex].offset
+        } else {
+            return nil
+        }
+    }
+
     
     private func initializeLevelComponents(level: Int){
         castleLeft = levels[level].castleLeft
@@ -56,14 +85,29 @@ final class LevelBuilder {
     
     private func createCastle(castle: Castle) -> UIView {
         var component: UIView!
+        var x: CGFloat = 0
+        var y: CGFloat = 0
+        var width: CGFloat = 0
+        var height: CGFloat = 0
         
         switch castle.locationOnScreen {
         case .left:
-            component = UIView(frame: CGRect(x: 0, y: screenSize.height - 110 , width: 90, height: 120))
-            component.backgroundColor = .red
+            x = 20
+            y = screenSize.height - 110
+            width = 120
+            height = 170
+            
+            component = UIView(frame: CGRect(x: x, y: y , width: width, height: height))
+            component.backgroundColor = .clear
         case .right:
-            component = UIView(frame: CGRect(x: screenSize.width - 90 , y: screenSize.height - 110, width: 90, height: 120))
-            component.backgroundColor = .cyan
+            x = screenSize.width - 90
+            y = screenSize.height - 110
+            width = 120
+            height = 170
+
+            
+            component = UIView(frame: CGRect(x: x , y: y, width: width, height: height))
+            component.backgroundColor = .clear
         }
         
         if let image = UIImage(named: castle.image) {
@@ -74,7 +118,13 @@ final class LevelBuilder {
     }
     
     private func createObstacle(obstacle: Obstacle) -> UIView {
-        let component = UIView(frame: CGRect(x: screenSize.width / 2 - 40, y: screenSize.height / 2 - 40 , width: 80, height: 80))
+        let x: CGFloat = screenSize.width / 2 - 40
+        let y: CGFloat = screenSize.height / 2 - 40
+        let width: CGFloat = 80
+        let height: CGFloat = 80
+
+        
+        let component = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
         component.backgroundColor = .blue
         
         if let image = UIImage(named: obstacle.image) {
@@ -85,23 +135,58 @@ final class LevelBuilder {
     
     private func createWeapon(weapon: Weapon) -> UIView {
         var component: UIView!
+
+
+        var x: CGFloat = 0
+        var y: CGFloat = 0
+        var width: CGFloat = 0
+        var height: CGFloat = 0
         let angleInRadians = CGFloat(90).degreesToRadians
+        
         
         switch weapon.locationOnScreen {
         case .left:
-            component = UIView(frame: CGRect(x: 130, y: screenSize.height - 100, width: 40, height: 70))
-            component.backgroundColor = .yellow
+            x = 130
+            y = screenSize.height - 100
+            width = 40
+            height = 70
+
+
+            component = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
+            component.backgroundColor = .clear
             component.transform = CGAffineTransform(rotationAngle: angleInRadians)
             if let image = UIImage(named: weapon.image) {
                 addComponentImage(referenceView: component, image: image)
+                
+                let imageView = component.subviews[0]
+                let imageViewOrigin = imageView.frame.origin
+                imageView.transform = CGAffineTransform(rotationAngle: angleInRadians)
+                
+                let newFrame = CGRect(x: imageViewOrigin.x, y: imageViewOrigin.y, width: width, height: height)
+                imageView.frame = newFrame
+                
             }
         case .right:
-            component = UIView(frame: CGRect(x: screenSize.width - 170, y: screenSize.height - 100, width: 40, height: 70))
-            component.backgroundColor = .green
+            x = screenSize.width - 170
+            y = screenSize.height - 100
+            width = 40
+            height = 70
+            
+
+            component = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
+            component.backgroundColor = .clear
             component.transform = CGAffineTransform(rotationAngle: -angleInRadians)
             
             if let image = UIImage(named: weapon.image) {
                 addComponentImage(referenceView: component, image: image)
+                
+                let imageView = component.subviews[0]
+                let imageViewOrigin = imageView.frame.origin
+                imageView.transform = CGAffineTransform(rotationAngle: angleInRadians)
+
+                let newFrame = CGRect(x: imageViewOrigin.x, y: imageViewOrigin.y, width: width, height: height)
+                imageView.frame = newFrame
+
             }
         }
         
@@ -111,30 +196,53 @@ final class LevelBuilder {
     private func createAmmo(weapon: Weapon, ammo: Ammo) -> UIView {
         var component: UIView!
         
+        var x: CGFloat = 0
+        var y: CGFloat = 0
+        var width: CGFloat = 0
+        var height: CGFloat = 0
+
         switch weapon.locationOnScreen {
         case .left:
-            component = UIView(frame: CGRect(x: 130, y: screenSize.height - 100, width: 20, height: 20))
+            x = 130
+            y = screenSize.height - 100
+            width = 20
+            height = 20
+
+            component = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
         case .right:
-            component = UIView(frame: CGRect(x: screenSize.width - 170, y: screenSize.height - 100, width: 20, height: 20))
+            x = screenSize.width - 170
+            y = screenSize.height - 100
+            width = 20
+            height = 20
+            
+            component = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
         }
         
         if let image = UIImage(named: ammo.image) {
             addComponentImage(referenceView: component, image: image)
         }
         
-        component.backgroundColor = .orange
+        component.backgroundColor = .clear
         
         return component
     }
     
     private func createScene(scene: Scene) -> UIView {
-        let component = UIView(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height))
+        let x: CGFloat = 0
+        let y: CGFloat = 0
+        let width: CGFloat = screenSize.width
+        let height: CGFloat = screenSize.height
+
+        
+        let component = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
         
         if let image = UIImage(named: scene.image) {
             addComponentImage(referenceView: component, image: image)
         }
         
         component.backgroundColor = .black
+        
+        
         return component
     }
     
@@ -180,7 +288,12 @@ final class LevelBuilder {
     private func buildInteractiveUI(referenceView: UIView) -> UIView {
         let fullScreenView = UIView(frame: CGRect(x: 0, y: 0, width: referenceView.frame.width, height: referenceView.frame.height))
         fullScreenView.backgroundColor = UIColor.clear
+        
+        let pauseButton = createPauseButton()
+
         referenceView.addSubview(fullScreenView)
+        referenceView.addSubview(pauseButton)
+        
         
         return referenceView
     }
@@ -191,16 +304,21 @@ final class LevelBuilder {
         let componentWidth: Double = 310
         let componentHeight: Double = 80
         
-        var imageViewX: Double = 0
-        var imageViewY: Double = 0
-        let imageViewWidth: Double = 60
-        let imageViewHeight: Double = 60
+        var characterImageViewX: Double = 0
+        var characterImageViewY: Double = 0
+        var characterImageViewWidth: Double = 60
+        var characterImageViewHeight: Double = 60
+
+        var characterBackgroundImageViewX: Double = 0
+        var characterBackgroundImageViewY: Double = 0
+        let characterBackgroundImageViewWidth: Double = 60
+        let characterBackgroundImageViewHeight: Double = 60
+        
         
         var healthScaleX: Double = 0
         var healthScaleY: Double = 0
         let healthScaleWidth: Double = 240
         let healthScaleHeight: Double = 30
-        
         
         var healthScaleBackgroundX: Double = 0
         var healthScaleBackgroundY: Double = 0
@@ -212,10 +330,13 @@ final class LevelBuilder {
             componentX = 20
             componentY = 10
             
-            imageViewX = componentX
-            imageViewY = componentY
+            characterBackgroundImageViewX = componentX + 2
+            characterBackgroundImageViewY = componentY - 5
             
-            healthScaleBackgroundX = imageViewX + imageViewWidth
+            characterImageViewX = characterBackgroundImageViewX
+            characterImageViewY = characterBackgroundImageViewY
+            
+            healthScaleBackgroundX = (characterBackgroundImageViewX + characterBackgroundImageViewWidth) - 3
             healthScaleBackgroundY = componentY
             
             healthScaleX = healthScaleBackgroundX
@@ -231,35 +352,58 @@ final class LevelBuilder {
             healthScaleX = componentX + healthScaleBackgroundWidth - healthScaleWidth
             healthScaleY = healthScaleBackgroundY + (healthScaleBackgroundHeight / 6)
             
-            imageViewX = healthScaleBackgroundX + healthScaleBackgroundWidth
-            imageViewY = componentY
+            characterBackgroundImageViewX = (healthScaleBackgroundX + healthScaleBackgroundWidth) - 2
+            characterBackgroundImageViewY = componentY - 5
+            
+            characterImageViewX = characterBackgroundImageViewX
+            characterImageViewY = componentY
         }
         
-        print(componentX, componentY, imageViewX, imageViewY, healthScaleX, healthScaleY, healthScaleBackgroundX, healthScaleBackgroundY)
         
+        characterImageViewWidth = characterBackgroundImageViewWidth * 0.7
+        characterImageViewHeight = characterBackgroundImageViewHeight * 0.7
+                
         let component = UIView(frame: CGRect(x: componentX, y: componentY, width: componentWidth, height: componentHeight))
         
-        let imageView = UIImageView(frame: CGRect(x: imageViewX, y: imageViewY, width: imageViewWidth, height: imageViewHeight))
+        let characterBackgroundImageView = UIImageView(frame: CGRect(x: characterBackgroundImageViewX, y: characterBackgroundImageViewY, width: characterBackgroundImageViewWidth, height: characterBackgroundImageViewHeight))
         
+        let characterImageView = UIImageView(frame: CGRect(x: characterBackgroundImageView.center.x - characterImageViewWidth / 2, y: characterBackgroundImageView.center.y - characterImageViewHeight / 2, width: characterImageViewWidth, height: characterImageViewHeight))
+
         let healthScaleBackground = UIImageView(frame: CGRect(x: healthScaleBackgroundX, y: healthScaleBackgroundY, width: healthScaleBackgroundWidth, height: healthScaleBackgroundHeight))
         
         let healthScale = UIView(frame: CGRect(x: healthScaleX, y: healthScaleY, width: healthScaleWidth, height: healthScaleHeight))
         
-        component.addSubview(imageView)
+        component.backgroundColor = .clear
+        
+        characterBackgroundImageView.image = UIImage(named: "cellFrame")
+        characterBackgroundImageView.contentMode = .scaleAspectFit
+        
+        characterImageView.contentMode = .scaleAspectFit
+        characterImageView.backgroundColor = .clear
+
+        healthScaleBackground.backgroundColor = UIColor(named: "backgroundColor")
+        healthScale.backgroundColor = .systemBrown
+        
+        component.addSubview(characterBackgroundImageView)
+        component.addSubview(characterImageView)
         component.addSubview(healthScaleBackground)
         component.addSubview(healthScale)
         
-        component.backgroundColor = .clear
-        imageView.backgroundColor = .gray
-        healthScaleBackground.backgroundColor = .systemGray3
-        healthScale.backgroundColor = .red
+        
+
+        switch side {
+        case .left:
+            healthScaleBackground.roundSpecificCorners(corners: [.topRight, .bottomRight], radius: 8)
+        case .right:
+            healthScaleBackground.roundSpecificCorners(corners: [.topLeft, .bottomLeft], radius: 8)
+        }
         
         return component
     }
     
     func updatePlayerHealthIndicator(health: Double, referenceView: UIView, side: Side) {
         let percentageFraction = health / 100
-        let originalFrame = referenceView.subviews[2].frame
+        let originalFrame = referenceView.subviews[3].frame
         
         let newWidth = originalFrame.width * CGFloat(percentageFraction)
         
@@ -273,7 +417,7 @@ final class LevelBuilder {
         
         let newFrame = CGRect(x: newX, y: originalFrame.origin.y, width: newWidth, height: originalFrame.size.height)
         
-        referenceView.subviews[2].frame = newFrame
+        referenceView.subviews[3].frame = newFrame
     }
     
     private func createTimerLabel() -> UILabel {
@@ -292,6 +436,24 @@ final class LevelBuilder {
         
         return timerLabel
     }
+
+    private func createPauseButton() -> UIButton {
+        let buttonX = Int(screenSize.width / 2)
+        let buttonY = 30
+        let buttonWidth = 40
+        let buttonHeight = 40
+        
+        let button = UIButton(frame: CGRect(x: buttonX + buttonWidth + 10, y: buttonY, width: buttonWidth, height: buttonHeight))
+        
+        if let image = UIImage(named: "pause") {
+            button.setImage(image, for: .normal)
+        }
+        
+        
+        return button
+    }
+
+    
     
     private func buildIndicatingUI(referenceView: UIView) -> UIView {
         let leftPlayerIndicator = createPlayerIndicatorView(side: .left)
@@ -317,5 +479,8 @@ final class LevelBuilder {
         ammo.isHidden = isHidden
     }
     
+    deinit {
+        print("level builder deinit")
+    }
     
 }

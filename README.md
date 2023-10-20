@@ -21,12 +21,13 @@ Below you can find our experiments on this project important parts
 # Details
 <b>Architecture - MVVM</b>
 
-`Key Elements`
+`Key Elements` <br/>
+<pre>
 • Level Manager (Builder)
 • Physics Manager
 • Game Manager
 • Storage Manager
-
+</pre>
 
 <b>Architecture - MVVM</b>
 

@@ -32,6 +32,7 @@
 		336A95352AE13F6C00F43B13 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 336A95342AE13F6C00F43B13 /* FirebaseCrashlytics */; };
 		336A95372AE1413B00F43B13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 336A95362AE1413B00F43B13 /* GoogleService-Info.plist */; };
 		336A95392AE180D900F43B13 /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95382AE180D900F43B13 /* PauseViewController.swift */; };
+		336A953B2AE20DE400F43B13 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A953A2AE20DE400F43B13 /* UIImage.swift */; };
 		33A293532AC44EF6008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
 		33A293542AC44EF6008D9B9C /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
 		33A293562AC44F00008D9B9C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293552AC44F00008D9B9C /* GameManager.swift */; };
@@ -175,6 +176,7 @@
 		336A952E2AE1377000F43B13 /* strengthIndicator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = strengthIndicator.json; path = ../../../../Downloads/strengthIndicator.json; sourceTree = "<group>"; };
 		336A95362AE1413B00F43B13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GD info plist/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		336A95382AE180D900F43B13 /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
+		336A953A2AE20DE400F43B13 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		33A293522AC44EF6008D9B9C /* LevelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuilder.swift; sourceTree = "<group>"; };
 		33A293552AC44F00008D9B9C /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		33A2935C2AC46A4D008D9B9C /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				336A95232ADDD92300F43B13 /* UIView.swift */,
 				33E8D3E42AD2AB2600C3892C /* CGFloat.swift */,
 				336A952B2ADF1B8200F43B13 /* Notification.swift */,
+				336A953A2AE20DE400F43B13 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 				33F00D602ABCB4CB00A5D5B2 /* AppDelegate.swift in Sources */,
 				33F00D622ABCB4CB00A5D5B2 /* SceneDelegate.swift in Sources */,
 				33E8D3E52AD2AB2600C3892C /* CGFloat.swift in Sources */,
+				336A953B2AE20DE400F43B13 /* UIImage.swift in Sources */,
 				E8BBD4742AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift in Sources */,
 				33F00DBF2ABDC45600A5D5B2 /* GameSceneModels.swift in Sources */,
 				33F00DBB2ABDC44E00A5D5B2 /* GameSceneViewModel.swift in Sources */,
@@ -1140,6 +1144,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1147,9 +1152,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-Kings";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1168,6 +1176,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1175,9 +1184,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-Kings";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

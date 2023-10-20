@@ -27,5 +27,7 @@ struct BattleModel: Codable {
     var player2Character: Character
     var player2Health: Double
     
+    var levelType: LevelType
+    
     var turn: Player
 }

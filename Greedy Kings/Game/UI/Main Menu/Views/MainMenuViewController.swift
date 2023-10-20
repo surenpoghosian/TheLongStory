@@ -26,6 +26,7 @@ final class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackground()
         viewModel = MainMenuViewModel()
         storageManager = StorageManager()
         setupUI()
@@ -33,6 +34,7 @@ final class MainMenuViewController: UIViewController {
         storageManager = StorageManager()
         setupAudioSettings()
         checkAndSetupCharactersData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +42,20 @@ final class MainMenuViewController: UIViewController {
         checkForUnfinishedGame()
     }
     
+    func setupBackground(){
+        let screenSize = UIScreen.main.bounds
+        let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height))
+        imageview.contentMode = .scaleAspectFill
+        let image = UIImage(named: "NormalScene1")
+
+        if let blurredImage = image?.applyBlur(radius: 6.0) {
+            imageview.image = blurredImage
+            
+        }
+        
+        
+        self.view.insertSubview(imageview, at: 0)
+    }
     
     private func checkAndSetupCharactersData(){
         if storageManager.get(key: "characters", storageType: .userdefaults) == nil {
@@ -88,6 +104,7 @@ final class MainMenuViewController: UIViewController {
     private func setupUI() {
         
         self.view.backgroundColor = viewModel.backgroundColor
+        
         playButton.setBackgroundImage(viewModel.buttonImage, for: .normal)
         continueButton.setBackgroundImage(viewModel.buttonImage, for: .normal)
         settingsButton.setBackgroundImage(viewModel.settingsIcon, for: .normal)
@@ -103,6 +120,13 @@ final class MainMenuViewController: UIViewController {
         
         soundMuteButton.alpha = 0
         musicMuteButton.alpha = 0
+    }
+    
+    func removeSavedGame(){
+        if let _ = self.storageManager.get(key: "game", storageType: .userdefaults) as? Data {
+            storageManager.remove(key: "game", storageType: .userdefaults)
+        }
+
     }
     
     //set buttons UI and actions
@@ -121,6 +145,8 @@ final class MainMenuViewController: UIViewController {
                 if let data = self?.storageManager.get(key: "game", storageType: .userdefaults) as? Data {
                     let decoder = JSONDecoder()
                     if let battleModel = try? decoder.decode(BattleModel.self, from: data) {
+                        self?.removeSavedGame()
+                        vc.levelType = battleModel.levelType
                         vc.battleModel = battleModel
                     }
                 }

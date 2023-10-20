@@ -623,7 +623,7 @@ final class GameSceneViewController: UIViewController {
         
         if player1Health != 100 || player2Health != 100  {
             if player2Health > 0 && player1Health > 0 {
-                let battleModel = BattleModel(player1Character: pickedCharacters!.player1Character, player1Health: player1Health, player2Character: pickedCharacters!.player2Character, player2Health: player2Health, turn: viewModel.currentPlayer!)
+                let battleModel = BattleModel(player1Character: pickedCharacters!.player1Character, player1Health: player1Health, player2Character: pickedCharacters!.player2Character, player2Health: player2Health, levelType: levelType!, turn: viewModel.currentPlayer!)
                 
                 let encoder = JSONEncoder()
                 if let encodedData = try? encoder.encode(battleModel) {
@@ -631,10 +631,15 @@ final class GameSceneViewController: UIViewController {
                 }
             }
         } else {
-            if let _ = self.storageManager.get(key: "game", storageType: .userdefaults) as? Data {
-                storageManager.remove(key: "game", storageType: .userdefaults)
-            }
+            removeSavedGame()
         }
+    }
+    
+    func removeSavedGame(){
+        if let _ = self.storageManager.get(key: "game", storageType: .userdefaults) as? Data {
+            storageManager.remove(key: "game", storageType: .userdefaults)
+        }
+
     }
     
     deinit {

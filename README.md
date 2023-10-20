@@ -21,7 +21,7 @@ Below you can find our experiments on this project important parts
 # Details
 <b>Architecture - MVVM</b>
 
-`Key Elements` <br/>
+`Key Elements`
 <pre>
 • Level Manager (Builder)
 • Physics Manager
@@ -33,7 +33,7 @@ Below you can find our experiments on this project important parts
 
 
 
-Hierarchy
+`Hierarchy`
 <pre>
 ├── Greedy Kings
 │   ├── <strong>AnimationAssets</strong>

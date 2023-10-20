@@ -21,7 +21,7 @@ class LevelsViewController: UIViewController {
         viewModel = LevelsViewModel()
         setupUI()
         setupLevelsData()
-        setupPickLevelLabel(hintText: "Pick the level")
+        setupPickLevelLabel(hintText: "Pick the Scene")
         setupLevelsCollectionView()
         setupBackButton()
         
@@ -61,6 +61,7 @@ class LevelsViewController: UIViewController {
         pickLevelLabel.font = UIFont(name: "Futura-Bold", size: 40.0)
         pickLevelLabel.alpha = 0.7
         pickLevelLabel.textAlignment = .center
+        pickLevelLabel.textColor = .white
         pickLevelLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(pickLevelLabel)
         

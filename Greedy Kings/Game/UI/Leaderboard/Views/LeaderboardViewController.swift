@@ -113,6 +113,7 @@ final class LeaderboardViewController: UIViewController {
         leaderboardLabel.text = hintText.uppercased()
         leaderboardLabel.font = UIFont(name: "Futura-Bold", size: 40.0)
         leaderboardLabel.alpha = 0.7
+        leaderboardLabel.textColor = .white
         leaderboardLabel.textAlignment = .center
         leaderboardLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(leaderboardLabel)
@@ -154,7 +155,11 @@ extension LeaderboardViewController: UITableViewDataSource {
         }
         
         cell.playerNameLabel.text = leaderboardItem.playerName
+        cell.playerNameLabel.textColor = .white
+
         cell.winsLabel.text = "\(leaderboardItem.wins)"
+        cell.winsLabel.textColor = .white
+        
         cell.playerPhotoImageView.image = UIImage(named: leaderboardItem.photoName)
         cell.backgroundColor = UIColor(named: "backgroundColor")
         return cell

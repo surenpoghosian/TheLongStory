@@ -9,7 +9,7 @@ import Foundation
 
 final class GameManager {
     private(set) var currentPlayer: Player!
-    private var battleResult: BattleResult!
+    private(set) var battleResult: BattleResult!
     private var healthManager: HealthManager!
     
     init() {
@@ -19,7 +19,7 @@ final class GameManager {
     }
     
     // set initial data
-    func initializeBattleResult() {
+    private func initializeBattleResult() {
         battleResult = BattleResult(player1Shots: 0,
                                     player1Hits: 0,
                                     player2Shots: 0,

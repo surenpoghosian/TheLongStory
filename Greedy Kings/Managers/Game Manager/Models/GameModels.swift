@@ -12,7 +12,7 @@ enum Player: Codable {
     case player2
 }
 
-struct BattleResult {
+struct BattleResult: Equatable {
     var player1Shots: Int
     var player1Hits: Int
     var player2Shots: Int

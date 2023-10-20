@@ -44,6 +44,34 @@
 		33A2939A2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293992ACB1B67008D9B9C /* PhysicsManager.swift */; };
 		33A2939B2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293992ACB1B67008D9B9C /* PhysicsManager.swift */; };
 		33A2939C2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293992ACB1B67008D9B9C /* PhysicsManager.swift */; };
+		33A5416C2AE2742C00657E8E /* StorageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5416B2AE2742C00657E8E /* StorageManagerTests.swift */; };
+		33A5416E2AE2745F00657E8E /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5416D2AE2745F00657E8E /* ExtensionsTests.swift */; };
+		33A541772AE274D400657E8E /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 33A541762AE274D400657E8E /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		33A541792AE274D400657E8E /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 33A541782AE274D400657E8E /* FirebaseCrashlytics */; };
+		33A5417D2AE274E300657E8E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 33A5417C2AE274E300657E8E /* FirebaseAnalytics */; };
+		33A5417F2AE274E300657E8E /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 33A5417E2AE274E300657E8E /* FirebaseCrashlytics */; };
+		33A541802AE2779B00657E8E /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887FCAC2AD073BA0056999E /* GameModels.swift */; };
+		33A541812AE2779F00657E8E /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887FCAE2AD073D10056999E /* HealthManager.swift */; };
+		33A541822AE277A400657E8E /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887FCAE2AD073D10056999E /* HealthManager.swift */; };
+		33A541832AE277A700657E8E /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887FCAC2AD073BA0056999E /* GameModels.swift */; };
+		33A541842AE277AA00657E8E /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293552AC44F00008D9B9C /* GameManager.swift */; };
+		33A541852AE277AF00657E8E /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293522AC44EF6008D9B9C /* LevelBuilder.swift */; };
+		33A541862AE277B200657E8E /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2935C2AC46A4D008D9B9C /* LevelModel.swift */; };
+		33A541872AE277B700657E8E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293602AC4B0D8008D9B9C /* StorageManager.swift */; };
+		33A541882AE277BD00657E8E /* StorageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95262ADEDE1E00F43B13 /* StorageModels.swift */; };
+		33A541892AE277BD00657E8E /* StorageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95262ADEDE1E00F43B13 /* StorageModels.swift */; };
+		33A5418A2AE277FC00657E8E /* AnimationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95042ADC6A0900F43B13 /* AnimationModels.swift */; };
+		33A5418B2AE277FC00657E8E /* AnimationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95042ADC6A0900F43B13 /* AnimationModels.swift */; };
+		33A5418C2AE2782300657E8E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95202ADDCAB200F43B13 /* UIViewController.swift */; };
+		33A5418D2AE2782400657E8E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95202ADDCAB200F43B13 /* UIViewController.swift */; };
+		33A5418E2AE2782800657E8E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95232ADDD92300F43B13 /* UIView.swift */; };
+		33A5418F2AE2782900657E8E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95232ADDD92300F43B13 /* UIView.swift */; };
+		33A541902AE2783100657E8E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A952B2ADF1B8200F43B13 /* Notification.swift */; };
+		33A541912AE2783100657E8E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A952B2ADF1B8200F43B13 /* Notification.swift */; };
+		33A541922AE2783400657E8E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A953A2AE20DE400F43B13 /* UIImage.swift */; };
+		33A541932AE2783400657E8E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A953A2AE20DE400F43B13 /* UIImage.swift */; };
+		33A541942AE2784800657E8E /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95382AE180D900F43B13 /* PauseViewController.swift */; };
+		33A541952AE2784900657E8E /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A95382AE180D900F43B13 /* PauseViewController.swift */; };
 		33E8D3E02AD0456300C3892C /* PhysicsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E8D3DF2AD0456300C3892C /* PhysicsModels.swift */; };
 		33E8D3E12AD0456300C3892C /* PhysicsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E8D3DF2AD0456300C3892C /* PhysicsModels.swift */; };
 		33E8D3E22AD0456300C3892C /* PhysicsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E8D3DF2AD0456300C3892C /* PhysicsModels.swift */; };
@@ -68,7 +96,7 @@
 		33F00D672ABCB4CB00A5D5B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33F00D652ABCB4CB00A5D5B2 /* Main.storyboard */; };
 		33F00D6C2ABCB4CC00A5D5B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33F00D6B2ABCB4CC00A5D5B2 /* Assets.xcassets */; };
 		33F00D6F2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33F00D6D2ABCB4CC00A5D5B2 /* LaunchScreen.storyboard */; };
-		33F00D7A2ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D792ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift */; };
+		33F00D7A2ABCB4CC00A5D5B2 /* GameManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D792ABCB4CC00A5D5B2 /* GameManagerTests.swift */; };
 		33F00D842ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D832ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift */; };
 		33F00D862ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00D852ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift */; };
 		33F00DB32ABDC41700A5D5B2 /* MainMenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F00DB22ABDC41700A5D5B2 /* MainMenuModels.swift */; };
@@ -180,8 +208,9 @@
 		33A293552AC44F00008D9B9C /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		33A2935C2AC46A4D008D9B9C /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
 		33A293602AC4B0D8008D9B9C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		33A293672AC855AE008D9B9C /* GameComponentsPropertyList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GameComponentsPropertyList.plist; sourceTree = "<group>"; };
 		33A293992ACB1B67008D9B9C /* PhysicsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsManager.swift; sourceTree = "<group>"; };
+		33A5416B2AE2742C00657E8E /* StorageManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManagerTests.swift; sourceTree = "<group>"; };
+		33A5416D2AE2745F00657E8E /* ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
 		33E8D3DF2AD0456300C3892C /* PhysicsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsModels.swift; sourceTree = "<group>"; };
 		33E8D3E42AD2AB2600C3892C /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		33E8D3E92AD52E9400C3892C /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
@@ -197,7 +226,7 @@
 		33F00D6E2ABCB4CC00A5D5B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33F00D702ABCB4CC00A5D5B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33F00D752ABCB4CC00A5D5B2 /* Greedy KingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Greedy KingsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		33F00D792ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsTests.swift; sourceTree = "<group>"; };
+		33F00D792ABCB4CC00A5D5B2 /* GameManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerTests.swift; sourceTree = "<group>"; };
 		33F00D7F2ABCB4CC00A5D5B2 /* Greedy KingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Greedy KingsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F00D832ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITests.swift; sourceTree = "<group>"; };
 		33F00D852ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -241,6 +270,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33A541792AE274D400657E8E /* FirebaseCrashlytics in Frameworks */,
+				33A541772AE274D400657E8E /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +279,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33A5417F2AE274E300657E8E /* FirebaseCrashlytics in Frameworks */,
+				33A5417D2AE274E300657E8E /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,14 +343,6 @@
 			path = "Storage Manager";
 			sourceTree = "<group>";
 		};
-		33A293642AC8556E008D9B9C /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				33A293672AC855AE008D9B9C /* GameComponentsPropertyList.plist */,
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
 		33A293982ACB1B4D008D9B9C /* Physics Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +350,13 @@
 				33A293992ACB1B67008D9B9C /* PhysicsManager.swift */,
 			);
 			path = "Physics Manager";
+			sourceTree = "<group>";
+		};
+		33A541732AE274D400657E8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		33E8D3DE2AD0454900C3892C /* PhysicsModels */ = {
@@ -406,6 +438,7 @@
 				33F00D782ABCB4CC00A5D5B2 /* Greedy KingsTests */,
 				33F00D822ABCB4CC00A5D5B2 /* Greedy KingsUITests */,
 				33F00D5D2ABCB4CB00A5D5B2 /* Products */,
+				33A541732AE274D400657E8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -438,7 +471,9 @@
 		33F00D782ABCB4CC00A5D5B2 /* Greedy KingsTests */ = {
 			isa = PBXGroup;
 			children = (
-				33F00D792ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift */,
+				33F00D792ABCB4CC00A5D5B2 /* GameManagerTests.swift */,
+				33A5416B2AE2742C00657E8E /* StorageManagerTests.swift */,
+				33A5416D2AE2745F00657E8E /* ExtensionsTests.swift */,
 			);
 			path = "Greedy KingsTests";
 			sourceTree = "<group>";
@@ -455,7 +490,6 @@
 		33F00D922ABCB56100A5D5B2 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				33A293642AC8556E008D9B9C /* Constants */,
 				33F00DA92ABCD92900A5D5B2 /* UI */,
 			);
 			path = Game;
@@ -730,6 +764,10 @@
 				33F00D772ABCB4CC00A5D5B2 /* PBXTargetDependency */,
 			);
 			name = "Greedy KingsTests";
+			packageProductDependencies = (
+				33A541762AE274D400657E8E /* FirebaseAnalyticsWithoutAdIdSupport */,
+				33A541782AE274D400657E8E /* FirebaseCrashlytics */,
+			);
 			productName = "Greedy KingsTests";
 			productReference = 33F00D752ABCB4CC00A5D5B2 /* Greedy KingsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -748,6 +786,10 @@
 				33F00D812ABCB4CC00A5D5B2 /* PBXTargetDependency */,
 			);
 			name = "Greedy KingsUITests";
+			packageProductDependencies = (
+				33A5417C2AE274E300657E8E /* FirebaseAnalytics */,
+				33A5417E2AE274E300657E8E /* FirebaseCrashlytics */,
+			);
 			productName = "Greedy KingsUITests";
 			productReference = 33F00D7F2ABCB4CC00A5D5B2 /* Greedy KingsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -898,21 +940,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BBD4692AC461FC0056E1E8 /* PickCharacterViewController.swift in Sources */,
+				33A541922AE2783400657E8E /* UIImage.swift in Sources */,
 				E8BBD4712AC462570056E1E8 /* PickCharacterModels.swift in Sources */,
 				33F00DBC2ABDC44E00A5D5B2 /* GameSceneViewModel.swift in Sources */,
+				33A5416C2AE2742C00657E8E /* StorageManagerTests.swift in Sources */,
 				E8BBD4142ABFA57B0056E1E8 /* GameSceneViewController.swift in Sources */,
 				E8F44AE02ADE380400B2568F /* LeaderboardTableViewCell.swift in Sources */,
 				E8BBD46D2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */,
 				E8BBD4102ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */,
 				E8BBD4302ABFC7F90056E1E8 /* LeaderboardViewModel.swift in Sources */,
 				E8BBD4752AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift in Sources */,
+				33A5418E2AE2782800657E8E /* UIView.swift in Sources */,
 				E8BBD4242ABFC7600056E1E8 /* ResultViewController.swift in Sources */,
+				33A5418C2AE2782300657E8E /* UIViewController.swift in Sources */,
+				33A5416E2AE2745F00657E8E /* ExtensionsTests.swift in Sources */,
+				33A541882AE277BD00657E8E /* StorageModels.swift in Sources */,
 				E8BBD4342ABFC8A70056E1E8 /* PlayerDataViewController.swift in Sources */,
+				33A541942AE2784800657E8E /* PauseViewController.swift in Sources */,
 				33E8D3E12AD0456300C3892C /* PhysicsModels.swift in Sources */,
+				33A541802AE2779B00657E8E /* GameModels.swift in Sources */,
 				33F00DB42ABDC41700A5D5B2 /* MainMenuModels.swift in Sources */,
 				33A293572AC44F00008D9B9C /* GameManager.swift in Sources */,
 				E8F44ADA2ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */,
 				33E8D43B2AD54B9D00C3892C /* HapticModels.swift in Sources */,
+				33A5418A2AE277FC00657E8E /* AnimationModels.swift in Sources */,
 				33F00DC02ABDC45600A5D5B2 /* GameSceneModels.swift in Sources */,
 				33F00DB82ABDC42700A5D5B2 /* MainMenuViewModel.swift in Sources */,
 				33E8D3EB2AD52E9400C3892C /* AudioManager.swift in Sources */,
@@ -923,12 +974,14 @@
 				33A293622AC4B0D8008D9B9C /* StorageManager.swift in Sources */,
 				E8BBD4182ABFA5B30056E1E8 /* LevelsViewController.swift in Sources */,
 				33F00DC82ABDC49800A5D5B2 /* LevelsViewModel.swift in Sources */,
+				33A541812AE2779F00657E8E /* HealthManager.swift in Sources */,
 				33A2935E2AC46A4D008D9B9C /* LevelModel.swift in Sources */,
 				33A293542AC44EF6008D9B9C /* LevelBuilder.swift in Sources */,
 				E8BBD4282ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
 				33E8D3F02AD52EBF00C3892C /* AudioModels.swift in Sources */,
+				33A541902AE2783100657E8E /* Notification.swift in Sources */,
 				E8BBD42C2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,
-				33F00D7A2ABCB4CC00A5D5B2 /* Greedy_KingsTests.swift in Sources */,
+				33F00D7A2ABCB4CC00A5D5B2 /* GameManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -937,24 +990,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8F44ADB2ADC419900B2568F /* LevelCollectionViewCell.swift in Sources */,
+				33A541842AE277AA00657E8E /* GameManager.swift in Sources */,
 				33E8D43C2AD54B9D00C3892C /* HapticModels.swift in Sources */,
+				33A541892AE277BD00657E8E /* StorageModels.swift in Sources */,
 				E8BBD4762AC46ACD0056E1E8 /* CharacterCollectionViewCell.swift in Sources */,
+				33A541952AE2784900657E8E /* PauseViewController.swift in Sources */,
 				33F00DB92ABDC42700A5D5B2 /* MainMenuViewModel.swift in Sources */,
 				E8BBD4312ABFC7F90056E1E8 /* LeaderboardViewModel.swift in Sources */,
 				E8BBD46E2AC462300056E1E8 /* PickCharacterViewModel.swift in Sources */,
+				33A5418B2AE277FC00657E8E /* AnimationModels.swift in Sources */,
 				E8BBD4352ABFC8A70056E1E8 /* PlayerDataViewController.swift in Sources */,
+				33A541862AE277B200657E8E /* LevelModel.swift in Sources */,
 				33E8D3F12AD52EBF00C3892C /* AudioModels.swift in Sources */,
 				E8BBD4252ABFC7600056E1E8 /* ResultViewController.swift in Sources */,
+				33A5418F2AE2782900657E8E /* UIView.swift in Sources */,
 				33F00DC92ABDC49800A5D5B2 /* LevelsViewModel.swift in Sources */,
 				33F00D842ABCB4CC00A5D5B2 /* Greedy_KingsUITests.swift in Sources */,
+				33A541852AE277AF00657E8E /* LevelBuilder.swift in Sources */,
 				33F00D862ABCB4CC00A5D5B2 /* Greedy_KingsUITestsLaunchTests.swift in Sources */,
 				E8BBD42D2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,
 				E8BBD4192ABFA5B30056E1E8 /* LevelsViewController.swift in Sources */,
+				33A541872AE277B700657E8E /* StorageManager.swift in Sources */,
 				E8BBD4112ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */,
 				E8F44AE12ADE380400B2568F /* LeaderboardTableViewCell.swift in Sources */,
+				33A5418D2AE2782400657E8E /* UIViewController.swift in Sources */,
 				E8BBD46A2AC461FC0056E1E8 /* PickCharacterViewController.swift in Sources */,
+				33A541832AE277A700657E8E /* GameModels.swift in Sources */,
+				33A541932AE2783400657E8E /* UIImage.swift in Sources */,
 				33F00DBD2ABDC44E00A5D5B2 /* GameSceneViewModel.swift in Sources */,
 				E8BBD4292ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
+				33A541822AE277A400657E8E /* HealthManager.swift in Sources */,
 				33F00DB52ABDC41700A5D5B2 /* MainMenuModels.swift in Sources */,
 				33E8D3E22AD0456300C3892C /* PhysicsModels.swift in Sources */,
 				E8BBD4722AC462570056E1E8 /* PickCharacterModels.swift in Sources */,
@@ -962,6 +1027,7 @@
 				33E8D3E72AD2AB2600C3892C /* CGFloat.swift in Sources */,
 				33A2939C2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */,
 				33E8D4372AD54B8B00C3892C /* HapticsManager.swift in Sources */,
+				33A541912AE2783100657E8E /* Notification.swift in Sources */,
 				33E8D3EC2AD52E9400C3892C /* AudioManager.swift in Sources */,
 				E8BBD4152ABFA57B0056E1E8 /* GameSceneViewController.swift in Sources */,
 				33F00DCD2ABDC4A200A5D5B2 /* LevelsModels.swift in Sources */,
@@ -1343,6 +1409,26 @@
 			productName = FirebaseAnalyticsWithoutAdIdSupport;
 		};
 		336A95422AE21C7B00F43B13 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 336A953F2AE21C7B00F43B13 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		33A541762AE274D400657E8E /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 336A953F2AE21C7B00F43B13 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		33A541782AE274D400657E8E /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 336A953F2AE21C7B00F43B13 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		33A5417C2AE274E300657E8E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 336A953F2AE21C7B00F43B13 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		33A5417E2AE274E300657E8E /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 336A953F2AE21C7B00F43B13 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;

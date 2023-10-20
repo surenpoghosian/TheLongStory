@@ -46,8 +46,6 @@
 		33A2939C2ACB1B67008D9B9C /* PhysicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A293992ACB1B67008D9B9C /* PhysicsManager.swift */; };
 		33A5416C2AE2742C00657E8E /* StorageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5416B2AE2742C00657E8E /* StorageManagerTests.swift */; };
 		33A5416E2AE2745F00657E8E /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5416D2AE2745F00657E8E /* ExtensionsTests.swift */; };
-		33A541702AE2747100657E8E /* PhysicsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5416F2AE2747100657E8E /* PhysicsManagerTests.swift */; };
-		33A541722AE2748100657E8E /* LevelManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A541712AE2748100657E8E /* LevelManagerTests.swift */; };
 		33A541772AE274D400657E8E /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 33A541762AE274D400657E8E /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		33A541792AE274D400657E8E /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 33A541782AE274D400657E8E /* FirebaseCrashlytics */; };
 		33A5417D2AE274E300657E8E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 33A5417C2AE274E300657E8E /* FirebaseAnalytics */; };
@@ -213,8 +211,6 @@
 		33A293992ACB1B67008D9B9C /* PhysicsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsManager.swift; sourceTree = "<group>"; };
 		33A5416B2AE2742C00657E8E /* StorageManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManagerTests.swift; sourceTree = "<group>"; };
 		33A5416D2AE2745F00657E8E /* ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
-		33A5416F2AE2747100657E8E /* PhysicsManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsManagerTests.swift; sourceTree = "<group>"; };
-		33A541712AE2748100657E8E /* LevelManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelManagerTests.swift; sourceTree = "<group>"; };
 		33E8D3DF2AD0456300C3892C /* PhysicsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsModels.swift; sourceTree = "<group>"; };
 		33E8D3E42AD2AB2600C3892C /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		33E8D3E92AD52E9400C3892C /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
@@ -478,8 +474,6 @@
 				33F00D792ABCB4CC00A5D5B2 /* GameManagerTests.swift */,
 				33A5416B2AE2742C00657E8E /* StorageManagerTests.swift */,
 				33A5416D2AE2745F00657E8E /* ExtensionsTests.swift */,
-				33A5416F2AE2747100657E8E /* PhysicsManagerTests.swift */,
-				33A541712AE2748100657E8E /* LevelManagerTests.swift */,
 			);
 			path = "Greedy KingsTests";
 			sourceTree = "<group>";
@@ -985,9 +979,7 @@
 				33A293542AC44EF6008D9B9C /* LevelBuilder.swift in Sources */,
 				E8BBD4282ABFC7B80056E1E8 /* LeaderboardViewController.swift in Sources */,
 				33E8D3F02AD52EBF00C3892C /* AudioModels.swift in Sources */,
-				33A541722AE2748100657E8E /* LevelManagerTests.swift in Sources */,
 				33A541902AE2783100657E8E /* Notification.swift in Sources */,
-				33A541702AE2747100657E8E /* PhysicsManagerTests.swift in Sources */,
 				E8BBD42C2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,
 				33F00D7A2ABCB4CC00A5D5B2 /* GameManagerTests.swift in Sources */,
 			);

@@ -42,3 +42,19 @@ final class StorageManager {
     }
 
 }
+
+
+
+
+
+extension StorageManager {
+
+    //  implement those functions as generics in extension for StorageManager to avoid code duplication in project at storage value read/write
+    //    func encode(){
+    //
+    //    }
+    //
+    //    func decode(){
+    //
+    //    }
+}

@@ -86,6 +86,8 @@ final class LeaderboardViewController: UIViewController {
         backButton.addAction(UIAction(handler: {[weak self] _ in
             self?.navigationController?.popViewController(animated: true)
         }), for: .touchUpInside)
+        backButton.accessibilityIdentifier = "leaderboardPageBackButton"
+        
         view.bringSubviewToFront(backButton)
     }
     

@@ -34,7 +34,17 @@ final class MainMenuViewController: UIViewController {
         storageManager = StorageManager()
         setupAudioSettings()
         checkAndSetupCharactersData()
-        
+        setupAccesibilityIdentifiers()
+    }
+    
+    
+    func setupAccesibilityIdentifiers(){
+        continueButton.accessibilityIdentifier = "continueButton"
+        playButton.accessibilityIdentifier = "playButton"
+        leaderboardButton.accessibilityIdentifier = "leaderboardButton"
+        settingsButton.accessibilityIdentifier = "settingsButton"
+        musicMuteButton.accessibilityIdentifier = "musicSettingsButton"
+        soundMuteButton.accessibilityIdentifier = "soundsSettingsButton"
     }
     
     override func viewWillAppear(_ animated: Bool) {

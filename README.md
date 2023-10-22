@@ -19,11 +19,11 @@ Below you can find our experiments on this project important parts
 • [Figma](https://www.figma.com/file/Hl29uOzYMh4mwdyZEW7LzK/The-Long-Story---Greedy-Kings-Game-UI?type=design&node-id=0-1&mode=design&t=H9i2z8GW5Si86SCE-0)
 
 
-![GreedyKingsIcon](https://github.com/surenpoghosian/TheLongStory/assets/56313895/dacda1fe-494e-478d-9969-2b841cb5919f)
-
-
 # Screenshots from the game
+`Icon`
+![GreedyKingsIcon](https://github.com/surenpoghosian/TheLongStory/assets/56313895/dacda1fe-494e-478d-9969-2b841cb5919f | width=100)
 
+`Pages`
 <img width="1501" alt="Screenshot 2023-10-22 at 14 51 56" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/dea4c546-b9f3-4cc7-8228-6182ee0d36f9">
 <img width="1489" alt="Screenshot 2023-10-22 at 14 52 34" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/a0ad2b3d-563f-4a59-be0b-2e32bd21991e">
 <img width="1512" alt="Screenshot 2023-10-22 at 14 52 45" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/e234bd79-7d4a-46a1-910c-ad897d0d838c">

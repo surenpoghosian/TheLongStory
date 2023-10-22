@@ -106,3 +106,17 @@ Below you can find our experiments on this project important parts
 │   └── Greedy_KingsUITestsLaunchTests.swift
 └── <strong>README.md</strong>
 </pre>
+
+
+
+# Screenshots from the game
+
+<img width="1501" alt="Screenshot 2023-10-22 at 14 51 56" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/dea4c546-b9f3-4cc7-8228-6182ee0d36f9">
+<img width="1489" alt="Screenshot 2023-10-22 at 14 52 34" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/a0ad2b3d-563f-4a59-be0b-2e32bd21991e">
+<img width="1512" alt="Screenshot 2023-10-22 at 14 52 45" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/e234bd79-7d4a-46a1-910c-ad897d0d838c">
+<img width="1498" alt="Screenshot 2023-10-22 at 14 52 58" 
+src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/0bbc1d34-621d-4daa-b1ab-af9d5bdd076c">
+<img width="1466" alt="Screenshot 2023-10-22 at 14 54 57" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/a90e0960-a215-4ecc-80f2-6ee42ef1cf4a">
+<img width="1492" alt="Screenshot 2023-10-22 at 14 52 22" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/02e93d4d-2b29-48cc-9932-f476f37f75b4">
+
+

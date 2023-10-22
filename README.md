@@ -21,7 +21,9 @@ Below you can find our experiments on this project important parts
 
 # Screenshots from the game
 `Icon` <br/>
-![](https://github.com/surenpoghosian/TheLongStory/assets/56313895/dacda1fe-494e-478d-9969-2b841cb5919f | width=100)
+
+<img width="1501" alt="Screenshot 2023-10-22 at 14 51 56" src="[https://github.com/surenpoghosian/TheLongStory/assets/56313895/dea4c546-b9f3-4cc7-8228-6182ee0d36f9](https://github.com/surenpoghosian/TheLongStory/assets/56313895/1ec003c6-bf1a-439d-901c-cd0a74f78b38)" width="250" height="250">
+
 
 `Pages`
 <img width="1501" alt="Screenshot 2023-10-22 at 14 51 56" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/dea4c546-b9f3-4cc7-8228-6182ee0d36f9">

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330CC0E12AED7E0C00C21D1A /* Greedy_KingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CC0E02AED7E0C00C21D1A /* Greedy_KingsTests.swift */; };
+		330CC0EE2AED7E2600C21D1A /* Greedy_KingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CC0ED2AED7E2600C21D1A /* Greedy_KingsUITests.swift */; };
+		330CC0F02AED7E2600C21D1A /* Greedy_KingsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CC0EF2AED7E2600C21D1A /* Greedy_KingsUITestsLaunchTests.swift */; };
 		336A94F72ADC657500F43B13 /* menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 336A94ED2ADC657500F43B13 /* menu.mp3 */; };
 		336A94F82ADC657500F43B13 /* gameFinished.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 336A94EE2ADC657500F43B13 /* gameFinished.mp3 */; };
 		336A94F92ADC657500F43B13 /* hit3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 336A94EF2ADC657500F43B13 /* hit3.mp3 */; };
@@ -74,7 +77,29 @@
 		E8F44ADF2ADE380400B2568F /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F44ADE2ADE380400B2568F /* LeaderboardTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		330CC0E22AED7E0C00C21D1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33F00D542ABCB4CB00A5D5B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33F00D5B2ABCB4CB00A5D5B2;
+			remoteInfo = "Greedy Kings";
+		};
+		330CC0F12AED7E2600C21D1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33F00D542ABCB4CB00A5D5B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33F00D5B2ABCB4CB00A5D5B2;
+			remoteInfo = "Greedy Kings";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		330CC0DE2AED7E0C00C21D1A /* Greedy KingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Greedy KingsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		330CC0E02AED7E0C00C21D1A /* Greedy_KingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsTests.swift; sourceTree = "<group>"; };
+		330CC0EB2AED7E2500C21D1A /* Greedy KingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Greedy KingsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		330CC0ED2AED7E2600C21D1A /* Greedy_KingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITests.swift; sourceTree = "<group>"; };
+		330CC0EF2AED7E2600C21D1A /* Greedy_KingsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy_KingsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		336A94ED2ADC657500F43B13 /* menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = menu.mp3; sourceTree = "<group>"; };
 		336A94EE2ADC657500F43B13 /* gameFinished.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameFinished.mp3; sourceTree = "<group>"; };
 		336A94EF2ADC657500F43B13 /* hit3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit3.mp3; sourceTree = "<group>"; };
@@ -143,6 +168,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		330CC0DB2AED7E0C00C21D1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		330CC0E82AED7E2500C21D1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		33F00D592ABCB4CB00A5D5B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,6 +195,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330CC0DF2AED7E0C00C21D1A /* Greedy KingsTests */ = {
+			isa = PBXGroup;
+			children = (
+				330CC0E02AED7E0C00C21D1A /* Greedy_KingsTests.swift */,
+			);
+			path = "Greedy KingsTests";
+			sourceTree = "<group>";
+		};
+		330CC0EC2AED7E2500C21D1A /* Greedy KingsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				330CC0ED2AED7E2600C21D1A /* Greedy_KingsUITests.swift */,
+				330CC0EF2AED7E2600C21D1A /* Greedy_KingsUITestsLaunchTests.swift */,
+			);
+			path = "Greedy KingsUITests";
+			sourceTree = "<group>";
+		};
 		336A95062ADC6CB100F43B13 /* AnimationAssets */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +360,8 @@
 			children = (
 				33F00DA62ABCBA9D00A5D5B2 /* README.md */,
 				33F00D5E2ABCB4CB00A5D5B2 /* Greedy Kings */,
+				330CC0DF2AED7E0C00C21D1A /* Greedy KingsTests */,
+				330CC0EC2AED7E2500C21D1A /* Greedy KingsUITests */,
 				33F00D5D2ABCB4CB00A5D5B2 /* Products */,
 				33A541732AE274D400657E8E /* Frameworks */,
 			);
@@ -313,6 +371,8 @@
 			isa = PBXGroup;
 			children = (
 				33F00D5C2ABCB4CB00A5D5B2 /* Greedy Kings.app */,
+				330CC0DE2AED7E0C00C21D1A /* Greedy KingsTests.xctest */,
+				330CC0EB2AED7E2500C21D1A /* Greedy KingsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -574,6 +634,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		330CC0DD2AED7E0C00C21D1A /* Greedy KingsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 330CC0E42AED7E0C00C21D1A /* Build configuration list for PBXNativeTarget "Greedy KingsTests" */;
+			buildPhases = (
+				330CC0DA2AED7E0C00C21D1A /* Sources */,
+				330CC0DB2AED7E0C00C21D1A /* Frameworks */,
+				330CC0DC2AED7E0C00C21D1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				330CC0E32AED7E0C00C21D1A /* PBXTargetDependency */,
+			);
+			name = "Greedy KingsTests";
+			productName = "Greedy KingsTests";
+			productReference = 330CC0DE2AED7E0C00C21D1A /* Greedy KingsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		330CC0EA2AED7E2500C21D1A /* Greedy KingsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 330CC0F32AED7E2600C21D1A /* Build configuration list for PBXNativeTarget "Greedy KingsUITests" */;
+			buildPhases = (
+				330CC0E72AED7E2500C21D1A /* Sources */,
+				330CC0E82AED7E2500C21D1A /* Frameworks */,
+				330CC0E92AED7E2500C21D1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				330CC0F22AED7E2600C21D1A /* PBXTargetDependency */,
+			);
+			name = "Greedy KingsUITests";
+			productName = "Greedy KingsUITests";
+			productReference = 330CC0EB2AED7E2500C21D1A /* Greedy KingsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		33F00D5B2ABCB4CB00A5D5B2 /* Greedy Kings */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33F00D892ABCB4CC00A5D5B2 /* Build configuration list for PBXNativeTarget "Greedy Kings" */;
@@ -606,6 +702,14 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					330CC0DD2AED7E0C00C21D1A = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 33F00D5B2ABCB4CB00A5D5B2;
+					};
+					330CC0EA2AED7E2500C21D1A = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 33F00D5B2ABCB4CB00A5D5B2;
+					};
 					33F00D5B2ABCB4CB00A5D5B2 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -629,11 +733,27 @@
 			projectRoot = "";
 			targets = (
 				33F00D5B2ABCB4CB00A5D5B2 /* Greedy Kings */,
+				330CC0DD2AED7E0C00C21D1A /* Greedy KingsTests */,
+				330CC0EA2AED7E2500C21D1A /* Greedy KingsUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		330CC0DC2AED7E0C00C21D1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		330CC0E92AED7E2500C21D1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		33F00D5A2ABCB4CB00A5D5B2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -663,6 +783,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		330CC0DA2AED7E0C00C21D1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				330CC0E12AED7E0C00C21D1A /* Greedy_KingsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		330CC0E72AED7E2500C21D1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				330CC0EE2AED7E2600C21D1A /* Greedy_KingsUITests.swift in Sources */,
+				330CC0F02AED7E2600C21D1A /* Greedy_KingsUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		33F00D582ABCB4CB00A5D5B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -715,6 +852,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		330CC0E32AED7E0C00C21D1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33F00D5B2ABCB4CB00A5D5B2 /* Greedy Kings */;
+			targetProxy = 330CC0E22AED7E0C00C21D1A /* PBXContainerItemProxy */;
+		};
+		330CC0F22AED7E2600C21D1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33F00D5B2ABCB4CB00A5D5B2 /* Greedy Kings */;
+			targetProxy = 330CC0F12AED7E2600C21D1A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		33F00D652ABCB4CB00A5D5B2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -735,6 +885,80 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		330CC0E52AED7E0C00C21D1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-KingsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greedy Kings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greedy Kings";
+			};
+			name = Debug;
+		};
+		330CC0E62AED7E0C00C21D1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-KingsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greedy Kings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greedy Kings";
+			};
+			name = Release;
+		};
+		330CC0F42AED7E2600C21D1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-KingsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Greedy Kings";
+			};
+			name = Debug;
+		};
+		330CC0F52AED7E2600C21D1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SZF3LG898Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xetpyrc.Greedy-KingsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Greedy Kings";
+			};
+			name = Release;
+		};
 		33F00D872ABCB4CC00A5D5B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -916,6 +1140,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		330CC0E42AED7E0C00C21D1A /* Build configuration list for PBXNativeTarget "Greedy KingsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				330CC0E52AED7E0C00C21D1A /* Debug */,
+				330CC0E62AED7E0C00C21D1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		330CC0F32AED7E2600C21D1A /* Build configuration list for PBXNativeTarget "Greedy KingsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				330CC0F42AED7E2600C21D1A /* Debug */,
+				330CC0F52AED7E2600C21D1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		33F00D572ABCB4CB00A5D5B2 /* Build configuration list for PBXProject "Greedy Kings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

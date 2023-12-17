@@ -12,28 +12,28 @@ import AVFoundation
 final class LevelBuilder {
     private(set) var levels: [Level] = [
         Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle2"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "NormalScene1"), type: .normal),
-
+        
         Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle2"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "NormalScene2"), type: .normal),
-
+        
         Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle2"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "NormalScene3"), type: .normal),
-
+        
         
         Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle3") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle4"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "HalloweenScene1"), type: .halloween),
-
+        
         
         Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle4"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "SpaceScene1"), type: .space),
-
+        
         Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle4"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "SpaceScene2"), type: .space),
-
+        
         Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle4"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "SpaceScene3"), type: .space),
-
+        
         Level(castleLeft: Castle(type: .wooden, locationOnScreen: .left, weapon: Weapon(type: .cannon, locationOnScreen: .left, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle1") , castleRight: Castle(type: .wooden, locationOnScreen: .right, weapon: Weapon(type: .cannon, locationOnScreen: .right, ammo: Ammo(type: .wood, image: "CannonBall"), image: "Cannon"), image: "Castle4"), obstacle:  Obstacle(type: .circle, difficulty: .easy, image: "Obstacle"), scene: Scene( image: "SpaceScene4"), type: .space),
-
+        
     ]
     
-//    private var adjustedLevel: Int = 0
+    
     private var level: Int = 0
-
+    
     private var castleLeft: Castle!
     private var castleRight: Castle!
     private var scene: Scene!
@@ -44,7 +44,7 @@ final class LevelBuilder {
     private var castleRightAmmo: Ammo!
     private let screenSize = UIScreen.main.bounds
     var physicsManager: PhysicsManager!
-
+    
     
     init(type: LevelType) {
         if let randomLevelIndex = getRandomLevelIndex(forSceneType: type) {
@@ -55,7 +55,7 @@ final class LevelBuilder {
             print("No levels of the specified scene type found.")
         }
     }
-
+    
     private func getRandomLevelIndex(forSceneType type: LevelType) -> Int? {
         let filteredLevels = levels.enumerated().filter { $0.element.type == type }
         
@@ -66,7 +66,7 @@ final class LevelBuilder {
             return nil
         }
     }
-
+    
     
     private func initializeLevelComponents(level: Int){
         castleLeft = levels[level].castleLeft
@@ -104,7 +104,7 @@ final class LevelBuilder {
             y = screenSize.height - 110
             width = 120
             height = 170
-
+            
             
             component = UIView(frame: CGRect(x: x , y: y, width: width, height: height))
             component.backgroundColor = .clear
@@ -122,7 +122,7 @@ final class LevelBuilder {
         let y: CGFloat = screenSize.height / 2 - 40
         let width: CGFloat = 80
         let height: CGFloat = 80
-
+        
         
         let component = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
         component.backgroundColor = .blue
@@ -135,8 +135,8 @@ final class LevelBuilder {
     
     private func createWeapon(weapon: Weapon) -> UIView {
         var component: UIView!
-
-
+        
+        
         var x: CGFloat = 0
         var y: CGFloat = 0
         var width: CGFloat = 0
@@ -150,8 +150,8 @@ final class LevelBuilder {
             y = screenSize.height - 100
             width = 40
             height = 70
-
-
+            
+            
             component = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
             component.backgroundColor = .clear
             component.transform = CGAffineTransform(rotationAngle: angleInRadians)
@@ -172,7 +172,7 @@ final class LevelBuilder {
             width = 40
             height = 70
             
-
+            
             component = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
             component.backgroundColor = .clear
             component.transform = CGAffineTransform(rotationAngle: -angleInRadians)
@@ -183,10 +183,10 @@ final class LevelBuilder {
                 let imageView = component.subviews[0]
                 let imageViewOrigin = imageView.frame.origin
                 imageView.transform = CGAffineTransform(rotationAngle: angleInRadians)
-
+                
                 let newFrame = CGRect(x: imageViewOrigin.x, y: imageViewOrigin.y, width: width, height: height)
                 imageView.frame = newFrame
-
+                
             }
         }
         
@@ -200,14 +200,14 @@ final class LevelBuilder {
         var y: CGFloat = 0
         var width: CGFloat = 0
         var height: CGFloat = 0
-
+        
         switch weapon.locationOnScreen {
         case .left:
             x = 130
             y = screenSize.height - 100
             width = 20
             height = 20
-
+            
             component = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
         case .right:
             x = screenSize.width - 170
@@ -232,7 +232,7 @@ final class LevelBuilder {
         let y: CGFloat = 0
         let width: CGFloat = screenSize.width
         let height: CGFloat = screenSize.height
-
+        
         
         let component = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
         
@@ -248,7 +248,7 @@ final class LevelBuilder {
     
     private func addComponentImage(referenceView: UIView, image: UIImage) {
         let imageView = UIImageView()
-
+        
         imageView.image = image
         imageView.contentMode = .scaleAspectFill
         imageView.frame = referenceView.bounds
@@ -290,7 +290,7 @@ final class LevelBuilder {
         fullScreenView.backgroundColor = UIColor.clear
         
         let pauseButton = createPauseButton()
-
+        
         referenceView.addSubview(fullScreenView)
         referenceView.addSubview(pauseButton)
         
@@ -308,7 +308,7 @@ final class LevelBuilder {
         var characterImageViewY: Double = 0
         var characterImageViewWidth: Double = 60
         var characterImageViewHeight: Double = 60
-
+        
         var characterBackgroundImageViewX: Double = 0
         var characterBackgroundImageViewY: Double = 0
         let characterBackgroundImageViewWidth: Double = 60
@@ -325,9 +325,62 @@ final class LevelBuilder {
         let healthScaleBackgroundWidth: Double = 250
         let healthScaleBackgroundHeight: Double = 50
         
+        var distanceFromLeft: Double = 0
+        var distanceFromRight: Double = 0
+        
+        
+        switch screenSize.width {
+        case 667:
+            // iPhone SE (3rd generation), iPhone 8, iPhone 7, iPhone 6s, iPhone 6
+            distanceFromLeft = 0
+            distanceFromRight = 0
+        case 736:
+            // iPhone 8 Plus, iPhone 7 Plus, iPhone 6s Plus, iPhone 6 Plus
+            distanceFromLeft = 0
+            distanceFromRight = 0
+        case 812:
+            // iPhone 13 mini, iPhone 12 mini
+            distanceFromLeft = 20
+            distanceFromRight = 20
+        case 844:
+            // iPhone 13, iPhone 13 Pro, iPhone 12, iPhone 12 Pro
+            distanceFromLeft = 20
+            distanceFromRight = 20
+        case 926:
+            // iPhone 13 Pro Max, iPhone 11 Pro, iPhone X, iPhone XS
+            distanceFromLeft = 20
+            distanceFromRight = 20
+        case 896:
+            // iPhone 11 Pro Max, iPhone XS Max
+            distanceFromLeft = 20
+            distanceFromRight = 20
+        case 932:
+            // iPhone 14 Pro Max
+            distanceFromLeft = 20
+            distanceFromRight = 20
+        case 852:
+            // iPhone 14 Pro
+            distanceFromLeft = 20
+            distanceFromRight = 20
+        case 839:
+            // iPhone 15 Pro
+            distanceFromLeft = 20
+            distanceFromRight = 20
+        case 759:
+            // iPhone 15 Pro
+            distanceFromLeft = 20
+            distanceFromRight = 20
+        default:
+//            // Default constraints for other devices
+            distanceFromLeft = 5
+            distanceFromRight = 5
+        }
+        
+        
+        
         switch side {
         case .left:
-            componentX = 20
+            componentX = 0 + distanceFromLeft
             componentY = 10
             
             characterBackgroundImageViewX = componentX + 2
@@ -343,7 +396,8 @@ final class LevelBuilder {
             healthScaleY = healthScaleBackgroundY + (healthScaleBackgroundHeight / 6)
             
         case .right:
-            componentX = screenSize.width / 2 - componentWidth / 2 - 20
+            
+            componentX = screenSize.width / 2 - componentWidth / 2 - distanceFromRight
             componentY = 10
             
             healthScaleBackgroundX = componentX
@@ -362,13 +416,13 @@ final class LevelBuilder {
         
         characterImageViewWidth = characterBackgroundImageViewWidth * 0.7
         characterImageViewHeight = characterBackgroundImageViewHeight * 0.7
-                
+        
         let component = UIView(frame: CGRect(x: componentX, y: componentY, width: componentWidth, height: componentHeight))
         
         let characterBackgroundImageView = UIImageView(frame: CGRect(x: characterBackgroundImageViewX, y: characterBackgroundImageViewY, width: characterBackgroundImageViewWidth, height: characterBackgroundImageViewHeight))
         
         let characterImageView = UIImageView(frame: CGRect(x: characterBackgroundImageView.center.x - characterImageViewWidth / 2, y: characterBackgroundImageView.center.y - characterImageViewHeight / 2, width: characterImageViewWidth, height: characterImageViewHeight))
-
+        
         let healthScaleBackground = UIImageView(frame: CGRect(x: healthScaleBackgroundX, y: healthScaleBackgroundY, width: healthScaleBackgroundWidth, height: healthScaleBackgroundHeight))
         
         let healthScale = UIView(frame: CGRect(x: healthScaleX, y: healthScaleY, width: healthScaleWidth, height: healthScaleHeight))
@@ -380,7 +434,7 @@ final class LevelBuilder {
         
         characterImageView.contentMode = .scaleAspectFit
         characterImageView.backgroundColor = .clear
-
+        
         healthScaleBackground.backgroundColor = UIColor(named: "backgroundColor")
         healthScale.backgroundColor = .systemBrown
         
@@ -390,7 +444,7 @@ final class LevelBuilder {
         component.addSubview(healthScale)
         
         
-
+        
         switch side {
         case .left:
             healthScaleBackground.roundSpecificCorners(corners: [.topRight, .bottomRight], radius: 8)
@@ -422,11 +476,11 @@ final class LevelBuilder {
     
     private func createTimerLabel() -> UILabel {
         let timerLabelX = Int(screenSize.width / 2)
-        let timerLabelY = 30
+        let timerLabelY = Int(screenSize.height / 2)
         let timerLabelWidth = 120
         let timerLabelHeight = 40
         
-        let timerLabel = UILabel(frame: CGRect(x: timerLabelX - timerLabelWidth / 2, y: timerLabelY, width: timerLabelWidth, height: timerLabelHeight))
+        let timerLabel = UILabel(frame: CGRect(x: timerLabelX - timerLabelWidth / 2, y: timerLabelY - timerLabelHeight / 2, width: timerLabelWidth, height: timerLabelHeight))
         
         timerLabel.textColor = .white
         
@@ -436,14 +490,14 @@ final class LevelBuilder {
         
         return timerLabel
     }
-
+    
     private func createPauseButton() -> UIButton {
         let buttonX = Int(screenSize.width / 2)
         let buttonY = 30
         let buttonWidth = 40
         let buttonHeight = 40
         
-        let button = UIButton(frame: CGRect(x: buttonX + buttonWidth + 10, y: buttonY, width: buttonWidth, height: buttonHeight))
+        let button = UIButton(frame: CGRect(x: buttonX - buttonWidth / 2, y: buttonY, width: buttonWidth, height: buttonHeight))
         
         if let image = UIImage(named: "pause") {
             button.setImage(image, for: .normal)
@@ -452,7 +506,7 @@ final class LevelBuilder {
         
         return button
     }
-
+    
     
     
     private func buildIndicatingUI(referenceView: UIView) -> UIView {

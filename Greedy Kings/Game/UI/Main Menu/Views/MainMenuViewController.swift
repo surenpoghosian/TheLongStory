@@ -19,6 +19,7 @@ final class MainMenuViewController: UIViewController {
     private var storageManager: StorageManager!
     private var isMusicOn: Bool!
     private var areSoundsOn: Bool!
+    private let screenSize = UIScreen.main.bounds
     
     private var viewModel: MainMenuViewModel!
     
@@ -130,6 +131,27 @@ final class MainMenuViewController: UIViewController {
         
         soundMuteButton.alpha = 0
         musicMuteButton.alpha = 0
+        
+        
+        var menuButtonsWidth: Double = 0
+        
+        
+        let calculatedWidth = screenSize.width * 0.2
+
+        let btnMinWidth: Double = 200
+        let btnMaxWidth: Double = 230
+        
+        if calculatedWidth > btnMaxWidth {
+            menuButtonsWidth = btnMaxWidth
+        } else if calculatedWidth < btnMinWidth {
+            menuButtonsWidth = btnMinWidth
+        } else {
+            menuButtonsWidth = calculatedWidth
+        }
+        
+        playButton.widthAnchor.constraint(equalToConstant: menuButtonsWidth).isActive = true
+        
+        
     }
     
     func removeSavedGame(){
@@ -166,9 +188,8 @@ final class MainMenuViewController: UIViewController {
                 
                 self?.navigationController?.pushViewController(vc, animated: true)
             }
-            
-            
         }), for: .touchUpInside)
+        
         
         playButton.addAction(UIAction(handler: { [weak self]_ in
             if self?.areHiddenButtonsOpen == true {

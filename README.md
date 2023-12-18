@@ -5,7 +5,7 @@ Project planning tools
 • [Jira](https://the-long-story.atlassian.net/jira/software/projects/LS/boards/1)
 
 
-#Available on AppStore
+# Available on AppStore
 
 [Download now](https://apps.apple.com/am/app/greedy-kings-origin/id6474153745)
 

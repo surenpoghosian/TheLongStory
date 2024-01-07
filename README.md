@@ -24,6 +24,12 @@ Below you can find our experiments on this project important parts
 
 • [Figma](https://www.figma.com/file/Hl29uOzYMh4mwdyZEW7LzK/The-Long-Story---Greedy-Kings-Game-UI?type=design&node-id=0-1&mode=design&t=H9i2z8GW5Si86SCE-0)
 
+# Demo
+
+https://github.com/surenpoghosian/TheLongStory/assets/56313895/48c5e1a5-15d3-4995-9301-1d3200c9e9e3
+
+
+
 
 # Screenshots from the game
 

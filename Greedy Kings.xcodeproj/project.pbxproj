@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		333931802B4AF645002D4F91 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3339317F2B4AF645002D4F91 /* .gitignore */; };
 		335334A12B27BA3300BB3E8E /* strengthIndicator.json in Resources */ = {isa = PBXBuildFile; fileRef = 335334A02B27BA3300BB3E8E /* strengthIndicator.json */; };
 		335334A22B27BBD000BB3E8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3353349D2B27B19A00BB3E8E /* GoogleService-Info.plist */; };
 		335334A32B27BBD100BB3E8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3353349D2B27B19A00BB3E8E /* GoogleService-Info.plist */; };
@@ -184,6 +185,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3339317F2B4AF645002D4F91 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3353349D2B27B19A00BB3E8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		335334A02B27BA3300BB3E8E /* strengthIndicator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = strengthIndicator.json; sourceTree = "<group>"; };
 		336A94ED2ADC657500F43B13 /* menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = menu.mp3; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 		33F00D532ABCB4CB00A5D5B2 = {
 			isa = PBXGroup;
 			children = (
+				3339317F2B4AF645002D4F91 /* .gitignore */,
 				33F00DA62ABCBA9D00A5D5B2 /* README.md */,
 				33F00D5E2ABCB4CB00A5D5B2 /* Greedy Kings */,
 				33F00D782ABCB4CC00A5D5B2 /* Greedy KingsTests */,
@@ -862,6 +865,7 @@
 				336A94F92ADC657500F43B13 /* hit3.mp3 in Resources */,
 				336A94FD2ADC657500F43B13 /* miss.mp3 in Resources */,
 				336A94FF2ADC657500F43B13 /* backgroundMusic1.mp3 in Resources */,
+				333931802B4AF645002D4F91 /* .gitignore in Resources */,
 				335334A22B27BBD000BB3E8E /* GoogleService-Info.plist in Resources */,
 				336A951A2ADC7E2100F43B13 /* animation2.json in Resources */,
 				33F00D6C2ABCB4CC00A5D5B2 /* Assets.xcassets in Resources */,

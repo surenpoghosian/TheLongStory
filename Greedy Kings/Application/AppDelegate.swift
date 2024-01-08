@@ -25,13 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        FirebaseApp.configure()
-        Analytics.logEvent("AppLaunched", parameters: [
-            "remember": "The ones who are crazy enough to think that they can change the world, are the ones who do."
-        ])
-        
-        Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
-        
+//        FirebaseApp.configure()
+//        Analytics.logEvent("AppLaunched", parameters: [
+//            "remember": "The ones who are crazy enough to think that they can change the world, are the ones who do."
+//        ])
+//        
+//        Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
+//        
         return true
     }
     

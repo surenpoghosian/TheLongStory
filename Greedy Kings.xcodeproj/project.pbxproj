@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33298FE82B57044A00DE9AB7 /* ResultModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33298FE72B57044A00DE9AB7 /* ResultModels.swift */; };
 		333931802B4AF645002D4F91 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3339317F2B4AF645002D4F91 /* .gitignore */; };
 		335334A12B27BA3300BB3E8E /* strengthIndicator.json in Resources */ = {isa = PBXBuildFile; fileRef = 335334A02B27BA3300BB3E8E /* strengthIndicator.json */; };
 		335334A22B27BBD000BB3E8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3353349D2B27B19A00BB3E8E /* GoogleService-Info.plist */; };
@@ -185,6 +186,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33298FE72B57044A00DE9AB7 /* ResultModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModels.swift; sourceTree = "<group>"; };
 		3339317F2B4AF645002D4F91 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3353349D2B27B19A00BB3E8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		335334A02B27BA3300BB3E8E /* strengthIndicator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = strengthIndicator.json; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 			children = (
 				33F00DBE2ABDC45600A5D5B2 /* GameSceneModels.swift */,
 				336A95042ADC6A0900F43B13 /* AnimationModels.swift */,
+				33298FE72B57044A00DE9AB7 /* ResultModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -907,6 +910,7 @@
 				336A95392AE180D900F43B13 /* PauseViewController.swift in Sources */,
 				E8BBD42F2ABFC7F90056E1E8 /* LeaderboardViewModel.swift in Sources */,
 				33E8D3EF2AD52EBF00C3892C /* AudioModels.swift in Sources */,
+				33298FE82B57044A00DE9AB7 /* ResultModels.swift in Sources */,
 				33F00DCB2ABDC4A200A5D5B2 /* LevelsModels.swift in Sources */,
 				33F00DC72ABDC49800A5D5B2 /* LevelsViewModel.swift in Sources */,
 				E8BBD42B2ABFC7E00056E1E8 /* LeaderboardModel.swift in Sources */,

@@ -20,6 +20,10 @@ final class ResultViewController: UIViewController {
     var winner: Character!
     weak var delegate: GameDataDelegate?
     var onMainMenu: (()-> Void)?
+    private var storageManager: StorageManager!
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -29,6 +33,7 @@ final class ResultViewController: UIViewController {
         setupWinnerLabel()
         setupButtonsStackView()
         setupModal()
+        storageManager = StorageManager()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -65,7 +70,7 @@ final class ResultViewController: UIViewController {
         rematchButton.addAction(UIAction(handler: {[weak self]_ in
             self?.dismiss(animated: true, completion: nil)
             self?.viewModel.rematch()
-
+            
         }), for: .touchUpInside)
         
         mainMenuButton = createButton(buttonLabel: "Main menu")
@@ -118,7 +123,6 @@ final class ResultViewController: UIViewController {
             
         ])
     }
-    
 }
 
 

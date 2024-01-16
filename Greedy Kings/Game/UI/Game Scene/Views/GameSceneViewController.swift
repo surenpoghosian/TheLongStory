@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import StoreKit
 
 final class GameSceneViewController: UIViewController {
     private var viewModel: GameSceneViewModel!
@@ -20,7 +21,7 @@ final class GameSceneViewController: UIViewController {
     private var viewanimator1_2: UIViewPropertyAnimator!
     private var viewanimator2: UIViewPropertyAnimator!
     private var viewanimator2_2: UIViewPropertyAnimator!
-
+    
     private var temporaryCurrentPlayer: Player?
     private var longPressStartTime: Date?
     private var countdownTimer: Timer?
@@ -38,7 +39,7 @@ final class GameSceneViewController: UIViewController {
     var healthManager: HealthManager!
     
     override func viewWillDisappear(_ animated: Bool) {
-       onClose()
+        onClose()
     }
     
     func onClose(){
@@ -80,14 +81,12 @@ final class GameSceneViewController: UIViewController {
         initializeGameScene()
         
         buildLevel(scene: levelType!, battleModel: battleModel)
-
+        
         setCharactersIcons(characters: pickedCharacters)
-
+        
         startTimer()
         
         addSwitchToBackgroundModeObserver()
-        
-
     }
     
     
@@ -159,7 +158,7 @@ final class GameSceneViewController: UIViewController {
                 stopAnimation(for: .player2)
                 onLongpressEnd(pressInterval: 1.2)
             }
-
+            
         }
     }
     
@@ -266,12 +265,12 @@ final class GameSceneViewController: UIViewController {
     
     func showPauseModal(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-          if let vc = storyboard.instantiateViewController(withIdentifier: "PauseView") as? PauseViewController {
-              vc.viewModel = viewModel
-              vc.onMainMenu = onMainMenu
-              vc.onContinue = onContinue
-              navigationController?.present(vc, animated: true)
-          }
+        if let vc = storyboard.instantiateViewController(withIdentifier: "PauseView") as? PauseViewController {
+            vc.viewModel = viewModel
+            vc.onMainMenu = onMainMenu
+            vc.onContinue = onContinue
+            navigationController?.present(vc, animated: true)
+        }
     }
     
     func buildLevel(scene: LevelType, battleModel: BattleModel? = nil){
@@ -288,7 +287,7 @@ final class GameSceneViewController: UIViewController {
         let fullScreenLongPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
         
         fullScreenTapView.addGestureRecognizer(fullScreenLongPressGesture)
-
+        
         let pauseButton = gameScene.subviews[12] as! UIButton
         
         pauseButton.addTarget(self, action: #selector(onPause), for: .touchUpInside)
@@ -516,9 +515,9 @@ final class GameSceneViewController: UIViewController {
         var winner: Character
         
         switch battleResult.winner! {
-            case .player1:
+        case .player1:
             winner = pickedCharacters!.player1Character
-            case .player2:
+        case .player2:
             winner = pickedCharacters!.player2Character
         }
         
@@ -527,14 +526,14 @@ final class GameSceneViewController: UIViewController {
     
     func showResultModal(winner: Character){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-          if let vc = storyboard.instantiateViewController(withIdentifier: "ResultView") as? ResultViewController {
-              
-              vc.winner = winner
-              vc.viewModel = viewModel
-              vc.onMainMenu = onMainMenu
-              navigationController?.present(vc, animated: true)
-          }
-
+        if let vc = storyboard.instantiateViewController(withIdentifier: "ResultView") as? ResultViewController {
+            
+            vc.winner = winner
+            vc.viewModel = viewModel
+            vc.onMainMenu = onMainMenu
+            navigationController?.present(vc, animated: true)
+        }
+        
     }
     
     
@@ -551,10 +550,10 @@ final class GameSceneViewController: UIViewController {
                 
                 
                 switch side {
-                    case .left:
-                        updateHealthScale(player: .player2)
-                    case .right:
-                        updateHealthScale(player: .player1)
+                case .left:
+                    updateHealthScale(player: .player2)
+                case .right:
+                    updateHealthScale(player: .player1)
                 }
                 
                 hapticsManager.generate(type: .medium)
@@ -578,6 +577,7 @@ final class GameSceneViewController: UIViewController {
     
     func onMainMenu(){
         onClose()
+        self.checkAndRequestReview()
         self.dismissToRoot(animated: true)
     }
     
@@ -607,11 +607,11 @@ final class GameSceneViewController: UIViewController {
     func addSwitchToBackgroundModeObserver(){
         NotificationCenter.default.addObserver(self, selector: #selector(onSwitchToBackgroundMode), name: .appDidEnterBackground, object: nil)
     }
-
+    
     func removeBackgroundModeObserver(){
         NotificationCenter.default.removeObserver(self, name: .appDidEnterBackground, object: nil)
     }
-
+    
     
     @objc func onSwitchToBackgroundMode(){
         saveGame()
@@ -639,15 +639,55 @@ final class GameSceneViewController: UIViewController {
         if let _ = self.storageManager.get(key: "game", storageType: .userdefaults) as? Data {
             storageManager.remove(key: "game", storageType: .userdefaults)
         }
-
+        
     }
+    
+    
+    private func checkAndRequestReview(){
+        
+        
+        if let lastTimeCalled = storageManager.get(key: "requestReviewModal", storageType: .userdefaults) as? Data {
+            let decoder = PropertyListDecoder()
+            
+            if let log = try? decoder.decode(RequestReviewLogItem.self, from: lastTimeCalled) {
+                
+                let currentDate = Date()
+                
+                if let fourMonthAgo = Calendar.current.date(byAdding: .month, value: -4, to: currentDate) {
+                    if log.date < fourMonthAgo {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            self.requestReview()
+                        }
+                    }
+                }
+            }
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.requestReview()
+            }
+        }
+    }
+    
+    private func requestReview(){
+        if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: scene)
+        }
+        
+        let newLog = RequestReviewLogItem(date: Date())
+        let encoder = PropertyListEncoder()
+        
+        if let logData = try? encoder.encode(newLog) {
+            storageManager.set(key: "requestReviewModal", value: logData, storageType: .userdefaults)
+        }
+    }
+    
     
     deinit {
         print("deinit")
         removeBackgroundModeObserver()
         onClose()
     }
-
+    
 }
 
 
@@ -667,7 +707,7 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                     
                 } else if otherView == rightAmmo && view == leftCastle {
                     self.onHit(ammo: rightAmmo, side: .right)
-
+                    
                 }
             }
         }
@@ -690,7 +730,7 @@ extension GameSceneViewController: UICollisionBehaviorDelegate {
                     
                 } else if view == rightAmmo {
                     self.onMiss(ammo: rightAmmo, side: .right)
-
+                    
                 }
             }
         }

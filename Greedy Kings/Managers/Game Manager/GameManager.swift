@@ -11,9 +11,11 @@ final class GameManager {
     private(set) var currentPlayer: Player!
     private(set) var battleResult: BattleResult!
     private var healthManager: HealthManager!
-    
+
+
     init() {
         healthManager = HealthManager()
+        
         initializeBattleResult()
         startGame()
     }
@@ -25,7 +27,7 @@ final class GameManager {
                                     player2Shots: 0,
                                     player2Hits: 0)
     }
-    
+
     // give turn to the first player in the beginning
     func startGame() {
         currentPlayer = .player1

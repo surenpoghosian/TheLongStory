@@ -483,8 +483,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "updateTimer()"
             landmarkType = "7">
             <Locations>
@@ -576,8 +576,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "543"
-            endingLineNumber = "543"
+            startingLineNumber = "542"
+            endingLineNumber = "542"
             landmarkName = "onHit(ammo:side:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -592,8 +592,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "545"
-            endingLineNumber = "545"
+            startingLineNumber = "544"
+            endingLineNumber = "544"
             landmarkName = "onHit(ammo:side:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -656,8 +656,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "336"
-            endingLineNumber = "336"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
             landmarkName = "updateHealthScale(player:)"
             landmarkType = "7">
             <Locations>
@@ -719,8 +719,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
             landmarkName = "updateHealthScale(player:)"
             landmarkType = "7">
             <Locations>
@@ -860,8 +860,8 @@
             filePath = "Greedy Kings/Managers/Game Manager/GameManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "updateHealth()"
             landmarkType = "7">
             <Locations>
@@ -938,8 +938,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "onContinue()"
             landmarkType = "7">
             <Locations>
@@ -1112,8 +1112,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
             landmarkName = "updatePlayerState(side:)"
             landmarkType = "7">
             <Locations>

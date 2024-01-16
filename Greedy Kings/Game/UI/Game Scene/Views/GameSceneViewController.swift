@@ -81,14 +81,32 @@ final class GameSceneViewController: UIViewController {
         initializeGameScene()
         
         buildLevel(scene: levelType!, battleModel: battleModel)
-        
+
         setCharactersIcons(characters: pickedCharacters)
         
-        startTimer()
+        if isFirstGame() {
+            showHintModal()
+        } else {
+            startTimer()
+            startAnimation(for: .player1)
+        }
         
         addSwitchToBackgroundModeObserver()
+        
     }
     
+    
+    func isFirstGame() -> Bool{
+    
+        if let _ = storageManager.get(key: "firstGame", storageType: .userdefaults) as? String {
+            return false
+            
+        } else {
+                storageManager.set(key: "firstGame", value: "data", storageType: .userdefaults)
+                return true
+            
+        }
+    }
     
     func initializeGameScene(){
         gameScene = nil
@@ -292,7 +310,6 @@ final class GameSceneViewController: UIViewController {
         
         pauseButton.addTarget(self, action: #selector(onPause), for: .touchUpInside)
         
-        startAnimation(for: .player1)
         
         let leftAmmo = gameScene.subviews[6]
         let rightAmmo = gameScene.subviews[7]
@@ -536,6 +553,20 @@ final class GameSceneViewController: UIViewController {
         
     }
     
+    func showHintModal(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "HintView") as? HintViewController {
+            
+            vc.onHintClose = onHintClose
+            navigationController?.present(vc, animated: true)
+        }
+        
+    }
+
+    func onHintClose(){
+        startTimer()
+        startAnimation(for: .player1)
+    }
     
     func onHit(ammo: UIView, side: Side){
         if let temporaryCurrentPlayer {

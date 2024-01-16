@@ -470,6 +470,21 @@
                   endingLineNumber = "17"
                   offsetFromSymbolStart = "56">
                </Location>
+               <Location
+                  uuid = "AC238B0B-1B63-409E-A9CC-D476B78EE599 - 31ad3861b017f08d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.AppDelegate.applicationWillTerminate(__C.UIApplication) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Application/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "104">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -483,8 +498,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "updateTimer()"
             landmarkType = "7">
             <Locations>
@@ -563,6 +578,21 @@
                   endingLineNumber = "154"
                   offsetFromSymbolStart = "276">
                </Location>
+               <Location
+                  uuid = "3F37E280-4E59-4F7F-B4DA-2659C093B7AB - 75b3d5780075f1d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.GameSceneViewController.updateTimer() -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Game%20Scene/Views/GameSceneViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "496">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -576,8 +606,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "542"
-            endingLineNumber = "542"
+            startingLineNumber = "573"
+            endingLineNumber = "573"
             landmarkName = "onHit(ammo:side:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -592,8 +622,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "544"
-            endingLineNumber = "544"
+            startingLineNumber = "575"
+            endingLineNumber = "575"
             landmarkName = "onHit(ammo:side:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -608,10 +638,10 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "585"
-            endingLineNumber = "585"
-            landmarkName = "onMiss(ammo:side:)"
-            landmarkType = "7">
+            startingLineNumber = "616"
+            endingLineNumber = "616"
+            landmarkName = "GameSceneViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -624,8 +654,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "587"
-            endingLineNumber = "587"
+            startingLineNumber = "618"
+            endingLineNumber = "618"
             landmarkName = "onMiss(ammo:side:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -640,8 +670,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "586"
-            endingLineNumber = "586"
+            startingLineNumber = "617"
+            endingLineNumber = "617"
             landmarkName = "onMiss(ammo:side:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -656,8 +686,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
+            startingLineNumber = "352"
+            endingLineNumber = "352"
             landmarkName = "updateHealthScale(player:)"
             landmarkType = "7">
             <Locations>
@@ -706,6 +736,21 @@
                   endingLineNumber = "336"
                   offsetFromSymbolStart = "96">
                </Location>
+               <Location
+                  uuid = "7060B3C8-41E4-4AF1-881C-7835F29ECAAD - 64a2413a5e8ae18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.GameSceneViewController.updateHealthScale(player: Greedy_Kings.Player) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Game%20Scene/Views/GameSceneViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "355"
+                  endingLineNumber = "355"
+                  offsetFromSymbolStart = "504">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -719,8 +764,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "336"
-            endingLineNumber = "336"
+            startingLineNumber = "353"
+            endingLineNumber = "353"
             landmarkName = "updateHealthScale(player:)"
             landmarkType = "7">
             <Locations>
@@ -768,6 +813,21 @@
                   startingLineNumber = "338"
                   endingLineNumber = "338"
                   offsetFromSymbolStart = "868">
+               </Location>
+               <Location
+                  uuid = "0C7614E6-F669-430C-B95F-A9D7984CFE6C - 64a2413a5e8aef9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.GameSceneViewController.updateHealthScale(player: Greedy_Kings.Player) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Game%20Scene/Views/GameSceneViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "356"
+                  endingLineNumber = "356"
+                  offsetFromSymbolStart = "864">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -847,6 +907,21 @@
                   endingLineNumber = "27"
                   offsetFromSymbolStart = "92">
                </Location>
+               <Location
+                  uuid = "81D5F062-A281-4E7D-91DF-B0E545005854 - 41178f8646e46377"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.GameSceneViewModel.onHit() -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Game%20Scene/ViewModel/GameSceneViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "108">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -925,6 +1000,21 @@
                   endingLineNumber = "77"
                   offsetFromSymbolStart = "68">
                </Location>
+               <Location
+                  uuid = "6E4AF3F1-AEEE-4A55-924B-C9A9E856133F - b41fa6c0556f2d12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.GameManager.updateHealth() -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Managers/Game%20Manager/GameManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "84">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -938,8 +1028,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
             landmarkName = "onContinue()"
             landmarkType = "7">
             <Locations>
@@ -987,6 +1077,21 @@
                   startingLineNumber = "264"
                   endingLineNumber = "264"
                   offsetFromSymbolStart = "532">
+               </Location>
+               <Location
+                  uuid = "7ECB8E96-8C3E-4BB0-8D5A-D5B8EA54A0D2 - 4c81b1e429bcdd27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.GameSceneViewController.onContinue() -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Game%20Scene/Views/GameSceneViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "284"
+                  endingLineNumber = "284"
+                  offsetFromSymbolStart = "516">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1112,8 +1217,8 @@
             filePath = "Greedy Kings/Game/UI/Game Scene/Views/GameSceneViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "368"
-            endingLineNumber = "368"
+            startingLineNumber = "385"
+            endingLineNumber = "385"
             landmarkName = "updatePlayerState(side:)"
             landmarkType = "7">
             <Locations>
@@ -1176,6 +1281,21 @@
                   startingLineNumber = "369"
                   endingLineNumber = "369"
                   offsetFromSymbolStart = "1720">
+               </Location>
+               <Location
+                  uuid = "870E6937-997C-4D9B-A982-A729370FADFE - 776c58b673050405"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.GameSceneViewController.updatePlayerState(side: Greedy_Kings.Side) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Game%20Scene/Views/GameSceneViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "388"
+                  endingLineNumber = "388"
+                  offsetFromSymbolStart = "1764">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1315,6 +1435,36 @@
                   endingLineNumber = "269"
                   offsetFromSymbolStart = "604">
                </Location>
+               <Location
+                  uuid = "DDB5ED61-1EB2-4602-A60A-366C875D56A3 - f60beb061b264ef1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.MainMenuViewController.updateAudioSettings(type: Greedy_Kings.AudioSettingType, isOn: Swift.Bool) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Main%20Menu/Views/MainMenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "290"
+                  endingLineNumber = "290"
+                  offsetFromSymbolStart = "392">
+               </Location>
+               <Location
+                  uuid = "DDB5ED61-1EB2-4602-A60A-366C875D56A3 - f60beb061b264ef1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.MainMenuViewController.updateAudioSettings(type: Greedy_Kings.AudioSettingType, isOn: Swift.Bool) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Main%20Menu/Views/MainMenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "290"
+                  endingLineNumber = "290"
+                  offsetFromSymbolStart = "652">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1377,6 +1527,21 @@
                   startingLineNumber = "254"
                   endingLineNumber = "254"
                   offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "E8A79811-50E2-47A9-9D0C-B9C6239FA40D - 7d7e2defa207d028"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.MainMenuViewController.updateAudioIcons() -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Main%20Menu/Views/MainMenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "275"
+                  endingLineNumber = "275"
+                  offsetFromSymbolStart = "280">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1441,6 +1606,36 @@
                   endingLineNumber = "233"
                   offsetFromSymbolStart = "144">
                </Location>
+               <Location
+                  uuid = "532E2D72-F153-4531-AB4B-D753FD7D4ACF - 69d0444d7305a6f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.MainMenuViewController.setupAudioSettings() -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Main%20Menu/Views/MainMenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "254"
+                  endingLineNumber = "254"
+                  offsetFromSymbolStart = "364">
+               </Location>
+               <Location
+                  uuid = "532E2D72-F153-4531-AB4B-D753FD7D4ACF - 69d0444d7305a6f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.MainMenuViewController.setupAudioSettings() -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Main%20Menu/Views/MainMenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "254"
+                  endingLineNumber = "254"
+                  offsetFromSymbolStart = "612">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1504,6 +1699,21 @@
                   endingLineNumber = "275"
                   offsetFromSymbolStart = "896">
                </Location>
+               <Location
+                  uuid = "02128547-A854-4F5A-9CF2-B5494D8762CE - f60beb061b264e16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.MainMenuViewController.updateAudioSettings(type: Greedy_Kings.AudioSettingType, isOn: Swift.Bool) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Main%20Menu/Views/MainMenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "295"
+                  endingLineNumber = "295"
+                  offsetFromSymbolStart = "936">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1566,6 +1776,21 @@
                   startingLineNumber = "242"
                   endingLineNumber = "242"
                   offsetFromSymbolStart = "1260">
+               </Location>
+               <Location
+                  uuid = "40661A1A-3C4A-4367-B7F7-F22BDAA707BA - 69d0444d7305a7d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.MainMenuViewController.setupAudioSettings() -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Main%20Menu/Views/MainMenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "263"
+                  endingLineNumber = "263"
+                  offsetFromSymbolStart = "1304">
                </Location>
             </Locations>
          </BreakpointContent>

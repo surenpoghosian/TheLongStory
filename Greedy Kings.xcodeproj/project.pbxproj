@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33025D8A2B5710D70010EAC0 /* HintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33025D892B5710D70010EAC0 /* HintViewController.swift */; };
 		33298FE82B57044A00DE9AB7 /* ResultModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33298FE72B57044A00DE9AB7 /* ResultModels.swift */; };
 		333931802B4AF645002D4F91 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3339317F2B4AF645002D4F91 /* .gitignore */; };
 		335334A12B27BA3300BB3E8E /* strengthIndicator.json in Resources */ = {isa = PBXBuildFile; fileRef = 335334A02B27BA3300BB3E8E /* strengthIndicator.json */; };
@@ -186,6 +187,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33025D892B5710D70010EAC0 /* HintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewController.swift; sourceTree = "<group>"; };
 		33298FE72B57044A00DE9AB7 /* ResultModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModels.swift; sourceTree = "<group>"; };
 		3339317F2B4AF645002D4F91 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3353349D2B27B19A00BB3E8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -589,6 +591,7 @@
 				E8BBD4222ABFC7600056E1E8 /* ResultViewController.swift */,
 				E8BBD4322ABFC8A70056E1E8 /* PlayerDataViewController.swift */,
 				336A95382AE180D900F43B13 /* PauseViewController.swift */,
+				33025D892B5710D70010EAC0 /* HintViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -903,6 +906,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BBD4332ABFC8A70056E1E8 /* PlayerDataViewController.swift in Sources */,
+				33025D8A2B5710D70010EAC0 /* HintViewController.swift in Sources */,
 				E8BBD40F2ABFA5460056E1E8 /* MainMenuViewController.swift in Sources */,
 				33F00D642ABCB4CB00A5D5B2 /* RootViewController.swift in Sources */,
 				33E8D3E02AD0456300C3892C /* PhysicsModels.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CloudKit
 //import FirebaseCore
 //import FirebaseAnalytics
 //import FirebaseCrashlytics
@@ -24,15 +25,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in
+            // Handle the user's response
+        }
         
-//        FirebaseApp.configure()
-//        Analytics.logEvent("AppLaunched", parameters: [
-//            "remember": "The ones who are crazy enough to think that they can change the world, are the ones who do."
-//        ])
-//        
-//        Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
-//        
+        application.registerForRemoteNotifications()
+        //        FirebaseApp.configure()
+        //        Analytics.logEvent("AppLaunched", parameters: [
+        //            "remember": "The ones who are crazy enough to think that they can change the world, are the ones who do."
+        //        ])
+        //
+        //        Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
+        //
         return true
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        let container = CKContainer.default()
+        let publicDatabase = container.publicCloudDatabase
+        
+        // Create a unique identifier for the subscription
+        let subscriptionID = "GreedyKings-Notifications"
+        
+        // Use CKQuerySubscription's initializer with a subscriptionID parameter
+        let subscription = CKQuerySubscription(recordType: "Notification", predicate: NSPredicate(value: true), subscriptionID: subscriptionID, options: .firesOnRecordCreation)
+        
+        let notificationInfo = CKSubscription.NotificationInfo()
+        notificationInfo.alertBody = "New data available"
+        subscription.notificationInfo = notificationInfo
+        
+        publicDatabase.save(subscription) { data, error in
+            print("subscription saved", data, error)
+            // Handle subscription save completion
+        }
+    }
+    
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        // Handle registration failure
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // ... Handle the incoming push notification ...
+        completionHandler(.newData)
     }
     
     // MARK: UISceneSession Lifecycle

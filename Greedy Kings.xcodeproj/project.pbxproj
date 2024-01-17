@@ -466,7 +466,6 @@
 		33F00D5E2ABCB4CB00A5D5B2 /* Greedy Kings */ = {
 			isa = PBXGroup;
 			children = (
-				33025D8D2B582F960010EAC0 /* Greedy Kings.entitlements */,
 				33F00D922ABCB56100A5D5B2 /* Game */,
 				33F00D942ABCB57600A5D5B2 /* Managers */,
 				33F00D932ABCB56600A5D5B2 /* Application */,
@@ -474,6 +473,7 @@
 				33E8D3F22AD5376200C3892C /* AudioAssets */,
 				336A95062ADC6CB100F43B13 /* AnimationAssets */,
 				33F00D6B2ABCB4CC00A5D5B2 /* Assets.xcassets */,
+				33025D8D2B582F960010EAC0 /* Greedy Kings.entitlements */,
 				33F00D702ABCB4CC00A5D5B2 /* Info.plist */,
 				3353349D2B27B19A00BB3E8E /* GoogleService-Info.plist */,
 			);

@@ -66,7 +66,7 @@ final class Animation {
             
             switch side {
             case .left:
-                animationViewX = CGFloat(x + animationViewWidth / 2)
+                animationViewX = CGFloat(x - animationViewWidth / 4)
                 animationViewY = CGFloat(y - animationViewHeight / 2)
             case .right:
                 animationViewX = CGFloat(x - animationViewWidth / 2)

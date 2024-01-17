@@ -1,4 +1,4 @@
-# The Long Story | Greedy Kings
+<img width="1507" alt="Screenshot 2024-01-17 at 13 38 28" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/d6a51445-4cb0-4487-8a8f-8475254c1a86"># The Long Story | Greedy Kings
 Project planning tools
 
 • [Miro](https://miro.com/app/board/uXjVMkG03_8=/?share_link_id=134224966956) <br/>
@@ -41,11 +41,12 @@ https://github.com/surenpoghosian/TheLongStory/assets/56313895/48c5e1a5-15d3-499
 <img width="1501" alt="Screenshot 2023-10-22 at 14 51 56" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/dea4c546-b9f3-4cc7-8228-6182ee0d36f9">
 <img width="1489" alt="Screenshot 2023-10-22 at 14 52 34" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/a0ad2b3d-563f-4a59-be0b-2e32bd21991e">
 <img width="1512" alt="Screenshot 2023-10-22 at 14 52 45" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/e234bd79-7d4a-46a1-910c-ad897d0d838c">
-<img width="1500" alt="Screenshot 2024-01-17 at 13 36 03" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/63472148-9067-4e2a-937d-7117d945102a">
+<img width="1507" alt="Screenshot 2024-01-17 at 13 38 28" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/9bd0879d-dc1c-452a-a6ac-2f2f3edd0660">
 <img width="1498" alt="Screenshot 2023-10-22 at 14 52 58" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/0bbc1d34-621d-4daa-b1ab-af9d5bdd076c">
 <img width="1466" alt="Screenshot 2023-10-22 at 14 54 57" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/a90e0960-a215-4ecc-80f2-6ee42ef1cf4a">
 <img width="1492" alt="Screenshot 2023-10-22 at 14 52 22" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/02e93d4d-2b29-48cc-9932-f476f37f75b4">
-<img width="1500" alt="Screenshot 2024-01-17 at 13 36 17" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/66240156-5f44-4804-9b4b-fd37edd805c4">
+<img width="1512" alt="Screenshot 2024-01-17 at 13 38 41" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/dcf3f551-c6d2-4dab-9cc3-fa2cc56155c5">
+
 
 
 

@@ -1,4 +1,4 @@
-<img width="1507" alt="Screenshot 2024-01-17 at 13 38 28" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/d6a51445-4cb0-4487-8a8f-8475254c1a86"># The Long Story | Greedy Kings
+# The Long Story | Greedy Kings
 Project planning tools
 
 • [Miro](https://miro.com/app/board/uXjVMkG03_8=/?share_link_id=134224966956) <br/>
@@ -35,9 +35,6 @@ https://github.com/surenpoghosian/TheLongStory/assets/56313895/48c5e1a5-15d3-499
 # Screenshots from the game
 
 `Pages`
-
-
-
 <img width="1501" alt="Screenshot 2023-10-22 at 14 51 56" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/dea4c546-b9f3-4cc7-8228-6182ee0d36f9">
 <img width="1489" alt="Screenshot 2023-10-22 at 14 52 34" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/a0ad2b3d-563f-4a59-be0b-2e32bd21991e">
 <img width="1512" alt="Screenshot 2023-10-22 at 14 52 45" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/e234bd79-7d4a-46a1-910c-ad897d0d838c">

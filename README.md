@@ -12,7 +12,7 @@ Project planning tools
 
 
 # Playgrounds of this project 
-Below you can find our experiments on this project important parts
+Below you can find our experiments on this project's important parts
 
 • [UIKitDynamics Gravity etc.](https://github.com/surenpoghosian/UikitDynamicsExperiments) <br/>
 • [Collisions](https://github.com/GarikHovsepyan/UIKitDynamicsCollisionTests) <br/>
@@ -35,13 +35,17 @@ https://github.com/surenpoghosian/TheLongStory/assets/56313895/48c5e1a5-15d3-499
 # Screenshots from the game
 
 `Pages`
+
 <img width="1501" alt="Screenshot 2023-10-22 at 14 51 56" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/dea4c546-b9f3-4cc7-8228-6182ee0d36f9">
 <img width="1489" alt="Screenshot 2023-10-22 at 14 52 34" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/a0ad2b3d-563f-4a59-be0b-2e32bd21991e">
 <img width="1512" alt="Screenshot 2023-10-22 at 14 52 45" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/e234bd79-7d4a-46a1-910c-ad897d0d838c">
-<img width="1498" alt="Screenshot 2023-10-22 at 14 52 58" 
-src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/0bbc1d34-621d-4daa-b1ab-af9d5bdd076c">
+<img width="1512" alt="Screenshot 2023-10-22 at 14 52 45" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/7e8081aa-3c96-448b-9945-f09f4c40e2c8">
+<img width="1498" alt="Screenshot 2023-10-22 at 14 52 58" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/0bbc1d34-621d-4daa-b1ab-af9d5bdd076c">
 <img width="1466" alt="Screenshot 2023-10-22 at 14 54 57" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/a90e0960-a215-4ecc-80f2-6ee42ef1cf4a">
 <img width="1492" alt="Screenshot 2023-10-22 at 14 52 22" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/02e93d4d-2b29-48cc-9932-f476f37f75b4">
+<img width="1492" alt="Screenshot 2023-10-22 at 14 52 22" src="https://github.com/surenpoghosian/TheLongStory/assets/56313895/83eca49e-fa9f-4772-a1cd-274f6a4f45f4">
+
+
 
 
 

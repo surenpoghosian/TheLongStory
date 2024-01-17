@@ -55,13 +55,12 @@ final class PickCharacterViewController: UIViewController {
     // set character data
     private func setupCharacterData() {
         if let characters = storageManager.get(key: "characters", storageType: .userdefaults) as? Data {
+            
             let decoder = JSONDecoder()
             if let characters = try? decoder.decode([Character].self, from: characters) {
-                print(characters)
                 characterData = characters
             }
         }
-        
     }
     
     // setup custom back button for navigation
@@ -233,13 +232,9 @@ extension PickCharacterViewController: UICollectionViewDataSource {
         cell.isUserInteractionEnabled = character.availableToPick
         
         // check the availability of character for picking and change its ui state
-        if character.availableToPick {
-            cell.nameLabel.alpha = 1
-            cell.characterImageView.alpha = 0.7
+        if character.availableToPick == true {
             cell.isUserInteractionEnabled = true
         } else {
-            cell.nameLabel.alpha = 0.7
-            cell.characterImageView.alpha = 0.7
             cell.isUserInteractionEnabled = false
         }
         return cell
@@ -253,6 +248,7 @@ extension PickCharacterViewController: UICollectionViewDelegate {
         if cell != nil {
             let sectionOffset = indexPath.section * (characterData.count / 2)
             let selectedCharacter = characterData[sectionOffset + indexPath.row]
+            
             
             if selectedCharacter.availableToPick {
                 if selectedPlayer == 1 {
@@ -274,7 +270,7 @@ extension PickCharacterViewController: UICollectionViewDelegate {
                         
                         pickedCharacterForPlayer1 = selectedCharacter
                         
-                        cell?.alpha = 0.5
+                        cell?.alpha = 0.7
                         
                         characterData[sectionOffset + indexPath.row].availableToPick = false
                         selectedPlayer = 2
@@ -297,13 +293,12 @@ extension PickCharacterViewController: UICollectionViewDelegate {
                         ])
                         
                         pickedCharacterForPlayer2 = selectedCharacter
-                        cell?.alpha = 0.5
+                        cell?.alpha = 0.7
                         characterData[sectionOffset + indexPath.row].availableToPick = false
                         nextButton.alpha = 1.0
                         selectedPlayer = 1
                     }
                 }
-                collectionView.reloadData()
             }
         }
     }

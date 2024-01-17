@@ -593,6 +593,21 @@
                   endingLineNumber = "174"
                   offsetFromSymbolStart = "496">
                </Location>
+               <Location
+                  uuid = "3F37E280-4E59-4F7F-B4DA-2659C093B7AB - 75b3d5780075f675"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.GameSceneViewController.updateTimer() -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Game%20Scene/Views/GameSceneViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "496">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -751,6 +766,21 @@
                   endingLineNumber = "355"
                   offsetFromSymbolStart = "504">
                </Location>
+               <Location
+                  uuid = "7060B3C8-41E4-4AF1-881C-7835F29ECAAD - 64a2413a5e8ae65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.GameSceneViewController.updateHealthScale(player: Greedy_Kings.Player) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Game%20Scene/Views/GameSceneViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "352"
+                  endingLineNumber = "352"
+                  offsetFromSymbolStart = "504">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -827,6 +857,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "356"
                   endingLineNumber = "356"
+                  offsetFromSymbolStart = "864">
+               </Location>
+               <Location
+                  uuid = "0C7614E6-F669-430C-B95F-A9D7984CFE6C - 64a2413a5e8ae5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.GameSceneViewController.updateHealthScale(player: Greedy_Kings.Player) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Game%20Scene/Views/GameSceneViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "353"
+                  endingLineNumber = "353"
                   offsetFromSymbolStart = "864">
                </Location>
             </Locations>
@@ -1093,116 +1138,20 @@
                   endingLineNumber = "284"
                   offsetFromSymbolStart = "516">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8866B769-E910-435E-9F80-2B39D288967A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greedy Kings/Game/UI/Pick Character/Views/PickCharacterViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "setupCharacterData()"
-            landmarkType = "7">
-            <Locations>
                <Location
-                  uuid = "8866B769-E910-435E-9F80-2B39D288967A - 27a84f19aeb1f12b"
+                  uuid = "7ECB8E96-8C3E-4BB0-8D5A-D5B8EA54A0D2 - 4c81b1e429bcde84"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.PickCharacterViewController.checkAndSetupCharactersData() -&gt; ()"
+                  symbolName = "Greedy_Kings.GameSceneViewController.onContinue() -&gt; ()"
                   moduleName = "Greedy Kings"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Game/UI/Pick%20Character/Views/PickCharacterViewController.swift"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Game%20Scene/Views/GameSceneViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "1484">
-               </Location>
-               <Location
-                  uuid = "8866B769-E910-435E-9F80-2B39D288967A - 94c62e4ffcfc4e76"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.PickCharacterViewController.setupCharacterData() -&gt; ()"
-                  moduleName = "Greedy Kings"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Game/UI/Pick%20Character/Views/PickCharacterViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "748">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2CC4BB48-4597-439B-B6A4-F9AC578CCCF5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greedy Kings/Game/UI/Pick Character/Views/PickCharacterViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "setupCharacterData()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2CC4BB48-4597-439B-B6A4-F9AC578CCCF5 - 27a84f19aeb1f1ce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.PickCharacterViewController.checkAndSetupCharactersData() -&gt; ()"
-                  moduleName = "Greedy Kings"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Game/UI/Pick%20Character/Views/PickCharacterViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "1076">
-               </Location>
-               <Location
-                  uuid = "2CC4BB48-4597-439B-B6A4-F9AC578CCCF5 - 94c62e4ffcfc4e93"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.PickCharacterViewController.setupCharacterData() -&gt; ()"
-                  moduleName = "Greedy Kings"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Game/UI/Pick%20Character/Views/PickCharacterViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "116">
-               </Location>
-               <Location
-                  uuid = "2CC4BB48-4597-439B-B6A4-F9AC578CCCF5 - 94c62e4ffcfc4e93"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greedy_Kings.PickCharacterViewController.setupCharacterData() -&gt; ()"
-                  moduleName = "Greedy Kings"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/surenpoghosyan/Documents/Greedy%20Kings/Greedy%20Kings/Game/UI/Pick%20Character/Views/PickCharacterViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "540">
+                  startingLineNumber = "281"
+                  endingLineNumber = "281"
+                  offsetFromSymbolStart = "516">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1295,6 +1244,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "388"
                   endingLineNumber = "388"
+                  offsetFromSymbolStart = "1764">
+               </Location>
+               <Location
+                  uuid = "870E6937-997C-4D9B-A982-A729370FADFE - 776c58b6730504e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greedy_Kings.GameSceneViewController.updatePlayerState(side: Greedy_Kings.Side) -&gt; ()"
+                  moduleName = "Greedy Kings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surenpoghosyan/Documents/TheLongStory/Greedy%20Kings/Game/UI/Game%20Scene/Views/GameSceneViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "385"
+                  endingLineNumber = "385"
                   offsetFromSymbolStart = "1764">
                </Location>
             </Locations>
